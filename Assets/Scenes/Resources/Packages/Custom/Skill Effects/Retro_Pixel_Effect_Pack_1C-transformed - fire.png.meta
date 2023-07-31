@@ -1,0 +1,5895 @@
+fileFormatVersion: 2
+guid: bbd062ab6330606439d837715398a0a3
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc1c0a8242e825443874c06ba59dfcbd
+      internalID: -693191880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d0633a264e97143915d2d2011daf82
+      internalID: 1838104772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8384c9cddedf64a985b9f0a048f851
+      internalID: -370308046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86e2d0483cc781247a9db6f4126c8857
+      internalID: -1845512407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71d0b8b689176244ae8663ac4045004
+      internalID: 1743843613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45be02b3d557f0418c3997df8869cfb
+      internalID: 1033781667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1452c35b56e0c474bacd5a082abf9a10
+      internalID: -629046555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 842205350a8e35b45aa2cedde3a7aa79
+      internalID: 960425687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc90a25f7f628a47b00fd3fe4acc70f
+      internalID: 164166841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9bbbda4ec49d447a45c1a61f6a8a8b
+      internalID: 1753534306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccfbd584c18590e49b92233f97e021e8
+      internalID: 532861788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a300281f0c23af43b10c614b5137ae0
+      internalID: 1362067687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_12
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1afe9761a4137d419ca88dfd0469513
+      internalID: 935436931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_13
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acccc94b0ee0dbd45ab5124402d2c1ec
+      internalID: 1079684787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_14
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b27cef99ad32e48a71362c2ae639c8
+      internalID: 1146929215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e7a69f71efbb044580b4b9b5b657df9
+      internalID: 454811248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0688d2e2d1a83da4b91d1020b8108514
+      internalID: 1018009169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_17
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67483c2f58fe1ab45b5a6178ba8ff3f4
+      internalID: -109094615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_18
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d0d0312ad9076b44b3112f745a59e31
+      internalID: -136014131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_19
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0054524475da502428673eaa111b7f59
+      internalID: -428869692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_20
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef9fb3ae283c2f44d908efba8b62e404
+      internalID: -1258451251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_21
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0291d15db489844d9b7a06ab40f86fc
+      internalID: -1267775904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_22
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d72f9cebc78ee45831a1f4b5a4fe60
+      internalID: -2055576272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50815625837d6c64eaed8d09feb9c2e1
+      internalID: 1850720352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_24
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2ae56b5e4430141b53acf9fabe57cd
+      internalID: 403540670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_25
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea60644ecdd33445805a9bed5ac964c
+      internalID: -1186612846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_26
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c563c1abb49cfcf469b882632bd3f019
+      internalID: 792229371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_27
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28098d217c9e924faeb5f9b82defa72
+      internalID: 1104223357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_28
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a548e521cebae164483e5842a52d2f10
+      internalID: 1685282848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_29
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cd4e95319b38734fbbeb9eed193b316
+      internalID: 731366788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_30
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb1b2e46fd4aeea4ab8f627a5920047d
+      internalID: -1020885989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_31
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05a745445e34a3c4cacc6fac151b36c3
+      internalID: -605615768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37f13659a297704ab65187b55bb64b1
+      internalID: -898923596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_33
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f8a1d6792b2f6499514b8c6e2c71c7
+      internalID: -410569827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_34
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f2ccdd6cfeb44a4088b9a36988cbe7a
+      internalID: -329943840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_35
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa12f196c34bba4c84ed2ce4e7380ec
+      internalID: 869977451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_36
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ebd117d07dba94188687dd406ef21c
+      internalID: 360058072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_37
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c520a9cdbde1b6448d543f1f120a2e3
+      internalID: -1886447188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_38
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28adbc997ac75bf4e9a84330f4294922
+      internalID: 1263195028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_39
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 993cd83e9f05473419cffd48b3fb1f05
+      internalID: 327476418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_40
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c5bc30e434ef88439a8e15f20c6872a
+      internalID: 1990959471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf774cec1918b8a46be35ea1fd5308bb
+      internalID: -71013057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_42
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9866488678d342d41bb5f648a813182e
+      internalID: 238875573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_43
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cc4fd263d7e6b04e8238787880a1d2b
+      internalID: 22495846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_44
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 319a18047bce433478c0837bf68729fb
+      internalID: -1459122828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_45
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf4be45c33d57a044917cda636a7a123
+      internalID: -824468213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_46
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301dfa07b33923149a4776ae4ca4a883
+      internalID: 1118987461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_47
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 239d1b3d6212e1642ac7b13d5a27faf1
+      internalID: 1250809123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_48
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55677998e3809a344bed0163ff9d7410
+      internalID: -1162129068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_49
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 267e829837e53c143bba0a35d18841a5
+      internalID: 1228724755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_50
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386f94d1d0d15c94fa294cfb4d57334c
+      internalID: 464253053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_51
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2eb3b34c3dcdf4aad3b6b930b0ff04
+      internalID: -1340174340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d9a9642d5900774c8fac13758471767
+      internalID: -338074914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_53
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2db3eae5b13cee44a9056650ccbcd207
+      internalID: -286345993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_54
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 167545907115ac541ae2f1fa1192e16c
+      internalID: 1317225446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_55
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70bc52bbbaefaf42b8feb620ad0ae5e
+      internalID: 2042193006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_56
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314c85f8cd83e8e4eb24a518598d7331
+      internalID: 1779291208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_57
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81ff90a48fa52cd4ab08d04743c1cfcc
+      internalID: -2031028218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_58
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f08b7368cd3d744db516bfbe02b3819
+      internalID: -1147197014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_59
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31a067aa8616574ca9b6cde1c4e879e
+      internalID: 266545268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_60
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a005ca641d0b354ab9c2dbb3f3c76bd
+      internalID: 164284943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_61
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2024a5cdd86a435468f2d4e5d2815174
+      internalID: -747093404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_62
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed47eefd8e8550e4aa3ce874bc02315b
+      internalID: -2124932473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_63
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cffcc43fcdfcb146bf758c836ff2a80
+      internalID: -556946474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23c36bd5f613c1847804c9a682805a08
+      internalID: 696219718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_65
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b788762a5c4e1d43a188ad9a9cab217
+      internalID: -1070089630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_66
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb1e794dfb0a37468738ae455ebdebb
+      internalID: -187261745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_67
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 185ec5bff39b7fc4499c78bdbb93a1e5
+      internalID: 1707510589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_68
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98fcc41c885d34b49a3bf773761a796a
+      internalID: 962293847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_69
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5be825abbdd9f2458274e478a00a75b
+      internalID: -1085409788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_70
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc83dd45b7c02246b52598f50ddd328
+      internalID: 1165622997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_71
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b545366c4ab15104d91477f3a792c3dd
+      internalID: -831620992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_72
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa2f972680e94ff4584b456d2f5562dc
+      internalID: 1051441033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_73
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7f6d63a49f0dd4194be0647a54c21b
+      internalID: -1469830118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_74
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a6d2c1b1e599842bf36c2e6b3f289b
+      internalID: 338997306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959ddc8e3b9f03d4183c0af5e973d2c2
+      internalID: 948138157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_76
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2381bed185c2b104b97be6d1f6ffa0ee
+      internalID: 1472801682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_77
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab0dfeec03bd7b34e84f4fd222782706
+      internalID: 632779494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_78
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26a4f1d53ddd419469afadc3f9c21504
+      internalID: -514271944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_79
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1f3898ec795a54e9ecc2f935578443
+      internalID: -878616926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_80
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6361d2da175ba8e43a5ee443dcf53807
+      internalID: -1169106963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_81
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 800ace98f3163e04bb8cb94571d49357
+      internalID: 655931911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_82
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7fdc54337c20374bb3ef3ecdc17cf7d
+      internalID: 694161391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_83
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644e3513cd9bdfb4da78ba0b6f7f41bb
+      internalID: -544460883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_84
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d8d0fac41172946af598218d43fae8
+      internalID: 1546445509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_85
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 667990ae61880674e96c2ff02bbb96da
+      internalID: -592693700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_86
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 535c9c38bb3e14545a0b72d33ad5eadd
+      internalID: 38133080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_87
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e9ea0277af53ae44827eb488cf4eadf
+      internalID: -1135557366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_88
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb48c97e06fa46041910bcec647cc222
+      internalID: -584279473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_89
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4704b1fa9c4e824a80a7f6a868528bf
+      internalID: -1812092681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_90
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796873af27d228e489c3458c84886b36
+      internalID: -1129486799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_91
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b955b0de18c2bfe479793261539d4292
+      internalID: -2009883864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_92
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 395106c12494ca84fa3e854d4e817295
+      internalID: -595050398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_93
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dbde47d9faaba14fa70be5ecd72189f
+      internalID: -1555412517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_94
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcdfb5bc91d903b498d6a7a85037f4a2
+      internalID: 1779855854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_95
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddac0affd6debed4d8f60b48ced9277e
+      internalID: 654430937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_96
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c27daf6e3014f040a64d4a259ba99ff
+      internalID: -1315492303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_97
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1ce28c09490624da1b044c4df28158
+      internalID: 598374542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_98
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6277a074d4045fe479288811193a5c15
+      internalID: 847187073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_99
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a345a5e7fdc3e4d9355fe4a34329bc
+      internalID: -610462725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_100
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b889752576a3eb54d9f340d61d68c4bb
+      internalID: 1978103808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_101
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10df684f9d8ff214eaa5cecd6b2e9e2b
+      internalID: 1907096148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_102
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 600723a992a8a054d9dec8df74c5da04
+      internalID: -183761495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_103
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaca9c72ca7ed814aaf3f7ac54a8481b
+      internalID: -12603907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_104
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e50c1da68e1c9749a1442e51ee60ce4
+      internalID: 1583544807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_105
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4913db51d213154184291cb9335c622
+      internalID: 518020167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_106
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea99cab4f8067de459009eddc5f6801e
+      internalID: -6452212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_107
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49f7b4c5d59bc24dbfe9e280c7ddcb6
+      internalID: -303136451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_108
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b644dd31b01e2e4d9512b204dd2714a
+      internalID: 50336452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_109
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836a29072dbb54b4a953c30e1ff27aa1
+      internalID: 1182228425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_110
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352d44482fbc8df4694097ba4cc4890f
+      internalID: 813554415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_111
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c40f82db61ffc9743949a447099b33ee
+      internalID: -1171181939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_112
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52648c8386cce5a44bc5596c4c36729c
+      internalID: -346634487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_113
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2abf4350f2f761478ae059443fa171f
+      internalID: 843626736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_114
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5740468a2a9345e4db1747ca4cb58970
+      internalID: 1559437254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_115
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc189c3e533215143ad7dabf2c05a5ae
+      internalID: -1807283396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_116
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4589a68206da694fbdb9bc984ef585a
+      internalID: 136736322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_117
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 617fb40bd2d0a264e9ab0c0ad0af1b1b
+      internalID: -1040949384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_118
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298469bbd8471184ca4a0a6e07abbcef
+      internalID: -767227813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_119
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ebe88ae8daa1bb40afdb74a4095f394
+      internalID: 758158917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_120
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64cce664430a546418774f90f4443a82
+      internalID: 875941784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_121
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb77ab3c153544d41b85b4b3d616c53a
+      internalID: 1193063970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_122
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b635467b4ceae45bd2595378a2a1e1
+      internalID: -494343426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_123
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8218c5647958344b82a1b16cdc830d5
+      internalID: -1549728100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_124
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe926eaca657fc4f8b29c861a20a417
+      internalID: -1109626745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_125
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f38b9a4d77b2e3c469c475ab25c98176
+      internalID: 1682601128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_126
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f634f25787c2c5147987ec8743680905
+      internalID: 1569172700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_127
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8bc5a22ced170d438b67f9e48edbe21
+      internalID: -1407384656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_128
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d2c5680f948a49499f045e37e8d2857
+      internalID: 1127784541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_129
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e976fc8c463f84cae6ded3fa0a5f2d
+      internalID: -1340325822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_130
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b05aa9d4e706a249bcf96d42479d022
+      internalID: -86633439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_131
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668f6c86cd72dd845975de18c39b0724
+      internalID: 2099526127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_132
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d86577a30b48a5e4491d2d5f8c414333
+      internalID: 1284378709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_133
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c3d18281f6849a4bb2300c3f2b7608b
+      internalID: -979133433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_134
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 572e621358f980041ad1ebeac6f2e122
+      internalID: 1646040045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_135
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6201a1cb00d7184286c0580eed95ed3
+      internalID: -802559402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_136
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1c028d422d00de4680d0f1174ca7d62
+      internalID: 1031329517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_137
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5004118deaf07224b88fb0122d9fe529
+      internalID: 1987393882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_138
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f15ce847832c91b4c884bb7aa04f50ee
+      internalID: -2062637235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_139
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948953f72ea31f6499d5af1bc2d29e23
+      internalID: 497520998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_140
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d7765ed13f4d74e8f4cf06e4138a3a
+      internalID: 2045700725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_141
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c501ac9c2855946ac68daa99754808
+      internalID: -219494059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_142
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027a0ab3cc13f28438e1016160d5fe25
+      internalID: -2025689995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_143
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c02cbefcf1e2145a0137669ad1d7d5
+      internalID: -2040733692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a7b78ca1d37c44a8072f451a27d7ea
+      internalID: 1210563487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_145
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2869de9455419a64f85e3edfbad404d2
+      internalID: -1400897609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_146
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2630f1c02ecdc5043bbadc9bd4bb7a1a
+      internalID: 1120125122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_147
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 716577d28d93e1647a59bd611cf266f3
+      internalID: -1151522575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_148
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcf0767fc8fc3d9449be9ab824320fcc
+      internalID: -1097792855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_149
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a5d9b0e4def6d4d851b2c6f2e38ac9
+      internalID: 1343351432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_150
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66719871ed33805408dacabb0ae5a2a8
+      internalID: 393691472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_151
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d3fd7eef1072cb45bed811298b6d669
+      internalID: 1565482350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_152
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1f26cce9f886742b7e9e834974e7ee
+      internalID: -1537871042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_153
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051234bdf587ccf41a268bbbc2274017
+      internalID: -1756735594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_154
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f8b7a61ee9f05144a603b04152a00a3
+      internalID: -1761472829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_155
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f066deaae00edd4294b063ceba3b7dc
+      internalID: -2108135738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_156
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13452eba51218c4eb9d1cfe557778df
+      internalID: 680534746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_157
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 282f8c83709fc6d4a8a166c80da748bb
+      internalID: 1651179783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_158
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 516773a72de80b14ea3f6d16cdd3b647
+      internalID: -1636312855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_159
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c1664a7f9f759f45b9365491ecf2fd6
+      internalID: -1149600433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_160
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1568acc71de084ba2fbb17ffea4af7
+      internalID: -613985667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_161
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a884d64f1a608448973182ddabc2e32
+      internalID: -1641577530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_162
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7403da49167cee4b8b01ff68a14d85e
+      internalID: 2009983034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_163
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05aa79a4c05df7046a5e76fb63c00077
+      internalID: -1787936652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_164
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2347ba1118ebea544b6553e205dd4ac7
+      internalID: -326801745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_165
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c731071bb7b2bb45bff42858eca624f
+      internalID: -1573089942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_166
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce638711a9e1da9479bc13ea9a9eb86a
+      internalID: 1522907980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_167
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8597bced31107a44d80d361bb9c10478
+      internalID: -1022130079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_168
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54df650720e2edd44ad4168865c206dd
+      internalID: 389029873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_169
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a800c4f88bed0478103d321c08fd21
+      internalID: 921838597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_170
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e82999abd75bf42bd9859dbd9eb162
+      internalID: -1800409422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_171
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27213c82ab8b174b8b2b6cbc8dfe47f
+      internalID: 83877302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_172
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905633e71d77d5e4b8073152331c4e61
+      internalID: 742993504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_173
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb90aecd42ac24439fac070fa8ded07
+      internalID: -2055007413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_174
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32cd4ab0ff89b0e4f966962434e22717
+      internalID: -989829160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_175
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1bd0fef2adb8954c8967d729c8b7dc4
+      internalID: -363400581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_176
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 318471a3f9412974c86f935fb75ae99e
+      internalID: 975934991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_177
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f322879a425990342a62d6c85dca49ab
+      internalID: 1703055008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_178
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39775cd9f2b568441b999e1bc08ba7f0
+      internalID: -279337159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_179
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be63306bcc6958459a9a7a59c95dcde
+      internalID: 507243895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_180
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af17012df21cfa041abe2efa68828856
+      internalID: -1375070850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_181
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b4f6d3dd1db51b45944eba55e085bb5
+      internalID: -35147628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_182
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b34cee9c85186084d80704d6bc35dd84
+      internalID: 205259957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_183
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aadfcadc75388f48aabae7871ca8f4f
+      internalID: 582988042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_184
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22eac92864bde3a46b63d67b4e5ae441
+      internalID: 2137353174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_185
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a641d95484545e74ea6dad21ba90202b
+      internalID: 949243063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_186
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83cdfe619b75c40419366df6bf22f1f6
+      internalID: -549906377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_187
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f859e1283390e48b34241a5fe74f23
+      internalID: -1485138611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_188
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 508d55980df232b4ab6fc952845717b1
+      internalID: 927688563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_189
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4033869f62c2744389aad25195e3e0e
+      internalID: 2001477587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_190
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7755f659f02c547b7da73d71f5aa1b
+      internalID: -91661023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_191
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53ff960f891b77049af7a351d50aa49e
+      internalID: 1606653137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_192
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab52c15c1b511724da783d92bdac3164
+      internalID: 1962844313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_193
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa7aa9d6d3b1c049a0bdc2b582ba4b3
+      internalID: 519340589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_194
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab3e46088a5f734ba1dfb4e8772045d
+      internalID: -800008238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_195
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adf213efefa547644aaac53d5c28bb70
+      internalID: 1269430461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_196
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7cee43fbcb0d2649816d034434bd61a
+      internalID: -1877806531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_197
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c8b5b2ad93f034ba3e721f1d74d9bf
+      internalID: 702766625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_198
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5676804dc24bd0c43aaae7d7a7101453
+      internalID: 864444408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_199
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0da073d9848c0d64b91ad7ed77ef1691
+      internalID: -567929104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_200
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c029c5f26fd5b243984fcc53cc90323
+      internalID: -1592261635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_201
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73cc79fcf8950ad419a43cae72a7d526
+      internalID: -1212625018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_202
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e5b40861d4b2d4391455cc4cc6b857
+      internalID: 1685323576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_203
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530bd85256f9b1e4ba399a61d4ba26aa
+      internalID: -299085330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_204
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7750e5cc22fbd4586948fbb35b3cd4
+      internalID: 712288757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_205
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e0ecf32c099754abddb694c6ae38bf
+      internalID: 1349620818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_206
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87699a1ca35071a4c8c498f16600d7f4
+      internalID: -338525992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_207
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f9526fd8716fe4b93e079d5ae5a263
+      internalID: -1204728451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_208
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efea87f745527fa439daa2e206d642dd
+      internalID: 480588069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_209
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cecdbbf2dea6be468054495bd7e179a
+      internalID: 623280531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_210
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51911fc2e4cc11949826356354cf98de
+      internalID: 1540840407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_211
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a401d5ddb315494c8ca30e264364d28
+      internalID: 1818339558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_212
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88057a2a0ea30740825a3be6accdb08
+      internalID: -646219113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_213
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f73697ddd30944d9b82e6024cb0b3c
+      internalID: 2011635575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_214
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f22e1de8078d204794fb6c1b391cc1c
+      internalID: -583092396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_215
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a01a10fba61fc04aaf975114e2cc79c
+      internalID: -2752106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_216
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca75d6df00eea67468928ec0f26415c6
+      internalID: 1445132461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_217
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e0ed0212bf02a45a5b201151e8cdbe
+      internalID: -311205718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_218
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 992daa568316df249956c8932ce111e2
+      internalID: 2107894658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_219
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe3101cae51007840bd650c809bacd35
+      internalID: 1763617221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_220
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 504a09a01c4977f4b8256988fc47b6e8
+      internalID: 1652883520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_221
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4593387f5edecfa49bbd37836e1f05d7
+      internalID: 1346162402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_222
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef3f1be003065544adfc3f06d3cfd52
+      internalID: 1933484105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_223
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f846f2c74e3aa047b014e79bebafe7f
+      internalID: -1532101401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_224
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb3d613b50dafb4081d880199b86d94
+      internalID: -1005905969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_225
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b97242fe2e4a89641ad7bea1334996dd
+      internalID: 240745067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_226
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee31632d2c071804fa1516d4d524292d
+      internalID: 2064318642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_227
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a67fe06cd6ab9642ac82ddb6c9a4efe
+      internalID: 434921320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_228
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3929d57b7ccfbc945ab73473e00106c9
+      internalID: -1255487905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_229
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b06f129e8ce0f841b4f67ecbb42c4cf
+      internalID: -329186155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_230
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bad3f79fba7d0d439d6bf2dc6c6dc37
+      internalID: -1928344095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_231
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c33a46b99c87274c8bce2da6a054672
+      internalID: -407377608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_232
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caff2aa6878cf9c4286280a08e9c79a3
+      internalID: 751176982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_233
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2921413ced14f794e9cefda98203e64d
+      internalID: 1265396826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_234
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44e4360049f977b489af603cb9874c20
+      internalID: -1584786173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_235
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80119f506244b0743ac89a2dcc74c164
+      internalID: -2126959843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_236
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598db97538bb1a44b8410329695f8bdb
+      internalID: 382542715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_237
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5e805777f50d240aacf09d1ae6e0f7
+      internalID: 2011322911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_238
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d99969b49f3f304db4f7130e8d43a20
+      internalID: -469230653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_239
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ccb826f368508f41b0ff636194841d1
+      internalID: -1998439254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_240
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5229ef6a87e3834db1fc17aa80b9706
+      internalID: -693028810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_241
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1d19a2f79f4879448cc6d1f3fe1f870
+      internalID: -2053162890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_242
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255e5b3ae4519be4f8081cbf772687db
+      internalID: 813444648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_243
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74e22a6bd03e9f045b6d491a42f20ee3
+      internalID: 785741579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_244
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f297808da08317f44b62724ad8f1628c
+      internalID: -432318624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_245
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3360e5f39a65e404583802ca72f3648c
+      internalID: -155645088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_246
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f3890d98b2fde4f990e4bb760f0f82
+      internalID: 614570606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_247
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adcbdca9765361d41a4afae725c85b8b
+      internalID: -847556926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_248
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704b54e6c1bf13b4680d3e520feb8d4a
+      internalID: -1309523191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_249
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5ad058826ee8a469e2aaa347b4ed15
+      internalID: -15381267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_250
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea1c547e8a3f5264789b36f07d7e5d41
+      internalID: 286600762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_251
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe19a72a4b36a3345b500f749d8a5ca5
+      internalID: 1797810271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_252
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b97dfc43dc923f4a99c9b265b894935
+      internalID: 2007887779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_253
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce5e664d111ccca4290b7b400a978d17
+      internalID: -1254294913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_254
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e262b10f4af554f4ab4a6aa5369e4e34
+      internalID: -1150442413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_255
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae101d459c044b47ab398e030d8181e
+      internalID: 206634977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_256
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf80b47003ac31040b920d03b6daa53e
+      internalID: -1256400196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_257
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1149076d31807db4f8aa63c8aaa66f6d
+      internalID: 979578127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_258
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8264ec9f5be294240a3834770e09cf11
+      internalID: 283712005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_259
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690491b817bdde840a8c903d89e18a9d
+      internalID: 1294667583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retro_Pixel_Effect_Pack_1C-transformed - fire_260
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36f75d1c4ebb4db4abc1de0b78c0cf88
+      internalID: 2057763358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_0: -693191880
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_1: 1838104772
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_10: 532861788
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_100: 1978103808
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_101: 1907096148
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_102: -183761495
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_103: -12603907
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_104: 1583544807
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_105: 518020167
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_106: -6452212
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_107: -303136451
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_108: 50336452
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_109: 1182228425
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_11: 1362067687
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_110: 813554415
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_111: -1171181939
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_112: -346634487
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_113: 843626736
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_114: 1559437254
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_115: -1807283396
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_116: 136736322
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_117: -1040949384
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_118: -767227813
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_119: 758158917
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_12: 935436931
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_120: 875941784
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_121: 1193063970
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_122: -494343426
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_123: -1549728100
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_124: -1109626745
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_125: 1682601128
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_126: 1569172700
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_127: -1407384656
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_128: 1127784541
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_129: -1340325822
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_13: 1079684787
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_130: -86633439
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_131: 2099526127
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_132: 1284378709
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_133: -979133433
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_134: 1646040045
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_135: -802559402
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_136: 1031329517
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_137: 1987393882
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_138: -2062637235
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_139: 497520998
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_14: 1146929215
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_140: 2045700725
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_141: -219494059
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_142: -2025689995
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_143: -2040733692
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_144: 1210563487
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_145: -1400897609
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_146: 1120125122
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_147: -1151522575
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_148: -1097792855
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_149: 1343351432
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_15: 454811248
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_150: 393691472
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_151: 1565482350
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_152: -1537871042
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_153: -1756735594
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_154: -1761472829
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_155: -2108135738
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_156: 680534746
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_157: 1651179783
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_158: -1636312855
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_159: -1149600433
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_16: 1018009169
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_160: -613985667
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_161: -1641577530
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_162: 2009983034
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_163: -1787936652
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_164: -326801745
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_165: -1573089942
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_166: 1522907980
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_167: -1022130079
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_168: 389029873
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_169: 921838597
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_17: -109094615
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_170: -1800409422
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_171: 83877302
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_172: 742993504
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_173: -2055007413
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_174: -989829160
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_175: -363400581
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_176: 975934991
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_177: 1703055008
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_178: -279337159
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_179: 507243895
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_18: -136014131
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_180: -1375070850
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_181: -35147628
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_182: 205259957
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_183: 582988042
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_184: 2137353174
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_185: 949243063
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_186: -549906377
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_187: -1485138611
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_188: 927688563
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_189: 2001477587
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_19: -428869692
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_190: -91661023
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_191: 1606653137
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_192: 1962844313
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_193: 519340589
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_194: -800008238
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_195: 1269430461
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_196: -1877806531
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_197: 702766625
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_198: 864444408
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_199: -567929104
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_2: -370308046
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_20: -1258451251
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_200: -1592261635
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_201: -1212625018
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_202: 1685323576
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_203: -299085330
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_204: 712288757
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_205: 1349620818
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_206: -338525992
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_207: -1204728451
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_208: 480588069
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_209: 623280531
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_21: -1267775904
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_210: 1540840407
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_211: 1818339558
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_212: -646219113
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_213: 2011635575
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_214: -583092396
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_215: -2752106
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_216: 1445132461
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_217: -311205718
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_218: 2107894658
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_219: 1763617221
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_22: -2055576272
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_220: 1652883520
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_221: 1346162402
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_222: 1933484105
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_223: -1532101401
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_224: -1005905969
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_225: 240745067
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_226: 2064318642
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_227: 434921320
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_228: -1255487905
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_229: -329186155
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_23: 1850720352
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_230: -1928344095
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_231: -407377608
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_232: 751176982
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_233: 1265396826
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_234: -1584786173
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_235: -2126959843
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_236: 382542715
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_237: 2011322911
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_238: -469230653
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_239: -1998439254
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_24: 403540670
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_240: -693028810
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_241: -2053162890
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_242: 813444648
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_243: 785741579
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_244: -432318624
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_245: -155645088
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_246: 614570606
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_247: -847556926
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_248: -1309523191
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_249: -15381267
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_25: -1186612846
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_250: 286600762
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_251: 1797810271
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_252: 2007887779
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_253: -1254294913
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_254: -1150442413
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_255: 206634977
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_256: -1256400196
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_257: 979578127
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_258: 283712005
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_259: 1294667583
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_26: 792229371
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_260: 2057763358
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_27: 1104223357
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_28: 1685282848
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_29: 731366788
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_3: -1845512407
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_30: -1020885989
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_31: -605615768
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_32: -898923596
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_33: -410569827
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_34: -329943840
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_35: 869977451
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_36: 360058072
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_37: -1886447188
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_38: 1263195028
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_39: 327476418
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_4: 1743843613
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_40: 1990959471
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_41: -71013057
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_42: 238875573
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_43: 22495846
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_44: -1459122828
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_45: -824468213
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_46: 1118987461
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_47: 1250809123
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_48: -1162129068
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_49: 1228724755
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_5: 1033781667
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_50: 464253053
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_51: -1340174340
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_52: -338074914
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_53: -286345993
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_54: 1317225446
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_55: 2042193006
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_56: 1779291208
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_57: -2031028218
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_58: -1147197014
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_59: 266545268
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_6: -629046555
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_60: 164284943
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_61: -747093404
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_62: -2124932473
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_63: -556946474
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_64: 696219718
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_65: -1070089630
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_66: -187261745
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_67: 1707510589
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_68: 962293847
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_69: -1085409788
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_7: 960425687
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_70: 1165622997
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_71: -831620992
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_72: 1051441033
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_73: -1469830118
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_74: 338997306
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_75: 948138157
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_76: 1472801682
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_77: 632779494
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_78: -514271944
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_79: -878616926
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_8: 164166841
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_80: -1169106963
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_81: 655931911
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_82: 694161391
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_83: -544460883
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_84: 1546445509
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_85: -592693700
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_86: 38133080
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_87: -1135557366
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_88: -584279473
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_89: -1812092681
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_9: 1753534306
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_90: -1129486799
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_91: -2009883864
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_92: -595050398
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_93: -1555412517
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_94: 1779855854
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_95: 654430937
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_96: -1315492303
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_97: 598374542
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_98: 847187073
+      Retro_Pixel_Effect_Pack_1C-transformed - fire_99: -610462725
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,6052 @@
+fileFormatVersion: 2
+guid: 7438b139afcf2b34c97148c23ec2b404
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75b496847eb011c4ebe62649ec89b517
+      internalID: 889612916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10af6d2919d35f242aa8190014b0f270
+      internalID: -452614857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87e3eb944fd6c624b829c89d4796d11e
+      internalID: -1077279233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb4406b8ea4bf1439419eb6149de0ed
+      internalID: 1752108309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f24aa1a7ecfab748ac74a828c1076f7
+      internalID: -1915380166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ac67a23ba1d11d45819b41a8adafd70
+      internalID: 1901723548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93fa0b63cf6e87f4b991ca5f027d38d3
+      internalID: -1977557914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e504c2c8c31a2144784c1c25ab88858f
+      internalID: -1080240757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45613a4025176d444ac1db3f3eb14a04
+      internalID: 1667071121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c0482f0598eb0f4a840a1f9b59593ef
+      internalID: -2143182932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef19d0a8a8b80e44ba730cb2620b46f5
+      internalID: 746297421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c9d9aa69d2bdb045bc08ca50dae3ab6
+      internalID: -1351156365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd5d33425d913bc449347493252bf6d0
+      internalID: 563617548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11401ebd572db494eb098b04d216bfad
+      internalID: 445705491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: befb2c8ec2ebea043a0bdfa194806232
+      internalID: -77384387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_16
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf45501876ce5e4a8e734c699883424
+      internalID: 729519925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_17
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1676629e571fdbf469c32ea5a81cd6b4
+      internalID: 1579709276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_18
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f76a9c285be1ac941b38850f191767ce
+      internalID: 1681023266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_19
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab80b77937f372a4fa2fe47f9596f274
+      internalID: -797232157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa6262db6ddad0d46ae5c4ac2bd6244d
+      internalID: -1393406951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb9341d14fd98724c875cf359c771a3e
+      internalID: -1651755865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_23
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f51450bef98724f84445d056b63948
+      internalID: 26773743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_24
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 896
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce07390ab657c84a9660976b88c2603
+      internalID: 2027118127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_25
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11846006f3a851947be7678e403f749a
+      internalID: -1847806099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_26
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10c7cd1b5456ce24db8432976e70354d
+      internalID: 359719671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_27
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b282d606b4b604094f676cb20b9f77
+      internalID: -2055122208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_28
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79265844198fe0a41acd234f3610fac8
+      internalID: 1106335316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_29
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fefa072d6ff3c3f40bd0a6e742f27277
+      internalID: -1895960247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_30
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2398f281a546c41bb089d89a10255f
+      internalID: -1948481251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_31
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ccfaeb8a6635e4a9be4e4109ccc843
+      internalID: 190781686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_32
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5664fcb3b03c1b4498cb21158f20a74a
+      internalID: -632905641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_33
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d5f85cc14d9a34a92ef23fdc1face5
+      internalID: -1168071819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_34
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdc639bb4b898014687d13f222db137c
+      internalID: 905284795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_35
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 694c8ed690b007a4c8638ed28cce421a
+      internalID: 532964659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_36
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d38689b5c580846aeb43698a80098b
+      internalID: 1071939927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_37
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbfa44aa69a664c4da1f29297746b3d5
+      internalID: 1103989615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_38
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039db3ac0205a3447b2a19aa1aeeef33
+      internalID: -1555258022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_39
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c0cf6006612cf84abf1feb077f00ac1
+      internalID: -504556934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f8f970e93ec65439bc8c87c7345c7f
+      internalID: -744784659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_41
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 805
+        width: 64
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb0112089d0f7246afb69c27736bc3f
+      internalID: 1682563359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_42
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 805
+        width: 64
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f9ee58676d91a43bd71319e4f37d55
+      internalID: 665588111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_43
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 805
+        width: 64
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ac54821974cd945b4d6354fbeb0af9
+      internalID: -72438194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_45
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fececdee1b813684ca1e5d79e4f43198
+      internalID: 1128287168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_46
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98e3e9dcdf41ca54081dfaf588b27adc
+      internalID: -194892352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_47
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639500745bcae7843aea66511bb9e5ca
+      internalID: 905064973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_48
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f05032f532d0914daad70cbb76c8d9d
+      internalID: 1720819106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_49
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e0b555ed776994ebf465db04c1c2c7
+      internalID: 1664092362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_50
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7dbbbc6f129ab149a783e4cf9508e11
+      internalID: 1960301827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_51
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53738cda2a326024fac36280205a87ea
+      internalID: -1801347974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_52
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 968514dd9149b204e816881af5e4e943
+      internalID: -1042615563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_53
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdfac08c5a65eb248a68b243f160aaa5
+      internalID: 1917991053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_54
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d14d0faa5b234429ff3a3719d6fa55
+      internalID: 1955319877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_55
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da07b0a15dc67fe40967922d1267f045
+      internalID: -1129005715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_56
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8996532b198571543886ac7b3c131ee6
+      internalID: -1118862115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_57
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc134a09297c234da509c1d3a095ba3
+      internalID: -1902022154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_58
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16281e0a24f976b4db1cde223acb7c06
+      internalID: -1733734555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 561723f356ad0f34c9a372e986047473
+      internalID: 10542368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_61
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 733
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1492d11a9cffbaf4f94b3754dc8006ae
+      internalID: 1238589922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_62
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 733
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ac52c656e0a7f14fb14d6e578c05c27
+      internalID: -406286538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_64
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 200fc9718e91d41458f01996b6b13e7d
+      internalID: 1213777000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_65
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c0f06b231c0071449a3d47575b74050
+      internalID: -781918799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_66
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ab81ad98c61064ba9ebf4ade695e92
+      internalID: 604608666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_67
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab41f0b8feeab484eb7fc1c1d441832f
+      internalID: 652630742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_68
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cdbc3dfad57d01439f2d595828ed73e
+      internalID: -1238821836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_69
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ad6ef8a9e145f45a60f32fcc8eb02e
+      internalID: 328123460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_70
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d70372fb85b343a4f9a49c0f2c767d99
+      internalID: 1914733992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_71
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a413b43b81ce1d54f9bd8cdf678114c3
+      internalID: -842330913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_72
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab142c4c8764b064eab17caaba5ed6e1
+      internalID: 217464983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_73
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15cf261871e2e4a4ba1d7a3a68dd6ea3
+      internalID: 914267027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_74
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 139852761c31bcc4f86ff1b805613568
+      internalID: 192009079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_75
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce050361a32ac34f8813651e6637de8
+      internalID: 690861793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_76
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6158d6db4bd8334a8a7f7215ff37271
+      internalID: -23100749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_77
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c9846390492854fbdc5d6edcefceff
+      internalID: -1268088177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d377b1389216743a01794a330bdf3e
+      internalID: 1759075366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_80
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 733
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668f23f18c38aa64f97e96b5c737b548
+      internalID: -1542003071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_84
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be94d1a4e9a21a4c840a35701eaabe7
+      internalID: -399112817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_85
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dea638ce920ba84f85fc0b087d54fd9
+      internalID: 622861185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_86
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c55530196af935240a6e5e3c1209d420
+      internalID: 886987163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_87
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c564d215c4368234ba999e607f78b32d
+      internalID: -468442568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_88
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c794dc824a7fdc46ab4267df53d862e
+      internalID: 117652248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_89
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0dee414b52a0d45b93c8548bdb6ac4
+      internalID: 2009355813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_90
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d319caef7583114b936142cf28cd922
+      internalID: 1260936557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_91
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a264a5f70805d94ab777f337819f619
+      internalID: 471099328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_92
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dfd9d01535238046ae12b3f263e0b89
+      internalID: -704086303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_93
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f9cf98048ed5b4da0858a5712302a6
+      internalID: 402152824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_94
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37edefea3d1b81b4eab64aefeee9eab3
+      internalID: -868870980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_95
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073acea4a7514a34ebd6fff93cf3e4bd
+      internalID: -1185846769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_96
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d72bd1107ce0cef46b7bd749c3c3685e
+      internalID: 304791116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_97
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b721daae65b34334aad67c54136cbbed
+      internalID: -609390014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_99
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 576
+        width: 64
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1575fbc2d847d94db66bc38456aabf2
+      internalID: -229079964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_100
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 576
+        width: 64
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e556e8f1446a248a5337b74487fd2b
+      internalID: -529652341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_102
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62cdfdcc8a234de4c84a3939e37ade99
+      internalID: -1875533788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_103
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4642497b177dfd9498c5809f8d438bd5
+      internalID: -998706480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_104
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c53e968d8e379478b4ab810056adb9
+      internalID: 1740992657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_105
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 292035d42fdddca489e91c546efa7983
+      internalID: -1901965242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_106
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aba946cf8e90e6d40acf16b5f8b61bae
+      internalID: 1760273989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_107
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3871b0229e35d64392737f449376fbd
+      internalID: 726352178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_108
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8fd07e498e202246bc56a57330a4ab2
+      internalID: 1601195606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_109
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf16f7fb58e79dc43815b0235bccd8fc
+      internalID: -684218997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_110
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b934ddd5f27c044093b88b978d26844
+      internalID: -1036159073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_111
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0acaf844041fe7478a1aef7b6de969d
+      internalID: -1318963321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_112
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5699a4042f50584bb233d70128d03d3
+      internalID: 1876577873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_113
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e5767312c2b02e4eabc7b9e07ff2873
+      internalID: -315537076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_114
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977e2b83ce500e543aa77073d36e39fe
+      internalID: 2102891683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_115
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c901686c673a045ad8d1d07d40c056
+      internalID: -674566747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_116
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa31604115641404186631760b949ab4
+      internalID: -810595905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_101
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 576
+        width: 64
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ccdeead0ffeb24881824c392f11f9c
+      internalID: -1142220022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_122
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 975bd377fbe071c4e93eb8cbd54417b3
+      internalID: 419941633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_123
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ab61d66a5e2054eb1275eb8f6ed36f
+      internalID: -1359810811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_124
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dede9d9cdef051448817e792260211c4
+      internalID: -1041597298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_125
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d27deb87bac3134c9fb5eadaad202f9
+      internalID: 702773905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_126
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8837ed1ae21ac84f9615e80977cb28d
+      internalID: 677134740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_127
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00fcd57c51e3bdc4397c6e977b679ca0
+      internalID: 1032134573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_128
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8034be4eb700784792d50c333dd2ed7
+      internalID: -1991784251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_129
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e3fb61573f5f8e488c20e34de4b325a
+      internalID: -267846190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_130
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a2473e2e9cd4843930ad999d37f1d3
+      internalID: -1270695476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_131
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40bf14d1fcb80754e8185a1a7355764e
+      internalID: 1719013706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_132
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30315e0fd456294ea9964a726457d3e
+      internalID: -2036437267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_133
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e79c948d5fc44e448ea2c0adec1b589
+      internalID: -1861832175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_134
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0658aa574de454c9ff47691037b622
+      internalID: 410616952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_135
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4899ad25cc8201c498ee14078d8ee93b
+      internalID: 1663071493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_137
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c08e6ff357d134c8a7ec2e0199f177
+      internalID: -2125936157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_138
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e162548238790c5408410b0323a80458
+      internalID: 167802111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_139
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce89d638143cb164aaaf3c0d80a8ed8e
+      internalID: 1691820191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_140
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c030e8b036d37b1459f5177baff8f13b
+      internalID: -117716140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_141
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae7a61f03addc3e4180bdb56f2f1508d
+      internalID: -2137256205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_142
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c8d8677ac310c3489d19a337f121b57
+      internalID: 406911888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_143
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2d510d3ed2c6b4ea73f6ee75c8d540
+      internalID: 114089575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_144
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55b1aa45634552438a354000aadf279
+      internalID: 1593316573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_145
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8767cbc9f87e4f448a649ebd41c05d2
+      internalID: -1739666999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_146
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 124addcf805b1604181e73b24c383ffd
+      internalID: 475109028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_147
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5f3f02cc8d52e04883208d59ce14b84
+      internalID: 981531329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_148
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7591eb1059fca9349acb892c1d53f0f1
+      internalID: -1127012910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_149
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be624ce43cc50e42a0ed1bd73843975
+      internalID: 1479790486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_150
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d05243868757e4994471cb6e9c7c4a
+      internalID: 315975753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_151
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c81dccb78ca51104da63d5fa4046d5bc
+      internalID: 1917798609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_152
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdacf31683e4fd84fabf1ecf0c707ec4
+      internalID: 2144867204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_153
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 34
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c95921fcc9e5843b3ef8be0c98ad38
+      internalID: -444651270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_158
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68d0c5be8caf7d841a6e9a62f34e6f8d
+      internalID: -1896147044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_159
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9cc9889a8ceb8549aa16c22f5043022
+      internalID: 474456302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_160
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc90dab9651f2541bad9628593f61b8
+      internalID: -1009037760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_161
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2b80721eeb5f25499362ea931578b95
+      internalID: -639127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_162
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb67595ceafde74a9d691bd8722608c
+      internalID: 1940176010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_163
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfde3756cdb9a6648a7f60bff2c1aab0
+      internalID: 974045516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_164
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 954b610ef63a3ae438ddb021978448e0
+      internalID: -1954847596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_165
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e5ea7dcb64843c47950745e2677eba8
+      internalID: 254572979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_166
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af6ccbce92e583447a8d106b2d70414a
+      internalID: 841492554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_167
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27713f51b88fc2e4c88a059e27e6a529
+      internalID: 1174005183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_168
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb38ae32a001e042ac0b12eceb04536
+      internalID: -464703873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_169
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b254f62d4913752439cb6d564ce4d46f
+      internalID: 973339704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_170
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c0d1b5bb5d6911478d62b6bd856474a
+      internalID: 937876367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_171
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 902ef266dc0780b4a9a7b6ead9bc2ee0
+      internalID: -635466041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_173
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a8bf3ea8e08e742a3dab247584481c
+      internalID: 848218477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_174
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b2e8b70df68ec4d9e8992058cd97b0
+      internalID: -703876621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_175
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c10577b63915a554b8d9c5978ac37d34
+      internalID: -375518160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_176
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b93ba4ae2729643b5cba85af5f6914
+      internalID: -709133301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_177
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40441079e7db48a48b2758e301eba4a8
+      internalID: 549260834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_178
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 717ea243df582584484b5b11319f9543
+      internalID: 340679425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_179
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d90023bc3dd28d4fbbe4510b680bb35
+      internalID: 1123111750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_180
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a0a8538acaa2945ab24313d269c250
+      internalID: 2040204281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_181
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc5f4aa25698bc949affd0ffc0c1f0f4
+      internalID: -1120741545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_182
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b0f44fb055c50d4b918e02feb64bc4a
+      internalID: 1319398474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_183
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c56feb48bc5c34f91a83b8ee4311c3
+      internalID: 1894815066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_184
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4118309e5eddd51419b95a2b82eaaed7
+      internalID: -1762331548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_185
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f3211a9993238741840649be79a8a50
+      internalID: 53872727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_186
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f23a8ace2b57943a305cd214d0be1d
+      internalID: 682461767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_187
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b60decfe3528cc4285ae4dc1c8f4417
+      internalID: -802487146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_188
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed0c6ca7a83ba3f40b37f375ff04a507
+      internalID: -1257839357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_189
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75865be08a363964eb07c18eed69d909
+      internalID: 834067675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_190
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c901e636a2307b4693314674d0a58f5
+      internalID: -515692858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_191
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 287
+        width: 64
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2f2208c316f3c4dbe1fbc6f075bf10
+      internalID: 2144486938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_193
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d36a566b47370324a931173b6672e1e4
+      internalID: -258818799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_194
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b7f0ab3ea558547b490f36bb53bb6f
+      internalID: 1370860054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_195
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb34dfa4e000f54eb3dd0ac5c8ef4af
+      internalID: 687226767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_196
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b38b9a69d6eca4eaeff0d0bedec918
+      internalID: -1685650820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_197
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7681309bfd89844aa371bc7dfc5d3c
+      internalID: 1104066706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_198
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b02b47e54279b40aaf47209152961a
+      internalID: 1198439790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_199
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db26ae38350a5ab4487ec3d679fa218b
+      internalID: -1367185127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_200
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee95caa76eaf2b047bb341e7e52c4387
+      internalID: 1911144965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_201
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecdae51a187696247bafa0852e93a87c
+      internalID: 1858478702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_202
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35c73fb103acc147b3425aef690c8d4
+      internalID: 1945338931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_203
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f336bca8c7dda4782d3ed35b524852
+      internalID: 1206464328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_204
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c5bfe88a0531944fb7e1eea1cae8784
+      internalID: -210834024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_205
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf08a2c60460d3641b5736d47525578e
+      internalID: -2100249075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_206
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f00fddea5231a3e42a8ed78873b1680a
+      internalID: 950419499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_207
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 230b72c1627947742af3a240dc885f42
+      internalID: -384586421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_208
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8224a21efb05cb4081840ccbffd724e
+      internalID: 536047945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_211
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 223
+        width: 64
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b64fc49591656d34388f3da1a42b1d04
+      internalID: 1591222803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_212
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 226
+        width: 64
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755f4af7fd8f73b42bb87e74fa9b91e9
+      internalID: 130573233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_213
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 226
+        width: 64
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85045050c51365e439c1dd3326d9d423
+      internalID: 890057593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_214
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4fc07478eb694243870586dfd3bb124
+      internalID: 163063971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_215
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a93e5c1bd9a244fab1ff59299a8c5b
+      internalID: 460718015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_216
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52c34a51ee017d44fb3e38a3f28023ef
+      internalID: -918085277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_217
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2251ea1b15879104b8a67d7a8bc1739b
+      internalID: -1597171668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_218
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e834d7b7f143ce4dbb1a5a4073eb2b2
+      internalID: -1853200780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_219
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec898ed06fb72e04c8cdf4ffe1109843
+      internalID: 1391540610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_220
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f7a563aa50418646a3a319dcdc950b8
+      internalID: 1850848400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_221
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6037091109bc2b5408370c6639af2f03
+      internalID: -291541603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_222
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435d1853a96d57a4394d2e14543a3445
+      internalID: -1477351180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_223
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd8da2948cec4f46b9713270882f698
+      internalID: -1497401569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_224
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f0a92aa786ff84eb1b31864f2df269
+      internalID: -1819072574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_225
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad5a0d9dac2bad4ab4f36bc246bee91
+      internalID: 271488788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_226
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e648aab8516bb4c9acbfa60b8779b5
+      internalID: 593306007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_227
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81670a78f92e7042a1eec39dd8cb525
+      internalID: 706688356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_228
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4563553627dcd48ac6ce9a5b14d90e
+      internalID: -340136474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_232
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee42ded86f3e084f924189d46faecc7
+      internalID: 936794384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_233
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cec70b693dc2534498e45521c4ef342
+      internalID: -314408430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_234
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e1799925eeb2343bb1eaf24bba0a2f
+      internalID: 27622078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_235
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 758ddd5f95a1e954ab6144b6e657eb3e
+      internalID: 981025694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_236
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb29aea3b88daa641ab7d702797b1097
+      internalID: -611481377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_237
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 685a155c74382f04db04c183c6ac483a
+      internalID: 1160032068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_238
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47118c93fe8c9604ea0dc962a9c8e004
+      internalID: 1272246839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_239
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb895c2eaa433f44ac4a09e704f7586
+      internalID: 520284259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_240
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d75cddeaef82aa649b87c3614f8803fc
+      internalID: 503206446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_241
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bff0fbd74f1bd48429b4ea98eae1fa83
+      internalID: 93653655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_242
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da975f9341b0e6c42bd1f5a99cdea1fc
+      internalID: 142673734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_243
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d6481d494cb58d45a13e305da517bb7
+      internalID: -1131831211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_244
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a0120d1f23a67345ab728419206dc4b
+      internalID: -130477471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_245
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21cf567efb4821b449a261c84a9648b4
+      internalID: -1922080091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_246
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 052c2aafb0b91c4438bb69052ff78461
+      internalID: 1756421214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_247
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 156
+        width: 64
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9637ab83be98a0478a3fe6cf2912864
+      internalID: 987080141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_248
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 156
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a94346b0203a24299b07653fed6011
+      internalID: -1354851040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_249
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 156
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de0019725eb476f409e2db7e26ce9287
+      internalID: -1802710370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_250
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0bd250b8148097409a809f8dafb1f02
+      internalID: -1610643465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_251
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6d56eab08643b44498ab65c361b3191
+      internalID: -258154796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_252
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5b09bd032a18ed41a35ce54b81a8e82
+      internalID: -235457269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_253
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c49e0968fba4f5448bfde0c71418fcb1
+      internalID: 624815858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_254
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c3954defa7634d41b1008cd7480f2e6
+      internalID: -671859332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_255
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2945b00bdf85134a8784bdf5f1d60dd
+      internalID: -1725304299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_256
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e0c880f9773b741823f56ba5fb04ef
+      internalID: -52556009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_257
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7b84f1d6f5c3940b1adaf0cfb850f8
+      internalID: 595122220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_258
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d68a62f20cbd604f829c5ea5edfa9df
+      internalID: 199689790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_259
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06bd8fba993ca01418387e5e825ad260
+      internalID: 1175444220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_260
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f9e513ca4dc312478f97796daa810e1
+      internalID: -1764068939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_261
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6990107d9d3f094992e338264927cf7
+      internalID: -1510327390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_262
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf72bfbb0a6a7d4d88a316cf783475c
+      internalID: -1610153345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_263
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f6e2c7bf7d5534696263aa63f389f2
+      internalID: -324121220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_264
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38c0551f1c454d64cad7d0d523002760
+      internalID: -1199550168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_265
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1be52ff84e817242a9967f91343461e
+      internalID: -1156440075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_266
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2465eda5406a3da439fd474136a22a9c
+      internalID: 1383394738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_267
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e393c280a4e3d7049aad9cd2a632120a
+      internalID: -856394437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_268
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd2283883194344bb519cf5ab3dcf60
+      internalID: -344773596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_269
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c102f216957e4e498cacd6232375e0e
+      internalID: -898145932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_270
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb6ef2cbca0bde42b04ea56a7ddf1f0
+      internalID: 1127181162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_271
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bda1716aceeb5440a088a2a648624f9
+      internalID: 342361231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_272
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63845b96ef675484c94ebe85d7b69136
+      internalID: -1047693743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_273
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9ab193c3c87c846ae411ad5734dbc1
+      internalID: 2004097625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_274
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb21c109c9011bd4f8b7b97aab338d99
+      internalID: -1673288634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_275
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750c25d5506537a4da03a74b27bfbe8c
+      internalID: -1497848435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_276
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f099268e17ad14ebda0affd6a993cf
+      internalID: -1125199710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_277
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ba546efc1e47446ac0027877bc7fd2
+      internalID: 103671146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_278
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08eee20e48fee24b98340142ac05464
+      internalID: 1629067004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_279
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a80c821d082b7b4f91b754b32e994c6
+      internalID: 512461328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_280
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60b61d7de1872bd4d824e691d9538f9b
+      internalID: -1700287260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_281
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2cf9a7e13999294fae8baaeb7e9626f
+      internalID: -391930753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_282
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b42b9add21089934fb7a92dfbeabaf34
+      internalID: 906057253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_283
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 236fa8be541c8a546aa06488c1eab424
+      internalID: -375776515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_284
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff5a0a8b2fcf6a046837f2612300859c
+      internalID: 1307756221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_285
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 308efc43254177d438dce6a2efd081af
+      internalID: 851073844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_286
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d811226ba9e78c843b68e24d8f1b7b66
+      internalID: 1590667692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_287
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78bde06f6822bef4a8676bf2f81e3a03
+      internalID: -1514197864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_288
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea03e5b744a95f43900ceba0aa41e9f
+      internalID: -1750828671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_289
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee0169e466d4474ab276210e470ce13
+      internalID: -1539611877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_290
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8133ccd0e71a39d498bb2de93a2e93e4
+      internalID: 980365944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_291
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b09d0c0104df84f931ad400236c501
+      internalID: -156237025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_292
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acfe8f989924d13479011572c60e45de
+      internalID: -1507417852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Effect_Bullet_Impact_Explosion_32x32-transformed_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 448
+        width: 34
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a394b4c34700d45b1230b8083fca17
+      internalID: -1665799186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_0: 889612916
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_1: -1665799186
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_10: -2143182932
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_100: -529652341
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_101: -1142220022
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_102: -1875533788
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_103: -998706480
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_104: 1740992657
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_105: -1901965242
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_106: 1760273989
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_107: 726352178
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_108: 1601195606
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_109: -684218997
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_11: 746297421
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_110: -1036159073
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_111: -1318963321
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_112: 1876577873
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_113: -315537076
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_114: 2102891683
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_115: -674566747
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_116: -810595905
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_117: -448862555
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_118: -1840946070
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_119: -171992934
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_12: -1351156365
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_121: -575611315
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_122: 419941633
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_123: -1359810811
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_124: -1041597298
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_125: 702773905
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_126: 677134740
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_127: 1032134573
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_128: -1991784251
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_129: -267846190
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_13: 563617548
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_130: -1270695476
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_131: 1719013706
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_132: -2036437267
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_133: -1861832175
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_134: 410616952
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_135: 1663071493
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_136: -2112921155
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_137: -2125936157
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_138: 167802111
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_139: 1691820191
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_14: 445705491
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_140: -117716140
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_141: -2137256205
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_142: 406911888
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_143: 114089575
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_144: 1593316573
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_145: -1739666999
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_146: 475109028
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_147: 981531329
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_148: -1127012910
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_149: 1479790486
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_15: -77384387
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_150: 315975753
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_151: 1917798609
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_152: 2144867204
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_153: -444651270
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_154: 474393883
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_155: 470143811
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_156: -1964978293
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_157: -563080851
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_158: -1896147044
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_159: 474456302
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_16: 729519925
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_160: -1009037760
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_161: -639127
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_162: 1940176010
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_163: 974045516
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_164: -1954847596
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_165: 254572979
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_166: 841492554
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_167: 1174005183
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_168: -464703873
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_169: 973339704
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_17: 1579709276
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_170: 937876367
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_171: -635466041
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_172: 616307601
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_173: 848218477
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_174: -703876621
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_175: -375518160
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_176: -709133301
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_177: 549260834
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_178: 340679425
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_179: 1123111750
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_18: 1681023266
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_180: 2040204281
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_181: -1120741545
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_182: 1319398474
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_183: 1894815066
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_184: -1762331548
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_185: 53872727
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_186: 682461767
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_187: -802487146
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_188: -1257839357
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_189: 834067675
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_19: -797232157
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_190: -515692858
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_191: 2144486938
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_192: 372084186
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_193: -258818799
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_194: 1370860054
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_195: 687226767
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_196: -1685650820
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_197: 1104066706
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_198: 1198439790
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_199: -1367185127
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_2: -452614857
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_20: -1393406951
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_200: 1911144965
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_201: 1858478702
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_202: 1945338931
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_203: 1206464328
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_204: -210834024
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_205: -2100249075
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_206: 950419499
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_207: -384586421
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_208: 536047945
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_209: -584016915
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_21: 619202836
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_210: 2073850772
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_211: 1591222803
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_212: 130573233
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_213: 890057593
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_214: 163063971
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_215: 460718015
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_216: -918085277
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_217: -1597171668
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_218: -1853200780
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_219: 1391540610
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_22: -1651755865
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_220: 1850848400
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_221: -291541603
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_222: -1477351180
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_223: -1497401569
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_224: -1819072574
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_225: 271488788
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_226: 593306007
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_227: 706688356
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_228: -340136474
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_229: -1045883488
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_23: 26773743
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_230: 80695816
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_231: 105393764
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_232: 936794384
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_233: -314408430
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_234: 27622078
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_235: 981025694
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_236: -611481377
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_237: 1160032068
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_238: 1272246839
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_239: 520284259
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_24: 2027118127
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_240: 503206446
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_241: 93653655
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_242: 142673734
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_243: -1131831211
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_244: -130477471
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_245: -1922080091
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_246: 1756421214
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_247: 987080141
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_248: -1354851040
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_249: -1802710370
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_25: -1847806099
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_250: -1610643465
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_251: -258154796
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_252: -235457269
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_253: 624815858
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_254: -671859332
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_255: -1725304299
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_256: -52556009
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_257: 595122220
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_258: 199689790
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_259: 1175444220
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_26: 359719671
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_260: -1764068939
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_261: -1510327390
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_262: -1610153345
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_263: -324121220
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_264: -1199550168
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_265: -1156440075
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_266: 1383394738
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_267: -856394437
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_268: -344773596
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_269: -898145932
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_27: -2055122208
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_270: 1127181162
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_271: 342361231
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_272: -1047693743
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_273: 2004097625
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_274: -1673288634
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_275: -1497848435
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_276: -1125199710
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_277: 103671146
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_278: 1629067004
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_279: 512461328
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_28: 1106335316
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_280: -1700287260
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_281: -391930753
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_282: 906057253
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_283: -375776515
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_284: 1307756221
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_285: 851073844
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_286: 1590667692
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_287: -1514197864
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_288: -1750828671
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_289: -1539611877
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_29: -1895960247
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_290: 980365944
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_291: -156237025
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_292: -1507417852
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_3: -1077279233
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_30: -1948481251
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_31: 190781686
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_32: -632905641
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_33: -1168071819
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_34: 905284795
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_35: 532964659
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_36: 1071939927
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_37: 1103989615
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_38: -1555258022
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_39: -504556934
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_4: 1752108309
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_40: -744784659
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_41: 1682563359
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_42: 665588111
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_43: -72438194
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_44: -1823775622
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_45: 1128287168
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_46: -194892352
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_47: 905064973
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_48: 1720819106
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_49: 1664092362
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_5: -1915380166
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_50: 1960301827
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_51: -1801347974
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_52: -1042615563
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_53: 1917991053
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_54: 1955319877
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_55: -1129005715
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_56: -1118862115
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_57: -1902022154
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_58: -1733734555
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_59: 10542368
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_6: 1901723548
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_60: -1684116625
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_61: 1238589922
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_62: -406286538
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_63: 724365458
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_64: 1213777000
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_65: -781918799
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_66: 604608666
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_67: 652630742
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_68: -1238821836
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_69: 328123460
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_7: -1977557914
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_70: 1914733992
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_71: -842330913
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_72: 217464983
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_73: 914267027
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_74: 192009079
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_75: 690861793
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_76: -23100749
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_77: -1268088177
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_78: 1759075366
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_79: 2072651928
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_8: -1080240757
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_80: -1542003071
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_81: 864408371
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_82: -853174197
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_83: 1356788035
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_84: -399112817
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_85: 622861185
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_86: 886987163
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_87: -468442568
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_88: 117652248
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_89: 2009355813
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_9: 1667071121
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_90: 1260936557
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_91: 471099328
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_92: -704086303
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_93: 402152824
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_94: -868870980
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_95: -1185846769
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_96: 304791116
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_97: -609390014
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_98: 1396120792
+      Red_Effect_Bullet_Impact_Explosion_32x32-transformed_99: -229079964
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1214 @@
+fileFormatVersion: 2
+guid: ed7554aeefd5da44a9fe1ee9b93afe77
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: TX Shadow Chest
+  - first:
+      213: 21300002
+    second: TX Shadow Cube
+  - first:
+      213: 21300004
+    second: TX Shadow Crate
+  - first:
+      213: 21300006
+    second: TX Shadow Crate Small
+  - first:
+      213: 21300008
+    second: TX Shadow Chest Opened
+  - first:
+      213: 21300010
+    second: TX Shadow Rune Pillar X2
+  - first:
+      213: 21300012
+    second: TX Shadow Rune Pillar X3
+  - first:
+      213: 21300014
+    second: TX Shadow Rune Pillar Broken
+  - first:
+      213: 21300016
+    second: TX Shadow Tileset Wall 3
+  - first:
+      213: 21300018
+    second: TX Shadow Tileset Wall 2
+  - first:
+      213: 21300020
+    second: TX Shadow Tileset Wall 1
+  - first:
+      213: 21300022
+    second: TX Shadow Barrel
+  - first:
+      213: 21300024
+    second: TX Shadow Gravestone A
+  - first:
+      213: 21300026
+    second: TX Shadow Gravestone C
+  - first:
+      213: 21300028
+    second: TX Shadow Gravestone B
+  - first:
+      213: 21300030
+    second: TX Shadow Tree T3
+  - first:
+      213: 21300032
+    second: TX Shadow Tileset Wall 5
+  - first:
+      213: 21300034
+    second: TX Shadow Tileset Wall 4
+  - first:
+      213: 21300036
+    second: TX Shadow Stone Coffin Vert
+  - first:
+      213: 21300038
+    second: TX Shadow Stone Coffin Hori
+  - first:
+      213: 21300040
+    second: TX Shadow Bush A
+  - first:
+      213: 21300042
+    second: TX Shadow Road Sign E
+  - first:
+      213: 21300044
+    second: TX Shadow Road Sign W
+  - first:
+      213: 21300046
+    second: TX Shadow Pot A
+  - first:
+      213: 21300048
+    second: TX Shadow Pot B
+  - first:
+      213: 21300050
+    second: TX Shadow Pot C
+  - first:
+      213: 21300052
+    second: TX Shadow Stone Bench S
+  - first:
+      213: 21300054
+    second: TX Shadow Stone Bench W
+  - first:
+      213: 21300056
+    second: TX Shadow Stone Bench E
+  - first:
+      213: 21300058
+    second: TX Shadow Stone T1
+  - first:
+      213: 21300060
+    second: TX Shadow Stone T2
+  - first:
+      213: 21300062
+    second: TX Shadow Stone T3
+  - first:
+      213: 21300064
+    second: TX Shadow Stone T4
+  - first:
+      213: 21300066
+    second: TX Shadow Stone T5
+  - first:
+      213: 21300068
+    second: TX Shadow Stone T6
+  - first:
+      213: 21300070
+    second: TX Shadow Statue
+  - first:
+      213: 21300072
+    second: TX Shadow Stone Lantern
+  - first:
+      213: 21300074
+    second: TX Shadow Bridge Gate
+  - first:
+      213: 21300076
+    second: TX Shadow Pillar
+  - first:
+      213: 21300078
+    second: TX Shadow Pillar Broken
+  - first:
+      213: 21300080
+    second: TX Shadow Tree T1
+  - first:
+      213: 21300082
+    second: TX Shadow Tree T2
+  - first:
+      213: 21300084
+    second: TX Shadow Stone Cube
+  - first:
+      213: 21300086
+    second: TX Shadow Bush D
+  - first:
+      213: 21300088
+    second: TX Shadow Bush C
+  - first:
+      213: 21300090
+    second: TX Shadow Bush B
+  - first:
+      213: 21300092
+    second: TX Shadow Bush E
+  - first:
+      213: 21300094
+    second: TX Shadow Bush F
+  - first:
+      213: 21300096
+    second: TX Shadow Altar
+  - first:
+      213: 21300098
+    second: TX Shadow Wooden Door
+  - first:
+      213: 21300100
+    second: TX Shadow Wooden Door Opened
+  - first:
+      213: 21300102
+    second: TX Shadow Well
+  - first:
+      213: 21300104
+    second: TX Shadow Stone T7
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TX Shadow_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 448
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 248816fee3ff0f645b61dd361aa2f10c
+      internalID: 826508556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 451
+        width: 36
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab2554af9888910438ad3db2893fd0f6
+      internalID: 1712166676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 448
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 461b77e56a6c8a2459793efd8d5aa2dc
+      internalID: -1249346997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_3
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 452
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c5cb97b9b78e204b8b8f1251bbf721c
+      internalID: -1607683087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_4
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 452
+        width: 60
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0456b445ecb40d0458ec33f4f8cd3c13
+      internalID: -1144639976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_5
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 449
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 339f6856694c60a40a1ccedb1d7a9041
+      internalID: -957737320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_6
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 419
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e611b36a4e87dc640ac56796d3b975a2
+      internalID: 1372425311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_7
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 387
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0a60562551b5b44b8460dfc39582bf
+      internalID: -1954826237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_8
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 387
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 890e5973eee91f549ab5997b94f7d7ed
+      internalID: 1078089538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_9
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 355
+        width: 36
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c315d03025b1854abb02e91d4d6e49d
+      internalID: -2075637172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_10
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 392
+        width: 67
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45d9edaa199272e4f93efe2e1b36c591
+      internalID: 1228376519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_11
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 353
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3345dd611c504e45a790adc97291489
+      internalID: 702589551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_12
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 352
+        width: 31
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea041d6a3085c24e9a64c34029b420c
+      internalID: -277914411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_13
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 359
+        width: 47
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14075f6d6649d6a4a904ea5f62d412a7
+      internalID: 944406679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_14
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 320
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f96c8bae3523ca45ae5d6626edf4942
+      internalID: -967590101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_15
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 321
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d16f9bc95fa19141b976f33af83da77
+      internalID: 956922578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_16
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 300
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b9427d1a51f2245aa0e12bfc20e7b0
+      internalID: 398588765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_17
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 293
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed2d9e0dfd56fa49b84746d19209574
+      internalID: -1095371106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_18
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 293
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a77eb8839a163c34481f1368f12070af
+      internalID: -944945792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_19
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 291
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0341cc5d6ea7e74cb0ef250bd907995
+      internalID: -1111473677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_20
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 261
+        width: 44
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0868f3126d68e049a805d89a16f2263
+      internalID: 1852571572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_21
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 261
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be22f59c03dd44a4a903f3c5dc2552f7
+      internalID: 1088021368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_22
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 275
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe3df9a5533f5d4c8be3b0b92643c1f
+      internalID: 1708531947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_23
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 256
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ae1215026c379479a5539c42273d7b
+      internalID: 1323685570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_24
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 261
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3adc9afc12224e44a9813ac528117c1
+      internalID: -1189890044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_25
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 232
+        width: 35
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d27965f01b9fc54c95b0ca408cc01a9
+      internalID: -1839191267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_26
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 232
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d87858f4075fa418e386a29eadc20d
+      internalID: 920525574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_27
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 171
+        width: 97
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87cbdb673584b1048a9fd0e35839853c
+      internalID: -1889202498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_28
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 128
+        width: 18
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c967f80be6cc25440b53cf1202297f49
+      internalID: 257372162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_29
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 197
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d942fda79fe9c4e45a5c90226b850b5f
+      internalID: -1721649193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_30
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 169
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 998a16ae2d4c40e44b1874b63b386f79
+      internalID: 1496655648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_31
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 144
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b659d64a82b6248965064aa4b8a57b
+      internalID: -361605405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_32
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 132
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e5624812d14f14aa79d089f4053445
+      internalID: 112352790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_33
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 104
+        width: 58
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e42533836a497940a423a58cccd49b2
+      internalID: -177314252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_34
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 40
+        width: 60
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab713a9069b57884facf41092fe7a8d9
+      internalID: -191513971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_35
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 10
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a60f7e4aef4d3f418284cfaacce0075
+      internalID: 1437881574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_36
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 8
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ece6a3ae99bcb84ca30a999ed3aa46c
+      internalID: -576657914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_37
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 6
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6269c30357b0b349946ae08cbda5c73
+      internalID: 1880305075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_38
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 6
+        width: 25
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91da15055c6889c49beb71dd36159f6c
+      internalID: -1538007930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_39
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 6
+        width: 29
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf5fac57527180f41a167fd695bbbdd0
+      internalID: -1408878275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Shadow_40
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 3
+        width: 29
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 588ccbea9113d58439237af5b15df1ef
+      internalID: -1943987084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 901f89b6ee1d4c64cb2963d1fac91fa4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      TX Shadow_0: 826508556
+      TX Shadow_1: 1712166676
+      TX Shadow_10: 1228376519
+      TX Shadow_11: 702589551
+      TX Shadow_12: -277914411
+      TX Shadow_13: 944406679
+      TX Shadow_14: -967590101
+      TX Shadow_15: 956922578
+      TX Shadow_16: 398588765
+      TX Shadow_17: -1095371106
+      TX Shadow_18: -944945792
+      TX Shadow_19: -1111473677
+      TX Shadow_2: -1249346997
+      TX Shadow_20: 1852571572
+      TX Shadow_21: 1088021368
+      TX Shadow_22: 1708531947
+      TX Shadow_23: 1323685570
+      TX Shadow_24: -1189890044
+      TX Shadow_25: -1839191267
+      TX Shadow_26: 920525574
+      TX Shadow_27: -1889202498
+      TX Shadow_28: 257372162
+      TX Shadow_29: -1721649193
+      TX Shadow_3: -1607683087
+      TX Shadow_30: 1496655648
+      TX Shadow_31: -361605405
+      TX Shadow_32: 112352790
+      TX Shadow_33: -177314252
+      TX Shadow_34: -191513971
+      TX Shadow_35: 1437881574
+      TX Shadow_36: -576657914
+      TX Shadow_37: 1880305075
+      TX Shadow_38: -1538007930
+      TX Shadow_39: -1408878275
+      TX Shadow_4: -1144639976
+      TX Shadow_40: -1943987084
+      TX Shadow_5: -957737320
+      TX Shadow_6: 1372425311
+      TX Shadow_7: -1954826237
+      TX Shadow_8: 1078089538
+      TX Shadow_9: -2075637172
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

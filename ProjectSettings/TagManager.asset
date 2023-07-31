@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - UI
+  - DamagePool
+  - GameManager
+  - Controls
+  - PlayerInfoBar
+  - InteractionManager
+  - Environment
+  - EnemyManager
+  - Npc
+  - Questionair
+  - ItemPool
+  - InventoryManager
+  - CharacterCreation
+  - Light
+  - BloodEffects
+  - PlayerCamera
+  - SkillEffects
+  - ItemsPoolWS
+  - RewardsLabelPool
+  - CharacterPanel
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - Enemy
+  - Minimap
+  - Environment
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Weather
+    uniqueID: 2729102369
+    locked: 0

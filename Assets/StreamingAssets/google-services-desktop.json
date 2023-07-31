@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "957866578538",
+    "firebase_url": "https://polynomial-quest-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "polynomial-quest",
+    "storage_bucket": "polynomial-quest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957866578538:android:737f3189dc4f151dc47013",
+        "android_client_info": {
+          "package_name": "com.Capstone.PolynomialQuest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957866578538-hhp9vei2rcbl60l730ko6l1aq3pujg7a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Capstone.PolynomialQuest",
+            "certificate_hash": "b65e918ae6539d283692fbac509f5a38bbcae1d6"
+          }
+        },
+        {
+          "client_id": "957866578538-0pmulhdvedas34mm5qb2m9607nb56tge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZGYr-FwOx2D3k1xtF0BVGZ5u4XpLV2UY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957866578538-0pmulhdvedas34mm5qb2m9607nb56tge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
