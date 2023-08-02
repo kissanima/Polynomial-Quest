@@ -1,0 +1,1011 @@
+fileFormatVersion: 2
+guid: d93707db524df0f42b1e67ade3b859ff
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 964
+        width: 220
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423fc4cff7900f54caaeb6a7b7eb7d7f
+      internalID: -341426340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_1
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 976
+        width: 241
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fc1a8a25251b24aa763798c495be4e
+      internalID: 1025204889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 964
+        width: 256
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4953f07fbae6db4d96ae8b1e03be6cb
+      internalID: -914233734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 980
+        width: 256
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d8024335efc1a4a964d3ef7c716d16
+      internalID: 23338867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 700
+        width: 252
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ddd5619045f8bd40a935fe3237625cd
+      internalID: -1404871305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_5
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 712
+        width: 240
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06c55c3e1bf9784aa25aa9ea2f1204c
+      internalID: 1239045153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_6
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 724
+        width: 240
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4189fc3cd63c434c81adbc741bf72dc
+      internalID: -2108432120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_7
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 712
+        width: 260
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ae39d71ba0af54c9559ea6ce59b3ed
+      internalID: 666444583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_8
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 516
+        width: 201
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f47bc0b1d29ef48a4299472dbba25f
+      internalID: -193908992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_9
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 508
+        width: 224
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b582ff5a6c8c7384ab4befc0d45a342f
+      internalID: 1883791358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_10
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 524
+        width: 208
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7e147d53e241948be0502989ea5de8
+      internalID: 461420383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_11
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 520
+        width: 196
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d5a7675f57c13641b231e4532b45ebc
+      internalID: -1745440849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_12
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 284
+        width: 216
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 505d7f00d409a6947926bdb1ac004fae
+      internalID: 40066629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_13
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 276
+        width: 192
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b649990f8d15d1f46acc7177cc2ca14c
+      internalID: -1090199995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_14
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 324
+        width: 160
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a594ac792edffc945b75f360bbdc8012
+      internalID: -1986614918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_15
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 340
+        width: 177
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b377f34791494f49a4db6e3f96eed0c
+      internalID: -1116595830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_16
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 252
+        width: 128
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2017976d0f5e59469c8c6743d16f806
+      internalID: -379997329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_17
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 260
+        width: 57
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0961cddc0725c4c4994634dd3dd96361
+      internalID: 182457782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_18
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 252
+        width: 66
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def52dcc8d024ba42a14d03a91818bd7
+      internalID: -878999638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_19
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 268
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b340615390d1d4ab52a2b5d9b72be5
+      internalID: 564950958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 126
+        width: 128
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a9a7e3063e88b45a04f881fac4fd83
+      internalID: -463975523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_21
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 136
+        width: 85
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b079794eccab8c4fa0eb061fd099077
+      internalID: 621213299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_22
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 144
+        width: 108
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 473817ef8c95db34f8a0616098c1861a
+      internalID: -2121163234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_23
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 140
+        width: 73
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3935f380792cd41a121e310c35d622
+      internalID: 121998614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_24
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 144
+        width: 112
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d413d6a349ca16b4c929012167e98b51
+      internalID: 755598839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_25
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 24
+        width: 72
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5943dd669ccb7224596ed4865d8af230
+      internalID: -138398500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_26
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 0
+        width: 133
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a5953e2538d44b40887a9a8ad503b1a
+      internalID: -1771048771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_27
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 64
+        width: 70
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435a9cb0c24a615458b510cd02b1a9a0
+      internalID: -719644119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_28
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 252
+        width: 59
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95cf45db8700cff4bbad3290f92a4a8c
+      internalID: 1910028901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_29
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 250
+        width: 64
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded50b801a34c084d991a4bb2e92ece7
+      internalID: -257613069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_30
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 253
+        width: 66
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b05f9418c1b69984ca575c8c7a79856e
+      internalID: -1616037576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_31
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 247
+        width: 61
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ff404e354b35b48a1f7ae657adc0d5
+      internalID: -1314460940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_32
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 9
+        width: 122
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f2417edba0fe6d4c9204bf4e423a5b6
+      internalID: -31822868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_33
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 5
+        width: 112
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9617b74c3d8a5442a712242f6ef60fa
+      internalID: -267468120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_34
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 6
+        width: 115
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 248907da97757714895d7110e2c880c5
+      internalID: -214273027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_35
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1
+        width: 134
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1fc4ca366e1544795499cda2a93268
+      internalID: 826720309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_36
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 126
+        width: 135
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6904d073897be4f40b916e4373478c45
+      internalID: -1526284591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_37
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 127
+        width: 128
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5de65e120d2a8c46892a552ac664373
+      internalID: 627508975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks_source_upscayl_4x_ultramix_balanced_38
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 126
+        width: 129
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e2ed732c3cb89b4984719dd239e7d31
+      internalID: 2030166971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Rocks_source_upscayl_4x_ultramix_balanced_0: -341426340
+      Rocks_source_upscayl_4x_ultramix_balanced_1: 1025204889
+      Rocks_source_upscayl_4x_ultramix_balanced_10: 461420383
+      Rocks_source_upscayl_4x_ultramix_balanced_11: -1745440849
+      Rocks_source_upscayl_4x_ultramix_balanced_12: 40066629
+      Rocks_source_upscayl_4x_ultramix_balanced_13: -1090199995
+      Rocks_source_upscayl_4x_ultramix_balanced_14: -1986614918
+      Rocks_source_upscayl_4x_ultramix_balanced_15: -1116595830
+      Rocks_source_upscayl_4x_ultramix_balanced_16: -379997329
+      Rocks_source_upscayl_4x_ultramix_balanced_17: 182457782
+      Rocks_source_upscayl_4x_ultramix_balanced_18: -878999638
+      Rocks_source_upscayl_4x_ultramix_balanced_19: 564950958
+      Rocks_source_upscayl_4x_ultramix_balanced_2: -914233734
+      Rocks_source_upscayl_4x_ultramix_balanced_20: -463975523
+      Rocks_source_upscayl_4x_ultramix_balanced_21: 621213299
+      Rocks_source_upscayl_4x_ultramix_balanced_22: -2121163234
+      Rocks_source_upscayl_4x_ultramix_balanced_23: 121998614
+      Rocks_source_upscayl_4x_ultramix_balanced_24: 755598839
+      Rocks_source_upscayl_4x_ultramix_balanced_25: -138398500
+      Rocks_source_upscayl_4x_ultramix_balanced_26: -1771048771
+      Rocks_source_upscayl_4x_ultramix_balanced_27: -719644119
+      Rocks_source_upscayl_4x_ultramix_balanced_28: 1910028901
+      Rocks_source_upscayl_4x_ultramix_balanced_29: -257613069
+      Rocks_source_upscayl_4x_ultramix_balanced_3: 23338867
+      Rocks_source_upscayl_4x_ultramix_balanced_30: -1616037576
+      Rocks_source_upscayl_4x_ultramix_balanced_31: -1314460940
+      Rocks_source_upscayl_4x_ultramix_balanced_32: -31822868
+      Rocks_source_upscayl_4x_ultramix_balanced_33: -267468120
+      Rocks_source_upscayl_4x_ultramix_balanced_34: -214273027
+      Rocks_source_upscayl_4x_ultramix_balanced_35: 826720309
+      Rocks_source_upscayl_4x_ultramix_balanced_36: -1526284591
+      Rocks_source_upscayl_4x_ultramix_balanced_37: 627508975
+      Rocks_source_upscayl_4x_ultramix_balanced_38: 2030166971
+      Rocks_source_upscayl_4x_ultramix_balanced_4: -1404871305
+      Rocks_source_upscayl_4x_ultramix_balanced_5: 1239045153
+      Rocks_source_upscayl_4x_ultramix_balanced_6: -2108432120
+      Rocks_source_upscayl_4x_ultramix_balanced_7: 666444583
+      Rocks_source_upscayl_4x_ultramix_balanced_8: -193908992
+      Rocks_source_upscayl_4x_ultramix_balanced_9: 1883791358
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

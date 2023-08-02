@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class LanSelectDifficulty : MonoBehaviour
 {
     public LanGameManager gmScript;
-    public GameObject welcome, Nature, Snow;
+    public GameObject welcome, Nature, Desert;
     public Transform enemyManager;
 
     private void Start() {
         gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         welcome = GameObject.FindWithTag("UI").transform.GetChild(7).gameObject;
-        Nature = GameObject.FindWithTag("Environment").transform.GetChild(0).gameObject;
-        Snow = GameObject.FindWithTag("Environment").transform.GetChild(1).gameObject;
+        Nature = GameObject.FindWithTag("Environment").transform.GetChild(0).GetChild(0).gameObject;
+        Desert = GameObject.FindWithTag("Environment").transform.GetChild(0).GetChild(1).gameObject;
         enemyManager = GameObject.FindWithTag("EnemyManager").transform.GetChild(0);
     }
     public void onValueChange(int var)
@@ -24,14 +24,12 @@ public class LanSelectDifficulty : MonoBehaviour
             gmScript.enemyStatsModifier = 100;
             gmScript.difficulty = 0;
             Nature.SetActive(true);
-            Snow.SetActive(false);
             break;
 
             case 1:
             gmScript.enemyStatsModifier = 200;
             gmScript.difficulty = 1;
-            Nature.SetActive(false);
-            Snow.SetActive(true);
+            Desert.SetActive(true);
             break;
 
             case 2:

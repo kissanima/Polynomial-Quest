@@ -1,0 +1,1077 @@
+fileFormatVersion: 2
+guid: 99946d3fe7b66fa49940ed30951a5575
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 280
+        width: 138
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ade8489a4f0aa4386a89d69e49a66e
+      internalID: 297150724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_1
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 300
+        width: 134
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bcc3732f985e75428915c06a496102d
+      internalID: -1699501144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_2
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 280
+        width: 150
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2b75115ac719e468774777e1478b5f
+      internalID: -662367662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_3
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 272
+        width: 150
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d7b5ecca2852de4fafcd52a6c2e7ea1
+      internalID: -1958768887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_4
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 264
+        width: 166
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcf75b5e6265d424785ecb5e23059227
+      internalID: -232648036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_5
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 276
+        width: 170
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b17146727bd2444a934697d0bdd14d
+      internalID: -2088828093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_6
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 280
+        width: 154
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffbc4f9ee9867d64ebc0ea361589d5c4
+      internalID: -1487217126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_7
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 292
+        width: 136
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d5d73c8e6e6194abe5d256eea8d135
+      internalID: -853524296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_8
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 268
+        width: 137
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b71c13c39ed3845ac14aca479f943a
+      internalID: 45302972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 124
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468e6c8eba0ccb34c8a230f3a5b1b0a2
+      internalID: -1573539223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_10
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 132
+        width: 90
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b737820001040408b8129f4b6f3315
+      internalID: -2042415037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_11
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 129
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2949be612e343f43bbdf7496433691d
+      internalID: -1102475783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_12
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 128
+        width: 126
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f14875e66f5b2143ad36f8adf93dc95
+      internalID: 975077284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_13
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 144
+        width: 97
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea296d1e402c2ed47816b834adcba2d6
+      internalID: -2005677037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_14
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 144
+        width: 109
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db65ffb62795fd44cb2cee5972a7f613
+      internalID: 686066576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_15
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 144
+        width: 109
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db63e1b0a61fda4ea07cdfa4706d9b5
+      internalID: 1502255452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_16
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 144
+        width: 70
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7be9fa9a8d17643961116471bd5d1c
+      internalID: 462337446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_17
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 139
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b71007f78ec97649b8eec032ddf112e
+      internalID: 1662874377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_18
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 140
+        width: 104
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3372f8589f57e3540a4a1db1e69cdb3e
+      internalID: -247344304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_19
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 131
+        width: 122
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9be7ed2bbe102b4ba4c665d6a8b0b12
+      internalID: 2023216102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_20
+      rect:
+        serializedVersion: 2
+        x: 1415
+        y: 135
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9bbf281c0a040a42b1312cd14b8babe
+      internalID: -1966033615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_21
+      rect:
+        serializedVersion: 2
+        x: 1551
+        y: 144
+        width: 98
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edfe11baab98e5b4e83410e5bf930d81
+      internalID: -1398610783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_22
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 23
+        width: 94
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2eba0f409a254d41811cdaef4075f15
+      internalID: 142839254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_23
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 16
+        width: 105
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0783d7820d77bd14f91cee0e4a5f8c78
+      internalID: -11525545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_24
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 12
+        width: 97
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9c154d17fe2454a8b8d554b535e4c9
+      internalID: -1244156099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_25
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 4
+        width: 114
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12a33dfcac7017e4e87a32a9ab8e3be3
+      internalID: -1808753909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_26
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 68
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cabe9dbca9e6e9e4083e42119a3a5943
+      internalID: 1788697407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_27
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 60
+        width: 64
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 479449b753862274881f9b7dd2996760
+      internalID: 2006221116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_28
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 60
+        width: 65
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2049cd132704c214784600ee27621264
+      internalID: 2094964593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_29
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 60
+        width: 69
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed85075f51f642446a1242effd3283cb
+      internalID: -1550080126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_30
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 67
+        width: 59
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3d0aca2c186dc041bb77cb95c21640b
+      internalID: -273319045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_31
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 64
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be78ec6aa65d5fd4e90938e84b87b2ff
+      internalID: -1454802713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_32
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 68
+        width: 66
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f15fbd8d0254bdd4193a9f4cfd72d652
+      internalID: 923379729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_33
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 60
+        width: 67
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d7593aab231d34bb71c40fdbd7e641
+      internalID: 361906802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_34
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 102
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea040b0da31efc7439861bc12d9a7ff8
+      internalID: -159330063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_35
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 94
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60dd2bab25123e4faef1530cd6fde50
+      internalID: -558456755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_36
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 55
+        width: 65
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce09a3ea7819cfc4dbc55a94988d0320
+      internalID: 1988405651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_37
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 58
+        width: 60
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d19c4a430c81e149840ed8944529a90
+      internalID: -1928847607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_38
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 63
+        width: 60
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf4dd95c87f57542a7b2a650d6ef861
+      internalID: 1842174023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_39
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 63
+        width: 64
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b365aa60edc3142afaac1e089ea41b
+      internalID: 340783320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_40
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 63
+        width: 63
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eb2fba72a2c55c4abf16f4bc991d4e8
+      internalID: -905989262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Assets_shadow_source_upscayl_4x_ultramix_balanced_41
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 64
+        width: 62
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5d029c92509574b9b8856f6ab7dbf3
+      internalID: 1233519591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_0: 297150724
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_1: -1699501144
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_10: -2042415037
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_11: -1102475783
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_12: 975077284
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_13: -2005677037
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_14: 686066576
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_15: 1502255452
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_16: 462337446
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_17: 1662874377
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_18: -247344304
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_19: 2023216102
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_2: -662367662
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_20: -1966033615
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_21: -1398610783
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_22: 142839254
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_23: -11525545
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_24: -1244156099
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_25: -1808753909
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_26: 1788697407
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_27: 2006221116
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_28: 2094964593
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_29: -1550080126
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_3: -1958768887
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_30: -273319045
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_31: -1454802713
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_32: 923379729
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_33: 361906802
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_34: -159330063
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_35: -558456755
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_36: 1988405651
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_37: -1928847607
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_38: 1842174023
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_39: 340783320
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_4: -232648036
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_40: -905989262
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_41: 1233519591
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_5: -2088828093
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_6: -1487217126
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_7: -853524296
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_8: 45302972
+      Assets_shadow_source_upscayl_4x_ultramix_balanced_9: -1573539223
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
