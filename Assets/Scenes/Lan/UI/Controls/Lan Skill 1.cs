@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Netcode;
 
-public class LanSkill1 : MonoBehaviour
+public class LanSkill1 : NetworkBehaviour
 {
     LanGameManager gmScript;
     Joystick joystick;
@@ -122,7 +123,7 @@ public class LanSkill1 : MonoBehaviour
                 switch (gmScript.player.playerClass)
                 {
                     case "Warrior":
-                    StartCoroutine(WarriorSkill1Wait());
+                    Warriorskill1ServerRpc(gmScript.player.NetworkObjectId);
                     break;
                     
                     
@@ -136,12 +137,33 @@ public class LanSkill1 : MonoBehaviour
         }
     }
 
-    IEnumerator WarriorSkill1Wait() {
-        tempSkill.parent = gmScript.player.transform.GetChild(3);
-        Debug.Log(tempSkill);
-        tempSkill.gameObject.SetActive(true);
-        yield return new WaitForSeconds(3);
-        tempSkill.parent = skillEffectParent.GetChild(0);
-        tempSkill.gameObject.SetActive(false);
+
+    [ServerRpc(RequireOwnership = false)]  //1
+    public void Warriorskill1ServerRpc(ulong playerID) { //
+        WarriorSkill1ClientRpc(playerID); //1
+    }
+
+
+    Transform instantiatedSkill;
+    [ClientRpc]   //2
+    void WarriorSkill1ClientRpc(ulong playerID) { //playerID = the network object id of the player who cast the skill
+        foreach (var item in gmScript.players)
+        {
+            if(item.NetworkObjectId == playerID) {
+                instantiatedSkill = Instantiate(tempSkill, item.transform.GetChild(3));
+                StartCoroutine(WarriorSkill1Wait(playerID));
+                break;
+            }
+        }
+            
+    }
+
+    IEnumerator WarriorSkill1Wait(ulong playerID) {
+        instantiatedSkill.GetComponent<WarriorSkill1>().ownerID = playerID; //1
+
+        instantiatedSkill.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3); //3 seconds
+        instantiatedSkill.parent = skillEffectParent.GetChild(0);
+        instantiatedSkill.gameObject.SetActive(false);
     }
 }

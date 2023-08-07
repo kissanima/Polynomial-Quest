@@ -13,23 +13,23 @@ public class LanPlayer : NetworkBehaviour
     public GameObject npc, deathPanel, mobsParent;
     public LanGameManager gmScript;
     public Transform damagePool;
-    public Transform bloodEffectsParent, skillEffectsParent;
+    public Transform bloodEffectsParent, skillEffectsParent, maps;
     public NetworkObject[] nObjects;
     
 
     //player customizations network variables
-    public NetworkVariable<int> belt = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    public NetworkVariable<int> boots = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    public NetworkVariable<int> elbow = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    public NetworkVariable<int> face = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    public NetworkVariable<int> hood = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    public NetworkVariable<int> legs = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    public NetworkVariable<int> shoulder = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    public NetworkVariable<int> torso = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    public NetworkVariable<int> wrist = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    public NetworkVariable<float> baseHealth = new NetworkVariable<float>(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    public NetworkVariable<float> finalHealth = new NetworkVariable<float>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    public NetworkVariable<float> currentHealth = new NetworkVariable<float>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<int> belt = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<int> boots = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<int> elbow = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<int> face = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<int> hood = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<int> legs = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<int> shoulder = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<int> torso = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<int> wrist = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<float> baseHealth = new(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<float> finalHealth = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<float> currentHealth = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public string[] inventory = {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"};
 
     public float moveSpeed = 1f, attackSpeed = 1, attackCooldown = 0, baseDamage= 25, finalDamage, currentExp,
@@ -49,7 +49,7 @@ public class LanPlayer : NetworkBehaviour
 
 
 
-    private void Start()     
+    void Start()     
     {
         //rename player object for easy debugging
         if(IsOwnedByServer) {
@@ -62,9 +62,9 @@ public class LanPlayer : NetworkBehaviour
         gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         bloodEffectsParent = GameObject.FindWithTag("BloodEffects").transform;
         skillEffectsParent = GameObject.FindWithTag("SkillEffects").transform;
+        maps = GameObject.FindWithTag("Maps").transform;
         FindNetworkObjectsServerRpc();
-
-
+        
         //check if is owner if not, return;
         if(!IsOwner) return; 
         
@@ -120,11 +120,20 @@ public class LanPlayer : NetworkBehaviour
 
 
         //call server to call PlayerCustomizationClientRpc method on all client
-        PlayerCustomizationServerRpc();
+        PlayerCustomizationServerRpc(); //load costomization
+        CallUpdatePlayerNameInfoServerRpc(); //update names
 
-        //call method for weather
-        if(!IsOwnedByServer) return;
-        RandomWeatherServerRpc();
+
+        //HOST = server and player ///network objects OWNER
+        //CLIENT = players
+        if(!IsOwnedByServer) { //executed except on HOST
+            GetDifficultyServerRpc();  //get difficulty
+        }
+
+
+
+        if(!IsOwnedByServer) return; //codes below is executed on server only ///////////////////
+        RandomWeatherServerRpc(); //weather
     }
 
     IEnumerator DetectEnemyWait() {   
@@ -212,11 +221,11 @@ public class LanPlayer : NetworkBehaviour
     }
 
     public void EventAttack() {
-        AttackServerRpc(targetList[0].transform.GetSiblingIndex(), finalDamage, OwnerClientId);
+        AttackServerRpc(targetList[0].transform.GetSiblingIndex(), finalDamage, NetworkObjectId);
     }
     
 
-    public void Attack() { //TODO:
+    public void Attack() {
             switch (playerClass)
             {
                 
@@ -289,7 +298,16 @@ public class LanPlayer : NetworkBehaviour
         gmScript.UpdateUI();
     }
 
+    
 
+    public void UpdateHealthBar(float oldValue, float newValue) {
+        sliderHealthWS.value = finalHealth.Value;
+        sliderHealthWS.value = newValue;
+    }
+
+
+
+    //////////////////////////////////////////////////////////////////////NETWORKING///////////////////////////////////////////////////////////TODO: 
 
     [ServerRpc(RequireOwnership = false)]
     public void SubtractHealthServerRpc(float damage) {
@@ -298,25 +316,19 @@ public class LanPlayer : NetworkBehaviour
 
 
     [ServerRpc(RequireOwnership = false)]
-    public void AttackServerRpc(int targetIndex, float finalDamage, ulong OwnerClientId) { //
+    public void AttackServerRpc(int targetIndex, float finalDamage, ulong networkId) { //
         int temp = 100;
         LanMobsMelee targetObject = null;;
         if(temp != targetIndex) {   //executed once, then procced to else
             targetObject = mobsParent.transform.GetChild(targetIndex).GetComponent<LanMobsMelee>();
             temp = targetIndex;
-            targetObject.Attacked(finalDamage, OwnerClientId);
+            targetObject.Attacked(finalDamage, networkId);
         }
         else {
-            targetObject.Attacked(finalDamage, OwnerClientId);
+            targetObject.Attacked(finalDamage, networkId);
         }
     }
 
-
-
-    public void UpdateHealthBar(float oldValue, float newValue) {
-        sliderHealthWS.value = finalHealth.Value;
-        sliderHealthWS.value = newValue;
-    }
 
 
     //initialize and store network objects
@@ -325,10 +337,50 @@ public class LanPlayer : NetworkBehaviour
         FindNetworkObjectsClientRpc();
     }
     [ClientRpc]
-    public void FindNetworkObjectsClientRpc() {
+    public void FindNetworkObjectsClientRpc() { //also find all players objects
         nObjects = FindObjectsOfType<NetworkObject>();
-        Debug.Log("network objects found: " + nObjects.Length);
     }
+
+
+    //get difficulty from server
+    [ServerRpc(RequireOwnership = false)]   //TODO: 
+    public void GetDifficultyServerRpc() {
+        SetDifficultyClientRpc(gmScript.difficulty);
+    }
+    [ClientRpc]
+    public void SetDifficultyClientRpc(int difficulty) { ///executed on players CLIENT 
+    Debug.Log(difficulty);
+        this.gmScript.difficulty = difficulty;
+
+        switch (gmScript.difficulty) //difficulty =1
+        {
+            case 0: //easy
+            maps.GetChild(0).gameObject.SetActive(true); //forest
+            maps.GetChild(1).gameObject.SetActive(false); //desert
+            maps.GetChild(2).gameObject.SetActive(false); //snow
+            break;
+
+            case 1:
+            maps.GetChild(0).gameObject.SetActive(false);
+            maps.GetChild(1).gameObject.SetActive(true);
+            maps.GetChild(2).gameObject.SetActive(false);
+            break;
+
+            case 2:
+            maps.GetChild(0).gameObject.SetActive(false);
+            maps.GetChild(1).gameObject.SetActive(false);
+            maps.GetChild(2).gameObject.SetActive(true);
+            break;
+
+            case 3: //extreme
+            maps.GetChild(0).gameObject.SetActive(false);
+            maps.GetChild(1).gameObject.SetActive(false);
+            maps.GetChild(2).gameObject.SetActive(false);
+            break;
+        }
+    }
+
+
 
 
 
@@ -392,7 +444,7 @@ public class LanPlayer : NetworkBehaviour
 
 
 
-    [ServerRpc(RequireOwnership = false)] //TODO: 
+    [ServerRpc(RequireOwnership = false)]
     public void SpawnMagicBulletServerRpc(Vector2 targetPosition) {
         SpawnMagicBulletClientRpc(targetPosition);
     }
@@ -405,7 +457,6 @@ public class LanPlayer : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     public void CallUpdatePlayerNameInfoServerRpc() {
         CallUpdatePlayerNameInfoClientRpc();
-        Debug.Log("CallUpdatePlayerNameInfoServerRpc: 1");
     }
 
     [ClientRpc]
@@ -427,6 +478,7 @@ public class LanPlayer : NetworkBehaviour
     public void UpdatePlayerNameLevelWSClientRpc(string name, float level, ulong id) { //update player name and level in world space
         //find all player scripts
         LanPlayer[] temp = FindObjectsOfType<LanPlayer>();
+        gmScript.players = temp;
 
         foreach (var item in temp)
         {
@@ -451,4 +503,12 @@ public class LanPlayer : NetworkBehaviour
     }
 
     
+
+
+
+
+
+
+
+
 }

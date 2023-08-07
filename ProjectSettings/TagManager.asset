@@ -25,6 +25,8 @@ TagManager:
   - ItemsPoolWS
   - RewardsLabelPool
   - CharacterPanel
+  - Maps
+  - Knight
   layers:
   - Default
   - TransparentFX

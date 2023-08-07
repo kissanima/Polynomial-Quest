@@ -9,9 +9,9 @@ using Unity.Multiplayer.Samples.Utilities.ClientAuthority;
 public class LanMobsMelee : NetworkBehaviour
 {
     
-    public NetworkVariable<float> baseHealth = new NetworkVariable<float>(100);
-    public NetworkVariable<float> currentHealth = new NetworkVariable<float>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    public NetworkVariable<float> finalHealth = new NetworkVariable<float>(0);
+    public NetworkVariable<float> baseHealth = new(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<float> currentHealth = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<float> finalHealth = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public float attackRange = .5f, walkSpeed = 1f, walkTime = .5f, idleTime = 0f, baseDamage = 25, finalDamage,
      attackSpeed = 1, attackCooldown = 0, elapsedTime, distance, deathTimer = 10f;
 
@@ -58,6 +58,7 @@ public class LanMobsMelee : NetworkBehaviour
     
     public void UpdateStats()
     {
+        if(!IsOwner) return;
         finalHealth.Value = baseHealth.Value * (gmScript.enemyStatsModifier / 100f);
         currentHealth.Value = finalHealth.Value;
         finalDamage = baseDamage * (gmScript.enemyStatsModifier / 100f);
@@ -117,7 +118,7 @@ public class LanMobsMelee : NetworkBehaviour
         }
         }   
     }
-    else if(isAttacking && target != null && !target.GetComponent<LanPlayer>().isDead) {           //if attacking and the player that attack this object is not dead
+    else if(isAttacking && target != null) {           //if attacking and the player that attack this object is not dead
         distance = Vector2.Distance(transform.position, new Vector2(target.transform.position.x, target.transform.position.y)); //TODO: need to optimize 
 
         if (target != null) {
@@ -172,19 +173,26 @@ public class LanMobsMelee : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     private void AttackServerRpc() {
         if(attackCooldown <= 0) {
-            target.GetComponent<LanPlayer>().Attacked(finalDamage);
+            if(target.CompareTag("Knight")) {
+                target.GetComponent<LanKnights>().Attacked(finalDamage);
+            }
+            else {
+                target.GetComponent<LanPlayer>().Attacked(finalDamage);
+            }
 
             attackCooldown = 1 / attackSpeed;
         }  
     }
 
     
-    public void Attacked(float damage, ulong clientId) {
+    public void Attacked(float damage, ulong networkId) { //knight ID = 72
         SubtracthealthServerRpc(damage); // call server to subtract network variable health using ServerRpc
-        players = FindObjectsOfType<LanPlayer>();
-        foreach (LanPlayer p in players)
+        //players = FindObjectsOfType<LanPlayer>();
+        Debug.Log(networkId);
+
+        foreach (NetworkObject p in gmScript.player.nObjects) 
         {
-            if (p.OwnerClientId == clientId)
+            if (p.NetworkObjectId == networkId)
             {
                 target = p.GetComponent<Collider2D>();
                 break;
@@ -253,7 +261,7 @@ public class LanMobsMelee : NetworkBehaviour
 
     //call server to subtract
     [ServerRpc(RequireOwnership = false)] public void SubtracthealthServerRpc(float damage) {
-        currentHealth.Value -= damage;
+        currentHealth.Value -= damage;  //currentHealth.Value = currentHealth.Value - damage
 
         //play animation
         anim.Play("Hit");   

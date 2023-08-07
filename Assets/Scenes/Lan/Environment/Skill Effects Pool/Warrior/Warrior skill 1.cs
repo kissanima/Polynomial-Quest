@@ -1,20 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
 public class WarriorSkill1 : MonoBehaviour
 {
     Collider2D[] targetList;
     LanGameManager gmScript;
-    public float finalDamage, additionalDamagePercentage = .5f;
+    public float finalDamage, additionalDamagePercentage = .5f, ownerID;
 
-    public void Initialize() {
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
-        finalDamage = (gmScript.player.finalDamage * additionalDamagePercentage) + 10f;
-        //Debug.Log("Initialized Cyclone Slash");
-    }
 
-    private void DetectEnemy() {
+    private void DetectEnemy() { //.2 seconds 
+        if(ownerID != gmScript.player.NetworkObjectId) return;    //0   0
         targetList = Physics2D.OverlapCircleAll(transform.position, 0.35f, 1 << 7);
 
         if(targetList.Length > 0) { //check if there is enemy detected
@@ -26,7 +23,10 @@ public class WarriorSkill1 : MonoBehaviour
     }
 
     private void OnEnable() {
-        StartCoroutine(DetectEnemyWait());
+        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
+        finalDamage = (gmScript.player.finalDamage * additionalDamagePercentage) + 10f;
+
+        StartCoroutine(DetectEnemyWait()); 
         transform.localPosition = new Vector3(0,0,0);
     }
 

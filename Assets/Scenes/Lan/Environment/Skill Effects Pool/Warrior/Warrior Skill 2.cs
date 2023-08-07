@@ -7,12 +7,11 @@ public class WarriorSKill2 : MonoBehaviour
     LanGameManager gmScript;
     public float finalDamage, additionalDamagePercentage = 1f;
 
-    public void Initialize() {
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
-        finalDamage = (gmScript.player.finalDamage * additionalDamagePercentage) + 50f;
-    }
 
     private void OnEnable() {
+        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
+        finalDamage = (gmScript.player.finalDamage * additionalDamagePercentage) + 50f;
+
         transform.localPosition = Vector3.zero;
     }
     private void OnTriggerEnter2D(Collider2D other) {

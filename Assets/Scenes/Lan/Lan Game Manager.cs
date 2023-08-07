@@ -22,7 +22,7 @@ public class LanGameManager : MonoBehaviour
     public int difficulty = 0;
     AudioSource audioSource;
     public AudioClip background;
-    LanPlayer[] players;
+    public LanPlayer[] players;
 
     Light2D light2D;
     public Sprite[] warriorSkillIcons, mageSkillIcons, assassinSkillIcons;
@@ -93,10 +93,10 @@ public class LanGameManager : MonoBehaviour
         GameObject.FindWithTag("Controls").transform.GetChild(11).GetComponent<LanSkill4>().Initialize(); //fourth skill
 
         //initialize skills warrior
-        GameObject.FindWithTag("SkillEffects").transform.GetChild(0).GetChild(0).GetComponent<WarriorSkill1>().Initialize();
-        GameObject.FindWithTag("SkillEffects").transform.GetChild(0).GetChild(1).GetComponent<WarriorSKill2>().Initialize();
-        GameObject.FindWithTag("SkillEffects").transform.GetChild(0).GetChild(2).GetComponent<WarriorSkill3>().Initialize();
-        GameObject.FindWithTag("SkillEffects").transform.GetChild(0).GetChild(3).GetComponent<WarriorSkill4>().Initialize();
+        //GameObject.FindWithTag("SkillEffects").transform.GetChild(0).GetChild(0).GetComponent<WarriorSkill1>().Initialize();
+        //GameObject.FindWithTag("SkillEffects").transform.GetChild(0).GetChild(1).GetComponent<WarriorSKill2>().Initialize();
+        //GameObject.FindWithTag("SkillEffects").transform.GetChild(0).GetChild(2).GetComponent<WarriorSkill3>().Initialize();
+        //GameObject.FindWithTag("SkillEffects").transform.GetChild(0).GetChild(3).GetComponent<WarriorSkill4>().Initialize();
 
 
         //initialize skills icon
@@ -224,7 +224,6 @@ public class LanGameManager : MonoBehaviour
         player.attackRange = 0.30f;
         break;
     }
-    player.CallUpdatePlayerNameInfoServerRpc(); //TODO: 
     //END LOAD PLAYER DATA
     } 
 

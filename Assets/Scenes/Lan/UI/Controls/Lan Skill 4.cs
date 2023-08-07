@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Netcode;
 
-public class LanSkill4 : MonoBehaviour
+public class LanSkill4 : NetworkBehaviour
 {
     LanGameManager gmScript;
     Joystick joystick;
@@ -114,7 +115,7 @@ public class LanSkill4 : MonoBehaviour
                 switch (gmScript.player.playerClass)
                 {
                     case "Warrior":
-                    StartCoroutine(WarriorSkill4Wait());
+                    Warriorskill4ServerRpc(gmScript.player.NetworkObjectId);
                     break;
                     
                     
@@ -128,14 +129,35 @@ public class LanSkill4 : MonoBehaviour
         }
     }
 
-    IEnumerator WarriorSkill4Wait() {
-        tempSkill.SetParent(player);
-        tempSkill.localPosition = new Vector2(0, 0.084f);
-        tempSkill.gameObject.SetActive(true);
+
+    [ServerRpc(RequireOwnership = false)]
+    public void Warriorskill4ServerRpc(ulong playerID) {
+        WarriorSkill4ClientRpc(playerID);
+    }
+
+    Transform instantiatedSkill;
+    [ClientRpc]
+    void WarriorSkill4ClientRpc(ulong playerID) { //playerID = the network object id of the player who cast the skill
+        foreach (var item in gmScript.players)
+        {
+            if(item.NetworkObjectId == playerID) {
+                instantiatedSkill = Instantiate(tempSkill, item.transform.GetChild(3));
+                StartCoroutine(WarriorSkill4Wait(playerID));
+                break;
+            }
+        }
+            
+    }
+
+    IEnumerator WarriorSkill4Wait(ulong playerID) {
+        instantiatedSkill.GetComponent<WarriorSkill4>().ownerID = playerID;
+        //tempSkill.SetParent(player);
+        //tempSkill.localPosition = new Vector2(0, 0.084f);
+        instantiatedSkill.gameObject.SetActive(true);
 
 
         yield return new WaitForSeconds(10); 
-        tempSkill.SetParent(skillEffectParent.GetChild(0));
-        tempSkill.gameObject.SetActive(false);
+        instantiatedSkill.SetParent(skillEffectParent.GetChild(0));
+        instantiatedSkill.gameObject.SetActive(false);
     }
 }

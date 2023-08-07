@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Netcode;
 
-public class LanSkill3 : MonoBehaviour
+public class LanSkill3 : NetworkBehaviour
 {
     LanGameManager gmScript;
     Joystick joystick;
@@ -13,7 +14,7 @@ public class LanSkill3 : MonoBehaviour
     public float baseDamage, damageModifier, finalDamage;
     Transform player, target, range, arrow, cone, skillEffectParent, temp, tempSkill;
     bool hasInitialized, hasPressed, hasReleased, warriorSkillStart, isSkillUseTarget = true;
-    float skillRange = .73f, cooldown = 15f, cooldownTimer, tempCooldownTimer, elapseTime;
+    float skillRange = .73f, cooldown = 15f, cooldownTimer, tempCooldownTimer, elapseTime, ownerID;
     GameObject cooldownImageObject;
     Image cooldownImage;
     TextMeshProUGUI cooldownText;
@@ -52,8 +53,6 @@ public class LanSkill3 : MonoBehaviour
 
             break;
         }
-
-
 
         hasInitialized = true;
     }
@@ -121,7 +120,7 @@ public class LanSkill3 : MonoBehaviour
         }
 
         else {
-            if(!hasPressed) return;
+            if(!hasPressed) return; //if has NOT pressed, do not proceed
             hasReleased = true;
             //initialize color
             Color outerColor = outerCircle.color;
@@ -148,7 +147,7 @@ public class LanSkill3 : MonoBehaviour
                 switch (playerClass)
                 {
                     case "Warrior":
-                    castSkill3();
+                    WarriorSkill3ServerRpc(joystickDirection.x, target.position, gmScript.player.NetworkObjectId);
                     break;
                     
                     
@@ -161,17 +160,34 @@ public class LanSkill3 : MonoBehaviour
             }
         }
     }
+    
+    [ServerRpc(RequireOwnership = false)]
+    void WarriorSkill3ServerRpc(float joystickDirectionx, Vector3 targetPosition, ulong playerID) {
+        WarriorSkill3ClientRpc(joystickDirectionx, targetPosition, gmScript.player.NetworkObjectId);
+    }
 
-    void castSkill3() {
-        if(joystickDirection.x < 0) {
-            tempSkill.GetComponent<SpriteRenderer>().flipX = true;
+    Transform instantiatedSkill;
+    [ClientRpc]
+    void WarriorSkill3ClientRpc(float joystickDirectionx, Vector3 targetPosition, ulong playerID) {
+        CastSkill3(joystickDirectionx, targetPosition, playerID);
+    }
+    void CastSkill3(float joystickDirectionx, Vector3 targetPosition, ulong playerID) {
+        foreach (var item in gmScript.players)
+        {
+            if(item.NetworkObjectId == playerID) {
+                instantiatedSkill = Instantiate(tempSkill, item.transform.GetChild(3));
+                instantiatedSkill.GetComponent<WarriorSkill3>().ownerID = playerID;
+                if(joystickDirectionx < 0) {
+                    instantiatedSkill.GetComponent<SpriteRenderer>().flipX = true;
+                }
+                else {
+                    instantiatedSkill.GetComponent<SpriteRenderer>().flipX = false;
+                }
+                instantiatedSkill.position = targetPosition;
+                instantiatedSkill.gameObject.SetActive(true);
+                break;
+            }
         }
-        else {
-            tempSkill.GetComponent<SpriteRenderer>().flipX = false;
-        }
-
-        tempSkill.localPosition = target.position;
-        tempSkill.gameObject.SetActive(true);
     }
 
     

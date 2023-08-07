@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
-
-public class LanSpell1 : MonoBehaviour
+using Unity.Netcode;
+public class LanSpell1 : NetworkBehaviour
 {
     LanGameManager gmScript;
     Joystick joystick;

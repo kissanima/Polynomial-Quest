@@ -6,10 +6,10 @@ public class WarriorSkill3 : MonoBehaviour
 {
     Collider2D[] targetList;
     LanGameManager gmScript;
-    public float finalDamage, additionalDamagePercentage = 150f;
+    public float finalDamage, additionalDamagePercentage = 150f, ownerID;
     Transform skillEffectsPool;
     
-    public void Initialize() {
+    public void OnEnable() {
         gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         skillEffectsPool = GameObject.FindWithTag("SkillEffects").transform;
         finalDamage = (gmScript.player.finalDamage * (additionalDamagePercentage / 100)) + 100f;  //150 / 100 = 1.5 
@@ -18,6 +18,7 @@ public class WarriorSkill3 : MonoBehaviour
     
 
     void DetecEnemy() { //animation event
+        if(ownerID != gmScript.player.NetworkObjectId) return;
         targetList = Physics2D.OverlapCircleAll(transform.position, 0.25f, 1 << 7);
 
         if(targetList.Length > 0) { //check if there is enemy detected
