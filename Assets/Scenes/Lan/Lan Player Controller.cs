@@ -403,7 +403,7 @@ public class LanPlayer : NetworkBehaviour
         int draw = Random.Range(0, 2);
         Debug.Log("RandomWeatherServerRpc called: " + draw);
 
-        if(draw == 1) {
+        if(draw == 1 && gmScript.difficulty == 1) {
             StartWeatherClientRpc();
         }
     }

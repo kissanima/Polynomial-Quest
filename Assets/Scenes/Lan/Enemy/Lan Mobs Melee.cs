@@ -185,7 +185,7 @@ public class LanMobsMelee : NetworkBehaviour
     }
 
     
-    public void Attacked(float damage, ulong networkId) { //knight ID = 72
+    public void Attacked(float damage, ulong networkId) {
         SubtracthealthServerRpc(damage); // call server to subtract network variable health using ServerRpc
         //players = FindObjectsOfType<LanPlayer>();
         Debug.Log(networkId);

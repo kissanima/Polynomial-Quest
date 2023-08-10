@@ -89,7 +89,7 @@ public class Lan : MonoBehaviour
 		welcome.SetActive(false);
 		
 		//enable minimap
-        GameObject.FindWithTag("UI").transform.GetChild(11).gameObject.SetActive(true);
+        GameObject.FindWithTag("UI").transform.GetChild(10).gameObject.SetActive(true);
 	}
 
 	public void ButtonHost() {

@@ -78,7 +78,7 @@ public class LanAnswerButtons : MonoBehaviour
                     enemy.HealServerRpc((enemy.currentHealth.Value * -1f) + (enemy.finalHealth.Value * .10f));
                 }
                 else {
-                    enemy.HealServerRpc((enemy.finalHealth.Value * .10f));
+                    enemy.HealServerRpc(enemy.finalHealth.Value * .10f);
                 }
 
                 transform.parent.gameObject.SetActive(false);

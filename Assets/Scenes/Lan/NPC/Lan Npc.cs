@@ -9,24 +9,26 @@ public class LanNpc : MonoBehaviour
     public LanPlayer player;
     public string[] question, choices;
     public int answerIndex, attempts;
-    public bool isNpc, isAI, isDone;
+    public bool isNpc, isAI, isDone, isFillinTheBlanks;
     Collider2D trigger;
-
+    Transform questionair;
     public void Initialize() {
         trigger = GetComponent<Collider2D>();
         attackButton = GameObject.FindWithTag("Controls").transform.GetChild(1).gameObject;
         interactButton = GameObject.FindWithTag("Controls").transform.GetChild(2).gameObject;
         gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
-        int draw = Random.Range(0, 10); //draw 0-1
+        questionair = GameObject.FindWithTag("Questionair").transform;
         //GetComponent<LanPlayer>().enabled = true;
         
         
         if(!isNpc) { //0 = easy, 1 = medium
-            question = GameObject.FindWithTag("Questionair").transform.GetChild(gmScript.difficulty).GetChild(draw).GetComponent<LanQuestions>().question;
-            choices = GameObject.FindWithTag("Questionair").transform.GetChild(gmScript.difficulty).GetChild(draw).GetComponent<LanQuestions>().choices;
-            answerIndex = GameObject.FindWithTag("Questionair").transform.GetChild(gmScript.difficulty).GetChild(draw).GetComponent<LanQuestions>().answerIndex;
-            attempts = GameObject.FindWithTag("Questionair").transform.GetChild(gmScript.difficulty).GetChild(draw).GetComponent<LanQuestions>().attempts;
-        
+        int draw = Random.Range(0, questionair.GetChild(gmScript.difficulty).transform.childCount); //draw 0-19 the child count of questonair
+        LanQuestions temp = questionair.GetChild(gmScript.difficulty).GetChild(draw).GetComponent<LanQuestions>();
+            question = temp.question;
+            choices = temp.choices;
+            answerIndex = temp.answerIndex;
+            attempts = temp.attempts;
+            isFillinTheBlanks = temp.isFillinTheBlanks;
         }
     }
     

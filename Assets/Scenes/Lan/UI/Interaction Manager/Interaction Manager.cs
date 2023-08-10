@@ -24,12 +24,12 @@ public class LanInteractionManager : MonoBehaviour
     
 
     private void OnEnable() {
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
+        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>(); 
         player = gmScript.player;
         npcScript = player.npc.GetComponent<LanNpc>();
         continueButton.SetActive(true);
 
-        
+        /*
         switch (gmScript.difficulty)
         {
             case 0: //easy difficulty
@@ -37,13 +37,13 @@ public class LanInteractionManager : MonoBehaviour
             break;
 
             case 1: //medium difficulty
-            textBox.SetText("Find the missing terms in each arithmetic sequence. \n" + npcScript.question[index]);
+            textBox.SetText("Follow the direction to solve the questions. ");
             break;
-        }
-        
+        } */
+        textBox.SetText("Follow the direction to solve the questions. ");
         continueButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText("Continue");
 
-        if(npcScript.isNpc) {
+        if(npcScript.isNpc) { //
             attempsCount.SetActive(false);
             attempsLabel.SetActive(false);
         }
@@ -57,7 +57,7 @@ public class LanInteractionManager : MonoBehaviour
     }
 
     public void Continue() {
-        if((npcScript.question.Length - 1) == index && !npcScript.isNpc) { //if index is equal to the length of text array of the npc, show the question
+        if((npcScript.question.Length - 1) == index && !npcScript.isNpc) { //if index is equal to the length of text array of the npc, show the question   0
             continueButton.SetActive(false); //and object is not npc
             answerSelection.SetActive(true);
             
@@ -68,7 +68,7 @@ public class LanInteractionManager : MonoBehaviour
             break;
 
             case 1: //medium difficulty
-            textBox.SetText("Find the missing terms in each arithmetic sequence. \n" + npcScript.question[index]);
+            textBox.SetText(npcScript.question[index]);
             break;
             }
         }

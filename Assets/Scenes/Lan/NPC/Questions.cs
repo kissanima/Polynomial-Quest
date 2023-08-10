@@ -5,9 +5,9 @@ using UnityEngine;
 public class LanQuestions : MonoBehaviour
 {
     public string[] question, choices;
-    public int attempts = 3, answerIndex;
-    public bool isDone;
-    string mediumAnswer;
+    public int attempts = 2, answerIndex;
+    public bool isDone, isFillinTheBlanks;
+    //string mediumAnswer;
 
     
 }

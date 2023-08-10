@@ -16,6 +16,6 @@ public class WarriorSKill2 : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag != "Enemy") return;
-        gmScript.player.AttackServerRpc(other.transform.GetSiblingIndex(), finalDamage, gmScript.player.OwnerClientId);
+        gmScript.player.AttackServerRpc(other.transform.GetSiblingIndex(), finalDamage, gmScript.player.NetworkObjectId);
     }
 }

@@ -24,7 +24,7 @@ public class WarriorSkill3 : MonoBehaviour
         if(targetList.Length > 0) { //check if there is enemy detected
             foreach (var item in targetList)
             {
-                gmScript.player.AttackServerRpc(item.transform.GetSiblingIndex(), finalDamage, gmScript.player.OwnerClientId); 
+                gmScript.player.AttackServerRpc(item.transform.GetSiblingIndex(), finalDamage, gmScript.player.NetworkObjectId); 
             }
             
         }

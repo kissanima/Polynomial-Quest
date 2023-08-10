@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LanSelectDifficulty : MonoBehaviour
 {
     public LanGameManager gmScript;
-    [SerializeField] GameObject welcome, nature, desert, snow;
+    [SerializeField] GameObject welcome, nature, desert, snow, decay;
     public Transform enemyManager;
 
     private void Awake() {
@@ -18,7 +18,7 @@ public class LanSelectDifficulty : MonoBehaviour
         nature = GameObject.FindWithTag("Environment").transform.GetChild(0).GetChild(0).gameObject;
         desert = GameObject.FindWithTag("Environment").transform.GetChild(0).GetChild(1).gameObject;
         snow = GameObject.FindWithTag("Environment").transform.GetChild(0).GetChild(2).gameObject;
-        
+        decay = GameObject.FindWithTag("Environment").transform.GetChild(0).GetChild(3).gameObject;
     }
     public void onValueChange(int var)
     {
@@ -30,6 +30,7 @@ public class LanSelectDifficulty : MonoBehaviour
             nature.SetActive(true);
             desert.SetActive(false);
             snow.SetActive(false);
+            decay.SetActive(false);
             break;
 
             case 1:
@@ -38,6 +39,7 @@ public class LanSelectDifficulty : MonoBehaviour
             nature.SetActive(false);
             desert.SetActive(true);
             snow.SetActive(false);
+            decay.SetActive(false);
             break;
 
             case 2:
@@ -46,11 +48,16 @@ public class LanSelectDifficulty : MonoBehaviour
             nature.SetActive(false);
             desert.SetActive(false);
             snow.SetActive(true);
+            decay.SetActive(false);
             break;
 
             case 3:
             gmScript.enemyStatsModifier = 500;
             gmScript.difficulty = 3;
+            nature.SetActive(false);
+            desert.SetActive(false);
+            snow.SetActive(false);
+            decay.SetActive(true);
             break;
         }
     }
