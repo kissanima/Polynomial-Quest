@@ -45,6 +45,11 @@ public class LanCharacterPanel : MonoBehaviour
             break;
 
             case "Mage":
+                //skills icons
+                skill1.sprite = gmScript.mageSkillIcons[0];
+                skill2.sprite = gmScript.mageSkillIcons[1];
+                skill3.sprite = gmScript.mageSkillIcons[2];
+                skill4.sprite = gmScript.mageSkillIcons[3];
             break;
 
             case "Assassin":

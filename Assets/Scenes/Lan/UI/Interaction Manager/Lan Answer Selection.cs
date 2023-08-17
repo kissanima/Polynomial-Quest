@@ -51,6 +51,11 @@ public class LanAnswerSelection : MonoBehaviour
             buttons[3].transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(choices[3]);
 
             transform.GetChild(0).gameObject.SetActive(true); //enable with choices object
+
+            foreach (var item in buttons)
+            {
+                item.SetActive(true);
+            }
         }
         else if(npc.isFillinTheBlanks) {
             Debug.Log("ïs with isFillinTheBlanks");
@@ -115,13 +120,20 @@ public class LanAnswerSelection : MonoBehaviour
     }
 
     public void UseHint() {
-        int randomValue;
-        do
-        {
-            randomValue = Random.Range(0, 4); // draw 0-3 while random value
+        if(gmScript.player.hint > 0) {
+            gmScript.player.hint--;
+            int randomValue;
+            do
+            {
+                randomValue = Random.Range(0, 4); // draw 0-3 while random value
         } while (randomValue == answerIndex);
 
-        transform.GetChild(randomValue).gameObject.SetActive(false);
+        if(randomValue == answerIndex) {
+            gmScript.player.hint++;
+        }
+        transform.GetChild(0).GetChild(randomValue).gameObject.SetActive(false);
+        interactionManager.UpdateUI();
+        }
     }
 
     public void MediumConfirmButton() {
@@ -155,7 +167,13 @@ public class LanAnswerSelection : MonoBehaviour
                 rewardsLabel.transform.SetParent(gmScript.player.transform.GetChild(1));
                 rewardsLabel.transform.position = gmScript.player.transform.position;
                 rewardsLabel.gameObject.SetActive(true);
-                //break;
+
+                //give exp
+                gmScript.player.currentExp += 25;
+                gmScript.player.updateStats();
+                gmScript.UpdateUI(); //update player healtbar, exp bar etc
+                gmScript.SavePlayerData(); //save data
+                
             //}
         }
         else { //if wrong

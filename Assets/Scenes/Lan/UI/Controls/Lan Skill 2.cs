@@ -4,14 +4,15 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Netcode;
 
-public class LanSkill2 : MonoBehaviour
+public class LanSkill2 : NetworkBehaviour
 {
     LanGameManager gmScript;
     Joystick joystick;
-    Image outerCircle, innerCircle;
+    Image outerCircle, innerCircle, skillImage, inCooldownSkillImage;
     public float baseDamage, damageModifier, finalDamage;
-    Transform player, target, range, arrow, cone, skillEffectParent, temp, tempSkill;
+    Transform player, target, range, arrow, cone, skillEffectParent, tempSkillIndicator, tempSkill, instantiatedSkill;
     bool hasInitialized, hasPressed, hasReleased, isDirectCast;
     float skillRange = .73f, cooldownTimer, tempCooldownTimer, elapseTime;
     public float cooldown;
@@ -21,17 +22,20 @@ public class LanSkill2 : MonoBehaviour
     string playerClass;
     Vector2 joystickDirection;
     Rigidbody2D rb;
-     Color outerColor, innerColor;
+    Color outerColor, innerColor;
+    Vector3 targetPosition;
 
     public void Initialize() {
         gmScript = GameObject.FindWithTag("GameManager").transform.GetComponent<LanGameManager>();
         joystick = transform.GetChild(0).GetComponent<Joystick>();
         outerCircle = transform.GetChild(0).GetComponent<Image>();
         innerCircle = transform.GetChild(0).GetChild(0).GetComponent<Image>();
+        skillImage = GetComponent<Image>();
         cooldownText = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         cooldownImageObject = transform.GetChild(1).gameObject;
         skillEffectParent = GameObject.FindWithTag("SkillEffects").transform;
         cooldownImage = cooldownImageObject.GetComponent<Image>();
+        inCooldownSkillImage = transform.GetChild(1).GetComponent<Image>();
         tempCooldownTimer = cooldownTimer / cooldown;
 
         player = gmScript.player.transform;
@@ -48,7 +52,13 @@ public class LanSkill2 : MonoBehaviour
         switch (playerClass)
         {
             case "Warrior":
-            temp = arrow;
+            tempSkillIndicator = arrow;
+            break;
+
+            case "Mage":
+            skillImage.sprite = gmScript.mageSkillIcons[1]; //set image 
+            inCooldownSkillImage.sprite = gmScript.mageSkillIcons[1]; //set image 
+            tempSkillIndicator = target;
             break;
         }
         hasInitialized = true;
@@ -81,8 +91,10 @@ public class LanSkill2 : MonoBehaviour
         if(joystick.Horizontal != 0 || joystick.Vertical != 0) {
             hasPressed = true;
             range.gameObject.SetActive(true); //enable skill range
-            temp.gameObject.SetActive(true); //enable skill target
-
+            tempSkillIndicator.gameObject.SetActive(true); //enable skill target
+            //set joystick transparancy
+            outerColor.a = 1;
+            innerColor.a = 1;
 
             //set scale
             transform.GetChild(0).localScale = new Vector3(2f,2f,1f);
@@ -92,21 +104,25 @@ public class LanSkill2 : MonoBehaviour
             {
                 case "Warrior":
                 range.localScale = new Vector2(.25f,.25f);
+                // Calculate target position
+                targetPosition = player.position + new Vector3(joystick.Horizontal * skillRange, joystick.Vertical * skillRange, 0) * 1;
+                // Move circle towards target position
+                tempSkillIndicator.position = targetPosition;
 
-                //set joystick transparancy
-                outerColor.a = 1;
-                innerColor.a = 1;
+                Vector3 difference = tempSkillIndicator.position - player.position;
+                float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+                tempSkillIndicator.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ - 90.0f);
+                break;
+
+                case "Mage":
+                //skill range indicator
+                range.localScale = new Vector2(.15f,.15f);
+                // Calculate target position     //0,0,-10           //
+                targetPosition = player.position + new Vector3(joystick.Horizontal * skillRange, joystick.Vertical * skillRange, 0) * 1;
+                // Move circle towards target position
+                target.position = targetPosition;
                 break;
             }
-            // Calculate target position
-            Vector3 targetPosition = player.position + new Vector3(joystick.Horizontal * skillRange, joystick.Vertical * skillRange, 0) * 1;
-
-            // Move circle towards target position
-            temp.position = targetPosition;
-
-            Vector3 difference = temp.position - player.position;
-            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            temp.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ - 90.0f);
             //target.position = Vector3.MoveTowards(player.position, targetPosition, 5f );
 
             joystickDirection = new Vector2(joystick.Horizontal, joystick.Vertical);
@@ -130,20 +146,40 @@ public class LanSkill2 : MonoBehaviour
 
             //disable skill shot
             range.gameObject.SetActive(false); 
-            temp.gameObject.SetActive(false);
+            tempSkillIndicator.gameObject.SetActive(false);
 
 
             //start 
             if(cooldownTimer <= 0 && hasPressed == true && hasReleased == true) {
-                Debug.Log("Skill 2 executed");
-                
                 switch (playerClass)
                 {
                     case "Warrior":
+                    if((gmScript.player.currentMana - 20) >= 0) {
+                    gmScript.player.currentMana -= 20;
+                    gmScript.UpdateUI();
                     StartCoroutine(WarriorSkill2Wait());
+
+                    //start skill cooldown
+                    cooldownTimer = cooldown;
+                    hasPressed = false;
+                    hasReleased = false;
+                    }
                     break;
                     
-                    
+                    case "Mage":
+                    if((gmScript.player.currentMana - 20) >= 0) {
+                    gmScript.player.currentMana -= 20;
+                    gmScript.UpdateUI();
+
+                    player.position = target.position;  //teleport player
+                    target.transform.position = Vector3.zero;  //reset target sprite position
+
+                    //start skill cooldown
+                    cooldownTimer = cooldown;
+                    hasPressed = false;
+                    hasReleased = false;
+                    }
+                    break;
                 }
 
                 //start skill cooldown
@@ -174,5 +210,6 @@ public class LanSkill2 : MonoBehaviour
         tempSkill.SetParent(skillEffectParent.GetChild(0));
         tempSkill.gameObject.SetActive(false);
     }
+
 
 }

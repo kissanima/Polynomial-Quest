@@ -67,11 +67,6 @@ public class LanGameManager : MonoBehaviour
             item.Initialize();        //Initialize() for each NPC
         }
 
-        //music
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = background;
-        audioSource.volume = 0;
-        audioSource.Play();
 
         //LoadPlayerData();
 
@@ -181,6 +176,10 @@ public class LanGameManager : MonoBehaviour
         player.potion = PlayerPrefs.GetFloat("potion");
         player.equipedWeaponIndex = PlayerPrefs.GetFloat("equipedWeaponIndex");
         player.equipedArmorIndex = PlayerPrefs.GetFloat("equipedArmorIndex");
+        player.hint = PlayerPrefs.GetFloat("hint");
+        player.finishIntro = PlayerPrefs.GetFloat("finishIntro");
+
+        player.updateStats();
         UpdateUI();
 
     
@@ -225,18 +224,24 @@ public class LanGameManager : MonoBehaviour
         break;
     }
     //END LOAD PLAYER DATA
+    Debug.Log("LOAD DATA SUCCESSFULLY");
     } 
 
     public void SavePlayerData() {
+
         PlayerPrefs.SetFloat("level", player.level);
         PlayerPrefs.SetFloat("currentExp", player.currentExp);
         PlayerPrefs.SetFloat("finalRequiredExp", player.finalRequiredExp);
         PlayerPrefs.SetFloat("potion", player.potion);
         PlayerPrefs.SetFloat("equipedWeaponIndex", player.equipedWeaponIndex);
         PlayerPrefs.SetFloat("equipedArmorIndex", player.equipedArmorIndex);
+        PlayerPrefs.SetFloat("hint", player.hint);
+        PlayerPrefs.SetFloat("finishIntro", player.finishIntro);
 
         string tempString = string.Join(",", player.inventory);
         PlayerPrefs.SetString("inventory", tempString);
+
+        Debug.Log("SAVE DATA SUCCESSFULLY");
     } 
 
 
@@ -281,5 +286,11 @@ public class LanGameManager : MonoBehaviour
     }
 
     
-    
+    public void StartBackgroundMusic() {
+        //music
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = background;
+        audioSource.volume = .5f;
+        audioSource.Play();
+    }
 }

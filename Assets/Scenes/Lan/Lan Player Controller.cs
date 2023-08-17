@@ -35,7 +35,7 @@ public class LanPlayer : NetworkBehaviour
     public float moveSpeed = 1f, attackSpeed = 1, attackCooldown = 0, baseDamage= 25, finalDamage, currentExp,
     baseRequiredExp = 75, finalRequiredExp, currentMana, baseMana = 75, finalMana, level,
     potion, weaponDmg, baseArmor = 5, finalArmor, itemArmor, equipedWeaponIndex, equipedArmorIndex, deathTimer = 5,
-    damageReduction, attackRange;
+    damageReduction, attackRange, hint = 5, finishIntro;
     public string username, playerClass;
     public Collider2D[] targetList;
     public Slider sliderHealthWS;
@@ -44,7 +44,8 @@ public class LanPlayer : NetworkBehaviour
     Vector2 targetDirection;
     TextMeshProUGUI deathTimerText;
     LanAttackButton attackButton;
-    public bool isDead, isUsingSkill;
+    Image cooldownImage;
+    public bool isDead, isUsingSkill, isManaShieldOn;
     
 
 
@@ -100,6 +101,8 @@ public class LanPlayer : NetworkBehaviour
         rb = GetComponent<Rigidbody2D>();
         deathPanel = GameObject.FindWithTag("UI").transform.GetChild(5).GetChild(3).gameObject;
         sliderHealthWS = transform.GetChild(1).GetChild(0).GetComponent<Slider>();
+        cooldownImage = GameObject.FindWithTag("Controls").transform.GetChild(1).GetChild(0).GetComponent<Image>();
+
         
 
         deathTimerText = deathPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -110,8 +113,8 @@ public class LanPlayer : NetworkBehaviour
 
         //initialize GameManager
         gmScript.Initialize();
-
-        updateStats();
+        
+        //updateStats();
 
         //suscribe to onValueChange listener for healthbar
         currentHealth.OnValueChanged += (float oldValue, float newValue) => {
@@ -160,7 +163,7 @@ public class LanPlayer : NetworkBehaviour
         sliderHealthWS.maxValue = finalHealth.Value;
         sliderHealthWS.value = currentHealth.Value;
 
-        gmScript.SavePlayerData(); //save data
+        //gmScript.SavePlayerData(); //save data
         gmScript.UpdateUI();
     }
 
@@ -175,6 +178,10 @@ public class LanPlayer : NetworkBehaviour
         }
         else {
             attackCooldown -= Time.deltaTime; 
+            if(attackCooldown >= 0) {
+            cooldownImage.gameObject.SetActive(true); //enable cooldown image
+            cooldownImage.fillAmount = (attackCooldown - 0) / (attackSpeed - 0);
+            }
 
             if(!isUsingSkill) {
                 Vector2 movement = new Vector2(joystick.Horizontal, joystick.Vertical) * moveSpeed;
@@ -256,10 +263,17 @@ public class LanPlayer : NetworkBehaviour
     }
 
 
-    public void Attacked(float damage) { 
+    public void Attacked(float damage) { //damage = 10
         if(!IsOwner) return;
         anim.Play("Hit");
-        currentHealth.Value -= damage;
+        if(isManaShieldOn) {
+            float tempDamage = damage * .30f; //expample: damage = 10, 30% is = 3
+            currentMana -= tempDamage;
+            currentHealth.Value -= damage - tempDamage;
+        }
+        else {
+            currentHealth.Value -= damage;
+        }
         gmScript.UpdateUI();
 
         
@@ -496,7 +510,7 @@ public class LanPlayer : NetworkBehaviour
         Transform temp = skillEffectsParent.GetChild(1).GetChild(0).GetChild(0);
         MagicBullet tempScript = temp.GetComponent<MagicBullet>();
 
-        tempScript.targetPosition = enemyPosition;
+        tempScript.direction = enemyPosition;
         temp.position = transform.position;
         temp.SetParent(skillEffectsParent.GetChild(1).GetChild(1)); //move to in Use object
         temp.gameObject.SetActive(true);
@@ -504,7 +518,25 @@ public class LanPlayer : NetworkBehaviour
 
     
 
-
+    [ServerRpc(RequireOwnership = false)]
+    public void StartIntroductionServerRpc() {
+        StartIntroductionClientRpc();
+    }
+    [ClientRpc]
+    void StartIntroductionClientRpc() {
+        GameObject ui = GameObject.FindWithTag("UI").gameObject;
+        if(IsHost && finishIntro == 0) {
+            ui.transform.GetChild(11).gameObject.SetActive(true); //start intro
+        }
+        else if(IsClient && finishIntro == 0) {
+            ui.transform.GetChild(7).gameObject.SetActive(false); //disable welcome object
+            ui.transform.GetChild(11).gameObject.SetActive(true); //start intro
+        }
+        else {
+            ui.transform.GetChild(10).gameObject.SetActive(true);
+            ui.transform.GetChild(7).gameObject.SetActive(false); //disable welcome object
+        }
+    }
 
 
 

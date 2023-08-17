@@ -13,7 +13,7 @@ public class LanSpell1 : NetworkBehaviour
     public float test;
     Transform player, target, range;
     bool hasInitialized, hasPressed = false, hasReleased;
-    float skillRange = .73f, cooldown = 15f, cooldownTimer, tempCooldownTimer;
+    float skillRange = .73f, cooldown = 25f, cooldownTimer, tempCooldownTimer;
     GameObject cooldownImageObject;
     Image cooldownImage;
     TextMeshProUGUI cooldownText;
@@ -113,8 +113,7 @@ public class LanSpell1 : NetworkBehaviour
 
             //start 
             if(cooldownTimer <= 0 && hasPressed == true && hasReleased == true) {
-                player.position = target.position;  //teleport player
-                target.transform.position = Vector3.zero;  //reset target sprite position
+    
 
                 //
                 cooldownTimer = cooldown;

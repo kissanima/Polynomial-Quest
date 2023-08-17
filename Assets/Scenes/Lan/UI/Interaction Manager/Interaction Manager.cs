@@ -90,6 +90,7 @@ public class LanInteractionManager : MonoBehaviour
 
     public void UpdateUI() {
         attempsText.SetText(answerSelection.GetComponent<LanAnswerSelection>().attempts.ToString());
+        transform.GetChild(6).GetComponent<TextMeshProUGUI>().SetText("hints: " + gmScript.player.hint.ToString());
     }
 
 }

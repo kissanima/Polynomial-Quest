@@ -16,13 +16,16 @@ public class Lan : MonoBehaviour
 	public GameObject welcome, startClient, startHost, enter, difficultyPanel, createCharacterButton, ui;
 	public LanCreateCharacter characterCreation;
 	PingCounter pingCounter;
+	LanGameManager gmScript;
 
 	void Start()
 	{
+		
 		ipAddress = "0.0.0.0";
 		SetIpAddress(); // Set the Ip to the above address
 		//InvokeRepeating("assignPlayerController", 0.1f, 0.1f);
 		//RegisterNetworkPrefabs();
+		gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
 		
 	}
 
@@ -86,10 +89,14 @@ public class Lan : MonoBehaviour
     }
 
 	public void ButtonPressedEnter() {
-		welcome.SetActive(false);
+		//welcome.SetActive(false);
 		
 		//enable minimap
-        GameObject.FindWithTag("UI").transform.GetChild(10).gameObject.SetActive(true);
+        //GameObject.FindWithTag("UI").transform.GetChild(10).gameObject.SetActive(true);
+
+		//enable intro
+		gmScript.player.StartIntroductionServerRpc();
+		gmScript.StartBackgroundMusic();
 	}
 
 	public void ButtonHost() {

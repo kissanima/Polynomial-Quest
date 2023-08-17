@@ -8,6 +8,7 @@ public class LanDungeonEntrance : MonoBehaviour
     Vector3 spawnPoint;
     LanGameManager gmScript;
     public GameObject transition;
+    [SerializeField] float minimumLevelRequirement;
 
     private void Start() {
         spawnPoint = transform.parent.GetChild(1).position;
@@ -16,9 +17,10 @@ public class LanDungeonEntrance : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag != "Player") return;
-        transition.gameObject.SetActive(true);
-        gmScript.player.transform.position = transform.parent.GetChild(1).position;
+        if(other.CompareTag("Player") && gmScript.player.level >= minimumLevelRequirement) {
+            transition.gameObject.SetActive(true);
+            gmScript.player.transform.position = transform.parent.GetChild(1).position;
+        }
     }
 
 

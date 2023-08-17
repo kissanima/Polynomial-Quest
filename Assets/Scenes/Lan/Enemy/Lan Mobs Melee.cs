@@ -212,7 +212,7 @@ public class LanMobsMelee : NetworkBehaviour
         //spawn blood effects
         gmScript.player.SpawnBloodEffectServerRpc(NetworkObjectId);
 
-        if(currentHealth.Value <= (finalHealth.Value * .15f)) {
+        if(currentHealth.Value <= (finalHealth.Value * .15f) && !target.CompareTag("Knight")) {
             enemyCollider.enabled = false;
             isAttacking = false;
             isIdle = false;

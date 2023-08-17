@@ -36,4 +36,5 @@ public class WarriorSkill1 : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
     }
+    
 }

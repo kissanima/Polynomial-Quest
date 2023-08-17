@@ -110,7 +110,6 @@ public class LanCreateCharacter : MonoBehaviour
         legsIndex = index;
         character.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = legs_l[legsIndex];
         character.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<SpriteRenderer>().sprite = legs_r[legsIndex];
-        Debug.Log(character.transform.GetChild(0).GetChild(1).GetChild(1));
     }
 
     public void SelectShoulder(int index) {

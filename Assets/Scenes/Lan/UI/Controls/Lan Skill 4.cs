@@ -10,32 +10,54 @@ public class LanSkill4 : NetworkBehaviour
 {
     LanGameManager gmScript;
     Joystick joystick;
-    Image outerCircle, innerCircle;
+    Image outerCircle, innerCircle, skillImage, inCooldownSkillImage;
     public float baseDamage, damageModifier, finalDamage;
-    Transform player, target, range, skillEffectParent, temp, tempSkill;
+    Transform player, target, range, arrow, cone, skillEffectParent, tempSkillIndicator, instantiatedSkill;
+    public Transform tempSkill;
     bool hasInitialized, hasPressed = false, hasReleased;
     float skillRange = .73f, cooldown = 50f, cooldownTimer, tempCooldownTimer;
     GameObject cooldownImageObject;
     Image cooldownImage;
     TextMeshProUGUI cooldownText;
+    string playerClass;
+    Vector3 targetPosition;
+    Vector2 joystickDirection;
 
     public void Initialize() {
         gmScript = GameObject.FindWithTag("GameManager").transform.GetComponent<LanGameManager>();
         joystick = transform.GetChild(0).GetComponent<Joystick>();
         outerCircle = transform.GetChild(0).GetComponent<Image>();
+        skillImage = GetComponent<Image>();
         innerCircle = transform.GetChild(0).GetChild(0).GetComponent<Image>();
         cooldownText = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         cooldownImageObject = transform.GetChild(1).gameObject;
         skillEffectParent = GameObject.FindWithTag("SkillEffects").transform;
         cooldownImage = cooldownImageObject.GetComponent<Image>();
+        inCooldownSkillImage = transform.GetChild(1).GetComponent<Image>();
         tempCooldownTimer = cooldownTimer / cooldown;
 
         player = gmScript.player.transform;
-        target = player.GetChild(1).GetChild(2).GetChild(2);
-        range = player.GetChild(1).GetChild(2).GetChild(0);
+        playerClass = gmScript.player.playerClass;
 
-        tempSkill = skillEffectParent.GetChild(0).GetChild(3);
+        target = player.transform.GetChild(1).GetChild(2).GetChild(2);
+        range = player.transform.GetChild(1).GetChild(2).GetChild(0);
+        cone = player.transform.GetChild(1).GetChild(2).GetChild(1);
+        arrow = player.transform.GetChild(1).GetChild(2).GetChild(3);
 
+        switch (playerClass)
+        {   
+            case "Warrior":
+            tempSkillIndicator = arrow;
+            tempSkill = skillEffectParent.GetChild(0).GetChild(3); //skill effect object
+            break;
+            
+            case "Mage":
+            tempSkill = skillEffectParent.GetChild(1).GetChild(2).GetChild(2); //skill effect object
+            skillImage.sprite = gmScript.mageSkillIcons[3];
+            inCooldownSkillImage.sprite = gmScript.mageSkillIcons[3];
+            tempSkillIndicator = arrow;
+            break;
+        }
         hasInitialized = true;
     }
 
@@ -62,7 +84,7 @@ public class LanSkill4 : NetworkBehaviour
         if(joystick.Horizontal != 0 || joystick.Vertical != 0) {
             hasPressed = true;
             range.gameObject.SetActive(true);
-            target.gameObject.SetActive(true);
+            tempSkillIndicator.gameObject.SetActive(true);
 
 
             //initialize color
@@ -78,13 +100,27 @@ public class LanSkill4 : NetworkBehaviour
             //set scale
             transform.GetChild(0).localScale = new Vector3(2f,2f,1f);
 
-            //start
-            // Calculate target position
-            Vector3 targetPosition = player.position + new Vector3(joystick.Horizontal * skillRange, joystick.Vertical * skillRange, 0) * 1;
+            switch (playerClass)
+            {
+                case "Warrior":
+                tempSkillIndicator.gameObject.SetActive(false); //disable skill indicator
+                // Calculate target position
+                targetPosition = player.position + new Vector3(joystick.Horizontal * skillRange, joystick.Vertical * skillRange, 0) * 1;
+                // Move circle towards target position
+                target.position = targetPosition;
+                break;
 
-            // Move circle towards target position
-            target.position = targetPosition;
-            //target.position = Vector3.MoveTowards(player.position, targetPosition, 5f );
+                case "Mage":
+                range.localScale = new Vector2(.25f,.25f);
+                targetPosition = player.position + new Vector3(joystick.Horizontal * skillRange, joystick.Vertical * skillRange, 0) * 1;
+                tempSkillIndicator.position = targetPosition;
+
+                Vector3 difference = tempSkillIndicator.position - player.position;
+                float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+                tempSkillIndicator.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ - 90.0f);
+                break;
+            }
+            joystickDirection = new Vector2(joystick.Horizontal, joystick.Vertical);
         }
 
         else {
@@ -105,26 +141,39 @@ public class LanSkill4 : NetworkBehaviour
 
             //disable skill shot
             range.gameObject.SetActive(false); 
-            target.gameObject.SetActive(false);
+            tempSkillIndicator.gameObject.SetActive(false);
 
 
             //start 
             if(cooldownTimer <= 0 && hasPressed == true && hasReleased == true) {
-                Debug.Log("Skill 1 executed");
-                
                 switch (gmScript.player.playerClass)
                 {
                     case "Warrior":
+                    if((gmScript.player.currentMana - 35) >= 0) {
+                    gmScript.player.currentMana -= 35;
+                    gmScript.UpdateUI();
                     Warriorskill4ServerRpc(gmScript.player.NetworkObjectId);
+
+                    //start skill cooldown
+                    cooldownTimer = cooldown;
+                    hasPressed = false;
+                    hasReleased = false;
+                    }
                     break;
                     
-                    
-                }
+                    case "Mage":
+                    if((gmScript.player.currentMana - 35) >= 0) {
+                    gmScript.player.currentMana -= 35;
+                    gmScript.UpdateUI();
+                    MageSkill4ServerRpc(joystickDirection, gmScript.player.NetworkObjectId);
 
-                //start skill cooldown
-                cooldownTimer = cooldown;
-                hasPressed = false;
-                hasReleased = false;
+                    //start skill cooldown
+                    cooldownTimer = cooldown;
+                    hasPressed = false;
+                    hasReleased = false;
+                    }
+                    break;
+                }
             }
         }
     }
@@ -132,10 +181,8 @@ public class LanSkill4 : NetworkBehaviour
 
     [ServerRpc(RequireOwnership = false)]
     public void Warriorskill4ServerRpc(ulong playerID) {
-        WarriorSkill4ClientRpc(playerID);
+        WarriorSkill4ClientRpc( playerID);
     }
-
-    Transform instantiatedSkill;
     [ClientRpc]
     void WarriorSkill4ClientRpc(ulong playerID) { //playerID = the network object id of the player who cast the skill
         foreach (var item in gmScript.players)
@@ -149,8 +196,11 @@ public class LanSkill4 : NetworkBehaviour
             
     }
 
-    IEnumerator WarriorSkill4Wait(ulong playerID) {
-        instantiatedSkill.GetComponent<WarriorSkill4>().ownerID = playerID;
+    IEnumerator WarriorSkill4Wait( ulong playerID) {
+        WarriorSkill4 temp = instantiatedSkill.GetComponent<WarriorSkill4>();
+        temp.ownerID = playerID;
+        //temp.direction = direction;
+        
         //tempSkill.SetParent(player);
         //tempSkill.localPosition = new Vector2(0, 0.084f);
         instantiatedSkill.gameObject.SetActive(true);
@@ -159,5 +209,33 @@ public class LanSkill4 : NetworkBehaviour
         yield return new WaitForSeconds(10); 
         instantiatedSkill.SetParent(skillEffectParent.GetChild(0));
         instantiatedSkill.gameObject.SetActive(false);
+    }
+
+
+    [ServerRpc(RequireOwnership = false)] 
+    void MageSkill4ServerRpc(Vector2 direction, ulong playerID) {
+        MageSkill4ClientRpc(direction, playerID);
+    }
+    [ClientRpc]
+    void MageSkill4ClientRpc(Vector2 direction, ulong playerID) {
+        foreach (var item in gmScript.players)
+        {
+            if(item.NetworkObjectId == playerID) {
+                instantiatedSkill = Instantiate(tempSkill, item.transform.GetChild(3));
+                StartCoroutine(MageSkill4Duration(direction, playerID));
+                break;
+            }
+        }
+    }
+
+    IEnumerator MageSkill4Duration(Vector2 direction, ulong playerID) {
+        MageSkill4 temp = instantiatedSkill.GetComponent<MageSkill4>();
+        temp.playerID = playerID; //1
+        temp.direction = direction;
+
+        instantiatedSkill.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3); //3 seconds
+        //instantiatedSkill.parent = skillEffectParent.GetChild(0);
+        Destroy(instantiatedSkill.gameObject);
     }
 }
