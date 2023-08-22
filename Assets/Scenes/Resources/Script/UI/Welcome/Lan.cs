@@ -47,6 +47,7 @@ public class Lan : MonoBehaviour
 
 		//enable minimap
         GameObject.FindWithTag("UI").transform.GetChild(11).gameObject.SetActive(true);
+		GameObject.FindWithTag("UI").transform.GetChild(14).gameObject.SetActive(true); //enable mission
 		}
 		else {
 			ipAddressLabel.color = Color.red;

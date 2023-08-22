@@ -7,6 +7,7 @@ public class WarriorSkill1 : MonoBehaviour
 {
     Collider2D[] targetList;
     LanGameManager gmScript;
+    AudioSource audioSource;
     public float finalDamage, additionalDamagePercentage = .5f, ownerID;
 
 
@@ -24,10 +25,12 @@ public class WarriorSkill1 : MonoBehaviour
 
     private void OnEnable() {
         gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
+        audioSource = GetComponent<AudioSource>();
         finalDamage = (gmScript.player.finalDamage * additionalDamagePercentage) + 10f;
 
         StartCoroutine(DetectEnemyWait()); 
         transform.localPosition = new Vector3(0,0,0);
+        audioSource.Play();
     }
 
     IEnumerator DetectEnemyWait() {   

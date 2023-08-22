@@ -6,7 +6,7 @@ using TMPro;
 
 public class LanKnights : NetworkBehaviour
 {
-    [SerializeField] float finalHealth = 10000, finalDamage = 5, moveSpeed = 1f, attackRange = 0.5f,
+    [SerializeField] float finalHealth = 10000, finalDamage = 1, moveSpeed = 1f, attackRange = 0.5f,
     attackCooldown, attackSpeed = 1;
     int targetIndex;
 

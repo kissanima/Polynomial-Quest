@@ -12,6 +12,8 @@ public class Intro : MonoBehaviour
     [SerializeField]string[] emmanuelDialogues, wilsonDialogues;
     LanGameManager gmScript;
     Animator emmanuelAnim, wilsonAnim, arrowAnim;
+    [SerializeField]AudioClip[] audioClips;
+    AudioSource audioSource;
 
     Vector3 rotation1 = new(0,0,-160);
     Vector3 position1 = new(-185,-16,0);
@@ -50,6 +52,7 @@ public class Intro : MonoBehaviour
         tutorialPanel = ui.GetChild(12);
         tutorialTextBox = tutorialPanel.GetChild(1).GetComponent<TextMeshProUGUI>();
         arrowAnim = tutorialPanel.GetChild(0).GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
     private void OnEnable() {
         gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
@@ -62,6 +65,9 @@ public class Intro : MonoBehaviour
 
     IEnumerator PlayEmmanuelDialogue() {
         yield return new WaitForSeconds(.5f);
+        audioSource.clip = audioClips[0];
+        audioSource.Play();
+
         Vector3 position = new(0.205f, 0.143f); //0-1
         Vector2 direction = (position - emmanuelRb.transform.position).normalized * .5f;
         while (elapseTime <= moveDuration) { //0   //1
@@ -92,8 +98,11 @@ public class Intro : MonoBehaviour
             emmanueltextBox.text += item;
             yield return new WaitForSeconds(0.05f);
         }
-
+        
+        ///////////////////DUB 2 start
         yield return new WaitForSeconds(2f); // pause
+        audioSource.clip = audioClips[1];
+        audioSource.Play();
         emmanueltextBox.text = null;
 
         //start text 3
@@ -261,6 +270,8 @@ public class Intro : MonoBehaviour
 
     IEnumerator PlayEmmanuelDialogue2() {
         emmanueltextBox.text = null;
+        audioSource.clip = audioClips[2];
+        audioSource.Play();
         yield return new WaitForSeconds(0.5f); //pause
 
         //start text 4
@@ -287,7 +298,8 @@ public class Intro : MonoBehaviour
         wilson.localPosition = new(0.602f, 0.165f);
 
 
-
+        audioSource.clip = audioClips[3];
+        audioSource.Play();
         yield return new WaitForSeconds(.5f); //pause
         wilsonTextBox.transform.parent.gameObject.SetActive(true);
         string tempwilson = "Good afternoon, " + gmScript.player.username + " Wilson, the Holy Angel, is who I am.";
@@ -310,6 +322,8 @@ public class Intro : MonoBehaviour
 
 
 
+        audioSource.clip = audioClips[4];
+        audioSource.Play();
         yield return new WaitForSeconds(1f); //pause
         wilsonTextBox.text = null;
         foreach (var item in wilsonDialogues[1])
@@ -329,7 +343,8 @@ public class Intro : MonoBehaviour
         }
 
 
-
+        audioSource.clip = audioClips[4];
+        audioSource.Play();
         yield return new WaitForSeconds(1f); //pause
         wilsonTextBox.text = null;
         foreach (var item in wilsonDialogues[3])
@@ -364,7 +379,7 @@ public class Intro : MonoBehaviour
         ui.GetChild(2).gameObject.SetActive(true); // true controls
         ui.GetChild(6).gameObject.SetActive(true); // true health bars
         ui.GetChild(10).gameObject.SetActive(true); // show minimap
-
+        ui.GetChild(14).gameObject.SetActive(true);
         gmScript.player.finishIntro = 1;
         gmScript.SavePlayerData();
     }

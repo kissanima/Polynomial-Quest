@@ -27,6 +27,8 @@ TagManager:
   - CharacterPanel
   - Maps
   - Knight
+  - MissionPanel
+  - Sounds
   layers:
   - Default
   - TransparentFX

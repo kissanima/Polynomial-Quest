@@ -15,7 +15,7 @@ public class LanSkill4 : NetworkBehaviour
     Transform player, target, range, arrow, cone, skillEffectParent, tempSkillIndicator, instantiatedSkill;
     public Transform tempSkill;
     bool hasInitialized, hasPressed = false, hasReleased;
-    float skillRange = .73f, cooldown = 50f, cooldownTimer, tempCooldownTimer;
+    float skillRange = .73f, cooldown = 50f, cooldownTimer, tempCooldownTimer, manaCost;
     GameObject cooldownImageObject;
     Image cooldownImage;
     TextMeshProUGUI cooldownText;
@@ -49,6 +49,7 @@ public class LanSkill4 : NetworkBehaviour
             case "Warrior":
             tempSkillIndicator = arrow;
             tempSkill = skillEffectParent.GetChild(0).GetChild(3); //skill effect object
+            manaCost = 35;
             break;
             
             case "Mage":
@@ -56,9 +57,12 @@ public class LanSkill4 : NetworkBehaviour
             skillImage.sprite = gmScript.mageSkillIcons[3];
             inCooldownSkillImage.sprite = gmScript.mageSkillIcons[3];
             tempSkillIndicator = arrow;
+            manaCost = 35;
             break;
         }
         hasInitialized = true;
+
+        //StartCoroutine(ManaCheck()); //start mana check
     }
 
     private void Update() {
@@ -66,12 +70,20 @@ public class LanSkill4 : NetworkBehaviour
         cooldownTimer -= Time.deltaTime;
         //Debug.Log(cooldownTimer);
         //start here
-        if(cooldownTimer >= 0) {
+        if(cooldownTimer >= 0) { //
             transform.GetChild(0).gameObject.SetActive(false); //disable skillshot
             cooldownImageObject.SetActive(true); //enable cooldown image
             cooldownImage.fillAmount = (cooldownTimer - 0) / (cooldown - 0);
             cooldownText.gameObject.SetActive(true);
+            cooldownText.fontSize = 120;
             cooldownText.SetText(cooldownTimer.ToString("0.0"));
+        }
+        else if((gmScript.player.currentMana - manaCost) < 0) {
+                cooldownImage.gameObject.SetActive(true);
+                cooldownImage.fillAmount = 1;
+                cooldownText.gameObject.SetActive(true);
+                cooldownText.fontSize = 80;
+                cooldownText.SetText("NO MANA");
         }
         else {
             transform.GetChild(0).gameObject.SetActive(true); //enable skillshot
@@ -81,7 +93,7 @@ public class LanSkill4 : NetworkBehaviour
             cooldownImage.fillAmount = 1;
         }
 
-        if(joystick.Horizontal != 0 || joystick.Vertical != 0) {
+        if(joystick.Horizontal != 0 || joystick.Vertical != 0 && (gmScript.player.currentMana - manaCost) >= 0) {
             hasPressed = true;
             range.gameObject.SetActive(true);
             tempSkillIndicator.gameObject.SetActive(true);
@@ -237,5 +249,17 @@ public class LanSkill4 : NetworkBehaviour
         yield return new WaitForSeconds(3); //3 seconds
         //instantiatedSkill.parent = skillEffectParent.GetChild(0);
         Destroy(instantiatedSkill.gameObject);
+    }
+
+    //MANA check courotine
+    IEnumerator ManaCheck() {
+        while(true) {
+            if((gmScript.player.currentMana - manaCost) < 0) {
+                cooldownImage.gameObject.SetActive(true);
+                cooldownText.gameObject.SetActive(true);
+                cooldownText.SetText("NO MANA");
+            }
+            yield return new WaitForSeconds(.5f);
+        }
     }
 }

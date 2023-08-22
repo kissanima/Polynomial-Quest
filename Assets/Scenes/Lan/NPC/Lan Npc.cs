@@ -20,7 +20,11 @@ public class LanNpc : MonoBehaviour
         questionair = GameObject.FindWithTag("Questionair").transform;
         //GetComponent<LanPlayer>().enabled = true;
         
-        
+        DrawQuestions();
+    }
+    
+    
+    void DrawQuestions() {
         if(!isNpc) { //0 = easy, 1 = medium
         int draw = Random.Range(0, questionair.GetChild(gmScript.difficulty).transform.childCount); //draw 0-19 the child count of questonair
         LanQuestions temp = questionair.GetChild(gmScript.difficulty).GetChild(draw).GetComponent<LanQuestions>();
@@ -31,8 +35,6 @@ public class LanNpc : MonoBehaviour
             isFillinTheBlanks = temp.isFillinTheBlanks;
         }
     }
-    
-
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Player" && trigger.isTrigger) {
             player = other.GetComponent<LanPlayer>();
@@ -55,7 +57,15 @@ public class LanNpc : MonoBehaviour
         //if(isNpc) return;
         gameObject.SetActive(false);
         GetComponent<Collider2D>().enabled = false;
-        Debug.Log("isDone called");
+        
+        if(!isAI && !isNpc) {
+            gmScript.dungeonStatues++;
+            gmScript.UpdateMission();
+        }
     }
 
+
+    private void OnDisable() {
+        DrawQuestions();
+    }
 }

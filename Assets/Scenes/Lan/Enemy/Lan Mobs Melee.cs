@@ -8,7 +8,7 @@ using Unity.Multiplayer.Samples.Utilities.ClientAuthority;
 
 public class LanMobsMelee : NetworkBehaviour
 {
-    
+
     public NetworkVariable<float> baseHealth = new(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public NetworkVariable<float> currentHealth = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public NetworkVariable<float> finalHealth = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
@@ -17,10 +17,11 @@ public class LanMobsMelee : NetworkBehaviour
 
     Rigidbody2D rb;
     Vector2 currentTarget;
-    public bool isWalking = false, isAttacking, isIdle = true, isDead;
+    public bool isWalking = false, isAttacking, isIdle = true, isDead, hasAttacked;
     Collider2D enemyCollider;
     Slider slider;
-    public Transform damagePool;
+    public Transform damagePool, textBox;
+    TextMeshProUGUI textBoxText;
     public Collider2D target;
     public LanGameManager gmScript;
     LanInteractionManager interactionManager;
@@ -29,18 +30,37 @@ public class LanMobsMelee : NetworkBehaviour
     Animator anim;
     LanPlayer[] players;
     SpriteRenderer[] spriteRenderers;
+    LanPlayer targetScript;
+    [SerializeField] bool isBoss, isEmmanuel;
+    [SerializeField] string[] dialogues;
+    [SerializeField] Transform wilson;
+
+    //sounds
+    AudioSource hitAudioSource;
 
     public override void OnNetworkSpawn()
     {
+        Debug.Log(isBoss);
         //initialize variables
         damagePool = GameObject.FindWithTag("DamagePool").transform;
         gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         originalPos = transform.position;
+        //animators component
         anim = transform.GetChild(3).GetComponent<Animator>();
         transform.GetChild(3).GetComponent<ClientNetworkAnimator>().Animator = anim;
+
+        hitAudioSource = transform.GetChild(5).GetChild(0).GetComponent<AudioSource>();
+        
         slider = transform.GetChild(1).GetComponent<Slider>();
         rb = GetComponent<Rigidbody2D>();
         enemyCollider = GetComponent<Collider2D>();
+        
+        if(isBoss) {
+            textBox = transform.GetChild(6);
+            textBoxText = textBox.GetChild(0).GetComponent<TextMeshProUGUI>();
+        }
+    
+
         UpdateStats();        
 
         currentHealth.OnValueChanged += (float oldValue, float newValue) => {
@@ -94,36 +114,21 @@ public class LanMobsMelee : NetworkBehaviour
             idleTime = Random.Range(2f, 5f);
         }
 
-        if (elapsedTime < walkTime) {
+        if (elapsedTime < walkTime) { //start moving
+            anim.SetBool("isMoving", true);
             rb.velocity = (currentTarget - (Vector2)transform.position) * walkSpeed;
 
             
             //flip object
-            if(rb.velocity.x < 0) {
-                transform.GetChild(3).localScale = new Vector3(.1f, .1f, 1);
+            if(isBoss) {
+                if(rb.velocity.x < 0) {
+                    transform.GetChild(3).localScale = new Vector3(-.1f, .1f, 1);
+                }
+                else {
+                    transform.GetChild(3).localScale = new Vector3(.1f, .1f, 1);
+                }
             }
             else {
-                transform.GetChild(3).localScale = new Vector3(-.1f, .1f, 1);
-            }
-
-
-
-            elapsedTime += Time.deltaTime;
-
-        }
-        else {
-            rb.velocity = Vector2.zero;
-            isWalking = false;
-            idleTime = 0f;
-        }
-        }   
-    }
-    else if(isAttacking && target != null) {           //if attacking and the player that attack this object is not dead
-        distance = Vector2.Distance(transform.position, new Vector2(target.transform.position.x, target.transform.position.y)); //TODO: need to optimize 
-
-        if (target != null) {
-                Vector3 direction = target.transform.position - transform.position;
-
                 if(rb.velocity.x < 0) {
                 transform.GetChild(3).localScale = new Vector3(.1f, .1f, 1);
                 }
@@ -131,13 +136,57 @@ public class LanMobsMelee : NetworkBehaviour
                 transform.GetChild(3).localScale = new Vector3(-.1f, .1f, 1);
                 }
             }
+            
 
 
-        if (distance <= attackRange) {         //if distance of the player is less or equal attackRange
-            rb.velocity = Vector2.zero;
-            AttackServerRpc();
+
+            elapsedTime += Time.deltaTime;
+
         }
-        else if (distance > attackRange) {
+        else { //stop moving
+            anim.SetBool("isMoving", false);
+            rb.velocity = Vector2.zero;
+            isWalking = false;
+            idleTime = 0f;
+        }
+        }   
+    }
+    else if(isAttacking && target != null) {           //if attacking and the player that attack this object is not dead
+        distance = Vector2.Distance(transform.position, new Vector2(target.transform.position.x, target.transform.position.y));
+
+        if (target != null) {
+                Vector3 direction = target.transform.position - transform.position;
+
+                //flip object
+            if(isBoss) {
+                if(rb.velocity.x < 0) {
+                    transform.GetChild(3).localScale = new Vector3(-.1f, .1f, 1);
+                }
+                else {
+                    transform.GetChild(3).localScale = new Vector3(.1f, .1f, 1);
+                }
+            }
+            else {
+                if(rb.velocity.x < 0) {
+                transform.GetChild(3).localScale = new Vector3(.1f, .1f, 1);
+                }
+                else {
+                transform.GetChild(3).localScale = new Vector3(-.1f, .1f, 1);
+                }
+            }
+            }
+
+
+        if (distance <= attackRange) {         //if distance of the player is less or equal attackRange, attack
+            rb.velocity = Vector2.zero;
+            if(targetScript.currentHealth.Value > 0) { //if health is greater than 0, attack
+                AttackServerRpc();
+            }
+            else {
+                target = null;
+            }
+        }
+        else if (distance > attackRange && distance <= 5) { //start chasing enemy
             rb.velocity = target.transform.position - transform.position * walkSpeed;
         }
         else
@@ -145,15 +194,24 @@ public class LanMobsMelee : NetworkBehaviour
                 if (target != null) {
                 Vector3 direction = target.transform.position - transform.position;
 
-                if(direction.x < 0) {
-                    transform.GetChild(3).localScale = new Vector2(.1f, transform.GetChild(3).localScale.y);
+                    //flip object
+                if(isBoss) {
+                    if(rb.velocity.x < 0) {
+                    transform.GetChild(3).localScale = new Vector3(-.1f, .1f, 1);
                 }
                 else {
-                    transform.GetChild(3).localScale = new Vector2(-.1f, transform.GetChild(3).localScale.y);
+                    transform.GetChild(3).localScale = new Vector3(-.1f, .1f, 1);
                 }
                 }
-
-
+                else {
+                    if(rb.velocity.x < 0) {
+                    transform.GetChild(3).localScale = new Vector3(.1f, .1f, 1);
+                    }
+                    else {
+                    transform.GetChild(3).localScale = new Vector3(-.1f, .1f, 1);
+                    }
+                }
+                }
                 rb.velocity = Vector2.zero;
             }
         
@@ -188,18 +246,19 @@ public class LanMobsMelee : NetworkBehaviour
     public void Attacked(float damage, ulong networkId) {
         SubtracthealthServerRpc(damage); // call server to subtract network variable health using ServerRpc
         //players = FindObjectsOfType<LanPlayer>();
-        Debug.Log(networkId);
 
         foreach (NetworkObject p in gmScript.player.nObjects) 
         {
             if (p.NetworkObjectId == networkId)
             {
                 target = p.GetComponent<Collider2D>();
+                targetScript = p.GetComponent<LanPlayer>();
                 break;
             }
         }
         isIdle = false;
         isAttacking = true;
+
 
         //spawn damage pops
         Transform temp;
@@ -212,7 +271,7 @@ public class LanMobsMelee : NetworkBehaviour
         //spawn blood effects
         gmScript.player.SpawnBloodEffectServerRpc(NetworkObjectId);
 
-        if(currentHealth.Value <= (finalHealth.Value * .15f) && !target.CompareTag("Knight")) {
+        if(currentHealth.Value <= (finalHealth.Value * .15f) && !target.CompareTag("Knight") && !isBoss) {
             enemyCollider.enabled = false;
             isAttacking = false;
             isIdle = false;
@@ -231,17 +290,26 @@ public class LanMobsMelee : NetworkBehaviour
             gmScript.SavePlayerData(); //save data
             StartCoroutine(DisableWait()); */
         }
+        else {
+            //play hit sound
+            hitAudioSource.Play();
+        }
 
     }
-
+    private void OnDisable() {
+        Invoke(nameof(RespawnWait), deathTimer);
+        //StartCoroutine(DisableWait()); 
+    }
     IEnumerator DisableWait() {
+        Debug.Log("DisableWait");
         yield return new WaitForSeconds(1);
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
 
         Invoke(nameof(RespawnWait), deathTimer);
     }
 
     void RespawnWait() {
+        Debug.Log("RespawnWait");
         transform.position = originalPos;
         isDead = false;
         gameObject.SetActive(true);
@@ -253,9 +321,23 @@ public class LanMobsMelee : NetworkBehaviour
     }
 
     
-    public void UpdateHealthBar(float oldValue, float newValue) {
-        slider.maxValue = finalHealth.Value;
-        slider.value = newValue;
+    public void UpdateHealthBar(float oldValue, float newValue) { //TODO:
+    slider.maxValue = finalHealth.Value;
+    slider.value = newValue;
+
+    if(isBoss) {
+        if(hasAttacked == false && isEmmanuel) {
+            StartCoroutine(PlayEmmanuelEvilDialogue());
+            hasAttacked = true;
+        }
+        else if(newValue < (finalHealth.Value * .95) && newValue > (finalHealth.Value * .90)  && isEmmanuel) { //boss 90-95% 
+            StartCoroutine(PlayEmmanuelEvilDialogue1());
+        }
+        else if(newValue < (finalHealth.Value * .50) && newValue > (finalHealth.Value * .45)  && isEmmanuel) { //teleport wilson here
+            wilson.transform.position = new(transform.position.x + .5f, transform.position.y);
+            StartCoroutine(PlayEmmanuelEvilDialogue2());
+        }
+    }    
     }
 
 
@@ -275,10 +357,47 @@ public class LanMobsMelee : NetworkBehaviour
     } */
 
     [ServerRpc(RequireOwnership = false)] public void HealServerRpc(float healAmount) {
-        Debug.Log("heal called " + healAmount);
         currentHealth.Value += healAmount;
 
 
+    }
+
+    //////////////////DIALOGUE//////////////////////////////////////////////////////////////
+    IEnumerator PlayEmmanuelEvilDialogue() {
+        textBox.gameObject.SetActive(true);
+        string dialogue0 = "Thus, you've come to deal with me, " + gmScript.player.username + "?" + " What a shame that your efforts were useless.";
+        foreach (var item in dialogue0) //
+        {
+            textBoxText.text += item;
+            yield return new WaitForSeconds(0.025f);
+        }
+        yield return new WaitForSeconds(1.5f);
+        textBox.gameObject.SetActive(false);
+        textBoxText.text = null;
+    }
+
+    IEnumerator PlayEmmanuelEvilDialogue1() {
+        textBox.gameObject.SetActive(true);
+        foreach (var item in dialogues[1])
+        {
+            textBoxText.text += item;
+            yield return new WaitForSeconds(0.025f);
+        }
+        yield return new WaitForSeconds(1.5f);
+        textBox.gameObject.SetActive(false);
+        textBoxText.text = null;
+    }
+
+    IEnumerator PlayEmmanuelEvilDialogue2() { //wilson the evil teleported
+        textBox.gameObject.SetActive(true);
+        foreach (var item in dialogues[2])
+        {
+            textBoxText.text += item;
+            yield return new WaitForSeconds(0.025f);
+        }
+        yield return new WaitForSeconds(1.5f);
+        textBox.gameObject.SetActive(false);
+        textBoxText.text = null;
     }
 }
 

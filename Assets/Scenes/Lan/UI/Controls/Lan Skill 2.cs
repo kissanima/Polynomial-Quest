@@ -14,7 +14,7 @@ public class LanSkill2 : NetworkBehaviour
     public float baseDamage, damageModifier, finalDamage;
     Transform player, target, range, arrow, cone, skillEffectParent, tempSkillIndicator, tempSkill, instantiatedSkill;
     bool hasInitialized, hasPressed, hasReleased, isDirectCast;
-    float skillRange = .73f, cooldownTimer, tempCooldownTimer, elapseTime;
+    float skillRange = .73f, cooldownTimer, tempCooldownTimer, elapseTime, manaCost;
     public float cooldown;
     GameObject cooldownImageObject;
     Image cooldownImage;
@@ -53,12 +53,14 @@ public class LanSkill2 : NetworkBehaviour
         {
             case "Warrior":
             tempSkillIndicator = arrow;
+            manaCost = 20;
             break;
 
             case "Mage":
             skillImage.sprite = gmScript.mageSkillIcons[1]; //set image 
             inCooldownSkillImage.sprite = gmScript.mageSkillIcons[1]; //set image 
             tempSkillIndicator = target;
+            manaCost = 20;
             break;
         }
         hasInitialized = true;
@@ -66,6 +68,8 @@ public class LanSkill2 : NetworkBehaviour
         //initialize joystick transparancy
         outerColor = outerCircle.color; //get color from joystick outer Circle
         innerColor = innerCircle.color;
+
+        //StartCoroutine(ManaCheck()); //start mana check
     }
 
     private void Update() {
@@ -73,12 +77,20 @@ public class LanSkill2 : NetworkBehaviour
         cooldownTimer -= Time.deltaTime;
         //Debug.Log(cooldownTimer);
         //start here
-        if(cooldownTimer >= 0) {
+        if(cooldownTimer >= 0) { //
             transform.GetChild(0).gameObject.SetActive(false); //disable skillshot
             cooldownImageObject.SetActive(true); //enable cooldown image
             cooldownImage.fillAmount = (cooldownTimer - 0) / (cooldown - 0);
             cooldownText.gameObject.SetActive(true);
+            cooldownText.fontSize = 120;
             cooldownText.SetText(cooldownTimer.ToString("0.0"));
+        }
+        else if((gmScript.player.currentMana - manaCost) < 0) {
+                cooldownImage.gameObject.SetActive(true);
+                cooldownImage.fillAmount = 1;
+                cooldownText.gameObject.SetActive(true);
+                cooldownText.fontSize = 80;
+                cooldownText.SetText("NO MANA");
         }
         else {
             transform.GetChild(0).gameObject.SetActive(true); //enable skillshot
@@ -88,7 +100,7 @@ public class LanSkill2 : NetworkBehaviour
             cooldownImage.fillAmount = 1;
         }
 
-        if(joystick.Horizontal != 0 || joystick.Vertical != 0) {
+        if(joystick.Horizontal != 0 || joystick.Vertical != 0 && (gmScript.player.currentMana - manaCost) >= 0) {
             hasPressed = true;
             range.gameObject.SetActive(true); //enable skill range
             tempSkillIndicator.gameObject.SetActive(true); //enable skill target
@@ -212,4 +224,15 @@ public class LanSkill2 : NetworkBehaviour
     }
 
 
+    //MANA check courotine
+    IEnumerator ManaCheck() {
+        while(true) {
+            if((gmScript.player.currentMana - manaCost) < 0) {
+                cooldownImage.gameObject.SetActive(true);
+                cooldownText.gameObject.SetActive(true);
+                cooldownText.SetText("NO MANA");
+            }
+            yield return new WaitForSeconds(.5f);
+        }
+    }
 }

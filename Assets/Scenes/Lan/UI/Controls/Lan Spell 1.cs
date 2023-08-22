@@ -113,7 +113,7 @@ public class LanSpell1 : NetworkBehaviour
 
             //start 
             if(cooldownTimer <= 0 && hasPressed == true && hasReleased == true) {
-    
+                player.position = target.position;
 
                 //
                 cooldownTimer = cooldown;

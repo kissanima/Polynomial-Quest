@@ -12,6 +12,9 @@ public class LanInteractionManager : MonoBehaviour
     public LanNpc npcScript;
     public GameObject continueButton, answerSelection, attempsCount, attempsLabel;
 
+    public AudioSource questionairSoundEffect, correctSound, wrongSound;
+
+
     private void Awake() {
         textBox = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         attempsText = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
@@ -19,6 +22,9 @@ public class LanInteractionManager : MonoBehaviour
         answerSelection = GameObject.FindWithTag("InteractionManager").transform.GetChild(5).gameObject;
         attempsCount = GameObject.FindWithTag("InteractionManager").transform.GetChild(2).gameObject;
         attempsLabel = GameObject.FindWithTag("InteractionManager").transform.GetChild(3).gameObject;
+        questionairSoundEffect = GetComponent<AudioSource>();
+        correctSound = GameObject.FindWithTag("Sounds").transform.GetChild(0).GetChild(0).GetComponent<AudioSource>();
+        wrongSound = GameObject.FindWithTag("Sounds").transform.GetChild(0).GetChild(1).GetComponent<AudioSource>();
     }
 
     
@@ -50,6 +56,9 @@ public class LanInteractionManager : MonoBehaviour
         else {
             attempsCount.SetActive(true);
             attempsLabel.SetActive(true);
+
+            //play questionair sound
+            questionairSoundEffect.Play();
         }
 
         

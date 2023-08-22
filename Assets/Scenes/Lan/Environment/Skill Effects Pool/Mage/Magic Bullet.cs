@@ -19,7 +19,7 @@ public class MagicBullet : MonoBehaviour
 
      private void OnEnable() {
         StartCoroutine(MovePosition());
-        finalDamage = gmScript.player.finalDamage * (additionalDamagePercentage / 100);
+        finalDamage = gmScript.player.finalDamage * (additionalDamagePercentage / 100) + gmScript.player.finalDamage;
     }
 
 

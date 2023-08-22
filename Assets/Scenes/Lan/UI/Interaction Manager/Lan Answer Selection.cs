@@ -7,13 +7,13 @@ using TMPro;
 public class LanAnswerSelection : MonoBehaviour
 {
     public GameObject[] buttons; //gameobjects
-    Transform wrongText, correctText, itemsPoolWS, rewardsLabelPool;
+    Transform wrongText, correctText, itemsPoolWS, rewardsLabelPool, reward;
     LanGameManager gmScript;
     LanInteractionManager interactionManager;
     public LanPlayer player;
     LanNpc npc;
     public string[] choices;
-    public int answerIndex, attempts, rewardIndexRange, rewardIndex;
+    public int answerIndex, attempts, rewardIndexRange, rewardIndex, potionOrItem;
     LanMobsMelee enemy;
     Collider2D enemyCollider;
     bool isAI;
@@ -61,62 +61,6 @@ public class LanAnswerSelection : MonoBehaviour
             Debug.Log("ïs with isFillinTheBlanks");
             transform.GetChild(1).gameObject.SetActive(true); //enable fill in the blanks object
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /* switch (gmScript.difficulty)
-        {
-            
-            case 0: //easy difficulty
-            buttons[0].transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(choices[0]);
-            buttons[1].transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(choices[1]);
-            buttons[2].transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(choices[2]);
-            buttons[3].transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(choices[3]);
-
-            transform.GetChild(0).gameObject.SetActive(true); //enable answer selection
-            break;
-
-            case 1: //medium difficulty
-            transform.GetChild(1).gameObject.SetActive(true); //enable answer selection
-            break;
-
-            case 2: //hard difficulty
-            break;
-
-            case 3: //extreme difficulty
-            break;
-        } */
     }
 
     public void UseHint() {
@@ -155,10 +99,64 @@ public class LanAnswerSelection : MonoBehaviour
             //switch (gmScript.difficulty)
             //{
                 //case 0: //0 means easy difficulty
-                rewardIndexRange = 5;
-                rewardIndex = Random.Range(0, rewardIndexRange); //draw 0-4
-                Transform reward = Instantiate(itemsPoolWS.transform.GetChild(rewardIndex), itemsPoolWS.transform);
-                reward.position = gmScript.player.transform.position;
+                switch (gmScript.player.playerClass)
+                {
+                    case "Warrior":
+                    potionOrItem = Random.Range(0, 2); //draw 0-1, if 0 give potion, if 1 give item
+                    if(potionOrItem == 0) { //give potion
+                    Debug.Log("Potion given");
+                        reward = Instantiate(itemsPoolWS.transform.GetChild(0), itemsPoolWS.transform);
+                    }
+                    else { //draw item and give as a reward
+                        float rarity = Random.Range(0, 1);
+                        int itemType = Random.Range(1, 5); //example 4
+                        if(rarity >= 0 && rarity < .40) { //chance 40% common
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(itemType), itemsPoolWS.transform);
+                        }
+                        else if(rarity >= .40 && rarity < .70) { //30% uncommon
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(itemType+4), itemsPoolWS.transform);
+                        }
+                        else if(rarity >= .70 && rarity < .85) { //15% rare
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(itemType+8), itemsPoolWS.transform);
+                        }
+                        else if(rarity >= .85 && rarity < .95) { //10% epic
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(itemType+12), itemsPoolWS.transform);
+                        }
+                        else if(rarity >= .95 && rarity <= 1) {  //5% legendary
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(itemType+16), itemsPoolWS.transform);
+                        }
+                    }
+                    reward.position = gmScript.player.transform.position;
+                    break;
+
+                    case "Mage":
+                    potionOrItem = Random.Range(0, 2); //draw 0-1, if 0 give potion, if 1 give item
+                    if(potionOrItem == 0) { //give potion
+                        reward = Instantiate(itemsPoolWS.transform.GetChild(0), itemsPoolWS.transform);
+                    }
+                    else { //draw item and give as a reward
+                        float rarity = Random.Range(0, 1);
+                        int itemType = Random.Range(1, 3); //2
+                        if(rarity >= 0 && rarity < .40) { //chance 40% common
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(20+itemType), itemsPoolWS.transform);
+                        }
+                        else if(rarity >= .40 && rarity < .70) { //30% uncommon
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(22+itemType), itemsPoolWS.transform);
+                        }
+                        else if(rarity >= .70 && rarity < .85) { //15% rare
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(24+itemType), itemsPoolWS.transform);
+                        }
+                        else if(rarity >= .85 && rarity < .95) { //10% epic
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(26+itemType), itemsPoolWS.transform);
+                        }
+                        else if(rarity >= .95 && rarity <= 1) {  //5% legendary
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(28+itemType), itemsPoolWS.transform);
+                        }
+                    }
+                    reward.position = gmScript.player.transform.position;
+                    break;
+                    
+                }
                 
 
                 //show reward
@@ -170,6 +168,7 @@ public class LanAnswerSelection : MonoBehaviour
 
                 //give exp
                 gmScript.player.currentExp += 25;
+                
                 gmScript.player.updateStats();
                 gmScript.UpdateUI(); //update player healtbar, exp bar etc
                 gmScript.SavePlayerData(); //save data

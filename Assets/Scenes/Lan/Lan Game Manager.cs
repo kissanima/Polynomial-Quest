@@ -8,6 +8,7 @@ using UnityEngine.Rendering.Universal;
 
 public class LanGameManager : MonoBehaviour
 {
+    Transform MissionPanel;
     public Slider sliderExp, sliderHealth, sliderMana, sliderHealthWS; //sliderHealthWS worlds space slider
 
     //initialize variables
@@ -19,10 +20,14 @@ public class LanGameManager : MonoBehaviour
     public GameObject inventoryManager, itemPool, characterCreationObject;
     LanCreateCharacter characterCreation;
     LanCameraController playerCamera;
-    public int difficulty = 0;
+    public int difficulty = 0, dungeonStatues;
     AudioSource audioSource;
-    public AudioClip background;
+    public AudioClip[] backgroundMusic;
     public LanPlayer[] players;
+    public bool isPortalFound;
+    public AudioClip[] WarriorSoundEffects;
+    public AudioClip[] MageSoundEffects;
+    public AudioClip playerHitSoundEffect;
 
     Light2D light2D;
     public Sprite[] warriorSkillIcons, mageSkillIcons, assassinSkillIcons;
@@ -42,7 +47,7 @@ public class LanGameManager : MonoBehaviour
         
         characterCreation = characterCreationObject.GetComponent<LanCreateCharacter>();
         sliderHealthWS = player.transform.GetChild(1).GetChild(0).GetComponent<Slider>(); //get world space healthbar
-        sliderHealth = GameObject.FindWithTag("UI").transform.GetChild(6).GetChild(2).GetComponent<Slider>();
+        sliderHealth = GameObject.FindWithTag("PlayerInfoBar").transform.GetChild(1).GetComponent<Slider>();
         healthText = GameObject.FindWithTag("UI").transform.GetChild(6).GetChild(2).GetChild(2).GetComponent<TextMeshProUGUI>();
 
         sliderMana = GameObject.FindWithTag("UI").transform.GetChild(6).GetChild(2).GetComponent<Slider>();
@@ -55,8 +60,8 @@ public class LanGameManager : MonoBehaviour
         potionText = GameObject.FindWithTag("Controls").transform.GetChild(5).GetChild(0).GetComponent<TextMeshProUGUI>();
         usernameSS = GameObject.FindWithTag("PlayerInfoBar").transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         usernameWS = player.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
-
-        //light
+        MissionPanel = GameObject.FindWithTag("UI").transform.GetChild(14);
+        audioSource = GetComponent<AudioSource>(); //music component
         light2D = GameObject.FindWithTag("Light").GetComponent<Light2D>();
 
 
@@ -178,6 +183,7 @@ public class LanGameManager : MonoBehaviour
         player.equipedArmorIndex = PlayerPrefs.GetFloat("equipedArmorIndex");
         player.hint = PlayerPrefs.GetFloat("hint");
         player.finishIntro = PlayerPrefs.GetFloat("finishIntro");
+        player.score.Value = PlayerPrefs.GetFloat("score");
 
         player.updateStats();
         UpdateUI();
@@ -186,7 +192,7 @@ public class LanGameManager : MonoBehaviour
     //Load Inventory String
     string tempString = PlayerPrefs.GetString("inventory");
     if (tempString == "") {
-        tempString = ("0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0");
+        tempString = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0";
     }
     player.inventory = tempString.Split(",");
 
@@ -237,7 +243,7 @@ public class LanGameManager : MonoBehaviour
         PlayerPrefs.SetFloat("equipedArmorIndex", player.equipedArmorIndex);
         PlayerPrefs.SetFloat("hint", player.hint);
         PlayerPrefs.SetFloat("finishIntro", player.finishIntro);
-
+        PlayerPrefs.SetFloat("score", player.score.Value);
         string tempString = string.Join(",", player.inventory);
         PlayerPrefs.SetString("inventory", tempString);
 
@@ -287,10 +293,51 @@ public class LanGameManager : MonoBehaviour
 
     
     public void StartBackgroundMusic() {
-        //music
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = background;
+        switch (difficulty)
+        {
+            case 0:
+            audioSource.clip = backgroundMusic[0];
+            break;
+
+            case 1:
+            audioSource.clip = backgroundMusic[1];
+            break;
+
+            case 2:
+            audioSource.clip = backgroundMusic[2];
+            break;
+
+            case 3:
+            audioSource.clip = backgroundMusic[0];
+            break;
+        }
         audioSource.volume = .5f;
         audioSource.Play();
+    }
+
+
+
+
+
+    ////////////////////////////////////////////////////////MISSION/////////////////////////////////////////////
+    public void UpdateMission() {
+        TextMeshProUGUI mission1 = MissionPanel.GetChild(1).GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI mission2 = MissionPanel.GetChild(2).GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI mission3 = MissionPanel.GetChild(3).GetComponent<TextMeshProUGUI>();
+
+        mission1.SetText("Dungeon statues completed: " + dungeonStatues + "/ 21");
+        if(dungeonStatues == 21) {
+            mission1.color = Color.gray;
+
+            //show next mission
+            MissionPanel.GetChild(2).gameObject.SetActive(true);
+        }
+        ////start next mission
+        if(isPortalFound) {
+            mission2.color = Color.gray;
+
+            //
+            MissionPanel.GetChild(3).gameObject.SetActive(true);
+        }
     }
 }

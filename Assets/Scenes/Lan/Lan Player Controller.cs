@@ -30,6 +30,7 @@ public class LanPlayer : NetworkBehaviour
     public NetworkVariable<float> baseHealth = new(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public NetworkVariable<float> finalHealth = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public NetworkVariable<float> currentHealth = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<float> score = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public string[] inventory = {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"};
 
     public float moveSpeed = 1f, attackSpeed = 1, attackCooldown = 0, baseDamage= 25, finalDamage, currentExp,
@@ -46,6 +47,11 @@ public class LanPlayer : NetworkBehaviour
     LanAttackButton attackButton;
     Image cooldownImage;
     public bool isDead, isUsingSkill, isManaShieldOn;
+    AudioSource audioSource, hitAudioSource;
+    [SerializeField] AudioClip[] WarriorSoundEffects;
+    [SerializeField] AudioClip[] MageSoundEffects;
+
+
     
 
 
@@ -102,8 +108,11 @@ public class LanPlayer : NetworkBehaviour
         deathPanel = GameObject.FindWithTag("UI").transform.GetChild(5).GetChild(3).gameObject;
         sliderHealthWS = transform.GetChild(1).GetChild(0).GetComponent<Slider>();
         cooldownImage = GameObject.FindWithTag("Controls").transform.GetChild(1).GetChild(0).GetComponent<Image>();
+        audioSource = GetComponent<AudioSource>();
 
-        
+        //hit
+        hitAudioSource = transform.GetChild(7).GetComponent<AudioSource>();
+        hitAudioSource.clip = gmScript.playerHitSoundEffect;
 
         deathTimerText = deathPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         playerCollider = GetComponent<BoxCollider2D>();      
@@ -132,6 +141,18 @@ public class LanPlayer : NetworkBehaviour
         if(!IsOwnedByServer) { //executed except on HOST
             GetDifficultyServerRpc();  //get difficulty
         }
+
+        StartCoroutine(ManaRegen()); //start mana regen, will regen 5% of max mana every .5s
+
+        //basic attack sound
+        switch (playerClass)
+        {
+            case "Warrior":
+            audioSource.clip = gmScript.WarriorSoundEffects[0];
+            break;
+        }
+
+
 
 
 
@@ -237,13 +258,14 @@ public class LanPlayer : NetworkBehaviour
             {
                 
                 case "Warrior":
-                    //animations // animations ng attack basi sa direction ng kalaban
                     if(targetDirection.x < 0) { //attack anim up
-                    transform.GetChild(0).localScale = new Vector3(-0.025f, 0.025f, 0);     
+                    transform.GetChild(0).localScale = new Vector3(-0.025f, 0.025f, 0);    //face the enemy before attacking
                     anim.Play("Attack1");
+
+                    audioSource.Play();
                     }
                     else if(targetDirection.x > 0) { //attack anim left
-                    transform.GetChild(0).localScale = new Vector3(0.025f, 0.025f, 0);
+                    transform.GetChild(0).localScale = new Vector3(0.025f, 0.025f, 0);    //face the enemy before attacking
                     //play animation
                     anim.Play("Attack1");
                      }
@@ -258,6 +280,14 @@ public class LanPlayer : NetworkBehaviour
                 break;
 
                 case "Assassin":
+                    if(targetDirection.x < 0) {
+                    transform.GetChild(0).localScale = new Vector3(-0.025f, 0.025f, 0);    //face the enemy before attacking
+                    anim.Play("Attack1");
+                    }
+                    else if(targetDirection.x > 0) {
+                    transform.GetChild(0).localScale = new Vector3(0.025f, 0.025f, 0);    //face the enemy before attacking
+                    anim.Play("Attack1"); //play animation
+                    }
                 break;
             }
     }
@@ -266,6 +296,12 @@ public class LanPlayer : NetworkBehaviour
     public void Attacked(float damage) { //damage = 10
         if(!IsOwner) return;
         anim.Play("Hit");
+        hitAudioSource.Play();
+
+
+
+
+
         if(isManaShieldOn) {
             float tempDamage = damage * .30f; //expample: damage = 10, 30% is = 3
             currentMana -= tempDamage;
@@ -534,6 +570,7 @@ public class LanPlayer : NetworkBehaviour
         }
         else {
             ui.transform.GetChild(10).gameObject.SetActive(true);
+            ui.transform.GetChild(14).gameObject.SetActive(true);
             ui.transform.GetChild(7).gameObject.SetActive(false); //disable welcome object
         }
     }
@@ -541,6 +578,19 @@ public class LanPlayer : NetworkBehaviour
 
 
 
+    IEnumerator ManaRegen() { //
+        while(true) {
+            if(currentMana < finalMana) { //mana regen 2.5% of max mana every 1s
 
+                currentMana += finalMana* .025f;
+                gmScript.UpdateUI();
+            }
+            else if(currentHealth.Value < finalHealth.Value) { //health regen 1% of max health every 1s
+                currentHealth.Value += finalHealth.Value * .01f;
+                gmScript.UpdateUI();
+            }
+            yield return new WaitForSeconds(1);
+        }
+    }
 
 }

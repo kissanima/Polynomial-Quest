@@ -16,7 +16,7 @@ public class LanItemsWS : MonoBehaviour
     }
     
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "enemy" || other == null) return;   //check if object collided is enemy
+        if(!other.CompareTag("Player")) return;   //check if object collided is enemy
         itemPool.transform.GetChild(itemIndex-1).gameObject.SetActive(true);
         //itemPool.transform.GetChild(itemIndex).SetParent(inventoryPanel.transform);
 

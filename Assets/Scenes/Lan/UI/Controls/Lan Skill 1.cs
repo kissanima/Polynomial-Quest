@@ -15,7 +15,7 @@ public class LanSkill1 : NetworkBehaviour
     Transform player, target, range, arrow, cone, skillEffectParent, tempSkillIndicator, instantiatedSkill;
     public Transform tempSkill;
     bool hasInitialized, hasPressed, hasReleased;
-    float skillRange = .73f, cooldown = 6f, cooldownTimer, tempCooldownTimer, isDirectCast;
+    float skillRange = .73f, cooldown = 6f, cooldownTimer, tempCooldownTimer, isDirectCast, manaCost, rotationZ;
     GameObject cooldownImageObject;
     Image cooldownImage;
     TextMeshProUGUI cooldownText;
@@ -23,6 +23,7 @@ public class LanSkill1 : NetworkBehaviour
     Rigidbody2D rb;
     Vector2 joystickDirection;
     Color outerColor, innerColor;
+    Vector3 targetPosition, difference;
 
 
 
@@ -55,6 +56,7 @@ public class LanSkill1 : NetworkBehaviour
             tempSkillIndicator = arrow;
             tempSkill = skillEffectParent.GetChild(0).GetChild(0);
             skillImage.sprite = gmScript.warriorSkillIcons[0];
+            manaCost = 15;
             break;
 
             case "Mage":
@@ -62,9 +64,15 @@ public class LanSkill1 : NetworkBehaviour
             skillImage.sprite = gmScript.mageSkillIcons[0];
             inCooldownSkillImage.sprite = gmScript.mageSkillIcons[0];
             tempSkillIndicator = arrow;
+            manaCost = 10;
             break;
 
             case "Assassin":
+            tempSkill = skillEffectParent.GetChild(3).GetChild(0); //
+            skillImage.sprite = gmScript.assassinSkillIcons[0];
+            inCooldownSkillImage.sprite = gmScript.assassinSkillIcons[0];
+            tempSkillIndicator = arrow;
+            manaCost = 12;
             break;
         }
 
@@ -73,6 +81,8 @@ public class LanSkill1 : NetworkBehaviour
         //initialize joystick transparancy
         outerColor = outerCircle.color; //get color from joystick outer Circle
         innerColor = innerCircle.color;
+
+        //StartCoroutine(ManaCheck()); //start mana check
     }
 
     private void Update() {
@@ -85,7 +95,15 @@ public class LanSkill1 : NetworkBehaviour
             cooldownImageObject.SetActive(true); //enable cooldown image
             cooldownImage.fillAmount = (cooldownTimer - 0) / (cooldown - 0);
             cooldownText.gameObject.SetActive(true);
+            cooldownText.fontSize = 120;
             cooldownText.SetText(cooldownTimer.ToString("0.0"));
+        }
+        else if((gmScript.player.currentMana - manaCost) < 0) {
+                cooldownImage.gameObject.SetActive(true);
+                cooldownImage.fillAmount = 1;
+                cooldownText.gameObject.SetActive(true);
+                cooldownText.fontSize = 80;
+                cooldownText.SetText("NO MANA");
         }
         else {
             transform.GetChild(0).gameObject.SetActive(true); //enable skillshot
@@ -94,8 +112,8 @@ public class LanSkill1 : NetworkBehaviour
             cooldownText.gameObject.SetActive(false);
             cooldownImage.fillAmount = 1;
         }
-
-        if(joystick.Horizontal != 0 || joystick.Vertical != 0) {
+        
+        if(joystick.Horizontal != 0 || joystick.Vertical != 0 && (gmScript.player.currentMana - manaCost) >= 0) {
             hasPressed = true;
             range.gameObject.SetActive(true); //range indicator
             tempSkillIndicator.gameObject.SetActive(true); //enable skill target indicator
@@ -119,12 +137,27 @@ public class LanSkill1 : NetworkBehaviour
                 range.localScale = new Vector2(.25f,.25f); //range indicator
 
                 // Calculate target position         
-                Vector3 targetPosition = player.position + new Vector3(joystick.Horizontal * skillRange, joystick.Vertical * skillRange, 0) * 1;
+                targetPosition = player.position + new Vector3(joystick.Horizontal * skillRange, joystick.Vertical * skillRange, 0) * 1;
                 // Move circle towards target position
                 tempSkillIndicator.position = targetPosition;
 
-                Vector3 difference = tempSkillIndicator.position - player.position;
-                float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+                difference = tempSkillIndicator.position - player.position;
+                rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+                tempSkillIndicator.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ - 90.0f);
+                break;
+
+                case "Assassin":
+                range.localScale = new Vector2(.25f,.25f); //range indicator
+
+                // Calculate target position         
+                targetPosition = player.position + new Vector3(joystick.Horizontal * skillRange, joystick.Vertical * skillRange, 0) * 1;
+                // Move circle towards target position
+                tempSkillIndicator.position = targetPosition;
+
+
+                //projectile rotation
+                difference = tempSkillIndicator.position - player.position; //direction
+                rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
                 tempSkillIndicator.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ - 90.0f);
                 break;
             }
@@ -182,7 +215,18 @@ public class LanSkill1 : NetworkBehaviour
                     }
                     break;
                     
-                    
+                    case "Assassin":
+                    if((gmScript.player.currentMana - 10) >= 0) {  //15
+                    gmScript.player.currentMana -= 10;
+                    gmScript.UpdateUI();
+                    AssassinSkill1ServerRpc(gmScript.player.NetworkObjectId, 3f, joystickDirection);
+
+                    //start skill cooldown
+                    cooldownTimer = cooldown;
+                    hasPressed = false;
+                    hasReleased = false;
+                    }
+                    break;
                 }
 
                 //start skill cooldown
@@ -194,6 +238,7 @@ public class LanSkill1 : NetworkBehaviour
     }
 
 
+    ///////////////////////////////////////////////////////WARRIOR SKill 1
     [ServerRpc(RequireOwnership = false)]  //1
     public void Warriorskill1ServerRpc(ulong playerID) { //
         WarriorSkill1ClientRpc(playerID); //1
@@ -222,7 +267,7 @@ public class LanSkill1 : NetworkBehaviour
 
 
 
-
+    //////////////////////////////////////////////////////MAGE SKILL 1
     [ServerRpc(RequireOwnership = false)]  //1
     public void MageSkill1ServerRpc(ulong playerID) { //
         MageSkill1ClientRpc(playerID); //1
@@ -247,5 +292,29 @@ public class LanSkill1 : NetworkBehaviour
         yield return new WaitForSeconds(3); //3 seconds
         //instantiatedSkill.parent = skillEffectParent.GetChild(0);
         Destroy(instantiatedSkill.gameObject);
+    }
+
+
+
+    ////////////////////////////////////////////////////ASSASSIN SKILL 1
+    [ServerRpc(RequireOwnership = false)] 
+    public void AssassinSkill1ServerRpc(ulong playerID, float projectileSpeed, Vector2 joystickDirection) { //
+        AssassinSkill1ClientRpc(playerID, projectileSpeed, joystickDirection); //1
+    }
+    [ClientRpc]
+    void AssassinSkill1ClientRpc(ulong playerID, float projectileSpeed, Vector2 joystickDirection) {
+        foreach (var item in gmScript.players)
+        {
+            if(item.NetworkObjectId == playerID) {
+                instantiatedSkill = Instantiate(tempSkill, item.transform.GetChild(3));
+                AssassinSKill1 temp = instantiatedSkill.GetComponent<AssassinSKill1>(); //get component to access the variables
+                temp.playerID = playerID;
+                temp.projectileSpeed = projectileSpeed;
+                temp.direction = joystickDirection;
+
+                instantiatedSkill.gameObject.SetActive(true);
+                break;
+            }
+        }
     }
 }
