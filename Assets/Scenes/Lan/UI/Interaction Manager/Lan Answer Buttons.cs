@@ -22,7 +22,6 @@ public class LanAnswerButtons : MonoBehaviour
         itemsPoolWS = GameObject.FindWithTag("ItemsPoolWS");
         playerPosition = gmScript.player.transform.position;
         rewardsLabelPool = GameObject.FindWithTag("RewardsLabelPool").transform;
-        Debug.Log(rewardsLabelPool);
     }
 
     private void OnEnable() {
@@ -42,7 +41,7 @@ public class LanAnswerButtons : MonoBehaviour
             transform.parent.gameObject.SetActive(false);
             interactionManager.SetActive(false);
 
-            interactionScript.correctSound.Play();
+            gmScript.correctSound.Play();
 
             interactionScript.npcScript.IsDone();
 
@@ -166,7 +165,7 @@ public class LanAnswerButtons : MonoBehaviour
         }
         else { //if wrong
             answerSelection.attempts -= 1; //subtract attemps
-            interactionScript.wrongSound.Play();
+            gmScript.wrongSound.Play();
             wrongText.SetActive(true);
             interactionManager.GetComponent<LanInteractionManager>().UpdateUI();
 

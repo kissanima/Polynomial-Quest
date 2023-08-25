@@ -40,14 +40,19 @@ public class Lan : MonoBehaviour
 	// To Join a game
 	public void StartClient() {
 		if(ipInput.text != ""){
+
 		ipAddress = ipInput.text;
 	    SetIpAddress();
 		NetworkManager.Singleton.StartClient();
 		welcome.SetActive(false);
 
-		//enable minimap
-        GameObject.FindWithTag("UI").transform.GetChild(11).gameObject.SetActive(true);
-		GameObject.FindWithTag("UI").transform.GetChild(14).gameObject.SetActive(true); //enable mission
+		if(PlayerPrefs.GetFloat("finishIntro") == 1) {
+			GameObject.FindWithTag("UI").transform.GetChild(11).gameObject.SetActive(false);
+		}
+		else {
+			GameObject.FindWithTag("UI").transform.GetChild(11).gameObject.SetActive(true); //start intro
+		}
+		//GameObject.FindWithTag("UI").transform.GetChild(14).gameObject.SetActive(false); //enable mission
 		}
 		else {
 			ipAddressLabel.color = Color.red;
@@ -102,7 +107,6 @@ public class Lan : MonoBehaviour
 
 	public void ButtonHost() {
 		string usernametemp = PlayerPrefs.GetString("username");
-		Debug.Log(usernametemp);
 		if(usernametemp != "") {
 			welcomeBackText.gameObject.SetActive(true); //enable welcomeback Object
 			welcomeBackText.SetText(welcomeBackText.text + PlayerPrefs.GetString("username") + "\n    Level: " + PlayerPrefs.GetFloat("level"));

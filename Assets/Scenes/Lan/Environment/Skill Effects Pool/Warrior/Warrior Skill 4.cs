@@ -7,11 +7,16 @@ public class WarriorSkill4 : MonoBehaviour
 {
     LanGameManager gmScript;
     Transform skillEffectsPool;
+    AudioSource audioSource;
     public float ownerID;
 
     public float damageReduction = 15f, damage = 100;
 
+    private void Awake() {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnEnable() {
+        audioSource.Play();
         gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
 
         

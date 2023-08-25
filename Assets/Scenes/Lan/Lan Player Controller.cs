@@ -15,7 +15,7 @@ public class LanPlayer : NetworkBehaviour
     public Transform damagePool;
     public Transform bloodEffectsParent, skillEffectsParent, maps;
     public NetworkObject[] nObjects;
-    
+    Transform itemsPool, inventoryPanel;
 
     //player customizations network variables
     public NetworkVariable<int> belt = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
@@ -47,7 +47,7 @@ public class LanPlayer : NetworkBehaviour
     LanAttackButton attackButton;
     Image cooldownImage;
     public bool isDead, isUsingSkill, isManaShieldOn;
-    AudioSource audioSource, hitAudioSource;
+    AudioSource audioSource, hitAudioSource, dieAudioSource;
     [SerializeField] AudioClip[] WarriorSoundEffects;
     [SerializeField] AudioClip[] MageSoundEffects;
 
@@ -109,10 +109,12 @@ public class LanPlayer : NetworkBehaviour
         sliderHealthWS = transform.GetChild(1).GetChild(0).GetComponent<Slider>();
         cooldownImage = GameObject.FindWithTag("Controls").transform.GetChild(1).GetChild(0).GetComponent<Image>();
         audioSource = GetComponent<AudioSource>();
-
-        //hit
+        itemsPool = GameObject.FindWithTag("ItemsPoolWS").transform;
+        inventoryPanel = GameObject.FindWithTag("UI").transform.GetChild(4).GetChild(0);
         hitAudioSource = transform.GetChild(7).GetComponent<AudioSource>();
+        dieAudioSource = transform.GetChild(8).GetComponent<AudioSource>();
         hitAudioSource.clip = gmScript.playerHitSoundEffect;
+        dieAudioSource.clip = gmScript.playerDieSoundEffect;
 
         deathTimerText = deathPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         playerCollider = GetComponent<BoxCollider2D>();      
@@ -168,7 +170,7 @@ public class LanPlayer : NetworkBehaviour
     }
 
     public void updateStats() {        
-        if(currentExp >= finalRequiredExp && level <= 30) {
+        if(currentExp != 0 && currentExp >= finalRequiredExp && level <= 30) {
             currentExp -= finalRequiredExp; //reset current Exp
             level += 1;
             baseRequiredExp += (baseRequiredExp * .20f);
@@ -179,7 +181,13 @@ public class LanPlayer : NetworkBehaviour
             gmScript.SavePlayerData(); //save data
             gmScript.UpdateUI();
         }
+
         finalDamage = baseDamage + weaponDmg;
+        finalArmor = baseArmor + itemArmor;
+        finalHealth.Value = baseHealth.Value;
+        currentHealth.Value = finalHealth.Value;
+        finalMana = baseMana;
+        currentMana = finalMana;
         finalRequiredExp = baseRequiredExp;
         sliderHealthWS.maxValue = finalHealth.Value;
         sliderHealthWS.value = currentHealth.Value;
@@ -324,10 +332,27 @@ public class LanPlayer : NetworkBehaviour
         SpawnBloodEffectServerRpc(NetworkObjectId);
 
         if(currentHealth.Value <= 0) {
+            targetList[0].GetComponent<LanMobsMelee>().target = null;
+            //dieAudioSource.Play();
             isDead = true;
-            anim.SetBool("isDead", true);
+            anim.Play("Death");
             playerCollider.enabled = false;
             deathPanel.SetActive(true); //show Died message
+
+            if(level > 1) { //TODO: 
+                level -= 1;
+            }
+            if(inventoryPanel.childCount > 0) {
+                for (int i = 0; i < inventoryPanel.childCount; i++)
+                {
+                    Destroy(inventoryPanel.GetChild(i).gameObject);
+                }
+                equipedWeaponIndex = 0;
+                weaponDmg = 0;
+                updateStats();
+                gmScript.SavePlayerData();
+                EquipItemServerRpc(0, NetworkObjectId);
+            }
             StartCoroutine(playerRespawnWait());
         }
     }
@@ -399,7 +424,6 @@ public class LanPlayer : NetworkBehaviour
     }
     [ClientRpc]
     public void SetDifficultyClientRpc(int difficulty) { ///executed on players CLIENT 
-    Debug.Log(difficulty);
         this.gmScript.difficulty = difficulty;
 
         switch (gmScript.difficulty) //difficulty =1
@@ -408,24 +432,29 @@ public class LanPlayer : NetworkBehaviour
             maps.GetChild(0).gameObject.SetActive(true); //forest
             maps.GetChild(1).gameObject.SetActive(false); //desert
             maps.GetChild(2).gameObject.SetActive(false); //snow
+            maps.GetChild(3).gameObject.SetActive(false); //extreme
             break;
 
             case 1:
             maps.GetChild(0).gameObject.SetActive(false);
             maps.GetChild(1).gameObject.SetActive(true);
             maps.GetChild(2).gameObject.SetActive(false);
+            maps.GetChild(3).gameObject.SetActive(false);
             break;
 
             case 2:
             maps.GetChild(0).gameObject.SetActive(false);
             maps.GetChild(1).gameObject.SetActive(false);
             maps.GetChild(2).gameObject.SetActive(true);
+            maps.GetChild(3).gameObject.SetActive(false);
             break;
 
             case 3: //extreme
             maps.GetChild(0).gameObject.SetActive(false);
             maps.GetChild(1).gameObject.SetActive(false);
             maps.GetChild(2).gameObject.SetActive(false);
+            maps.GetChild(3).gameObject.SetActive(true);
+            skillEffectsParent.GetChild(2).GetChild(1).gameObject.SetActive(true); //enable portal
             break;
         }
     }
@@ -573,6 +602,27 @@ public class LanPlayer : NetworkBehaviour
             ui.transform.GetChild(14).gameObject.SetActive(true);
             ui.transform.GetChild(7).gameObject.SetActive(false); //disable welcome object
         }
+    }
+
+    [ServerRpc(RequireOwnership = false)] //TODO: item sync
+    public void EquipItemServerRpc(int itemIndex, ulong playerID) {
+        EquipItemClientRpc(itemIndex, playerID);
+        
+    }
+    [ClientRpc]
+    void EquipItemClientRpc(int itemIndex, ulong playerID) {
+        foreach (var item in gmScript.players)
+        {
+            if(item.NetworkObjectId == playerID) {
+                if(itemIndex == 0) {
+                    item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
+                }
+                else {
+                    item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = itemsPool.GetChild(itemIndex-1).GetComponent<SpriteRenderer>().sprite;
+                }
+            }
+        }
+    
     }
 
 

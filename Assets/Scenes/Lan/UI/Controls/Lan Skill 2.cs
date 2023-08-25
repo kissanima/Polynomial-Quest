@@ -24,6 +24,8 @@ public class LanSkill2 : NetworkBehaviour
     Rigidbody2D rb;
     Color outerColor, innerColor;
     Vector3 targetPosition;
+    AudioSource audioSource;
+    [SerializeField] AudioClip warriorSkill2SoundEffect;
 
     public void Initialize() {
         gmScript = GameObject.FindWithTag("GameManager").transform.GetComponent<LanGameManager>();
@@ -37,6 +39,9 @@ public class LanSkill2 : NetworkBehaviour
         cooldownImage = cooldownImageObject.GetComponent<Image>();
         inCooldownSkillImage = transform.GetChild(1).GetComponent<Image>();
         tempCooldownTimer = cooldownTimer / cooldown;
+
+        //sound
+        audioSource = GetComponent<AudioSource>();
 
         player = gmScript.player.transform;
         rb = gmScript.player.GetComponent<Rigidbody2D>();
@@ -54,6 +59,7 @@ public class LanSkill2 : NetworkBehaviour
             case "Warrior":
             tempSkillIndicator = arrow;
             manaCost = 20;
+            audioSource.clip = warriorSkill2SoundEffect;
             break;
 
             case "Mage":
@@ -115,6 +121,7 @@ public class LanSkill2 : NetworkBehaviour
             switch (playerClass)
             {
                 case "Warrior":
+
                 range.localScale = new Vector2(.25f,.25f);
                 // Calculate target position
                 targetPosition = player.position + new Vector3(joystick.Horizontal * skillRange, joystick.Vertical * skillRange, 0) * 1;
@@ -170,6 +177,7 @@ public class LanSkill2 : NetworkBehaviour
                     gmScript.player.currentMana -= 20;
                     gmScript.UpdateUI();
                     StartCoroutine(WarriorSkill2Wait());
+                    audioSource.Play(); //play sound effect
 
                     //start skill cooldown
                     cooldownTimer = cooldown;
@@ -223,16 +231,4 @@ public class LanSkill2 : NetworkBehaviour
         tempSkill.gameObject.SetActive(false);
     }
 
-
-    //MANA check courotine
-    IEnumerator ManaCheck() {
-        while(true) {
-            if((gmScript.player.currentMana - manaCost) < 0) {
-                cooldownImage.gameObject.SetActive(true);
-                cooldownText.gameObject.SetActive(true);
-                cooldownText.SetText("NO MANA");
-            }
-            yield return new WaitForSeconds(.5f);
-        }
-    }
 }

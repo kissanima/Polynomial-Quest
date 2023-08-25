@@ -8,11 +8,19 @@ public class WarriorSkill3 : MonoBehaviour
     LanGameManager gmScript;
     public float finalDamage, additionalDamagePercentage = 150f, ownerID;
     Transform skillEffectsPool;
+    AudioSource audioSource;
+
+    private void Awake() {
+        audioSource = GetComponent<AudioSource>();
+    }
     
     public void OnEnable() {
         gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         skillEffectsPool = GameObject.FindWithTag("SkillEffects").transform;
         finalDamage = (gmScript.player.finalDamage * (additionalDamagePercentage / 100)) + 100f;  //150 / 100 = 1.5 
+
+        //play sound effect
+        audioSource.Play();
     }
 
     

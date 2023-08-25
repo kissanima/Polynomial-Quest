@@ -8,11 +8,13 @@ public class LanSelectDifficulty : MonoBehaviour
     public LanGameManager gmScript;
     [SerializeField] GameObject welcome, nature, desert, snow, decay;
     public Transform enemyManager;
+    Transform skillEffectsParent;
 
     private void Awake() {
         gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         welcome = GameObject.FindWithTag("UI").transform.GetChild(7).gameObject;
         enemyManager = GameObject.FindWithTag("EnemyManager").transform.GetChild(0);
+        skillEffectsParent = GameObject.FindWithTag("SkillEffects").transform;
 
         //maps
         nature = GameObject.FindWithTag("Environment").transform.GetChild(0).GetChild(0).gameObject;
@@ -58,6 +60,7 @@ public class LanSelectDifficulty : MonoBehaviour
             desert.SetActive(false);
             snow.SetActive(false);
             decay.SetActive(true);
+            skillEffectsParent.GetChild(2).GetChild(1).gameObject.SetActive(true); //enable portal
             break;
         }
     }
@@ -65,7 +68,7 @@ public class LanSelectDifficulty : MonoBehaviour
     public void ButtonPressed()
     {
         for(int i = 0; i < enemyManager.childCount; i++) {
-            enemyManager.GetChild(i).GetComponent<MobsMelee>().UpdateStats();
+            enemyManager.GetChild(i).GetComponent<LanMobsMelee>().UpdateStats();
         }
         welcome.SetActive(false);
     }

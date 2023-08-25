@@ -206,7 +206,7 @@ public class LanSkill1 : NetworkBehaviour
                     if((gmScript.player.currentMana - 10) >= 0) {  //15
                     gmScript.player.currentMana -= 10;
                     gmScript.UpdateUI();
-                    MageSkill1ServerRpc(gmScript.player.NetworkObjectId);
+                    MageSkill1ServerRpc(gmScript.player.NetworkObjectId, joystickDirection);
 
                     //start skill cooldown
                     cooldownTimer = cooldown;
@@ -269,24 +269,26 @@ public class LanSkill1 : NetworkBehaviour
 
     //////////////////////////////////////////////////////MAGE SKILL 1
     [ServerRpc(RequireOwnership = false)]  //1
-    public void MageSkill1ServerRpc(ulong playerID) { //
-        MageSkill1ClientRpc(playerID); //1
+    public void MageSkill1ServerRpc(ulong playerID, Vector2 joystickDirection) { //
+        MageSkill1ClientRpc(playerID, joystickDirection); //1
     }
     [ClientRpc]
-    void MageSkill1ClientRpc(ulong playerID) { //playerID = the network object id of the player who cast the skill
+    void MageSkill1ClientRpc(ulong playerID, Vector2 joystickDirection) { //playerID = the network object id of the player who cast the skill
         foreach (var item in gmScript.players)
         {
             if(item.NetworkObjectId == playerID) {
                 instantiatedSkill = Instantiate(tempSkill, item.transform.GetChild(3));
-                StartCoroutine(MageSkill1Duration(playerID));
+                Debug.Log("instantiated" + instantiatedSkill);
+                StartCoroutine(MageSkill1Duration(playerID, joystickDirection));
                 break;
             }
         }      
     }
-    IEnumerator MageSkill1Duration(ulong playerID) {
-        MagicBullet temp = instantiatedSkill.GetComponent<MagicBullet>();
-        temp.playerID = playerID; //1
-        temp.direction = joystickDirection;
+    IEnumerator MageSkill1Duration(ulong playerID, Vector2 joystickDirection) {
+        instantiatedSkill.GetComponent<MagicBullet>().playerID = playerID;
+        instantiatedSkill.GetComponent<MagicBullet>().direction = joystickDirection;
+        //temp.playerID = playerID; //1
+        //temp.direction = joystickDirection;
 
         instantiatedSkill.gameObject.SetActive(true); 
         yield return new WaitForSeconds(3); //3 seconds

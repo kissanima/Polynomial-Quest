@@ -25,6 +25,6 @@ public class LanItemsWS : MonoBehaviour
         gmScript.player.inventory[temp] = itemIndex.ToString();  //set value to array
         Instantiate(itemPool.transform.GetChild(itemIndex-1), inventoryManager.transform.GetChild(0)); //make a copy of the item
         gmScript.SavePlayerData();
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

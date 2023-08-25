@@ -34,13 +34,12 @@ public class LanMobsMelee : NetworkBehaviour
     [SerializeField] bool isBoss, isEmmanuel;
     [SerializeField] string[] dialogues;
     [SerializeField] Transform wilson;
-
+    bool dialogue1Done, dialogue2Done;
     //sounds
-    AudioSource hitAudioSource;
+    AudioSource hitAudioSource, dieAudioSource;
 
     public override void OnNetworkSpawn()
     {
-        Debug.Log(isBoss);
         //initialize variables
         damagePool = GameObject.FindWithTag("DamagePool").transform;
         gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
@@ -58,6 +57,7 @@ public class LanMobsMelee : NetworkBehaviour
         if(isBoss) {
             textBox = transform.GetChild(6);
             textBoxText = textBox.GetChild(0).GetComponent<TextMeshProUGUI>();
+            dieAudioSource = transform.GetChild(5).GetChild(1).GetComponent<AudioSource>();
         }
     
 
@@ -73,6 +73,11 @@ public class LanMobsMelee : NetworkBehaviour
         //interaction manager
         interactionManager = GameObject.FindWithTag("UI").transform.GetChild(3).GetComponent<LanInteractionManager>();
 
+
+
+        //disable this script after initialization
+        GetComponent<LanMobsMelee>().enabled = false;
+        transform.GetChild(3).GetComponent<Animator>().enabled = false;
     }
 
     
@@ -247,7 +252,7 @@ public class LanMobsMelee : NetworkBehaviour
         SubtracthealthServerRpc(damage); // call server to subtract network variable health using ServerRpc
         //players = FindObjectsOfType<LanPlayer>();
 
-        foreach (NetworkObject p in gmScript.player.nObjects) 
+        foreach (var p in gmScript.players) 
         {
             if (p.NetworkObjectId == networkId)
             {
@@ -290,6 +295,11 @@ public class LanMobsMelee : NetworkBehaviour
             gmScript.SavePlayerData(); //save data
             StartCoroutine(DisableWait()); */
         }
+        else if(currentHealth.Value <= 0 && isBoss) {
+            enemyCollider.enabled = false;
+            anim.Play("Die");
+            dieAudioSource.Play();
+        }
         else {
             //play hit sound
             hitAudioSource.Play();
@@ -330,12 +340,17 @@ public class LanMobsMelee : NetworkBehaviour
             StartCoroutine(PlayEmmanuelEvilDialogue());
             hasAttacked = true;
         }
-        else if(newValue < (finalHealth.Value * .95) && newValue > (finalHealth.Value * .90)  && isEmmanuel) { //boss 90-95% 
+        else if(newValue < (finalHealth.Value * .95) && newValue > (finalHealth.Value * .90)  && isEmmanuel && !dialogue1Done) { //boss 90-95% 
             StartCoroutine(PlayEmmanuelEvilDialogue1());
+            dialogue1Done = true;
         }
-        else if(newValue < (finalHealth.Value * .50) && newValue > (finalHealth.Value * .45)  && isEmmanuel) { //teleport wilson here
+        else if(newValue < (finalHealth.Value * .50) && newValue > (finalHealth.Value * .45)  && isEmmanuel && !dialogue2Done) { //teleport wilson here
             wilson.transform.position = new(transform.position.x + .5f, transform.position.y);
             StartCoroutine(PlayEmmanuelEvilDialogue2());
+            dialogue2Done = true;
+        }
+        else if(newValue <= 0 && isEmmanuel) {
+            StartCoroutine(PlayEmmanuelEvilDialogue3());
         }
     }    
     }
@@ -391,6 +406,34 @@ public class LanMobsMelee : NetworkBehaviour
     IEnumerator PlayEmmanuelEvilDialogue2() { //wilson the evil teleported
         textBox.gameObject.SetActive(true);
         foreach (var item in dialogues[2])
+        {
+            textBoxText.text += item;
+            yield return new WaitForSeconds(0.025f);
+        }
+        yield return new WaitForSeconds(1.5f);
+        textBox.gameObject.SetActive(false);
+        textBoxText.text = null;
+    }
+
+    IEnumerator PlayEmmanuelEvilDialogue3() { //You have demonstrated
+        textBox.gameObject.SetActive(true);
+        foreach (var item in dialogues[3])
+        {
+            textBoxText.text += item;
+            yield return new WaitForSeconds(0.025f);
+        }
+        yield return new WaitForSeconds(1.5f);
+        textBox.gameObject.SetActive(false);
+        textBoxText.text = null;
+        StartCoroutine(PlayEmmanuelEvilDialogue4());
+    }
+
+    IEnumerator PlayEmmanuelEvilDialogue4() { //you have won
+        string dialogeTemp = "You, " + gmScript.player.username + ", have won.";
+        yield return new WaitForSeconds(1f);
+
+        textBox.gameObject.SetActive(true);
+        foreach (var item in dialogeTemp)
         {
             textBoxText.text += item;
             yield return new WaitForSeconds(0.025f);

@@ -7,12 +7,12 @@ public class LanInteractionManager : MonoBehaviour
 {
     public int index, attemps;
     public LanPlayer player;
-    TextMeshProUGUI textBox, attempsText;
+    TextMeshProUGUI textBox, attempsText, continueButtonText;
     LanGameManager gmScript;
     public LanNpc npcScript;
     public GameObject continueButton, answerSelection, attempsCount, attempsLabel;
 
-    public AudioSource questionairSoundEffect, correctSound, wrongSound;
+    AudioSource questionairSoundEffect;
 
 
     private void Awake() {
@@ -23,31 +23,21 @@ public class LanInteractionManager : MonoBehaviour
         attempsCount = GameObject.FindWithTag("InteractionManager").transform.GetChild(2).gameObject;
         attempsLabel = GameObject.FindWithTag("InteractionManager").transform.GetChild(3).gameObject;
         questionairSoundEffect = GetComponent<AudioSource>();
-        correctSound = GameObject.FindWithTag("Sounds").transform.GetChild(0).GetChild(0).GetComponent<AudioSource>();
-        wrongSound = GameObject.FindWithTag("Sounds").transform.GetChild(0).GetChild(1).GetComponent<AudioSource>();
+
+        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
+
+        continueButtonText = continueButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
     }
 
     
 
     private void OnEnable() {
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>(); 
         player = gmScript.player;
         npcScript = player.npc.GetComponent<LanNpc>();
         continueButton.SetActive(true);
 
-        /*
-        switch (gmScript.difficulty)
-        {
-            case 0: //easy difficulty
-            textBox.SetText(npcScript.question[index]);
-            break;
-
-            case 1: //medium difficulty
-            textBox.SetText("Follow the direction to solve the questions. ");
-            break;
-        } */
         textBox.SetText("Follow the direction to solve the questions. ");
-        continueButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText("Continue");
+        continueButtonText.SetText("Continue");
 
         if(npcScript.isNpc) { //
             attempsCount.SetActive(false);
@@ -69,6 +59,7 @@ public class LanInteractionManager : MonoBehaviour
         if((npcScript.question.Length - 1) == index && !npcScript.isNpc) { //if index is equal to the length of text array of the npc, show the question   0
             continueButton.SetActive(false); //and object is not npc
             answerSelection.SetActive(true);
+            
             
             switch (gmScript.difficulty)
             {

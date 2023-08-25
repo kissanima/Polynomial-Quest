@@ -22,12 +22,13 @@ public class LanGameManager : MonoBehaviour
     LanCameraController playerCamera;
     public int difficulty = 0, dungeonStatues;
     AudioSource audioSource;
+    public AudioSource correctSound, wrongSound;
     public AudioClip[] backgroundMusic;
     public LanPlayer[] players;
     public bool isPortalFound;
     public AudioClip[] WarriorSoundEffects;
     public AudioClip[] MageSoundEffects;
-    public AudioClip playerHitSoundEffect;
+    public AudioClip playerHitSoundEffect, playerDieSoundEffect;
 
     Light2D light2D;
     public Sprite[] warriorSkillIcons, mageSkillIcons, assassinSkillIcons;
@@ -48,7 +49,7 @@ public class LanGameManager : MonoBehaviour
         characterCreation = characterCreationObject.GetComponent<LanCreateCharacter>();
         sliderHealthWS = player.transform.GetChild(1).GetChild(0).GetComponent<Slider>(); //get world space healthbar
         sliderHealth = GameObject.FindWithTag("PlayerInfoBar").transform.GetChild(1).GetComponent<Slider>();
-        healthText = GameObject.FindWithTag("UI").transform.GetChild(6).GetChild(2).GetChild(2).GetComponent<TextMeshProUGUI>();
+        healthText = sliderHealth.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
 
         sliderMana = GameObject.FindWithTag("UI").transform.GetChild(6).GetChild(2).GetComponent<Slider>();
         manaText = GameObject.FindWithTag("UI").transform.GetChild(6).GetChild(2).GetChild(2).GetComponent<TextMeshProUGUI>();
@@ -64,7 +65,9 @@ public class LanGameManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>(); //music component
         light2D = GameObject.FindWithTag("Light").GetComponent<Light2D>();
 
-
+        //SOUNDS
+        correctSound = GameObject.FindWithTag("Sounds").transform.GetChild(0).GetChild(0).GetComponent<AudioSource>();
+        wrongSound = GameObject.FindWithTag("Sounds").transform.GetChild(0).GetChild(1).GetComponent<AudioSource>();
         //initialize NPC questions and their dialogues
         LanNpc[] npc = FindObjectsOfType<LanNpc>(); //find all NPC
         foreach (LanNpc item in npc)
@@ -147,22 +150,18 @@ public class LanGameManager : MonoBehaviour
     }
     
     public void UpdateUI() {
+        Debug.Log(sliderHealth);
         sliderHealth.maxValue = player.finalHealth.Value;
         sliderHealth.value = player.currentHealth.Value;
-        healthText.SetText(player.currentHealth.Value.ToString() + " / " + player.finalHealth.ToString());
-        //sync Player health bars
-        //foreach (LanPlayer item in players)
-        //{
-        //    item.UpdateHealthBar();
-        //}
+        healthText.SetText(Mathf.FloorToInt(sliderHealth.value).ToString() + " / " + Mathf.FloorToInt(sliderHealth.maxValue).ToString() );
         
         sliderMana.maxValue = player.finalMana;
         sliderMana.value = player.currentMana;
-        manaText.SetText(player.currentMana.ToString() + " /" + player.finalMana.ToString());
+        manaText.SetText(Mathf.FloorToInt(sliderMana.value).ToString()  + " /" +Mathf.FloorToInt(sliderMana.maxValue).ToString() );
 
         sliderExp.maxValue = player.finalRequiredExp;
         sliderExp.value = player.currentExp;
-        expText.SetText(player.currentExp + "/" + player.finalRequiredExp);
+        expText.SetText(Mathf.FloorToInt(sliderExp.value).ToString()  + "/" + Mathf.FloorToInt(sliderExp.maxValue).ToString() );
 
         potionText.SetText(player.potion.ToString());
 

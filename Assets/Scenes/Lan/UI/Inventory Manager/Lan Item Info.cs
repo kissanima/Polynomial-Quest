@@ -55,7 +55,8 @@ public class LanItemInfo : MonoBehaviour
             Debug.Log("item equiped");
 
             //set item sprite to player
-            gmScript.player.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = itemImageWS;
+            //gmScript.player.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = itemImageWS;
+            player.EquipItemServerRpc(itemIndex, player.NetworkObjectId);
             
             if(itemType == "sword") {
                 player.weaponDmg = weaponDmg;

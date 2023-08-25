@@ -5,7 +5,7 @@ using UnityEngine;
 public class LanTransition : MonoBehaviour
 {
     public GameObject playerPrefab;
-    public GameManager gmScript;
+    public LanGameManager gmScript;
     public void MyAnimationEvent() {
         gameObject.SetActive(false);
     }

@@ -124,9 +124,11 @@ public class Options : MonoBehaviour
 
     public void OpenWiki() {
         wiki.gameObject.SetActive(true);
+        ui.GetChild(14).gameObject.SetActive(false);
     }
 
     public void CloseWiki() {
         wiki.gameObject.SetActive(false);
+        ui.GetChild(14).gameObject.SetActive(true);
     }
 }

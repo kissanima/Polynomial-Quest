@@ -44,9 +44,9 @@ public class MagicBullet : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D other) {
-        MobsMelee enemy;
+        LanMobsMelee enemy;
         if(other.tag == "Enemy") {
-            enemy = other.GetComponent<MobsMelee>();
+            enemy = other.GetComponent<LanMobsMelee>();
             gmScript.player.AttackServerRpc(other.transform.GetSiblingIndex(), finalDamage, gmScript.player.NetworkObjectId);
 
             //disable projectile

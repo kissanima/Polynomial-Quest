@@ -48,9 +48,9 @@ public class AssassinSKill1 : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D other) {
-        MobsMelee enemy;
+        LanMobsMelee enemy;
         if(other.CompareTag("Enemy")) {
-            enemy = other.GetComponent<MobsMelee>();
+            enemy = other.GetComponent<LanMobsMelee>();
             gmScript.player.AttackServerRpc(other.transform.GetSiblingIndex(), finalDamage, gmScript.player.NetworkObjectId);
             //teleport player to this projectile current position
             player.position = transform.position;
