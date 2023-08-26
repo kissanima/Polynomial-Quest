@@ -150,7 +150,6 @@ public class LanGameManager : MonoBehaviour
     }
     
     public void UpdateUI() {
-        Debug.Log(sliderHealth);
         sliderHealth.maxValue = player.finalHealth.Value;
         sliderHealth.value = player.currentHealth.Value;
         healthText.SetText(Mathf.FloorToInt(sliderHealth.value).ToString() + " / " + Mathf.FloorToInt(sliderHealth.maxValue).ToString() );

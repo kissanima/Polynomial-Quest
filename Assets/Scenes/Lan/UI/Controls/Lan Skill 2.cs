@@ -217,14 +217,16 @@ public class LanSkill2 : NetworkBehaviour
         gmScript.player.isUsingSkill = true;
         tempSkill.SetParent(gmScript.player.transform.GetChild(3));
         tempSkill.gameObject.SetActive(true);
+        rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         while (elapseTime < .5f)
         {
             elapseTime += Time.deltaTime;
-            rb.MovePosition(rb.position + (joystickDirection * 3) * Time.deltaTime);
+            rb.MovePosition(rb.position + joystickDirection * 3 * Time.fixedDeltaTime );
             yield return null;
             
 
         }
+        rb.interpolation = RigidbodyInterpolation2D.None;
         elapseTime = 0;
         gmScript.player.isUsingSkill = false;
         tempSkill.SetParent(skillEffectParent.GetChild(0));

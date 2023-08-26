@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class WarriorSKill2 : MonoBehaviour
 {
-    LanGameManager gmScript;
+    [SerializeField] LanGameManager gmScript;
     public float finalDamage, additionalDamagePercentage = 1f;
 
 
     private void OnEnable() {
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
+        //gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         finalDamage = (gmScript.player.finalDamage * additionalDamagePercentage) + 50f;
 
         transform.localPosition = Vector3.zero;

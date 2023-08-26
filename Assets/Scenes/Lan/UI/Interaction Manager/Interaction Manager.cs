@@ -7,7 +7,7 @@ public class LanInteractionManager : MonoBehaviour
 {
     public int index, attemps;
     public LanPlayer player;
-    TextMeshProUGUI textBox, attempsText, continueButtonText;
+    TextMeshProUGUI textBox, attempsText, continueButtonText, hintsText;
     LanGameManager gmScript;
     public LanNpc npcScript;
     public GameObject continueButton, answerSelection, attempsCount, attempsLabel;
@@ -27,6 +27,7 @@ public class LanInteractionManager : MonoBehaviour
         gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
 
         continueButtonText = continueButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        hintsText = transform.GetChild(6).GetComponent<TextMeshProUGUI>();
     }
 
     
@@ -90,7 +91,7 @@ public class LanInteractionManager : MonoBehaviour
 
     public void UpdateUI() {
         attempsText.SetText(answerSelection.GetComponent<LanAnswerSelection>().attempts.ToString());
-        transform.GetChild(6).GetComponent<TextMeshProUGUI>().SetText("hints: " + gmScript.player.hint.ToString());
+        hintsText.SetText("hints: " + gmScript.player.hint.ToString());
     }
 
 }

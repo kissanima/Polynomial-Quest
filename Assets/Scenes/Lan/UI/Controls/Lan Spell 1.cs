@@ -18,6 +18,7 @@ public class LanSpell1 : NetworkBehaviour
     Image cooldownImage;
     TextMeshProUGUI cooldownText;
     Color outerColor, innerColor;
+    AudioSource audioSource;
 
     public void Initialize() {
         gmScript = GameObject.FindWithTag("GameManager").transform.GetComponent<LanGameManager>();
@@ -28,7 +29,7 @@ public class LanSpell1 : NetworkBehaviour
         cooldownImageObject = transform.GetChild(1).gameObject;
         cooldownImage = cooldownImageObject.GetComponent<Image>();
         tempCooldownTimer = cooldownTimer / cooldown;
-
+        audioSource = GetComponent<AudioSource>();
         player = gmScript.player.transform;
         target = player.GetChild(1).GetChild(2).GetChild(2);
         range = player.GetChild(1).GetChild(2).GetChild(0);
@@ -113,7 +114,8 @@ public class LanSpell1 : NetworkBehaviour
 
             //start 
             if(cooldownTimer <= 0 && hasPressed == true && hasReleased == true) {
-                player.position = target.position;
+                audioSource.Play(); //play sound effect
+                player.position = target.position; //teleport player
 
                 //
                 cooldownTimer = cooldown;

@@ -37,7 +37,7 @@ public class LanMobsMelee : NetworkBehaviour
     bool dialogue1Done, dialogue2Done;
     //sounds
     AudioSource hitAudioSource, dieAudioSource;
-
+    Transform bloodEffectParent;
     public override void OnNetworkSpawn()
     {
         //initialize variables
@@ -53,7 +53,7 @@ public class LanMobsMelee : NetworkBehaviour
         slider = transform.GetChild(1).GetComponent<Slider>();
         rb = GetComponent<Rigidbody2D>();
         enemyCollider = GetComponent<Collider2D>();
-        
+        bloodEffectParent = GameObject.FindWithTag("BloodEffects").transform;
         if(isBoss) {
             textBox = transform.GetChild(6);
             textBoxText = textBox.GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -274,7 +274,7 @@ public class LanMobsMelee : NetworkBehaviour
         temp.gameObject.SetActive(true);
 
         //spawn blood effects
-        gmScript.player.SpawnBloodEffectServerRpc(NetworkObjectId);
+        //gmScript.player.SpawnBloodEffectServerRpc(NetworkObjectId);
 
         if(currentHealth.Value <= (finalHealth.Value * .15f) && !target.CompareTag("Knight") && !isBoss) {
             enemyCollider.enabled = false;
@@ -307,16 +307,18 @@ public class LanMobsMelee : NetworkBehaviour
 
     }
     private void OnDisable() {
+        if(currentHealth.Value > 0) return;
         Invoke(nameof(RespawnWait), deathTimer);
         //StartCoroutine(DisableWait()); 
     }
-    IEnumerator DisableWait() {
+
+    /* IEnumerator DisableWait() {
         Debug.Log("DisableWait");
         yield return new WaitForSeconds(1);
         //gameObject.SetActive(false);
 
         Invoke(nameof(RespawnWait), deathTimer);
-    }
+    } */
 
     void RespawnWait() {
         Debug.Log("RespawnWait");
@@ -334,6 +336,12 @@ public class LanMobsMelee : NetworkBehaviour
     public void UpdateHealthBar(float oldValue, float newValue) { //TODO:
     slider.maxValue = finalHealth.Value;
     slider.value = newValue;
+
+    if(newValue < oldValue) {
+        Transform bloodEffectTemp = bloodEffectParent.GetChild(0);
+        bloodEffectTemp.SetParent(transform);
+        bloodEffectTemp.gameObject.SetActive(true);
+    }
 
     if(isBoss) {
         if(hasAttacked == false && isEmmanuel) {

@@ -257,6 +257,7 @@ public class LanPlayer : NetworkBehaviour
     }
 
     public void EventAttack() {
+        //if(targetList.Length == 0) return; //check to avoid out of bounds error
         AttackServerRpc(targetList[0].transform.GetSiblingIndex(), finalDamage, NetworkObjectId);
     }
     
@@ -329,7 +330,7 @@ public class LanPlayer : NetworkBehaviour
         temp.gameObject.SetActive(true);
         
         //blood effects
-        SpawnBloodEffectServerRpc(NetworkObjectId);
+        //SpawnBloodEffectServerRpc(NetworkObjectId);
 
         if(currentHealth.Value <= 0) {
             targetList[0].GetComponent<LanMobsMelee>().target = null;
@@ -378,6 +379,12 @@ public class LanPlayer : NetworkBehaviour
     public void UpdateHealthBar(float oldValue, float newValue) {
         sliderHealthWS.value = finalHealth.Value;
         sliderHealthWS.value = newValue;
+
+        if(newValue < oldValue) { //less than means it recieve damage
+        Transform bloodEffectTemp = bloodEffectsParent.GetChild(0);
+        bloodEffectTemp.SetParent(transform.GetChild(3));
+        bloodEffectTemp.gameObject.SetActive(true);
+    }
     }
 
 
@@ -501,7 +508,7 @@ public class LanPlayer : NetworkBehaviour
     }
     [ClientRpc]
     public void SpawnBloodEffectsClientRpc(ulong targetID) { //1
-        Transform temp = bloodEffectsParent.GetChild(0);
+        Transform temp = bloodEffectsParent.GetChild(0).GetChild(0);
         NetworkObject objectFound = null; //optimization
 
         if(objectFound != null && objectFound.NetworkObjectId == targetID) {
