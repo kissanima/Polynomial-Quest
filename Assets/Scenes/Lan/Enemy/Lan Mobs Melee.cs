@@ -31,13 +31,14 @@ public class LanMobsMelee : NetworkBehaviour
     LanPlayer[] players;
     SpriteRenderer[] spriteRenderers;
     LanPlayer targetScript;
-    [SerializeField] bool isBoss, isEmmanuel;
+    [SerializeField] bool isBoss, isEmmanuel, isRespawnable;
     [SerializeField] string[] dialogues;
     [SerializeField] Transform wilson;
     bool dialogue1Done, dialogue2Done;
     //sounds
     AudioSource hitAudioSource, dieAudioSource;
     Transform bloodEffectParent;
+    public Collider2D attackersTarget;
     public override void OnNetworkSpawn()
     {
         //initialize variables
@@ -74,11 +75,9 @@ public class LanMobsMelee : NetworkBehaviour
         interactionManager = GameObject.FindWithTag("UI").transform.GetChild(3).GetComponent<LanInteractionManager>();
 
 
-        ////////////////OPTIMIZATIONS/////////////
-        //disable this script after initialization
-        GetComponent<LanMobsMelee>().enabled = false;
+        ////////////////OPTIMIZATIONS///////////
         //transform.GetChild(3).GetComponent<Animator>().enabled = false;
-        transform.GetChild(3).gameObject.SetActive(false);
+        //transform.GetChild(3).gameObject.SetActive(false);
     }
 
     
@@ -100,7 +99,7 @@ public class LanMobsMelee : NetworkBehaviour
         attackCooldown -= Time.deltaTime;
         idleTime += Time.deltaTime;
 
-    if (isIdle && !isAttacking) {        //if idle and not attacking
+    if (isIdle && !isAttacking && IsOwnedByServer) {        //if idle and not attacking
         if(idleTime !>= 3) {       
             if (!isWalking) {
             Vector2 randomDirection = new Vector2(Random.Range(-.5f, .5f), Random.Range(-.5f, .5f));
@@ -185,8 +184,12 @@ public class LanMobsMelee : NetworkBehaviour
 
         if (distance <= attackRange) {         //if distance of the player is less or equal attackRange, attack
             rb.velocity = Vector2.zero;
-            if(targetScript.currentHealth.Value > 0) { //if health is greater than 0, attack
-                AttackServerRpc();
+            if(targetScript != null && targetScript.currentHealth.Value > 0 && IsOwnedByServer) { //if health is greater than 0, attack
+                if(attackCooldown <= 0) {
+                    AttackServerRpc(finalDamage, targetScript.NetworkObjectId);
+                    attackCooldown = 1 / attackSpeed;
+                }
+              
             }
             else {
                 target = null;
@@ -235,22 +238,30 @@ public class LanMobsMelee : NetworkBehaviour
    
 
     [ServerRpc(RequireOwnership = false)]
-    private void AttackServerRpc() {
-        if(attackCooldown <= 0) {
+    private void AttackServerRpc(float finalDamage, ulong playerID) {
+        Debug.Log(playerID);
             if(target.CompareTag("Knight")) {
                 target.GetComponent<LanKnights>().Attacked(finalDamage);
             }
             else {
-                target.GetComponent<LanPlayer>().Attacked(finalDamage);
-            }
-
-            attackCooldown = 1 / attackSpeed;
-        }  
+                AttackServerClientRpc(finalDamage, playerID);
+                attackCooldown = 1 / attackSpeed;
+            
+        }
     }
 
-    
+    [ClientRpc] void AttackServerClientRpc(float finalDamage, ulong playerID) {
+        foreach (var item in gmScript.players)
+        {
+            if(item.NetworkObjectId == playerID) {
+                item.Attacked(finalDamage, playerID);
+                break;
+            }
+        }
+    }
+
     public void Attacked(float damage, ulong networkId) {
-        SubtracthealthServerRpc(damage); // call server to subtract network variable health using ServerRpc
+        SubtracthealthServerRpc(damage, networkId); // call server to subtract network variable health using ServerRpc
         //players = FindObjectsOfType<LanPlayer>();
 
         foreach (var p in gmScript.players) 
@@ -262,6 +273,7 @@ public class LanMobsMelee : NetworkBehaviour
                 break;
             }
         }
+        
         isIdle = false;
         isAttacking = true;
 
@@ -275,10 +287,9 @@ public class LanMobsMelee : NetworkBehaviour
         temp.gameObject.SetActive(true);
 
         //spawn blood effects
-        //gmScript.player.SpawnBloodEffectServerRpc(NetworkObjectId);
+        //gmScript.player.SpawnBloodEffectServerR     pc(NetworkObjectId);
 
-        if(currentHealth.Value <= (finalHealth.Value * .15f) && !target.CompareTag("Knight") && !isBoss ) {
-            if(!targetScript.IsLocalPlayer) return;
+        if(currentHealth.Value <= (finalHealth.Value * .15f) && !isBoss  && targetScript.NetworkObjectId == gmScript.player.NetworkObjectId) {
             enemyCollider.enabled = false;
             isAttacking = false;
             isIdle = false;
@@ -327,7 +338,10 @@ public class LanMobsMelee : NetworkBehaviour
         Transform bloodEffectTemp = bloodEffectParent.GetChild(0);
         bloodEffectTemp.SetParent(transform);
         bloodEffectTemp.gameObject.SetActive(true);
+        
     }
+
+
 
     if(isBoss) {
         if(hasAttacked == false && isEmmanuel) {
@@ -351,7 +365,8 @@ public class LanMobsMelee : NetworkBehaviour
 
 
     //call server to subtract
-    [ServerRpc(RequireOwnership = false)] public void SubtracthealthServerRpc(float damage) {
+    [ServerRpc(RequireOwnership = false)] public void SubtracthealthServerRpc(float damage, ulong playerID) {
+        if(gmScript.player.NetworkObjectId != playerID) return;
         currentHealth.Value -= damage;  //currentHealth.Value = currentHealth.Value - damage
 
         //play animation

@@ -154,6 +154,7 @@ public class LanGameManager : MonoBehaviour
     }
 
     public IEnumerator RedrawWeather() {
+        weatherTitleText.gameObject.SetActive(false);
         yield return new WaitForSeconds(30f);
         player.RandomWeatherServerRpc();
     }

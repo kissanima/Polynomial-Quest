@@ -153,6 +153,5 @@ public class LanCreateCharacter : MonoBehaviour
         lanPanel.transform.GetChild(7).gameObject.SetActive(false); //disable create character button
         lanPanel.transform.GetChild(6).gameObject.SetActive(true); //showw select difficulty
 
-        Debug.Log("Save success " + "/n" + PlayerPrefs.GetString("username"));
     }
 }

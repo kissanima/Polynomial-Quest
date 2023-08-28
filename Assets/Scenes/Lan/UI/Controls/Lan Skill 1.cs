@@ -222,7 +222,7 @@ public class LanSkill1 : NetworkBehaviour
                     if((gmScript.player.currentMana - 10) >= 0) {  //15
                     gmScript.player.currentMana -= 10;
                     gmScript.UpdateUI();
-                    AssassinSkill1ServerRpc(gmScript.player.NetworkObjectId, 3f, joystickDirection);
+                    AssassinSkill1ServerRpc(gmScript.player.NetworkObjectId, joystickDirection);
 
                     //start skill cooldown
                     cooldownTimer = cooldown;
@@ -300,22 +300,19 @@ public class LanSkill1 : NetworkBehaviour
     }
 
 
-
-    ////////////////////////////////////////////////////ASSASSIN SKILL 1
     [ServerRpc(RequireOwnership = false)] 
-    public void AssassinSkill1ServerRpc(ulong playerID, float projectileSpeed, Vector2 joystickDirection) { //
-        AssassinSkill1ClientRpc(playerID, projectileSpeed, joystickDirection); //1
+    public void AssassinSkill1ServerRpc(ulong playerID, Vector2 joystickDirection) { //
+        AssassinSkill1ClientRpc(playerID, joystickDirection); //1
     }
     [ClientRpc]
-    void AssassinSkill1ClientRpc(ulong playerID, float projectileSpeed, Vector2 joystickDirection) {
+    void AssassinSkill1ClientRpc(ulong playerID, Vector2 joystickDirection) {
+        Debug.Log("skill 1 assassin called");
         foreach (var item in gmScript.players)
         {
             if(item.NetworkObjectId == playerID) {
                 instantiatedSkill = Instantiate(AssassinSkillObject, item.transform.GetChild(3));
-                AssassinSKill1 temp = instantiatedSkill.GetComponent<AssassinSKill1>(); //get component to access the variables
-                temp.playerID = playerID;
-                temp.projectileSpeed = projectileSpeed;
-                temp.direction = joystickDirection;
+                instantiatedSkill.GetComponent<AssassinSKill1>().playerID = playerID;; 
+                instantiatedSkill.GetComponent<AssassinSKill1>().direction = joystickDirection;
 
                 instantiatedSkill.gameObject.SetActive(true);
                 break;

@@ -37,6 +37,7 @@ public class Intro : MonoBehaviour
     Vector3 position7 = new(34,64,0);
 
     float elapseTime, moveDuration = 1f, index;
+    [SerializeField]LanMobsMelee[] attackingMonsters;
 
     private void Awake() {
         npcParent = GameObject.Find("Npc").transform;
@@ -89,7 +90,7 @@ public class Intro : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
 
-        yield return new WaitForSeconds(1f); // pause
+        yield return new WaitForSeconds(.5f); // pause
         emmanueltextBox.text = null;
 
         //start text 2
@@ -100,7 +101,7 @@ public class Intro : MonoBehaviour
         }
         
         ///////////////////DUB 2 start
-        yield return new WaitForSeconds(2f); // pause
+        yield return new WaitForSeconds(1f); // pause
         audioSource.clip = audioClips[1];
         audioSource.Play();
         emmanueltextBox.text = null;
@@ -322,8 +323,6 @@ public class Intro : MonoBehaviour
 
 
 
-        audioSource.clip = audioClips[4];
-        audioSource.Play();
         yield return new WaitForSeconds(1f); //pause
         wilsonTextBox.text = null;
         foreach (var item in wilsonDialogues[1])
@@ -355,7 +354,7 @@ public class Intro : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(1f); //pause
+        yield return new WaitForSeconds(.1f); //pause
         wilsonTextBox.text = null;
         foreach (var item in wilsonDialogues[4])
         {
@@ -374,7 +373,35 @@ public class Intro : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
 
-        yield return new WaitForSeconds(1f); //pause
+        
+        yield return new WaitForSeconds(1.5f); //pause
+        wilsonTextBox.text = null; /*
+        foreach (var item in wilsonDialogues[5]) //oh no monsters are attacking
+        {
+            wilsonTextBox.text += item;
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        foreach (var item in attackingMonsters) 
+        {
+            item.target = item.attackersTarget;
+            item.isAttacking = true;
+        }
+
+        */
+
+
+
+
+
+
+
+
+
+
+
+
+
         wilsonTextBox.transform.parent.gameObject.SetActive(false); //textbox disable
         ui.GetChild(2).gameObject.SetActive(true); // true controls
         ui.GetChild(6).gameObject.SetActive(true); // true health bars

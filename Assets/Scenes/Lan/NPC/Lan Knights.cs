@@ -6,7 +6,8 @@ using TMPro;
 
 public class LanKnights : NetworkBehaviour
 {
-    [SerializeField] float finalHealth = 10000, finalDamage = 1, moveSpeed = 1f, attackRange = 0.5f,
+    public NetworkVariable<float> currentHealth = new(10000, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    [SerializeField] float finalDamage = 1, moveSpeed = 1f, attackRange = 0.5f,
     attackCooldown, attackSpeed = 1;
     int targetIndex;
 
@@ -18,6 +19,7 @@ public class LanKnights : NetworkBehaviour
    LanGameManager gmScript;
    Animator anim;
    Transform mobsParent, damagePool;
+   LanMobsMelee targetScript;
 
     void Start() {  
     rb = GetComponent<Rigidbody2D>();
@@ -32,21 +34,19 @@ public class LanKnights : NetworkBehaviour
 
    private void Update() {
     attackCooldown -= Time.deltaTime;
-    if(target != null) { //if there is target
+    if(target != null && !targetScript.isDead) { //if there is target
         float distance = Vector2.Distance(transform.position, target.transform.position); //calculate distance
 
         if(distance <= attackRange) { //start attacking
         anim.SetBool("isRunning", false);
         anim.SetBool("isIdle", true);
 
-        if(attackCooldown <=0) {
-            AttackServerRpc(targetIndex, finalDamage, NetworkObjectId);
-            anim.Play("Attack");
-            Debug.Log("Knight has Attack");
-
-            attackCooldown = 1 / attackSpeed;
-        }
-
+            if(attackCooldown <=0) {
+                AttackServerRpc(targetIndex, finalDamage, NetworkObjectId);
+                anim.Play("Attack");
+                attackCooldown = 1 / attackSpeed;
+            }
+        rb.velocity = Vector2.zero;
         }
         else if(distance > attackRange) {// if true, start chasing      0-1
             Vector2 targetDirection = (target.transform.position - transform.position).normalized * moveSpeed; //calculate target direction
@@ -71,6 +71,7 @@ public class LanKnights : NetworkBehaviour
    private void OnTriggerEnter2D(Collider2D other) {
     if(!other.CompareTag("Enemy")) return;
     target = other;
+    targetScript = target.GetComponent<LanMobsMelee>();
     targetIndex = other.transform.GetSiblingIndex();
 
    }

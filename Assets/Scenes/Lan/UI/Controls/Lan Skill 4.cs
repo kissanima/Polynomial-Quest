@@ -292,7 +292,7 @@ public class LanSkill4 : NetworkBehaviour
             gmScript.player.attackSpeed += 1;
 
             yield return new WaitForSeconds(10);
-            instantiatedSkill.gameObject.SetActive(false);
+            instantiatedSkill.gameObject.SetActive(false); 
             gmScript.player.moveSpeed -= 1f;
             gmScript.player.attackSpeed -= 1;
         }

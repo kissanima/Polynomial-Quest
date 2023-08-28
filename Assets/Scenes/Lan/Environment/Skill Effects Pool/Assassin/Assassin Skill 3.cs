@@ -13,7 +13,6 @@ public class AssassinSkill3 : MonoBehaviour
    private void OnEnable() {
     player = gmScript.player.transform;
     finalDamage = gmScript.player.finalDamage * 3.5f;
-    Debug.Log(finalDamage);
     if(playerID != gmScript.player.NetworkObjectId) return; 
         targetList = Physics2D.OverlapCircleAll(transform.position, 0.35f, 1 << 7);
 

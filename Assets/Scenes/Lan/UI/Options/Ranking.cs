@@ -30,10 +30,10 @@ public class Ranking : MonoBehaviour
                 }
             }
         }
-        byScore.SetText("");
-        foreach (var item in players)
+        byScore.SetText("Name                 SCORE \n");
+        foreach (var item in players.Reverse())
         {
-            byScore.SetText("Name                 SCORE \n" + byScore.text + "\n" + item.username + "              " + item.score.Value.ToString() + "\n");
+            byScore.SetText(byScore.text + "\n" + item.username + "              " + item.score.Value.ToString() + "\n");
         }
         byLevel.gameObject.SetActive(false);
         byScore.gameObject.SetActive(true);
@@ -49,10 +49,10 @@ public class Ranking : MonoBehaviour
                 }
             }
         }
-        byLevel.SetText("");
-        foreach (var item in players)
+        byLevel.SetText("Name                 SCORE \n");
+        foreach (var item in players.Reverse())
         {
-            byScore.SetText("Name                 SCORE \n" + byScore.text + "\n" + item.username + "              " + item.level.ToString() + "\n");
+            byLevel.SetText(byLevel.text + "\n" + item.username + "              " + item.level.Value.ToString() + "\n");
         }
         byLevel.gameObject.SetActive(true);
         byScore.gameObject.SetActive(false);

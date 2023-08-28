@@ -20,6 +20,7 @@ public class AssassinSKill1 : MonoBehaviour
     }
 
      private void OnEnable() {
+        projectileSpeed = 3;
         player = gmScript.player.transform;
         StartCoroutine(MovePosition());
         finalDamage = gmScript.player.finalDamage * (additionalDamagePercentage / 100) + gmScript.player.finalDamage;
@@ -51,9 +52,9 @@ public class AssassinSKill1 : MonoBehaviour
         LanMobsMelee enemy;
         if(other.CompareTag("Enemy")) {
             enemy = other.GetComponent<LanMobsMelee>();
-            gmScript.player.AttackServerRpc(other.transform.GetSiblingIndex(), finalDamage, gmScript.player.NetworkObjectId);
+            gmScript.player.AttackServerRpc(other.transform.GetSiblingIndex(), finalDamage, gmScript.player.NetworkObjectId); //deal damage
             //teleport player to this projectile current position
-            player.position = transform.position;
+            player.position = transform.position; 
 
             //destroy
             Destroy(gameObject);

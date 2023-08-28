@@ -37,7 +37,7 @@ public class LanPlayer : NetworkBehaviour
     public float moveSpeed = 1f, attackSpeed = 1, attackCooldown = 0, baseDamage= 25, finalDamage, currentExp,
     baseRequiredExp = 75, finalRequiredExp, currentMana, baseMana = 75, finalMana,
     potion, weaponDmg, baseArmor = 5, finalArmor, itemArmor, equipedWeaponIndex, equipedArmorIndex, deathTimer = 5,
-    damageReduction, attackRange, hint = 5, finishIntro;
+    damageReduction, attackRange, hint = 10, finishIntro;
     public string username, playerClass;
     public Collider2D[] targetList;
     public Slider sliderHealthWS;
@@ -71,7 +71,12 @@ public class LanPlayer : NetworkBehaviour
         bloodEffectsParent = GameObject.FindWithTag("BloodEffects").transform;
         skillEffectsParent = GameObject.FindWithTag("SkillEffects").transform;
         maps = GameObject.FindWithTag("Maps").transform;
+        anim = transform.GetChild(0).GetComponent<Animator>(); //for animations
         
+        if(!IsLocalPlayer) {
+            transform.GetChild(6).gameObject.SetActive(false);
+        }
+
         //check if is owner if not, return;
         if(!IsOwner) return; 
         
@@ -97,9 +102,9 @@ public class LanPlayer : NetworkBehaviour
         currentMana = finalMana;
         finalRequiredExp = baseRequiredExp;
         potion = 10;
+        hint = 10;
 
         damagePool = GameObject.FindWithTag("DamagePool").transform; // for damage pops
-        anim = transform.GetChild(0).GetComponent<Animator>(); //for animations
         transform.GetChild(0).GetComponent<ClientNetworkAnimator>().Animator = anim; //to sync animations across clients
         //transform.parent.GetComponent<LanCameraController>().player = gameObject;
         joystick = GameObject.FindWithTag("UI").transform.GetChild(2).GetChild(0).GetComponent<FixedJoystick>(); //joystick for movement
@@ -301,8 +306,10 @@ public class LanPlayer : NetworkBehaviour
     }
 
 
-    public void Attacked(float damage) { //damage = 10
-        if(!IsOwner) return;
+    public void Attacked(float damage, ulong playerID) { //damage = 10
+    if(NetworkObjectId == playerID && IsLocalPlayer) {
+        Debug.Log("Attacked " + playerID);
+    
         anim.Play("Hit");
         hitAudioSource.Play();
 
@@ -355,6 +362,8 @@ public class LanPlayer : NetworkBehaviour
             }
             StartCoroutine(playerRespawnWait());
         }
+    }
+
     }
 
     IEnumerator playerRespawnWait() {
@@ -508,28 +517,27 @@ public class LanPlayer : NetworkBehaviour
     }
 
     [ClientRpc] public void CallUpdatePlayerNameInfoClientRpc() {
-        Debug.Log("get name testing called" + NetworkObjectId);
+        GetLocalName(username, NetworkObjectId);
     }
 
-    void testingName() {
-        Debug.Log(username);
+    void GetLocalName(string name, ulong playerID) {
+       CallUpdatePlayerNameLevelWSServerRpc(name, playerID);
     }
 
     [ServerRpc(RequireOwnership = false)]
     public void CallUpdatePlayerNameLevelWSServerRpc(string name, ulong NetworkObjectId) {
-        Debug.Log(NetworkObjectId);
-        //UpdatePlayerNameLevelWSClientRpc(name, NetworkObjectId);
+        UpdatePlayerNameLevelWSClientRpc(name, NetworkObjectId);
     }
 
     [ClientRpc]
-    public void UpdatePlayerNameLevelWSClientRpc(string name, ulong id) { //update player name and level in world space
+    public void UpdatePlayerNameLevelWSClientRpc(string name, ulong playerID) { //update player name and level in world space
         //find all player scripts
         LanPlayer[] temp = FindObjectsOfType<LanPlayer>();
         gmScript.players = temp;
 
         foreach (var item in temp)
         {
-            if(item.NetworkObjectId == id) {
+            if(item.NetworkObjectId == playerID) {
                 item.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().SetText(name + " lvl. " + level.Value);
                 item.username = name;
                 break;
@@ -554,10 +562,10 @@ public class LanPlayer : NetworkBehaviour
 
     [ServerRpc(RequireOwnership = false)]
     public void StartIntroductionServerRpc() {
-        StartIntroductionClientRpc();
+        StartIntroductionClientRpc(finishIntro);
     }
     [ClientRpc]
-    void StartIntroductionClientRpc() {
+    void StartIntroductionClientRpc(float finishIntro) {
         GameObject ui = GameObject.FindWithTag("UI").gameObject;
         if(IsHost && finishIntro == 0) {
             ui.transform.GetChild(11).gameObject.SetActive(true); //start intro
