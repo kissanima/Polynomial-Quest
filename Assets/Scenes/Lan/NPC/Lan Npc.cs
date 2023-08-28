@@ -36,8 +36,9 @@ public class LanNpc : MonoBehaviour
         }
     }
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "Player" && trigger.isTrigger) {
+        if(other.CompareTag("Player") && trigger.isTrigger) {
             player = other.GetComponent<LanPlayer>();
+            if(!player.IsLocalPlayer) return;
             interactButton.SetActive(true);
             attackButton.SetActive(false);
             gmScript.player.npc = gameObject;
@@ -45,7 +46,7 @@ public class LanNpc : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        if(other.tag == "Player" && trigger.isTrigger) {
+        if(other.CompareTag("Player") && trigger.isTrigger) {
             player = null;
             attackButton.SetActive(true);
             interactButton.SetActive(false);

@@ -13,7 +13,7 @@ public class MageSkill4 : MonoBehaviour
     private void OnEnable() {
         gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         rb = GetComponent<Rigidbody2D>();
-        finalDamage = gmScript.player.finalDamage + gmScript.player.finalDamage * additionalDamagePercentage;
+        finalDamage = gmScript.player.finalDamage + 25;
 
         StartCoroutine(DetectEnemyWait()); 
         StartCoroutine(MoveTo());

@@ -23,7 +23,8 @@ public class LanItemsWS : MonoBehaviour
         
         int temp = inventoryManager.transform.GetChild(0).childCount; //get child count of inventory panel
         gmScript.player.inventory[temp] = itemIndex.ToString();  //set value to array
-        Instantiate(itemPool.transform.GetChild(itemIndex-1), inventoryManager.transform.GetChild(0)); //make a copy of the item
+        Transform instantiatedItem = Instantiate(itemPool.transform.GetChild(itemIndex-1), inventoryManager.transform.GetChild(0)); //make a copy of the item
+        instantiatedItem.GetComponent<LanItemSS>().itemIndex = itemIndex + 1;
         gmScript.SavePlayerData();
         Destroy(gameObject);
     }

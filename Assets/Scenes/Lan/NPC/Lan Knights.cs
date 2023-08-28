@@ -101,7 +101,5 @@ public class LanKnights : NetworkBehaviour
         temp.SetParent(transform.GetChild(1));
         temp.gameObject.SetActive(true);
         
-        //blood effects
-        gmScript.player.SpawnBloodEffectServerRpc(NetworkObjectId);
     }
 }

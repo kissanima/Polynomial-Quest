@@ -29,9 +29,9 @@ public class LanGameManager : MonoBehaviour
     public AudioClip[] WarriorSoundEffects;
     public AudioClip[] MageSoundEffects;
     public AudioClip playerHitSoundEffect, playerDieSoundEffect;
-
     Light2D light2D;
     public Sprite[] warriorSkillIcons, mageSkillIcons, assassinSkillIcons;
+    [SerializeField] TextMeshProUGUI weatherTitleText, weatherInfoText, scoreText;
 
     public void Initialize() {
         Application.targetFrameRate = 60;
@@ -132,7 +132,10 @@ public class LanGameManager : MonoBehaviour
     }
 
     public void RainWeather() {
-            player.transform.GetChild(2).gameObject.SetActive(true);
+        weatherTitleText.gameObject.SetActive(true);
+        weatherTitleText.SetText("raining");
+        weatherInfoText.SetText("       -10% movespeed");
+            player.transform.GetChild(2).GetChild(0).gameObject.SetActive(true);
 
             player.moveSpeed -= (player.moveSpeed * .10f); //debuffs
             light2D.intensity = .9f;
@@ -142,11 +145,17 @@ public class LanGameManager : MonoBehaviour
 
     IEnumerator RandomWeatherWait() {
         yield return new WaitForSeconds(30f);
-            player.transform.GetChild(2).gameObject.SetActive(false);
-            player.moveSpeed += (player.moveSpeed * .10f);
-            light2D.intensity =  1f;
+        weatherTitleText.gameObject.SetActive(false);
+        player.transform.GetChild(2).GetChild(0).gameObject.SetActive(false);
+        player.moveSpeed += player.moveSpeed * .10f;
+        light2D.intensity =  1f;
 
-            player.RandomWeatherServerRpc();
+        player.RandomWeatherServerRpc();
+    }
+
+    public IEnumerator RedrawWeather() {
+        yield return new WaitForSeconds(30f);
+        player.RandomWeatherServerRpc();
     }
     
     public void UpdateUI() {
@@ -164,15 +173,18 @@ public class LanGameManager : MonoBehaviour
 
         potionText.SetText(player.potion.ToString());
 
-        usernameSS.SetText(player.username + "  Lv. " + player.level);
-        usernameWS.SetText(player.username + "  Lv. " + player.level);
+        usernameSS.SetText(player.username + "  Lv. " + player.level.Value);
+        usernameWS.SetText(player.username + "  Lv. " + player.level.Value);
+
+        scoreText.SetText("SCORE: " + player.score.Value.ToString());
 
     }
 
 
     public void LoadPlayerData() {
         player.username = PlayerPrefs.GetString("username");
-        player.level = PlayerPrefs.GetFloat("level");
+        //player.nameNVariable.Value = player.username;
+        player.level.Value = PlayerPrefs.GetFloat("level");
         player.playerClass = PlayerPrefs.GetString("playerClass");
         player.currentExp = PlayerPrefs.GetFloat("currentExp");
         player.finalRequiredExp = PlayerPrefs.GetFloat("finalRequiredExp");
@@ -182,7 +194,8 @@ public class LanGameManager : MonoBehaviour
         player.hint = PlayerPrefs.GetFloat("hint");
         player.finishIntro = PlayerPrefs.GetFloat("finishIntro");
         player.score.Value = PlayerPrefs.GetFloat("score");
-
+    
+        player.CallUpdatePlayerNameInfoServerRpc(); //get names
         player.updateStats();
         UpdateUI();
 
@@ -205,6 +218,7 @@ public class LanGameManager : MonoBehaviour
         {
             if(temp == itemPool.transform.GetChild(j).GetSiblingIndex() && temp >= 0) { 
                 GameObject tempInstance = Instantiate(itemPool.transform.GetChild(j).gameObject, inventoryManager.transform.GetChild(0)); //instantiate
+                tempInstance.GetComponent<LanItemSS>().itemIndex = itemPool.transform.GetChild(j).GetSiblingIndex();
                 tempInstance.gameObject.SetActive(true); 
                 break;
             }
@@ -233,7 +247,7 @@ public class LanGameManager : MonoBehaviour
 
     public void SavePlayerData() {
 
-        PlayerPrefs.SetFloat("level", player.level);
+        PlayerPrefs.SetFloat("level", player.level.Value);
         PlayerPrefs.SetFloat("currentExp", player.currentExp);
         PlayerPrefs.SetFloat("finalRequiredExp", player.finalRequiredExp);
         PlayerPrefs.SetFloat("potion", player.potion);

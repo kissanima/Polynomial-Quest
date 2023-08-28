@@ -760,7 +760,7 @@ Transform:
   m_Children:
   - {fileID: 487385653137950374}
   - {fileID: 1368383370128777818}
-  - {fileID: 7599138071274906546}
+  - {fileID: 1190435621668429793}
   - {fileID: 5696686719928671245}
   - {fileID: 7836883346158119254}
   - {fileID: 7886414905409470011}
@@ -817,6 +817,8 @@ MonoBehaviour:
   currentHealth:
     m_InternalValue: 0
   score:
+    m_InternalValue: 0
+  levelNVariable:
     m_InternalValue: 0
   inventory:
   - 0
@@ -989,8 +991,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 1
+  m_Mass: 0.0001
+  m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -2082,6 +2084,38 @@ Transform:
   - {fileID: 5099780939708326761}
   m_Father: {fileID: 233320264430173345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3908083854345766641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1190435621668429793}
+  m_Layer: 6
+  m_Name: Weather
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1190435621668429793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3908083854345766641}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7599138071274906546}
+  m_Father: {fileID: 4725502977728270332}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4262882201079233091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,7 +2180,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4725502977728270332}
+  m_Father: {fileID: 1190435621668429793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -18.8}
 --- !u!198 &4198476002721975003
 ParticleSystem:

@@ -12,7 +12,8 @@ public class LanSkill2 : NetworkBehaviour
     Joystick joystick;
     Image outerCircle, innerCircle, skillImage, inCooldownSkillImage;
     public float baseDamage, damageModifier, finalDamage;
-    Transform player, target, range, arrow, cone, skillEffectParent, tempSkillIndicator, tempSkill, instantiatedSkill;
+    Transform player, target, range, arrow, cone, skillEffectParent, tempSkillIndicator, tempSkill, instantiatedSkill, warriorSkillObject, mageSkillObject,
+    AssassinSkillObject;
     bool hasInitialized, hasPressed, hasReleased, isDirectCast;
     float skillRange = .73f, cooldownTimer, tempCooldownTimer, elapseTime, manaCost;
     public float cooldown;
@@ -26,6 +27,7 @@ public class LanSkill2 : NetworkBehaviour
     Vector3 targetPosition;
     AudioSource audioSource;
     [SerializeField] AudioClip warriorSkill2SoundEffect;
+    [SerializeField] AudioClip mageSkill2SoundEffect;
 
     public void Initialize() {
         gmScript = GameObject.FindWithTag("GameManager").transform.GetComponent<LanGameManager>();
@@ -52,7 +54,8 @@ public class LanSkill2 : NetworkBehaviour
         cone = player.transform.GetChild(1).GetChild(2).GetChild(1);
         arrow = player.transform.GetChild(1).GetChild(2).GetChild(3);
 
-        tempSkill = skillEffectParent.GetChild(0).GetChild(1);
+        warriorSkillObject = skillEffectParent.GetChild(0).GetChild(1);
+        AssassinSkillObject = skillEffectParent.GetChild(3).GetChild(1);
 
         switch (playerClass)
         {
@@ -65,6 +68,12 @@ public class LanSkill2 : NetworkBehaviour
             case "Mage":
             skillImage.sprite = gmScript.mageSkillIcons[1]; //set image 
             inCooldownSkillImage.sprite = gmScript.mageSkillIcons[1]; //set image 
+            tempSkillIndicator = target;
+            manaCost = 20;
+            audioSource.clip = mageSkill2SoundEffect;
+            break;
+
+            case "Assassin":
             tempSkillIndicator = target;
             manaCost = 20;
             break;
@@ -141,6 +150,11 @@ public class LanSkill2 : NetworkBehaviour
                 // Move circle towards target position
                 target.position = targetPosition;
                 break;
+
+                case "Assassin":
+                //skill range indicator
+                range.localScale = new Vector2(.15f,.15f);
+                break;
             }
             //target.position = Vector3.MoveTowards(player.position, targetPosition, 5f );
 
@@ -177,7 +191,6 @@ public class LanSkill2 : NetworkBehaviour
                     gmScript.player.currentMana -= 20;
                     gmScript.UpdateUI();
                     StartCoroutine(WarriorSkill2Wait());
-                    audioSource.Play(); //play sound effect
 
                     //start skill cooldown
                     cooldownTimer = cooldown;
@@ -200,8 +213,21 @@ public class LanSkill2 : NetworkBehaviour
                     hasReleased = false;
                     }
                     break;
-                }
 
+                    case "Assassin":
+                    if((gmScript.player.currentMana - 20) >= 0) {
+                    gmScript.player.currentMana -= 20;
+                    gmScript.UpdateUI();
+
+                    AssassinSkill2ServerRpc(gmScript.player.NetworkObjectId);
+                    //start skill cooldown
+                    cooldownTimer = cooldown;
+                    hasPressed = false;
+                    hasReleased = false;
+                    }
+                    break;
+                }
+                audioSource.Play(); //play sound effect
                 //start skill cooldown
                 cooldownTimer = cooldown;
                 hasPressed = false;
@@ -233,4 +259,20 @@ public class LanSkill2 : NetworkBehaviour
         tempSkill.gameObject.SetActive(false);
     }
 
+    [ServerRpc(RequireOwnership = false)]
+    void AssassinSkill2ServerRpc(ulong playerID) {
+        AssassinSkill2ClientRpc(playerID);
+    }
+    [ClientRpc]
+    void AssassinSkill2ClientRpc(ulong playerID) {
+        foreach (var item in gmScript.players)
+        {
+            if(item.NetworkObjectId == playerID) {
+                instantiatedSkill = Instantiate(AssassinSkillObject, item.transform.GetChild(3));
+                instantiatedSkill.GetComponent<AssassinSkill2>().playerID = playerID;
+                instantiatedSkill.gameObject.SetActive(true);
+            }
+            
+        }
+    }
 }

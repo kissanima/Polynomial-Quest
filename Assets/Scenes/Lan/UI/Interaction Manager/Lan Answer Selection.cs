@@ -44,7 +44,6 @@ public class LanAnswerSelection : MonoBehaviour
 
         
         if(!npc.isFillinTheBlanks) {  //isfill in the blanks false, if true, it has choices
-            Debug.Log("ïs with choices");
             if(choices[1].Length > 5) {  //set text size
                 buttons[0].transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 15;
                 buttons[1].transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 15;
@@ -195,7 +194,7 @@ public class LanAnswerSelection : MonoBehaviour
             if(attempts <= 0 && isAI) { //if wrong and attemp is zero
                 enemyCollider.enabled = true;
                 enemy.isDead = false;
-                npc.attempts = 3;
+                npc.attempts = 2;
 
                 //heal enemy
                 if(enemy.currentHealth.Value <= 0) { //if dead and health is negative

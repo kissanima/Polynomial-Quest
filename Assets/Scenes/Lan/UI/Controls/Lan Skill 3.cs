@@ -12,7 +12,8 @@ public class LanSkill3 : NetworkBehaviour
     Joystick joystick;
     Image outerCircle, innerCircle, skillImage, inCooldownSkillImage;
     public float baseDamage, damageModifier, finalDamage;
-    Transform player, target, range, arrow, cone, skillEffectParent, tempSkillIndicator, instantiatedSkill;
+    Transform player, target, range, arrow, cone, skillEffectParent, tempSkillIndicator, instantiatedSkill, warriorSkillObject, mageSkillObject,
+    AssassinSkillObject;
     public Transform tempSkill;
     bool hasInitialized, hasPressed, hasReleased, warriorSkillStart, isSkillUseTarget = true;
     float skillRange = .73f, cooldown = 15f, cooldownTimer, tempCooldownTimer, elapseTime, ownerID, manaCost;
@@ -22,6 +23,8 @@ public class LanSkill3 : NetworkBehaviour
     string playerClass;
     Vector2 joystickDirection;
     Rigidbody2D rb;
+    AudioSource audioSource;
+    [SerializeField] AudioClip mageSkill3SoundEffect;
 
     public void Initialize() {
         gmScript = GameObject.FindWithTag("GameManager").transform.GetComponent<LanGameManager>();
@@ -35,6 +38,8 @@ public class LanSkill3 : NetworkBehaviour
         cooldownImage = cooldownImageObject.GetComponent<Image>();
         inCooldownSkillImage = transform.GetChild(1).GetComponent<Image>();
         tempCooldownTimer = cooldownTimer / cooldown;
+        audioSource = GetComponent<AudioSource>();
+        
 
         player = gmScript.player.transform;
         rb = gmScript.player.GetComponent<Rigidbody2D>();
@@ -45,6 +50,9 @@ public class LanSkill3 : NetworkBehaviour
         cone = player.transform.GetChild(1).GetChild(2).GetChild(1);
         arrow = player.transform.GetChild(1).GetChild(2).GetChild(3);
 
+        warriorSkillObject = skillEffectParent.GetChild(0).GetChild(2);
+        mageSkillObject = skillEffectParent.GetChild(1).GetChild(2).GetChild(1);
+        AssassinSkillObject = skillEffectParent.GetChild(3).GetChild(2); //skill effect object
 
         switch (playerClass)
         {
@@ -52,7 +60,6 @@ public class LanSkill3 : NetworkBehaviour
             tempSkillIndicator = target;
             range.localScale = new Vector2(range.localScale.x * .5f, range.localScale.y * .5f);
             skillRange *= .5f;
-            tempSkill = skillEffectParent.GetChild(0).GetChild(2);
             manaCost = 20;
             break;
 
@@ -60,8 +67,15 @@ public class LanSkill3 : NetworkBehaviour
             tempSkillIndicator = target;
             skillImage.sprite = gmScript.mageSkillIcons[2];
             inCooldownSkillImage.sprite = gmScript.mageSkillIcons[2];
-            tempSkill = skillEffectParent.GetChild(1).GetChild(2).GetChild(1);
             manaCost = 10;
+            audioSource.clip = mageSkill3SoundEffect;
+            break;
+
+            case "Assassin":
+            tempSkillIndicator = target;
+            skillImage.sprite = gmScript.mageSkillIcons[2];
+            inCooldownSkillImage.sprite = gmScript.mageSkillIcons[2];
+            manaCost = 15;
             break;
         }
 
@@ -169,29 +183,30 @@ public class LanSkill3 : NetworkBehaviour
                 {
                     case "Warrior":
                     if((gmScript.player.currentMana - 20) >= 0) {
-                    gmScript.player.currentMana -= 20;
-                    gmScript.UpdateUI();
-                    WarriorSkill3ServerRpc(joystickDirection.x, target.position, gmScript.player.NetworkObjectId);
+                        gmScript.player.currentMana -= 20;
+                        gmScript.UpdateUI();
+                        WarriorSkill3ServerRpc(joystickDirection.x, target.position, gmScript.player.NetworkObjectId);
 
-                    //start skill cooldown
-                    cooldownTimer = cooldown;
-                    hasPressed = false;
-                    hasReleased = false;
+                    
                     }
                     break;
                     
                     case "Mage":
                     if((gmScript.player.currentMana - 10) >= 0) {  //15
-                    gmScript.player.currentMana -= 10;
-                    gmScript.UpdateUI();
-                    Mageskill3ServerRpc(gmScript.player.NetworkObjectId);
-                    //start skill cooldown
-                    cooldownTimer = cooldown;
-                    hasPressed = false;
-                    hasReleased = false;
+                        gmScript.player.currentMana -= 10;
+                        gmScript.UpdateUI();
+                        Mageskill3ServerRpc(gmScript.player.NetworkObjectId);
+                    
                     }
                     break;
                     
+                    case "Assassin":
+                    if((gmScript.player.currentMana - 10) >= 0) {
+                        gmScript.player.currentMana -= 10;
+                        gmScript.UpdateUI();
+                        Assassinskill3ServerRpc(gmScript.player.NetworkObjectId);
+                    }
+                    break;
                 }
 
                 //start skill cooldown
@@ -214,7 +229,7 @@ public class LanSkill3 : NetworkBehaviour
         foreach (var item in gmScript.players)
         {
             if(item.NetworkObjectId == playerID) {
-                instantiatedSkill = Instantiate(tempSkill, item.transform.GetChild(3));
+                instantiatedSkill = Instantiate(warriorSkillObject, item.transform.GetChild(3));
                 instantiatedSkill.GetComponent<WarriorSkill3>().ownerID = playerID;
                 if(joystickDirectionx < 0) {
                     instantiatedSkill.GetComponent<SpriteRenderer>().flipX = true;
@@ -237,7 +252,7 @@ public class LanSkill3 : NetworkBehaviour
     foreach (var item in gmScript.players)
         {
             if(item.NetworkObjectId == playerID) {
-                instantiatedSkill = Instantiate(tempSkill, item.transform.GetChild(3));
+                instantiatedSkill = Instantiate(mageSkillObject, item.transform.GetChild(3));
                 StartCoroutine(MageSkill3Duration(playerID, item));
                 break;
             }
@@ -252,15 +267,21 @@ public class LanSkill3 : NetworkBehaviour
         instantiatedSkill.gameObject.SetActive(false);
     }
 
-    //MANA check courotine
-    IEnumerator ManaCheck() {
-        while(true) {
-            if((gmScript.player.currentMana - manaCost) < 0) {
-                cooldownImage.gameObject.SetActive(true);
-                cooldownText.gameObject.SetActive(true);
-                cooldownText.SetText("NO MANA");
+    
+
+
+    ///////////////////////////////////////ASSASSIN/////////////
+    [ServerRpc(RequireOwnership = false)] public void Assassinskill3ServerRpc(ulong playerID) {
+        AssassinSkill3ClientRpc(playerID);
+    }
+    [ClientRpc] void AssassinSkill3ClientRpc(ulong playerID) {
+        foreach (var item in gmScript.players)
+        {
+            if(item.NetworkObjectId == playerID) {
+                instantiatedSkill = Instantiate(AssassinSkillObject, item.transform.GetChild(3));
+                instantiatedSkill.GetComponent<AssassinSkill3>().playerID = playerID;
+                instantiatedSkill.gameObject.SetActive(true);
             }
-            yield return new WaitForSeconds(.5f);
         }
     }
 }

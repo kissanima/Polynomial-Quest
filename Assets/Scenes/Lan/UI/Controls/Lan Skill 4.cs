@@ -12,7 +12,8 @@ public class LanSkill4 : NetworkBehaviour
     Joystick joystick;
     Image outerCircle, innerCircle, skillImage, inCooldownSkillImage;
     public float baseDamage, damageModifier, finalDamage;
-    Transform player, target, range, arrow, cone, skillEffectParent, tempSkillIndicator, instantiatedSkill;
+    Transform player, target, range, arrow, cone, skillEffectParent, tempSkillIndicator, instantiatedSkill, warriorSkillObject, mageSkillObject,
+    AssassinSkillObject;
     public Transform tempSkill;
     bool hasInitialized, hasPressed = false, hasReleased;
     float skillRange = .73f, cooldown = 50f, cooldownTimer, tempCooldownTimer, manaCost;
@@ -44,16 +45,25 @@ public class LanSkill4 : NetworkBehaviour
         cone = player.transform.GetChild(1).GetChild(2).GetChild(1);
         arrow = player.transform.GetChild(1).GetChild(2).GetChild(3);
 
+        warriorSkillObject = skillEffectParent.GetChild(0).GetChild(3); //skill effect object
+        mageSkillObject = skillEffectParent.GetChild(1).GetChild(2).GetChild(2); //skill effect object
+        AssassinSkillObject = skillEffectParent.GetChild(3).GetChild(3); //skill effect object
+
         switch (playerClass)
         {   
             case "Warrior":
             tempSkillIndicator = arrow;
-            tempSkill = skillEffectParent.GetChild(0).GetChild(3); //skill effect object
             manaCost = 35;
             break;
             
             case "Mage":
-            tempSkill = skillEffectParent.GetChild(1).GetChild(2).GetChild(2); //skill effect object
+            skillImage.sprite = gmScript.mageSkillIcons[3];
+            inCooldownSkillImage.sprite = gmScript.mageSkillIcons[3];
+            tempSkillIndicator = arrow;
+            manaCost = 35;
+            break;
+
+            case "Assassin":
             skillImage.sprite = gmScript.mageSkillIcons[3];
             inCooldownSkillImage.sprite = gmScript.mageSkillIcons[3];
             tempSkillIndicator = arrow;
@@ -62,7 +72,6 @@ public class LanSkill4 : NetworkBehaviour
         }
         hasInitialized = true;
 
-        //StartCoroutine(ManaCheck()); //start mana check
     }
 
     private void Update() {
@@ -131,6 +140,11 @@ public class LanSkill4 : NetworkBehaviour
                 float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
                 tempSkillIndicator.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ - 90.0f);
                 break;
+
+                case "Assassin":
+                tempSkillIndicator.gameObject.SetActive(false);
+
+                break;
             }
             joystickDirection = new Vector2(joystick.Horizontal, joystick.Vertical);
         }
@@ -165,11 +179,6 @@ public class LanSkill4 : NetworkBehaviour
                     gmScript.player.currentMana -= 35;
                     gmScript.UpdateUI();
                     Warriorskill4ServerRpc(gmScript.player.NetworkObjectId);
-
-                    //start skill cooldown
-                    cooldownTimer = cooldown;
-                    hasPressed = false;
-                    hasReleased = false;
                     }
                     break;
                     
@@ -178,14 +187,22 @@ public class LanSkill4 : NetworkBehaviour
                     gmScript.player.currentMana -= 35;
                     gmScript.UpdateUI();
                     MageSkill4ServerRpc(joystickDirection, gmScript.player.NetworkObjectId);
+                    }
+                    break;
 
-                    //start skill cooldown
-                    cooldownTimer = cooldown;
-                    hasPressed = false;
-                    hasReleased = false;
+                    case "Assassin":
+                    if((gmScript.player.currentMana - 35) >= 0) {
+                    gmScript.player.currentMana -= 35;
+                    gmScript.UpdateUI();
+                    AssassinSkill4ServerRpc(gmScript.player.NetworkObjectId);
                     }
                     break;
                 }
+
+                //start skill cooldown
+                cooldownTimer = cooldown;
+                hasPressed = false;
+                hasReleased = false;
             }
         }
     }
@@ -200,7 +217,7 @@ public class LanSkill4 : NetworkBehaviour
         foreach (var item in gmScript.players)
         {
             if(item.NetworkObjectId == playerID) {
-                instantiatedSkill = Instantiate(tempSkill, item.transform.GetChild(3));
+                instantiatedSkill = Instantiate(warriorSkillObject, item.transform.GetChild(3));
                 StartCoroutine(WarriorSkill4Wait(playerID));
                 break;
             }
@@ -233,7 +250,7 @@ public class LanSkill4 : NetworkBehaviour
         foreach (var item in gmScript.players)
         {
             if(item.NetworkObjectId == playerID) {
-                instantiatedSkill = Instantiate(tempSkill, item.transform.GetChild(3));
+                instantiatedSkill = Instantiate(mageSkillObject, item.transform.GetChild(3));
                 StartCoroutine(MageSkill4Duration(direction, playerID));
                 break;
             }
@@ -251,15 +268,33 @@ public class LanSkill4 : NetworkBehaviour
         Destroy(instantiatedSkill.gameObject);
     }
 
-    //MANA check courotine
-    IEnumerator ManaCheck() {
-        while(true) {
-            if((gmScript.player.currentMana - manaCost) < 0) {
-                cooldownImage.gameObject.SetActive(true);
-                cooldownText.gameObject.SetActive(true);
-                cooldownText.SetText("NO MANA");
+
+
+
+    [ServerRpc(RequireOwnership = false)] void AssassinSkill4ServerRpc(ulong playerID) {
+        AssassinSkill4ClientRpc(playerID);
+    }
+    [ClientRpc] void AssassinSkill4ClientRpc(ulong playerID) {
+        foreach (var item in gmScript.players)
+        {
+            if(item.NetworkObjectId == playerID) {
+                instantiatedSkill = Instantiate(AssassinSkillObject, item.transform.GetChild(3));
+                instantiatedSkill.gameObject.SetActive(true);
+                StartCoroutine(AssassinSkill4Duration(playerID));
+                break;
             }
-            yield return new WaitForSeconds(.5f);
+        }
+    }
+
+    IEnumerator AssassinSkill4Duration(ulong playerID) {
+        if(gmScript.player.NetworkObjectId == playerID) {
+            gmScript.player.moveSpeed += 1f;
+            gmScript.player.attackSpeed += 1;
+
+            yield return new WaitForSeconds(10);
+            instantiatedSkill.gameObject.SetActive(false);
+            gmScript.player.moveSpeed -= 1f;
+            gmScript.player.attackSpeed -= 1;
         }
     }
 }

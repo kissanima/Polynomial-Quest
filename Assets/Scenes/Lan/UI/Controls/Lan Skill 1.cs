@@ -12,7 +12,8 @@ public class LanSkill1 : NetworkBehaviour
     Joystick joystick;
     Image outerCircle, innerCircle, skillImage, inCooldownSkillImage;
     public float baseDamage, damageModifier, finalDamage;
-    Transform player, target, range, arrow, cone, skillEffectParent, tempSkillIndicator, instantiatedSkill;
+    Transform player, target, range, arrow, cone, skillEffectParent, tempSkillIndicator, instantiatedSkill, warriorSkillObject, mageSkillObject,
+    AssassinSkillObject;
     public Transform tempSkill;
     bool hasInitialized, hasPressed, hasReleased;
     float skillRange = .73f, cooldown = 6f, cooldownTimer, tempCooldownTimer, isDirectCast, manaCost, rotationZ;
@@ -24,6 +25,7 @@ public class LanSkill1 : NetworkBehaviour
     Vector2 joystickDirection;
     Color outerColor, innerColor;
     Vector3 targetPosition, difference;
+
 
 
 
@@ -50,17 +52,19 @@ public class LanSkill1 : NetworkBehaviour
         cone = player.transform.GetChild(1).GetChild(2).GetChild(1);
         arrow = player.transform.GetChild(1).GetChild(2).GetChild(3);
 
+        warriorSkillObject = skillEffectParent.GetChild(0).GetChild(0);
+        mageSkillObject = skillEffectParent.GetChild(1).GetChild(2).GetChild(0); //
+        AssassinSkillObject = skillEffectParent.GetChild(3).GetChild(0); //
+
         switch (playerClass)
         {
             case "Warrior":
             tempSkillIndicator = arrow;
-            tempSkill = skillEffectParent.GetChild(0).GetChild(0);
             skillImage.sprite = gmScript.warriorSkillIcons[0];
             manaCost = 15;
             break;
 
             case "Mage":
-            tempSkill = skillEffectParent.GetChild(1).GetChild(2).GetChild(0); //
             skillImage.sprite = gmScript.mageSkillIcons[0];
             inCooldownSkillImage.sprite = gmScript.mageSkillIcons[0];
             tempSkillIndicator = arrow;
@@ -68,7 +72,6 @@ public class LanSkill1 : NetworkBehaviour
             break;
 
             case "Assassin":
-            tempSkill = skillEffectParent.GetChild(3).GetChild(0); //
             skillImage.sprite = gmScript.assassinSkillIcons[0];
             inCooldownSkillImage.sprite = gmScript.assassinSkillIcons[0];
             tempSkillIndicator = arrow;
@@ -248,7 +251,7 @@ public class LanSkill1 : NetworkBehaviour
         foreach (var item in gmScript.players)
         {
             if(item.NetworkObjectId == playerID) {
-                instantiatedSkill = Instantiate(tempSkill, item.transform.GetChild(3));
+                instantiatedSkill = Instantiate(warriorSkillObject, item.transform.GetChild(3));
                 StartCoroutine(WarriorSkill1Wait(playerID));
                 break;
             }
@@ -277,7 +280,7 @@ public class LanSkill1 : NetworkBehaviour
         foreach (var item in gmScript.players)
         {
             if(item.NetworkObjectId == playerID) {
-                instantiatedSkill = Instantiate(tempSkill, item.transform.GetChild(3));
+                instantiatedSkill = Instantiate(mageSkillObject, item.transform.GetChild(3));
                 Debug.Log("instantiated" + instantiatedSkill);
                 StartCoroutine(MageSkill1Duration(playerID, joystickDirection));
                 break;
@@ -308,7 +311,7 @@ public class LanSkill1 : NetworkBehaviour
         foreach (var item in gmScript.players)
         {
             if(item.NetworkObjectId == playerID) {
-                instantiatedSkill = Instantiate(tempSkill, item.transform.GetChild(3));
+                instantiatedSkill = Instantiate(AssassinSkillObject, item.transform.GetChild(3));
                 AssassinSKill1 temp = instantiatedSkill.GetComponent<AssassinSKill1>(); //get component to access the variables
                 temp.playerID = playerID;
                 temp.projectileSpeed = projectileSpeed;

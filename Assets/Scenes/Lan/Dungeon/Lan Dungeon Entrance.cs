@@ -17,7 +17,7 @@ public class LanDungeonEntrance : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag("Player") && gmScript.player.level >= minimumLevelRequirement) {
+        if(other.CompareTag("Player") && gmScript.player.level.Value >= minimumLevelRequirement) {
             transition.gameObject.SetActive(true);
             gmScript.player.transform.position = transform.parent.GetChild(1).position;
         }

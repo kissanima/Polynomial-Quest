@@ -5,27 +5,13 @@ using Unity.Netcode;
 
 public class LanAttackButton : NetworkBehaviour
 {
-     public LanPlayer player;
-
-    public override void OnNetworkSpawn()
-    {
-
-        LanPlayer[] players = FindObjectsOfType<LanPlayer>();
-        foreach (LanPlayer p in players)
-        {
-            if (p.IsLocalPlayer)
-            {
-                player = p;
-                break;
-            }
-        }
-    }
+   [SerializeField] LanGameManager gmScript;
     
     
     public void ButtonPressed() {
-        if(player.targetList.Length > 0 && player.attackCooldown <= 0) {
-            player.Attack();
-            player.attackCooldown = 1 / player.attackSpeed;
+        if(gmScript.player.targetList.Length > 0 && gmScript.player.attackCooldown <= 0) {
+            gmScript.player.Attack();
+            gmScript.player.attackCooldown = 1 / gmScript.player.attackSpeed;
         }
     }
 }

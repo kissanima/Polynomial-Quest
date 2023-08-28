@@ -172,7 +172,8 @@ public class LanAnswerButtons : MonoBehaviour
             if(answerSelection.attempts <= 0 && isAI) { //if wrong and attemp is zero and its an enemy
                 enemyCollider.enabled = true;
                 enemy.isDead = false;
-                enemy.GetComponent<LanNpc>().attempts = 3;
+                enemy.target = null;
+                enemy.GetComponent<LanNpc>().attempts = 2;
 
                 //heal enemy
                 if(enemy.currentHealth.Value <= 0) { //if dead and health is negative
@@ -181,7 +182,7 @@ public class LanAnswerButtons : MonoBehaviour
                 else {
                     enemy.HealServerRpc(enemy.finalHealth.Value * .10f);
                 }
-                transform.parent.gameObject.SetActive(false);
+                transform.parent.gameObject.SetActive(false); //disable 
                 interactionManager.SetActive(false);
             }
             else if(answerSelection.attempts <= 0) { //if wrong and attemp is zero and is station

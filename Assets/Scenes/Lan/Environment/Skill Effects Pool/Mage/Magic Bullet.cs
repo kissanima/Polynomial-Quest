@@ -10,6 +10,7 @@ public class MagicBullet : MonoBehaviour
     public Vector2 direction;
     Rigidbody2D rb;
     Transform parent;
+    AudioSource audioSource;
 
     private void Awake() {
         gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
@@ -18,6 +19,8 @@ public class MagicBullet : MonoBehaviour
     }
 
      private void OnEnable() {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
         StartCoroutine(MovePosition());
         finalDamage = gmScript.player.finalDamage * (additionalDamagePercentage / 100) + gmScript.player.finalDamage;
     }
@@ -45,7 +48,7 @@ public class MagicBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         LanMobsMelee enemy;
-        if(other.tag == "Enemy") {
+        if(other.CompareTag("Enemy")) {
             enemy = other.GetComponent<LanMobsMelee>();
             gmScript.player.AttackServerRpc(other.transform.GetSiblingIndex(), finalDamage, gmScript.player.NetworkObjectId);
 

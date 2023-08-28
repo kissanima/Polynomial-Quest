@@ -11,6 +11,7 @@ public class LanPotion : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if(!other.CompareTag("Player")) return;
         gmScript.player.potion += 1;
+        gmScript.UpdateUI();
         Destroy(gameObject);
     }
 }

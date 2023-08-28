@@ -5,7 +5,7 @@ using UnityEngine;
 public class WarriorSkill3 : MonoBehaviour
 {
     Collider2D[] targetList;
-    LanGameManager gmScript;
+    [SerializeField] LanGameManager gmScript;
     public float finalDamage, additionalDamagePercentage = 150f, ownerID;
     Transform skillEffectsPool;
     AudioSource audioSource;
@@ -15,7 +15,6 @@ public class WarriorSkill3 : MonoBehaviour
     }
     
     public void OnEnable() {
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         skillEffectsPool = GameObject.FindWithTag("SkillEffects").transform;
         finalDamage = (gmScript.player.finalDamage * (additionalDamagePercentage / 100)) + 100f;  //150 / 100 = 1.5 
 

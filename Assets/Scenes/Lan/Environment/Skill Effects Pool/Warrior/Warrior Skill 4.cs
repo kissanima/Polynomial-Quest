@@ -5,7 +5,7 @@ using Unity.Netcode;
 
 public class WarriorSkill4 : MonoBehaviour
 {
-    LanGameManager gmScript;
+    [SerializeField] LanGameManager gmScript;
     Transform skillEffectsPool;
     AudioSource audioSource;
     public float ownerID;
@@ -17,7 +17,6 @@ public class WarriorSkill4 : MonoBehaviour
     }
     private void OnEnable() {
         audioSource.Play();
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
 
         
         if(ownerID != gmScript.player.NetworkObjectId) return;

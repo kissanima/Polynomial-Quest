@@ -6,7 +6,7 @@ using TMPro;
 
 public class LanItemSS : MonoBehaviour
 {
-    int itemIndex;
+    public int itemIndex;
     public float damage = 25;
     public float armor;
     string itemName;
@@ -18,7 +18,7 @@ public class LanItemSS : MonoBehaviour
     LanGameManager gmScript;
 
     private void Awake() {
-        itemIndex = transform.GetSiblingIndex() + 1;
+        //itemIndex = transform.GetSiblingIndex() + 1;
         gameObject.name = gameObject.name.Replace("(Clone)", "");
         itemName = gameObject.name;
         itemImage = GetComponent<Image>().sprite;

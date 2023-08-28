@@ -74,10 +74,11 @@ public class LanMobsMelee : NetworkBehaviour
         interactionManager = GameObject.FindWithTag("UI").transform.GetChild(3).GetComponent<LanInteractionManager>();
 
 
-
+        ////////////////OPTIMIZATIONS/////////////
         //disable this script after initialization
         GetComponent<LanMobsMelee>().enabled = false;
-        transform.GetChild(3).GetComponent<Animator>().enabled = false;
+        //transform.GetChild(3).GetComponent<Animator>().enabled = false;
+        transform.GetChild(3).gameObject.SetActive(false);
     }
 
     
@@ -276,24 +277,17 @@ public class LanMobsMelee : NetworkBehaviour
         //spawn blood effects
         //gmScript.player.SpawnBloodEffectServerRpc(NetworkObjectId);
 
-        if(currentHealth.Value <= (finalHealth.Value * .15f) && !target.CompareTag("Knight") && !isBoss) {
+        if(currentHealth.Value <= (finalHealth.Value * .15f) && !target.CompareTag("Knight") && !isBoss ) {
+            if(!targetScript.IsLocalPlayer) return;
             enemyCollider.enabled = false;
             isAttacking = false;
             isIdle = false;
             isDead = true;
-
+            
 
             gmScript.player.npc = gameObject;
             interactionManager.gameObject.SetActive(true);
 
-
-            //give exp
-            /*
-            gmScript.player.currentExp += 25;
-            gmScript.player.updateStats();
-            gmScript.UpdateUI(); //update player healtbar, exp bar etc
-            gmScript.SavePlayerData(); //save data
-            StartCoroutine(DisableWait()); */
         }
         else if(currentHealth.Value <= 0 && isBoss) {
             enemyCollider.enabled = false;
@@ -307,18 +301,10 @@ public class LanMobsMelee : NetworkBehaviour
 
     }
     private void OnDisable() {
-        if(currentHealth.Value > 0) return;
-        Invoke(nameof(RespawnWait), deathTimer);
-        //StartCoroutine(DisableWait()); 
+        if(currentHealth.Value <= 0) {
+            Invoke(nameof(RespawnWait), deathTimer);
+        }
     }
-
-    /* IEnumerator DisableWait() {
-        Debug.Log("DisableWait");
-        yield return new WaitForSeconds(1);
-        //gameObject.SetActive(false);
-
-        Invoke(nameof(RespawnWait), deathTimer);
-    } */
 
     void RespawnWait() {
         Debug.Log("RespawnWait");

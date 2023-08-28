@@ -14,7 +14,6 @@ public class LanPlayer : NetworkBehaviour
     public LanGameManager gmScript;
     public Transform damagePool;
     public Transform bloodEffectsParent, skillEffectsParent, maps;
-    public NetworkObject[] nObjects;
     Transform itemsPool, inventoryPanel;
 
     //player customizations network variables
@@ -31,10 +30,12 @@ public class LanPlayer : NetworkBehaviour
     public NetworkVariable<float> finalHealth = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public NetworkVariable<float> currentHealth = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public NetworkVariable<float> score = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<float> level = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    //public NetworkVariable<string> nameNVariable = new("", NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public string[] inventory = {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"};
 
     public float moveSpeed = 1f, attackSpeed = 1, attackCooldown = 0, baseDamage= 25, finalDamage, currentExp,
-    baseRequiredExp = 75, finalRequiredExp, currentMana, baseMana = 75, finalMana, level,
+    baseRequiredExp = 75, finalRequiredExp, currentMana, baseMana = 75, finalMana,
     potion, weaponDmg, baseArmor = 5, finalArmor, itemArmor, equipedWeaponIndex, equipedArmorIndex, deathTimer = 5,
     damageReduction, attackRange, hint = 5, finishIntro;
     public string username, playerClass;
@@ -70,7 +71,6 @@ public class LanPlayer : NetworkBehaviour
         bloodEffectsParent = GameObject.FindWithTag("BloodEffects").transform;
         skillEffectsParent = GameObject.FindWithTag("SkillEffects").transform;
         maps = GameObject.FindWithTag("Maps").transform;
-        FindNetworkObjectsServerRpc();
         
         //check if is owner if not, return;
         if(!IsOwner) return; 
@@ -135,7 +135,6 @@ public class LanPlayer : NetworkBehaviour
 
         //call server to call PlayerCustomizationClientRpc method on all client
         PlayerCustomizationServerRpc(); //load costomization
-        CallUpdatePlayerNameInfoServerRpc(); //update names
 
 
         //HOST = server and player ///network objects OWNER
@@ -170,9 +169,9 @@ public class LanPlayer : NetworkBehaviour
     }
 
     public void updateStats() {        
-        if(currentExp != 0 && currentExp >= finalRequiredExp && level <= 30) {
+        if(currentExp != 0 && currentExp >= finalRequiredExp && level.Value <= 30) {
             currentExp -= finalRequiredExp; //reset current Exp
-            level += 1;
+            level.Value += 1;
             baseRequiredExp += (baseRequiredExp * .20f);
             baseDamage += (baseDamage * .20f);
             baseArmor += (baseArmor * .20f);
@@ -226,7 +225,7 @@ public class LanPlayer : NetworkBehaviour
         else if(joystick.Horizontal > 0) {
             transform.GetChild(0).localScale = new Vector3(0.025f, 0.025f, 0);
         }
-        //rb.velocity = movement;
+        
 
         //animation here
         if(joystick.Horizontal < 0 || joystick.Horizontal > 0 || joystick.Vertical < 0 || joystick.Vertical > 0  ) {
@@ -340,8 +339,8 @@ public class LanPlayer : NetworkBehaviour
             playerCollider.enabled = false;
             deathPanel.SetActive(true); //show Died message
 
-            if(level > 1) { //TODO: 
-                level -= 1;
+            if(level.Value > 1) { //TODO: 
+                level.Value -= 1;
             }
             if(inventoryPanel.childCount > 0) {
                 for (int i = 0; i < inventoryPanel.childCount; i++)
@@ -412,18 +411,6 @@ public class LanPlayer : NetworkBehaviour
     }
 
 
-
-    //initialize and store network objects
-    [ServerRpc(RequireOwnership = false)]  
-    public void FindNetworkObjectsServerRpc() {
-        FindNetworkObjectsClientRpc();
-    }
-    [ClientRpc]
-    public void FindNetworkObjectsClientRpc() { //also find all players objects
-        nObjects = FindObjectsOfType<NetworkObject>();
-    }
-
-
     //get difficulty from server
     [ServerRpc(RequireOwnership = false)]   //TODO: 
     public void GetDifficultyServerRpc() {
@@ -489,8 +476,11 @@ public class LanPlayer : NetworkBehaviour
         int draw = Random.Range(0, 2);
         Debug.Log("RandomWeatherServerRpc called: " + draw);
 
-        if(draw == 1 && gmScript.difficulty == 1) {
+        if(draw == 1 && gmScript.difficulty == 0) {
             StartWeatherClientRpc();
+        }
+        else {
+            StartCoroutine(gmScript.RedrawWeather());
         }
     }
     [ClientRpc]
@@ -499,34 +489,6 @@ public class LanPlayer : NetworkBehaviour
 
     }
 
-
-
-    //spawn blood effects
-    [ServerRpc(RequireOwnership = false)] 
-    public void SpawnBloodEffectServerRpc(ulong targetID) {
-        SpawnBloodEffectsClientRpc(targetID);
-    }
-    [ClientRpc]
-    public void SpawnBloodEffectsClientRpc(ulong targetID) { //1
-        Transform temp = bloodEffectsParent.GetChild(0).GetChild(0);
-        NetworkObject objectFound = null; //optimization
-
-        if(objectFound != null && objectFound.NetworkObjectId == targetID) {
-            temp.parent = objectFound.transform;
-        }
-        else {
-            foreach (var item in nObjects) 
-            {
-            if(targetID == item.NetworkObjectId) {
-                temp.parent = item.transform;
-                objectFound = item;
-                break;
-            }
-            }
-        }
-
-        temp.gameObject.SetActive(true);
-    }
 
 
 
@@ -545,23 +507,22 @@ public class LanPlayer : NetworkBehaviour
         CallUpdatePlayerNameInfoClientRpc();
     }
 
-    [ClientRpc]
-    public void CallUpdatePlayerNameInfoClientRpc() {
-        UpdatePlayerNameLevel();
+    [ClientRpc] public void CallUpdatePlayerNameInfoClientRpc() {
+        Debug.Log("get name testing called" + NetworkObjectId);
     }
 
-    void UpdatePlayerNameLevel() {
-        CallUpdatePlayerNameLevelWSServerRpc(this.username, this.level, NetworkObjectId);
+    void testingName() {
+        Debug.Log(username);
     }
-    
 
     [ServerRpc(RequireOwnership = false)]
-    public void CallUpdatePlayerNameLevelWSServerRpc(string name, float level, ulong NetworkObjectId) {
-        UpdatePlayerNameLevelWSClientRpc(name, level, NetworkObjectId);
+    public void CallUpdatePlayerNameLevelWSServerRpc(string name, ulong NetworkObjectId) {
+        Debug.Log(NetworkObjectId);
+        //UpdatePlayerNameLevelWSClientRpc(name, NetworkObjectId);
     }
 
     [ClientRpc]
-    public void UpdatePlayerNameLevelWSClientRpc(string name, float level, ulong id) { //update player name and level in world space
+    public void UpdatePlayerNameLevelWSClientRpc(string name, ulong id) { //update player name and level in world space
         //find all player scripts
         LanPlayer[] temp = FindObjectsOfType<LanPlayer>();
         gmScript.players = temp;
@@ -569,7 +530,8 @@ public class LanPlayer : NetworkBehaviour
         foreach (var item in temp)
         {
             if(item.NetworkObjectId == id) {
-                item.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().SetText(name + " lvl. " + level);
+                item.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().SetText(name + " lvl. " + level.Value);
+                item.username = name;
                 break;
             }
         }
@@ -625,7 +587,7 @@ public class LanPlayer : NetworkBehaviour
                     item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
                 }
                 else {
-                    item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = itemsPool.GetChild(itemIndex-1).GetComponent<SpriteRenderer>().sprite;
+                    item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = itemsPool.GetChild(itemIndex).GetComponent<SpriteRenderer>().sprite;
                 }
             }
         }
