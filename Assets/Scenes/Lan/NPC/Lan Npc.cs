@@ -55,14 +55,14 @@ public class LanNpc : MonoBehaviour
     }
 
     public void IsDone() {
-        //if(isNpc) return;
-        gameObject.SetActive(false);
-        GetComponent<Collider2D>().enabled = false;  //enemy
         
 
         if(!isAI && !isNpc) {  //
             gmScript.dungeonStatues++;
             gmScript.UpdateMission();
+        }
+        else {
+            gmScript.player.DisableEnemyServerRpc(transform.GetSiblingIndex());
         }
     }
 

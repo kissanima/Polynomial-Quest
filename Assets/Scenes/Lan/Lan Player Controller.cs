@@ -412,10 +412,10 @@ public class LanPlayer : NetworkBehaviour
         if(temp != targetIndex) {   //executed once, then procced to else
             targetObject = mobsParent.transform.GetChild(targetIndex).GetComponent<LanMobsMelee>();
             temp = targetIndex;
-            targetObject.Attacked(finalDamage, networkId);
+            targetObject.AttackedClientRpc(finalDamage, networkId);
         }
         else {
-            targetObject.Attacked(finalDamage, networkId);
+            targetObject.AttackedClientRpc(finalDamage, networkId);
         }
     }
 
@@ -559,13 +559,7 @@ public class LanPlayer : NetworkBehaviour
     }
 
     
-
-    [ServerRpc(RequireOwnership = false)]
-    public void StartIntroductionServerRpc() {
-        StartIntroductionClientRpc(finishIntro);
-    }
-    [ClientRpc]
-    void StartIntroductionClientRpc(float finishIntro) {
+    public void StartIntroduction() {
         GameObject ui = GameObject.FindWithTag("UI").gameObject;
         if(IsHost && finishIntro == 0) {
             ui.transform.GetChild(11).gameObject.SetActive(true); //start intro
@@ -618,6 +612,18 @@ public class LanPlayer : NetworkBehaviour
             }
             yield return new WaitForSeconds(1);
         }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void DisableEnemyServerRpc(int enemyIndex) {
+        DisableEnemyClientRpc(enemyIndex);
+    }
+
+    [ClientRpc]
+    void DisableEnemyClientRpc(int enemyIndex) { //TODO:
+    Transform enemy = mobsParent.transform.GetChild(enemyIndex);
+    enemy.gameObject.SetActive(false);
+    enemy.GetComponent<Collider2D>().enabled = false;
     }
 
 }

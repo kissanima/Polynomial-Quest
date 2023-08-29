@@ -73,8 +73,8 @@ public class LanSkill3 : NetworkBehaviour
 
             case "Assassin":
             tempSkillIndicator = target;
-            skillImage.sprite = gmScript.mageSkillIcons[2];
-            inCooldownSkillImage.sprite = gmScript.mageSkillIcons[2];
+            skillImage.sprite = gmScript.assassinSkillIcons[2];
+            inCooldownSkillImage.sprite = gmScript.assassinSkillIcons[2];
             manaCost = 15;
             break;
         }

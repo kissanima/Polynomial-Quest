@@ -83,10 +83,10 @@ public class LanKnights : NetworkBehaviour
         if(temp != targetIndex) {   //executed once, then procced to else
             targetObject = mobsParent.transform.GetChild(targetIndex).GetComponent<LanMobsMelee>();
             temp = targetIndex;
-            targetObject.Attacked(finalDamage, NetworkObjectId);
+            targetObject.AttackedClientRpc(finalDamage, NetworkObjectId);
         }
         else {
-            targetObject.Attacked(finalDamage, NetworkObjectId);
+            targetObject.AttackedClientRpc(finalDamage, NetworkObjectId);
         }
     }
 

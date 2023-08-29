@@ -260,8 +260,10 @@ public class LanMobsMelee : NetworkBehaviour
         }
     }
 
-    public void Attacked(float damage, ulong networkId) {
-        SubtracthealthServerRpc(damage, networkId); // call server to subtract network variable health using ServerRpc
+    [ClientRpc]public void AttackedClientRpc(float damage, ulong networkId) {
+        if(IsOwner) {
+            SubtracthealthServerRpc(damage, networkId); // call server to subtract network variable health using ServerRpc
+        }
         //players = FindObjectsOfType<LanPlayer>();
 
         foreach (var p in gmScript.players) 
@@ -289,15 +291,16 @@ public class LanMobsMelee : NetworkBehaviour
         //spawn blood effects
         //gmScript.player.SpawnBloodEffectServerR     pc(NetworkObjectId);
 
-        if(currentHealth.Value <= (finalHealth.Value * .15f) && !isBoss  && targetScript.NetworkObjectId == gmScript.player.NetworkObjectId) {
+        if(currentHealth.Value <= (finalHealth.Value * .15f) && !isBoss) {
             enemyCollider.enabled = false;
             isAttacking = false;
             isIdle = false;
             isDead = true;
             
-
-            gmScript.player.npc = gameObject;
-            interactionManager.gameObject.SetActive(true);
+            if(targetScript.IsLocalPlayer && networkId == gmScript.player.NetworkObjectId) {
+                gmScript.player.npc = gameObject;
+                interactionManager.gameObject.SetActive(true);
+            }
 
         }
         else if(currentHealth.Value <= 0 && isBoss) {
@@ -319,6 +322,7 @@ public class LanMobsMelee : NetworkBehaviour
 
     void RespawnWait() {
         Debug.Log("RespawnWait");
+        if(!IsOwner) return;
         transform.position = originalPos;
         isDead = false;
         gameObject.SetActive(true);
@@ -338,7 +342,7 @@ public class LanMobsMelee : NetworkBehaviour
         Transform bloodEffectTemp = bloodEffectParent.GetChild(0);
         bloodEffectTemp.SetParent(transform);
         bloodEffectTemp.gameObject.SetActive(true);
-        
+
     }
 
 
@@ -366,7 +370,6 @@ public class LanMobsMelee : NetworkBehaviour
 
     //call server to subtract
     [ServerRpc(RequireOwnership = false)] public void SubtracthealthServerRpc(float damage, ulong playerID) {
-        if(gmScript.player.NetworkObjectId != playerID) return;
         currentHealth.Value -= damage;  //currentHealth.Value = currentHealth.Value - damage
 
         //play animation

@@ -64,8 +64,8 @@ public class LanSkill4 : NetworkBehaviour
             break;
 
             case "Assassin":
-            skillImage.sprite = gmScript.mageSkillIcons[3];
-            inCooldownSkillImage.sprite = gmScript.mageSkillIcons[3];
+            skillImage.sprite = gmScript.assassinSkillIcons[3];
+            inCooldownSkillImage.sprite = gmScript.assassinSkillIcons[3];
             tempSkillIndicator = arrow;
             manaCost = 35;
             break;

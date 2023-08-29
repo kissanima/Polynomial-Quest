@@ -47,10 +47,12 @@ public class Lan : MonoBehaviour
 		welcome.SetActive(false);
 
 		if(PlayerPrefs.GetFloat("finishIntro") == 1) {
-			GameObject.FindWithTag("UI").transform.GetChild(11).gameObject.SetActive(false);
+			ui.transform.GetChild(10).gameObject.SetActive(true); //minimap
+			ui.transform.GetChild(14).gameObject.SetActive(true); //mission
+			ui.transform.GetChild(11).gameObject.SetActive(false);
 		}
 		else {
-			GameObject.FindWithTag("UI").transform.GetChild(11).gameObject.SetActive(true); //start intro
+			ui.transform.GetChild(11).gameObject.SetActive(true); //start intro
 		}
 		//GameObject.FindWithTag("UI").transform.GetChild(14).gameObject.SetActive(false); //enable mission
 		}
@@ -101,7 +103,7 @@ public class Lan : MonoBehaviour
         //GameObject.FindWithTag("UI").transform.GetChild(10).gameObject.SetActive(true);
 
 		//enable intro
-		gmScript.player.StartIntroductionServerRpc();
+		gmScript.player.StartIntroduction();
 		gmScript.StartBackgroundMusic();
 	}
 

@@ -75,6 +75,8 @@ public class LanSkill2 : NetworkBehaviour
 
             case "Assassin":
             tempSkillIndicator = target;
+            skillImage.sprite = gmScript.assassinSkillIcons[1]; //set image 
+            inCooldownSkillImage.sprite = gmScript.assassinSkillIcons[1]; //set image 
             manaCost = 20;
             break;
         }
@@ -241,8 +243,8 @@ public class LanSkill2 : NetworkBehaviour
     
     IEnumerator WarriorSkill2Wait() {
         gmScript.player.isUsingSkill = true;
-        tempSkill.SetParent(gmScript.player.transform.GetChild(3));
-        tempSkill.gameObject.SetActive(true);
+        warriorSkillObject.SetParent(gmScript.player.transform.GetChild(3));
+        warriorSkillObject.gameObject.SetActive(true);
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         while (elapseTime < .5f)
         {
@@ -255,8 +257,8 @@ public class LanSkill2 : NetworkBehaviour
         rb.interpolation = RigidbodyInterpolation2D.None;
         elapseTime = 0;
         gmScript.player.isUsingSkill = false;
-        tempSkill.SetParent(skillEffectParent.GetChild(0));
-        tempSkill.gameObject.SetActive(false);
+        warriorSkillObject.SetParent(skillEffectParent.GetChild(0));
+        warriorSkillObject.gameObject.SetActive(false);
     }
 
     [ServerRpc(RequireOwnership = false)]
