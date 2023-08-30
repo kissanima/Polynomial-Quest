@@ -31,6 +31,7 @@ public class LanCreateCharacter : MonoBehaviour
         assassinPanel = selectClassPanel.transform.GetChild(0).GetChild(3).gameObject;
 
         lanPanel = ui.transform.GetChild(7).GetChild(3).gameObject;
+        lanPanel.gameObject.SetActive(false);
     }
 
     
@@ -149,9 +150,11 @@ public class LanCreateCharacter : MonoBehaviour
         
         gameObject.SetActive(false);
         ui.SetActive(true);
-        lanPanel.transform.GetChild(1).gameObject.SetActive(false); //disable host button
+        lanPanel.transform.GetChild(0).gameObject.SetActive(false); //disable welcome text
+        lanPanel.transform.GetChild(6).gameObject.SetActive(false); //showw select difficulty
+        lanPanel.transform.GetChild(1).gameObject.SetActive(true); //disable host button
         lanPanel.transform.GetChild(7).gameObject.SetActive(false); //disable create character button
-        lanPanel.transform.GetChild(6).gameObject.SetActive(true); //showw select difficulty
+        lanPanel.SetActive(true);
 
     }
 }

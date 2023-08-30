@@ -60,6 +60,11 @@ public class LanMobsMelee : NetworkBehaviour
             textBoxText = textBox.GetChild(0).GetComponent<TextMeshProUGUI>();
             dieAudioSource = transform.GetChild(5).GetChild(1).GetComponent<AudioSource>();
         }
+        //else { //randomize enemy design
+        //    int drawDesign = Random.Range(0, gmScript.MobsDesign.Length);
+        //    Instantiate(gmScript.MobsDesign[drawDesign].transform.GetChild(0), transform.GetChild(3));
+        //    Destroy(transform.GetChild(3).GetChild(0).gameObject);
+        //}
     
 
         UpdateStats();        
@@ -103,36 +108,24 @@ public class LanMobsMelee : NetworkBehaviour
         if(idleTime !>= 3) {       
             if (!isWalking) {
             Vector2 randomDirection = new Vector2(Random.Range(-.5f, .5f), Random.Range(-.5f, .5f));
-
-            /*
-            if(randomDirection.x < 0) {
-                transform.GetChild(3).localScale = new Vector3(.1f, .1f, 1);
-            }
-            else {
-                transform.GetChild(3).localScale = new Vector3(-.1f, .1f, 1);
-            } */
-
             currentTarget = transform.position + (Vector3)randomDirection;
 
             isWalking = true;
             elapsedTime = 0f; // Reset elapsed time
             idleTime = Random.Range(2f, 5f);
-        }
-
-        if (elapsedTime < walkTime) { //start moving
-            anim.SetBool("isMoving", true);
-            rb.velocity = (currentTarget - (Vector2)transform.position) * walkSpeed;
-
-            
-            //flip object
-            if(isBoss) {
-                if(rb.velocity.x < 0) {
-                    transform.GetChild(3).localScale = new Vector3(-.1f, .1f, 1);
-                }
-                else {
-                    transform.GetChild(3).localScale = new Vector3(.1f, .1f, 1);
-                }
             }
+            if (elapsedTime < walkTime) { //start moving
+                anim.SetBool("isMoving", true);
+                rb.velocity = (currentTarget - (Vector2)transform.position) * walkSpeed;
+                //flip object
+                if(isBoss) {
+                    if(rb.velocity.x < 0) {
+                        transform.GetChild(3).localScale = new Vector3(-.1f, .1f, 1);
+                    }
+                    else {
+                        transform.GetChild(3).localScale = new Vector3(.1f, .1f, 1);
+                    }
+                }
             else {
                 if(rb.velocity.x < 0) {
                 transform.GetChild(3).localScale = new Vector3(.1f, .1f, 1);
@@ -141,12 +134,7 @@ public class LanMobsMelee : NetworkBehaviour
                 transform.GetChild(3).localScale = new Vector3(-.1f, .1f, 1);
                 }
             }
-            
-
-
-
             elapsedTime += Time.deltaTime;
-
         }
         else { //stop moving
             anim.SetBool("isMoving", false);
@@ -164,7 +152,7 @@ public class LanMobsMelee : NetworkBehaviour
 
                 //flip object
             if(isBoss) {
-                if(rb.velocity.x < 0) {
+                if(direction.x < 0) {
                     transform.GetChild(3).localScale = new Vector3(-.1f, .1f, 1);
                 }
                 else {
@@ -172,7 +160,7 @@ public class LanMobsMelee : NetworkBehaviour
                 }
             }
             else {
-                if(rb.velocity.x < 0) {
+                if(direction.x < 0) {
                 transform.GetChild(3).localScale = new Vector3(.1f, .1f, 1);
                 }
                 else {
@@ -186,6 +174,7 @@ public class LanMobsMelee : NetworkBehaviour
             rb.velocity = Vector2.zero;
             if(targetScript != null && targetScript.currentHealth.Value > 0 && IsOwnedByServer) { //if health is greater than 0, attack
                 if(attackCooldown <= 0) {
+                    anim.Play("attack");
                     AttackServerRpc(finalDamage, targetScript.NetworkObjectId);
                     attackCooldown = 1 / attackSpeed;
                 }
@@ -197,9 +186,10 @@ public class LanMobsMelee : NetworkBehaviour
         }
         else if (distance > attackRange && distance <= 5) { //start chasing enemy
             rb.velocity = target.transform.position - transform.position * walkSpeed;
+            anim.SetBool("isMoving", true);
         }
         else
-            {
+            {   /*
                 if (target != null) {
                 Vector3 direction = target.transform.position - transform.position;
 
@@ -220,7 +210,8 @@ public class LanMobsMelee : NetworkBehaviour
                     transform.GetChild(3).localScale = new Vector3(-.1f, .1f, 1);
                     }
                 }
-                }
+                } */
+                anim.SetBool("isMoving", false);
                 rb.velocity = Vector2.zero;
             }
         
@@ -239,15 +230,12 @@ public class LanMobsMelee : NetworkBehaviour
 
     [ServerRpc(RequireOwnership = false)]
     private void AttackServerRpc(float finalDamage, ulong playerID) {
-        Debug.Log(playerID);
             if(target.CompareTag("Knight")) {
                 target.GetComponent<LanKnights>().Attacked(finalDamage);
             }
             else {
                 AttackServerClientRpc(finalDamage, playerID);
-                attackCooldown = 1 / attackSpeed;
-            
-        }
+            }
     }
 
     [ClientRpc] void AttackServerClientRpc(float finalDamage, ulong playerID) {
@@ -265,7 +253,6 @@ public class LanMobsMelee : NetworkBehaviour
             SubtracthealthServerRpc(damage, networkId); // call server to subtract network variable health using ServerRpc
         }
         //players = FindObjectsOfType<LanPlayer>();
-
         foreach (var p in gmScript.players) 
         {
             if (p.NetworkObjectId == networkId)
@@ -305,6 +292,8 @@ public class LanMobsMelee : NetworkBehaviour
         }
         else if(currentHealth.Value <= 0 && isBoss) {
             enemyCollider.enabled = false;
+            isDead = true;
+            isAttacking = false;
             anim.Play("Die");
             dieAudioSource.Play();
         }

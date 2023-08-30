@@ -178,21 +178,24 @@ public class LanPlayer : NetworkBehaviour
             currentExp -= finalRequiredExp; //reset current Exp
             level.Value += 1;
             baseRequiredExp += (baseRequiredExp * .20f);
+            finalRequiredExp = baseRequiredExp;
+
             baseDamage += (baseDamage * .20f);
+            finalDamage = baseDamage + weaponDmg;
+
             baseArmor += (baseArmor * .20f);
+
             baseHealth.Value += (baseHealth.Value * .20f);
+            finalHealth.Value = baseHealth.Value;
 
             gmScript.SavePlayerData(); //save data
             gmScript.UpdateUI();
         }
 
-        finalDamage = baseDamage + weaponDmg;
-        finalArmor = baseArmor + itemArmor;
-        finalHealth.Value = baseHealth.Value;
-        currentHealth.Value = finalHealth.Value;
+  
         finalMana = baseMana;
         currentMana = finalMana;
-        finalRequiredExp = baseRequiredExp;
+
         sliderHealthWS.maxValue = finalHealth.Value;
         sliderHealthWS.value = currentHealth.Value;
 

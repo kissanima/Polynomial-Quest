@@ -17,7 +17,8 @@ public class Lan : MonoBehaviour
 	public LanCreateCharacter characterCreation;
 	PingCounter pingCounter;
 	LanGameManager gmScript;
-
+	bool hasCharacter;
+	string tempUsername;
 	void Start()
 	{
 		
@@ -26,7 +27,15 @@ public class Lan : MonoBehaviour
 		//InvokeRepeating("assignPlayerController", 0.1f, 0.1f);
 		//RegisterNetworkPrefabs();
 		gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
-		
+	}
+
+	private void OnEnable() {
+		if((tempUsername = PlayerPrefs.GetString("username")) != "") {
+			hasCharacter = true;
+			ipInput.gameObject.SetActive(true);
+			welcomeBackText.gameObject.SetActive(true);
+			welcomeBackText.SetText("Welcome back, " + tempUsername + "\n    Level: " + PlayerPrefs.GetFloat("level"));
+		}
 	}
 
 	// To Host a game
@@ -38,27 +47,34 @@ public class Lan : MonoBehaviour
 	}
 
 	// To Join a game
-	public void StartClient() {
-		if(ipInput.text != ""){
-
-		ipAddress = ipInput.text;
-	    SetIpAddress();
-		NetworkManager.Singleton.StartClient();
-		welcome.SetActive(false);
-
-		if(PlayerPrefs.GetFloat("finishIntro") == 1) {
-			ui.transform.GetChild(10).gameObject.SetActive(true); //minimap
-			ui.transform.GetChild(14).gameObject.SetActive(true); //mission
-			ui.transform.GetChild(11).gameObject.SetActive(false);
+	public void StartClient() { //JOIN Button
+		if(hasCharacter == false) {
+			welcomeBackText.SetText("no player data found, create new character");
+			welcomeBackText.gameObject.SetActive(true);
+			createCharacterButton.SetActive(true);
 		}
 		else {
+			if(ipInput.text != ""){
+
+			ipAddress = ipInput.text;
+	    	SetIpAddress();
+			NetworkManager.Singleton.StartClient();
+			welcome.SetActive(false);
+
+			if(PlayerPrefs.GetFloat("finishIntro") == 1) {
+				ui.transform.GetChild(10).gameObject.SetActive(true); //minimap
+				ui.transform.GetChild(14).gameObject.SetActive(true); //mission
+				ui.transform.GetChild(11).gameObject.SetActive(false);
+			}
+		else {
 			ui.transform.GetChild(11).gameObject.SetActive(true); //start intro
-		}
+			}
 		//GameObject.FindWithTag("UI").transform.GetChild(14).gameObject.SetActive(false); //enable mission
 		}
 		else {
 			ipAddressLabel.color = Color.red;
 			ipAddressLabel.SetText("error: IP is empty!");
+			}
 		}
 	}
 
@@ -111,7 +127,7 @@ public class Lan : MonoBehaviour
 		string usernametemp = PlayerPrefs.GetString("username");
 		if(usernametemp != "") {
 			welcomeBackText.gameObject.SetActive(true); //enable welcomeback Object
-			welcomeBackText.SetText(welcomeBackText.text + PlayerPrefs.GetString("username") + "\n    Level: " + PlayerPrefs.GetFloat("level"));
+			welcomeBackText.SetText("Welcome back, " + PlayerPrefs.GetString("username") + "\n    Level: " + PlayerPrefs.GetFloat("level"));
 
 			ipInput.gameObject.SetActive(false); //hide the ip inputBox
 			startClient.SetActive(false); //hide the start Client Button

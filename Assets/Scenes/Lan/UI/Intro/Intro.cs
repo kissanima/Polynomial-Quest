@@ -6,6 +6,7 @@ using Unity.Mathematics;
 
 public class Intro : MonoBehaviour
 {
+    [SerializeField] GameObject skipButton;
     Rigidbody2D emmanuelRb, wilsonRb; //movePosition()
     Transform npcParent, ui, tutorialPanel, wilson;
     TextMeshProUGUI emmanueltextBox, wilsonTextBox, tutorialTextBox;
@@ -115,6 +116,7 @@ public class Intro : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1f); // pause
+        skipButton.SetActive(true);
         emmanueltextBox.text = null;
 
         //start text 3
@@ -407,6 +409,21 @@ public class Intro : MonoBehaviour
         ui.GetChild(6).gameObject.SetActive(true); // true health bars
         ui.GetChild(10).gameObject.SetActive(true); // show minimap
         ui.GetChild(14).gameObject.SetActive(true);
+        gmScript.player.finishIntro = 1;
+        gmScript.SavePlayerData();
+    }
+
+
+    public void SkipButton() {
+        gameObject.SetActive(false);
+        skipButton.SetActive(false);
+        emmanueltextBox.transform.parent.gameObject.SetActive(false); //disable emmanuel text box
+        wilsonTextBox.transform.parent.gameObject.SetActive(false); //textbox disable
+        ui.GetChild(2).gameObject.SetActive(true); // true controls
+        ui.GetChild(6).gameObject.SetActive(true); // true health bars
+        ui.GetChild(10).gameObject.SetActive(true); // show minimap
+        ui.GetChild(12).gameObject.SetActive(false); //disable tutorial
+        ui.GetChild(14).gameObject.SetActive(true); //show mission panel
         gmScript.player.finishIntro = 1;
         gmScript.SavePlayerData();
     }

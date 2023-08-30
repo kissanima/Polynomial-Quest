@@ -32,7 +32,7 @@ public class LanGameManager : MonoBehaviour
     Light2D light2D;
     public Sprite[] warriorSkillIcons, mageSkillIcons, assassinSkillIcons;
     [SerializeField] TextMeshProUGUI weatherTitleText, weatherInfoText, scoreText;
-
+    public GameObject[] MobsDesign;
     public void Initialize() {
         Application.targetFrameRate = 60;
         players = FindObjectsOfType<LanPlayer>();
@@ -184,17 +184,19 @@ public class LanGameManager : MonoBehaviour
 
     public void LoadPlayerData() {
         player.username = PlayerPrefs.GetString("username");
-        //player.nameNVariable.Value = player.username;
-        player.level.Value = PlayerPrefs.GetFloat("level");
         player.playerClass = PlayerPrefs.GetString("playerClass");
-        player.currentExp = PlayerPrefs.GetFloat("currentExp");
-        player.finalRequiredExp = PlayerPrefs.GetFloat("finalRequiredExp");
-        player.potion = PlayerPrefs.GetFloat("potion");
-        player.equipedWeaponIndex = PlayerPrefs.GetFloat("equipedWeaponIndex");
-        player.equipedArmorIndex = PlayerPrefs.GetFloat("equipedArmorIndex");
-        player.hint = PlayerPrefs.GetFloat("hint");
-        player.finishIntro = PlayerPrefs.GetFloat("finishIntro");
-        player.score.Value = PlayerPrefs.GetFloat("score");
+
+        player.level.Value = PlayerPrefs.GetInt("level");
+        player.currentExp = PlayerPrefs.GetInt("currentExp");
+        player.finalRequiredExp = PlayerPrefs.GetInt("finalRequiredExp");
+        player.potion = PlayerPrefs.GetInt("potion");
+        player.equipedWeaponIndex = PlayerPrefs.GetInt("equipedWeaponIndex");
+        player.equipedArmorIndex = PlayerPrefs.GetInt("equipedArmorIndex");
+        player.hint = PlayerPrefs.GetInt("hint");
+        player.finishIntro = PlayerPrefs.GetInt("finishIntro");
+        player.score.Value = PlayerPrefs.GetInt("score");
+        player.finalHealth.Value = PlayerPrefs.GetInt("finalHealth");
+        player.currentHealth.Value = PlayerPrefs.GetInt("currentHealth");
     
         player.CallUpdatePlayerNameInfoServerRpc(); //get names
         player.updateStats();
@@ -248,15 +250,19 @@ public class LanGameManager : MonoBehaviour
 
     public void SavePlayerData() {
 
-        PlayerPrefs.SetFloat("level", player.level.Value);
-        PlayerPrefs.SetFloat("currentExp", player.currentExp);
-        PlayerPrefs.SetFloat("finalRequiredExp", player.finalRequiredExp);
-        PlayerPrefs.SetFloat("potion", player.potion);
-        PlayerPrefs.SetFloat("equipedWeaponIndex", player.equipedWeaponIndex);
-        PlayerPrefs.SetFloat("equipedArmorIndex", player.equipedArmorIndex);
-        PlayerPrefs.SetFloat("hint", player.hint);
-        PlayerPrefs.SetFloat("finishIntro", player.finishIntro);
-        PlayerPrefs.SetFloat("score", player.score.Value);
+        PlayerPrefs.SetInt("currentExp", (int)player.currentExp);
+        PlayerPrefs.SetInt("potion", (int)player.potion);
+        PlayerPrefs.SetInt("equipedWeaponIndex", (int)player.equipedWeaponIndex);
+        PlayerPrefs.SetInt("equipedArmorIndex", (int)player.equipedArmorIndex);
+        PlayerPrefs.SetInt("finalRequiredExp", (int)player.finalRequiredExp);
+        PlayerPrefs.SetInt("finishIntro", (int)player.finishIntro);
+        PlayerPrefs.SetInt("hint", (int)player.hint);
+        PlayerPrefs.SetInt("level", (int)player.level.Value);
+        PlayerPrefs.SetInt("score", (int)player.score.Value);
+        PlayerPrefs.SetInt("finalHealth", (int)player.finalHealth.Value);
+        PlayerPrefs.SetInt("currentHealth", (int)player.currentHealth.Value);
+
+
         string tempString = string.Join(",", player.inventory);
         PlayerPrefs.SetString("inventory", tempString);
 
@@ -324,7 +330,7 @@ public class LanGameManager : MonoBehaviour
             audioSource.clip = backgroundMusic[0];
             break;
         }
-        audioSource.volume = .5f;
+        audioSource.volume = .25f;
         audioSource.Play();
     }
 
