@@ -250,7 +250,7 @@ public class LanSkill2 : NetworkBehaviour
         {
             elapseTime += Time.deltaTime;
             rb.MovePosition(rb.position + joystickDirection * 3 * Time.fixedDeltaTime );
-            yield return null;
+            yield return new WaitForFixedUpdate();
             
 
         }

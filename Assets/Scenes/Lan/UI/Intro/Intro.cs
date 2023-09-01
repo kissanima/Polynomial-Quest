@@ -73,14 +73,14 @@ public class Intro : MonoBehaviour
         Vector3 position = new(0.205f, 0.143f); //0-1
         Vector2 direction = (position - emmanuelRb.transform.position).normalized * .5f;
         while (elapseTime <= moveDuration) { //0   //1
-            emmanuelAnim.SetBool("isRunning", true);  //running
+            emmanuelAnim.SetBool("isMoving", true);  //running
             elapseTime += Time.fixedDeltaTime;  
             emmanuelRb.MovePosition(emmanuelRb.position + direction * Time.deltaTime);
 
 
             yield return new WaitForFixedUpdate();
         }
-        emmanuelAnim.SetBool("isRunning", false); //elapseTime == moveDuration
+        emmanuelAnim.SetBool("isMoving", false); //elapseTime == moveDuration
         elapseTime = 0;
         emmanueltextBox.transform.parent.gameObject.SetActive(true); //show text box
 
@@ -377,20 +377,20 @@ public class Intro : MonoBehaviour
 
         
         yield return new WaitForSeconds(1.5f); //pause
-        wilsonTextBox.text = null; /*
+        wilsonTextBox.text = null; 
         foreach (var item in wilsonDialogues[5]) //oh no monsters are attacking
         {
             wilsonTextBox.text += item;
             yield return new WaitForSeconds(0.05f);
         }
 
+        yield return new WaitForSeconds(1.5f); //pause
         foreach (var item in attackingMonsters) 
         {
             item.target = item.attackersTarget;
             item.isAttacking = true;
         }
 
-        */
 
 
 

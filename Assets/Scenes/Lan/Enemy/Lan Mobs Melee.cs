@@ -33,7 +33,7 @@ public class LanMobsMelee : NetworkBehaviour
     LanPlayer targetScript;
     [SerializeField] bool isBoss, isEmmanuel, isRespawnable;
     [SerializeField] string[] dialogues;
-    [SerializeField] Transform wilson;
+    [SerializeField] Transform wilson, ending;
     bool dialogue1Done, dialogue2Done;
     //sounds
     AudioSource hitAudioSource, dieAudioSource;
@@ -248,18 +248,27 @@ public class LanMobsMelee : NetworkBehaviour
         }
     }
 
-    [ClientRpc]public void AttackedClientRpc(float damage, ulong networkId) {
+    [ClientRpc]public void AttackedClientRpc(float damage, ulong networkId, int isKnight) {
         if(IsOwner) {
             SubtracthealthServerRpc(damage, networkId); // call server to subtract network variable health using ServerRpc
         }
         //players = FindObjectsOfType<LanPlayer>();
-        foreach (var p in gmScript.players) 
-        {
-            if (p.NetworkObjectId == networkId)
+
+        if(isKnight == 1) {
+            foreach (var item in gmScript.knights)
             {
+                if(item.NetworkObjectId == networkId) {
+                    target = item.GetComponent<Collider2D>();
+                }
+            }
+        }
+        else { //is a player
+            foreach (var p in gmScript.players) {
+                if (p.NetworkObjectId == networkId) {
                 target = p.GetComponent<Collider2D>();
                 targetScript = p.GetComponent<LanPlayer>();
                 break;
+                }
             }
         }
         
@@ -294,6 +303,7 @@ public class LanMobsMelee : NetworkBehaviour
             enemyCollider.enabled = false;
             isDead = true;
             isAttacking = false;
+            anim.SetBool("isMoving", false);
             anim.Play("Die");
             dieAudioSource.Play();
         }
@@ -304,13 +314,12 @@ public class LanMobsMelee : NetworkBehaviour
 
     }
     private void OnDisable() {
-        if(currentHealth.Value <= 0) {
+        if(isRespawnable) { //if false, dont respawn
             Invoke(nameof(RespawnWait), deathTimer);
         }
     }
 
     void RespawnWait() {
-        Debug.Log("RespawnWait");
         if(!IsOwner) return;
         transform.position = originalPos;
         isDead = false;
@@ -374,8 +383,6 @@ public class LanMobsMelee : NetworkBehaviour
 
     [ServerRpc(RequireOwnership = false)] public void HealServerRpc(float healAmount) {
         currentHealth.Value += healAmount;
-
-
     }
 
     //////////////////DIALOGUE//////////////////////////////////////////////////////////////
@@ -423,7 +430,7 @@ public class LanMobsMelee : NetworkBehaviour
             textBoxText.text += item;
             yield return new WaitForSeconds(0.025f);
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         textBox.gameObject.SetActive(false);
         textBoxText.text = null;
         StartCoroutine(PlayEmmanuelEvilDialogue4());
@@ -442,6 +449,9 @@ public class LanMobsMelee : NetworkBehaviour
         yield return new WaitForSeconds(1.5f);
         textBox.gameObject.SetActive(false);
         textBoxText.text = null;
+
+        //START ENDING
+        ending.gameObject.SetActive(true);
     }
 }
 

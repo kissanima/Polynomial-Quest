@@ -19,6 +19,7 @@ public class Lan : MonoBehaviour
 	LanGameManager gmScript;
 	bool hasCharacter;
 	string tempUsername;
+	float finishIntroClient;
 	void Start()
 	{
 		
@@ -27,6 +28,7 @@ public class Lan : MonoBehaviour
 		//InvokeRepeating("assignPlayerController", 0.1f, 0.1f);
 		//RegisterNetworkPrefabs();
 		gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
+		finishIntroClient = PlayerPrefs.GetInt("finishIntro");
 	}
 
 	private void OnEnable() {
@@ -61,13 +63,13 @@ public class Lan : MonoBehaviour
 			NetworkManager.Singleton.StartClient();
 			welcome.SetActive(false);
 
-			if(PlayerPrefs.GetFloat("finishIntro") == 1) {
+			if(finishIntroClient == 1) {
 				ui.transform.GetChild(10).gameObject.SetActive(true); //minimap
 				ui.transform.GetChild(14).gameObject.SetActive(true); //mission
 				ui.transform.GetChild(11).gameObject.SetActive(false);
 			}
-		else {
-			ui.transform.GetChild(11).gameObject.SetActive(true); //start intro
+			else {
+				ui.transform.GetChild(11).gameObject.SetActive(true); //start intro
 			}
 		//GameObject.FindWithTag("UI").transform.GetChild(14).gameObject.SetActive(false); //enable mission
 		}

@@ -25,6 +25,7 @@ public class LanGameManager : MonoBehaviour
     public AudioSource correctSound, wrongSound;
     public AudioClip[] backgroundMusic;
     public LanPlayer[] players;
+    public LanKnights[] knights;
     public bool isPortalFound;
     public AudioClip[] WarriorSoundEffects;
     public AudioClip[] MageSoundEffects;
@@ -44,6 +45,8 @@ public class LanGameManager : MonoBehaviour
                 break;
             }
         }
+
+        knights = FindObjectsOfType<LanKnights>();
 
         
         characterCreation = characterCreationObject.GetComponent<LanCreateCharacter>();
@@ -183,20 +186,42 @@ public class LanGameManager : MonoBehaviour
 
 
     public void LoadPlayerData() {
-        player.username = PlayerPrefs.GetString("username");
-        player.playerClass = PlayerPrefs.GetString("playerClass");
+        if(PlayerPrefs.GetInt("hasStatsInitialized") == 0) {
+            PlayerPrefs.SetInt("hasStatsInitialized", 1);
+            player.username = PlayerPrefs.GetString("username");
+            player.playerClass = PlayerPrefs.GetString("playerClass");
+            player.equipedWeaponIndex = PlayerPrefs.GetInt("equipedWeaponIndex");
 
-        player.level.Value = PlayerPrefs.GetInt("level");
-        player.currentExp = PlayerPrefs.GetInt("currentExp");
-        player.finalRequiredExp = PlayerPrefs.GetInt("finalRequiredExp");
-        player.potion = PlayerPrefs.GetInt("potion");
-        player.equipedWeaponIndex = PlayerPrefs.GetInt("equipedWeaponIndex");
-        player.equipedArmorIndex = PlayerPrefs.GetInt("equipedArmorIndex");
-        player.hint = PlayerPrefs.GetInt("hint");
-        player.finishIntro = PlayerPrefs.GetInt("finishIntro");
-        player.score.Value = PlayerPrefs.GetInt("score");
-        player.finalHealth.Value = PlayerPrefs.GetInt("finalHealth");
-        player.currentHealth.Value = PlayerPrefs.GetInt("currentHealth");
+            //initialize variables
+            player.finalDamage = player.baseDamage + player.weaponDmg;
+            player.finalHealth.Value = player.baseHealth.Value;
+            player.currentHealth.Value = player.finalHealth.Value;
+            player.finalMana = player.baseMana;
+            player.currentMana = player.finalMana;
+            player.finalRequiredExp = player.baseRequiredExp;
+            player.potion = 10;
+            player.hint = 10;
+
+        }
+        else {
+            player.username = PlayerPrefs.GetString("username");
+            player.playerClass = PlayerPrefs.GetString("playerClass");
+
+            player.level.Value = PlayerPrefs.GetInt("level");
+            player.currentExp = PlayerPrefs.GetInt("currentExp");
+            player.finalRequiredExp = PlayerPrefs.GetInt("finalRequiredExp");
+            player.potion = PlayerPrefs.GetInt("potion");
+            player.equipedArmorIndex = PlayerPrefs.GetInt("equipedArmorIndex");
+            player.hint = PlayerPrefs.GetInt("hint");
+            player.finishIntro = PlayerPrefs.GetInt("finishIntro");
+            player.score.Value = PlayerPrefs.GetInt("score");
+            player.finalHealth.Value = PlayerPrefs.GetInt("finalHealth");
+            player.currentHealth.Value = PlayerPrefs.GetInt("currentHealth");
+
+            //initialize
+            player.finalDamage = player.baseDamage + player.weaponDmg;
+
+        }
     
         player.CallUpdatePlayerNameInfoServerRpc(); //get names
         player.updateStats();

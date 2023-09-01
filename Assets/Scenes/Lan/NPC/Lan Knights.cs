@@ -7,7 +7,7 @@ using TMPro;
 public class LanKnights : NetworkBehaviour
 {
     public NetworkVariable<float> currentHealth = new(10000, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    [SerializeField] float finalDamage = 1, moveSpeed = 1f, attackRange = 0.5f,
+    [SerializeField] float finalDamage = .01f, moveSpeed = 1f, attackRange = 0.5f,
     attackCooldown, attackSpeed = 1;
     int targetIndex;
 
@@ -18,7 +18,7 @@ public class LanKnights : NetworkBehaviour
    Vector3 startPosition;
    LanGameManager gmScript;
    Animator anim;
-   Transform mobsParent, damagePool;
+   Transform mobsParent, damagePool, characterSprite;
    LanMobsMelee targetScript;
 
     void Start() {  
@@ -28,36 +28,35 @@ public class LanKnights : NetworkBehaviour
     mobsParent = GameObject.FindWithTag("EnemyManager").transform.GetChild(0);
     damagePool = GameObject.FindWithTag("DamagePool").transform;
     startPosition = transform.position;
+    characterSprite = transform.GetChild(0);
 
     //gameobject.name = gameObject.name.Replace()
    }
 
-   private void Update() {
+    void FixedUpdate() {
+    if(!IsOwner) return;
     attackCooldown -= Time.deltaTime;
     if(target != null && !targetScript.isDead) { //if there is target
         float distance = Vector2.Distance(transform.position, target.transform.position); //calculate distance
 
         if(distance <= attackRange) { //start attacking
-        anim.SetBool("isRunning", false);
-        anim.SetBool("isIdle", true);
-
+            anim.SetBool("isRunning", false);
+            anim.SetBool("isIdle", true);
             if(attackCooldown <=0) {
                 AttackServerRpc(targetIndex, finalDamage, NetworkObjectId);
                 anim.Play("Attack");
                 attackCooldown = 1 / attackSpeed;
             }
-        rb.velocity = Vector2.zero;
+            rb.velocity = Vector2.zero;
         }
         else if(distance > attackRange) {// if true, start chasing      0-1
             Vector2 targetDirection = (target.transform.position - transform.position).normalized * moveSpeed; //calculate target direction
-
-
             //rotate object to face target
             if(targetDirection.x < 0) {
-                transform.GetChild(0).localScale = new Vector2(-0.07f, 0.07f);
+                characterSprite.localScale = new Vector2(-0.05f, 0.05f);
             }
             else {
-                transform.GetChild(0).localScale = new Vector2(0.07f, 0.07f);
+                characterSprite.localScale = new Vector2(0.05f, 0.05f);
             }
             rb.MovePosition(rb.position + targetDirection * Time.deltaTime); //move to
             anim.SetBool("isRunning", true);
@@ -83,10 +82,10 @@ public class LanKnights : NetworkBehaviour
         if(temp != targetIndex) {   //executed once, then procced to else
             targetObject = mobsParent.transform.GetChild(targetIndex).GetComponent<LanMobsMelee>();
             temp = targetIndex;
-            targetObject.AttackedClientRpc(finalDamage, NetworkObjectId);
+            targetObject.AttackedClientRpc(finalDamage, NetworkObjectId, 1);
         }
         else {
-            targetObject.AttackedClientRpc(finalDamage, NetworkObjectId);
+            targetObject.AttackedClientRpc(finalDamage, NetworkObjectId, 1);
         }
     }
 

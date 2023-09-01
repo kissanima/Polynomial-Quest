@@ -37,7 +37,7 @@ public class LanPlayer : NetworkBehaviour
     public float moveSpeed = 1f, attackSpeed = 1, attackCooldown = 0, baseDamage= 25, finalDamage, currentExp,
     baseRequiredExp = 75, finalRequiredExp, currentMana, baseMana = 75, finalMana,
     potion, weaponDmg, baseArmor = 5, finalArmor, itemArmor, equipedWeaponIndex, equipedArmorIndex, deathTimer = 5,
-    damageReduction, attackRange, hint = 10, finishIntro;
+    damageReduction, attackRange, hint = 10, finishIntro, hasStatsInitialized;
     public string username, playerClass;
     public Collider2D[] targetList;
     public Slider sliderHealthWS;
@@ -72,7 +72,8 @@ public class LanPlayer : NetworkBehaviour
         skillEffectsParent = GameObject.FindWithTag("SkillEffects").transform;
         maps = GameObject.FindWithTag("Maps").transform;
         anim = transform.GetChild(0).GetComponent<Animator>(); //for animations
-        
+        itemsPool = GameObject.FindWithTag("ItemsPoolWS").transform;
+
         if(!IsLocalPlayer) {
             transform.GetChild(6).gameObject.SetActive(false);
         }
@@ -93,16 +94,6 @@ public class LanPlayer : NetworkBehaviour
         torso.Value = PlayerPrefs.GetInt("torso");
         wrist.Value = PlayerPrefs.GetInt("wrist");
         
-        //initialize variables
-        finalDamage = baseDamage + weaponDmg;
-        finalArmor = baseArmor + itemArmor;
-        finalHealth.Value = baseHealth.Value;
-        currentHealth.Value = finalHealth.Value;
-        finalMana = baseMana;
-        currentMana = finalMana;
-        finalRequiredExp = baseRequiredExp;
-        potion = 10;
-        hint = 10;
 
         damagePool = GameObject.FindWithTag("DamagePool").transform; // for damage pops
         transform.GetChild(0).GetComponent<ClientNetworkAnimator>().Animator = anim; //to sync animations across clients
@@ -114,7 +105,6 @@ public class LanPlayer : NetworkBehaviour
         sliderHealthWS = transform.GetChild(1).GetChild(0).GetComponent<Slider>();
         cooldownImage = GameObject.FindWithTag("Controls").transform.GetChild(1).GetChild(0).GetComponent<Image>();
         audioSource = GetComponent<AudioSource>();
-        itemsPool = GameObject.FindWithTag("ItemsPoolWS").transform;
         inventoryPanel = GameObject.FindWithTag("UI").transform.GetChild(4).GetChild(0);
         hitAudioSource = transform.GetChild(7).GetComponent<AudioSource>();
         dieAudioSource = transform.GetChild(8).GetComponent<AudioSource>();
@@ -264,7 +254,7 @@ public class LanPlayer : NetworkBehaviour
     }
 
     public void EventAttack() {
-        //if(targetList.Length == 0) return; //check to avoid out of bounds error
+        if(targetList.Length == 0) return; //check to avoid out of bounds error
         AttackServerRpc(targetList[0].transform.GetSiblingIndex(), finalDamage, NetworkObjectId);
     }
     
@@ -342,7 +332,6 @@ public class LanPlayer : NetworkBehaviour
         //SpawnBloodEffectServerRpc(NetworkObjectId);
 
         if(currentHealth.Value <= 0) {
-            targetList[0].GetComponent<LanMobsMelee>().target = null;
             //dieAudioSource.Play();
             isDead = true;
             anim.Play("Death");
@@ -415,10 +404,10 @@ public class LanPlayer : NetworkBehaviour
         if(temp != targetIndex) {   //executed once, then procced to else
             targetObject = mobsParent.transform.GetChild(targetIndex).GetComponent<LanMobsMelee>();
             temp = targetIndex;
-            targetObject.AttackedClientRpc(finalDamage, networkId);
+            targetObject.AttackedClientRpc(finalDamage, networkId, 0);
         }
         else {
-            targetObject.AttackedClientRpc(finalDamage, networkId);
+            targetObject.AttackedClientRpc(finalDamage, networkId, 0);
         }
     }
 
