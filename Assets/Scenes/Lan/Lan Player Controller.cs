@@ -13,7 +13,7 @@ public class LanPlayer : NetworkBehaviour
     public GameObject npc, deathPanel, mobsParent;
     public LanGameManager gmScript;
     public Transform damagePool;
-    public Transform bloodEffectsParent, skillEffectsParent, maps;
+    public Transform bloodEffectsParent, skillEffectsParent, maps, ui;
     Transform itemsPool, inventoryPanel;
 
     //player customizations network variables
@@ -72,7 +72,8 @@ public class LanPlayer : NetworkBehaviour
         skillEffectsParent = GameObject.FindWithTag("SkillEffects").transform;
         maps = GameObject.FindWithTag("Maps").transform;
         anim = transform.GetChild(0).GetComponent<Animator>(); //for animations
-        itemsPool = GameObject.FindWithTag("ItemsPoolWS").transform;
+        ui = GameObject.FindWithTag("UI").transform;
+        itemsPool = ui.GetChild(4).GetChild(1);
 
         if(!IsLocalPlayer) {
             transform.GetChild(6).gameObject.SetActive(false);
@@ -581,7 +582,7 @@ public class LanPlayer : NetworkBehaviour
                     item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
                 }
                 else {
-                    item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = itemsPool.GetChild(itemIndex).GetComponent<SpriteRenderer>().sprite;
+                    item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = itemsPool.GetChild(itemIndex).GetComponent<LanItemSS>().itemImageWS;
                 }
             }
         }
