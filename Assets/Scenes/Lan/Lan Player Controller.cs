@@ -478,11 +478,18 @@ public class LanPlayer : NetworkBehaviour
         int draw = Random.Range(0, 2);
         Debug.Log("RandomWeatherServerRpc called: " + draw);
 
-        if(draw == 1 && gmScript.difficulty == 0) {
-            StartWeatherClientRpc();
-        }
-        else {
-            StartCoroutine(gmScript.RedrawWeather());
+        switch (gmScript.difficulty)
+        {
+            case 0:
+                if(draw == 1) {
+                    StartWeatherClientRpc();
+                }
+                else {
+                    StartCoroutine(gmScript.RedrawWeather());
+                }
+            break;
+
+            
         }
     }
     [ClientRpc]

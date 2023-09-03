@@ -409,6 +409,7 @@ public class Intro : MonoBehaviour
         ui.GetChild(6).gameObject.SetActive(true); // true health bars
         ui.GetChild(10).gameObject.SetActive(true); // show minimap
         ui.GetChild(14).gameObject.SetActive(true);
+        skipButton.SetActive(false);
         gmScript.player.finishIntro = 1;
         gmScript.SavePlayerData();
     }

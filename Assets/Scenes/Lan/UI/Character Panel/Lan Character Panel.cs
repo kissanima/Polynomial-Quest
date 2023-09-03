@@ -23,7 +23,7 @@ public class LanCharacterPanel : MonoBehaviour
 
     private void OnEnable() {
         infoText.SetText("Name: " + gmScript.player.username + "   CLASS: " + gmScript.player.playerClass + "\n"
-        + "Level: " + gmScript.player.level + "\n"
+        + "Level: " + gmScript.player.level.Value + "\n"
         + "HP: " + gmScript.player.currentHealth.Value + "/" + gmScript.player.finalHealth.Value + "\n"
         + "Mana: " + gmScript.player.currentMana + "/" + gmScript.player.finalMana + "\n"
         + "Exp: " + gmScript.player.currentExp + "/" + gmScript.player.finalRequiredExp + "\n"

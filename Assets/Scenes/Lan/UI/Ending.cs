@@ -7,6 +7,7 @@ public class Ending : MonoBehaviour
 {
     [SerializeField] Transform WilsonTransform, emmanuelTransform, controls, playerInforBar, minimap, missionPanel, mapParent, effect104, ultimateWeapon, ultimateWeaponSS, itemPool, endingFade;
     [SerializeField] TextMeshProUGUI wilsonText, emmanuelText, endingFadeText;
+    [SerializeField] AudioClip[] wilsonSound, emmanuelSound;
     Vector2 wilsonPosition;
     LanGameManager gmScript;
     Animator emmanuelAnim;
