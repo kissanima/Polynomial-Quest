@@ -34,6 +34,7 @@ public class LanGameManager : MonoBehaviour
     public Sprite[] warriorSkillIcons, mageSkillIcons, assassinSkillIcons;
     [SerializeField] TextMeshProUGUI weatherTitleText, weatherInfoText, scoreText;
     public GameObject[] MobsDesign;
+    float elapseTime, weatherDuration = 30;
     public void Initialize() {
         Application.targetFrameRate = 60;
         players = FindObjectsOfType<LanPlayer>();
@@ -134,19 +135,20 @@ public class LanGameManager : MonoBehaviour
         }
     }
 
+    ////////////////////////////////////////RAIN/////////////////////////////////////
     public void RainWeather() {
         weatherTitleText.gameObject.SetActive(true);
         weatherTitleText.SetText("raining");
-        weatherInfoText.SetText("       -10% movespeed");
+        weatherInfoText.SetText("-10% movespeed");
             player.transform.GetChild(2).GetChild(0).gameObject.SetActive(true);
 
-            player.moveSpeed -= (player.moveSpeed * .10f); //debuffs
+            player.moveSpeed -= player.moveSpeed * .10f; //debuffs
             light2D.intensity = .9f;
 
-            StartCoroutine(RandomWeatherWait());
+            StartCoroutine(RainWait());
     }
 
-    IEnumerator RandomWeatherWait() {
+    IEnumerator RainWait() {
         yield return new WaitForSeconds(30f);
         weatherTitleText.gameObject.SetActive(false);
         player.transform.GetChild(2).GetChild(0).gameObject.SetActive(false);
@@ -155,13 +157,142 @@ public class LanGameManager : MonoBehaviour
 
         player.RandomWeatherServerRpc();
     }
+    //////////////////////////////////////END////////////////////////////////////////////
 
+    ////////////////////////////////////////DESERT/////////////////////////////////////
+    public void DesertWeather() {
+        weatherTitleText.gameObject.SetActive(true);
+        weatherTitleText.SetText("SandStorm");
+        weatherInfoText.SetText("-10% movespeed \n-10% attack Speed");
+            player.transform.GetChild(2).GetChild(1).gameObject.SetActive(true); //disable particle system
+
+            player.attackSpeed = player.attackSpeed * .10f;
+            player.moveSpeed -= player.moveSpeed * .10f; //debuffs
+            light2D.intensity = 1.2f;
+
+            StartCoroutine(DesertWait());
+    }
+
+    IEnumerator DesertWait() {
+        /* if(elapseTime < weatherDuration) {
+            elapseTime += Time.fixedDeltaTime;
+            while (true) {
+
+                yield return new WaitForSeconds(.1f);
+            }
+        } */
+        yield return new WaitForSeconds(30f);
+        weatherTitleText.gameObject.SetActive(false);
+        player.transform.GetChild(2).GetChild(1).gameObject.SetActive(false); //disable particle system
+
+        player.moveSpeed += player.moveSpeed * .10f;
+        player.attackSpeed += player.attackSpeed * .10f;
+        light2D.intensity =  1f;
+
+        player.RandomWeatherServerRpc();
+    }
+    //////////////////////////////////////END////////////////////////////////////////////
+
+    ////////////////////////////////////////SNOW/////////////////////////////////////
+    public void SnowWeather() {
+        weatherTitleText.gameObject.SetActive(true);
+        weatherTitleText.SetText("Snow");
+        weatherInfoText.SetText("-15% movespeed \n-15% attack Speed \n-25% max mana");
+            player.transform.GetChild(2).GetChild(2).gameObject.SetActive(true); //enable particle
+
+            //debuffs
+            player.attackSpeed = player.attackSpeed * .10f;
+            player.moveSpeed -= player.moveSpeed * .10f; 
+            player.finalMana -= player.finalMana * .25f;
+
+            UpdateUI();
+            StartCoroutine(SnowWait());
+    }
+
+    IEnumerator SnowWait() {
+        /* if(elapseTime < weatherDuration) {
+            elapseTime += Time.fixedDeltaTime;
+            while (true) {
+
+                yield return new WaitForSeconds(.1f);
+            }
+        } */
+        yield return new WaitForSeconds(30f);
+        weatherTitleText.gameObject.SetActive(false);
+        player.transform.GetChild(2).GetChild(2).gameObject.SetActive(false); //disable particle system
+        
+        player.moveSpeed += player.moveSpeed * .15f;
+        player.attackSpeed += player.attackSpeed * .15f;
+        player.finalMana += player.finalMana * .25f;
+
+        UpdateUI();
+        player.RandomWeatherServerRpc();
+    }
+    //////////////////////////////////////END////////////////////////////////////////////
+
+
+    ////////////////////////////////////////SNOW/////////////////////////////////////
+    public void AcidWeather() {
+        weatherTitleText.gameObject.SetActive(true);
+        weatherTitleText.SetText("Acid Rain");
+        weatherInfoText.SetText("-15% movespeed \n-15% attack Speed \n-25% max mana \n-(20 + 1% of max health) per second");
+            player.transform.GetChild(2).GetChild(3).gameObject.SetActive(true);
+
+            //debuffs
+            player.attackSpeed = player.attackSpeed * .10f;
+            player.moveSpeed -= player.moveSpeed * .10f; 
+            player.finalMana -= player.finalMana * .25f;
+
+            UpdateUI();
+            StartCoroutine(AcidWait());
+    }
+
+    IEnumerator AcidWait() {
+         if(elapseTime < weatherDuration) {
+            elapseTime += Time.fixedDeltaTime;
+            while (true) {
+                player.currentHealth.Value -= (player.currentHealth.Value * .01f) + 20f;
+                yield return new WaitForSeconds(1f);
+            }
+        }
+        //yield return new WaitForSeconds(30f);
+        weatherTitleText.gameObject.SetActive(false);
+        player.transform.GetChild(2).GetChild(3).gameObject.SetActive(false); //disable particle system
+        
+        player.moveSpeed += player.moveSpeed * .15f;
+        player.attackSpeed += player.attackSpeed * .15f;
+        player.finalMana += player.finalMana * .25f;
+
+        UpdateUI();
+        player.RandomWeatherServerRpc();
+    }
+    //////////////////////////////////////END////////////////////////////////////////////
+
+    
     public IEnumerator RedrawWeather() {
         weatherTitleText.gameObject.SetActive(false);
         yield return new WaitForSeconds(30f);
         player.RandomWeatherServerRpc();
     }
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public void UpdateUI() {
         sliderHealth.maxValue = player.finalHealth.Value;
         sliderHealth.value = player.currentHealth.Value;

@@ -390,7 +390,7 @@ public class LanPlayer : NetworkBehaviour
 
 
 
-    //////////////////////////////////////////////////////////////////////NETWORKING///////////////////////////////////////////////////////////TODO: 
+    //////////////////////////////////////////////////////////////////////NETWORKING///////////////////////////////////////////////////////////
 
     [ServerRpc(RequireOwnership = false)]
     public void SubtractHealthServerRpc(float damage) {
@@ -478,23 +478,34 @@ public class LanPlayer : NetworkBehaviour
         int draw = Random.Range(0, 2);
         Debug.Log("RandomWeatherServerRpc called: " + draw);
 
-        switch (gmScript.difficulty)
-        {
-            case 0:
-                if(draw == 1) {
-                    StartWeatherClientRpc();
-                }
-                else {
-                    StartCoroutine(gmScript.RedrawWeather());
-                }
-            break;
-
-            
+        if(draw == 1) {
+            StartWeatherClientRpc(gmScript.difficulty);
+        }
+        else if(draw == 0) {
+            StartCoroutine(gmScript.RedrawWeather());
         }
     }
     [ClientRpc]
-    public void StartWeatherClientRpc() {
-        gmScript.RainWeather();
+    public void StartWeatherClientRpc(int difficulty) {
+        switch (difficulty)
+        {
+            case 0:
+            gmScript.RainWeather();
+            break;
+
+            case 1:
+            gmScript.DesertWeather();
+            break;
+
+            case 2:
+            gmScript.SnowWeather();
+            break;
+
+            case 3:
+            gmScript.AcidWeather();
+            break;
+            
+        }
 
     }
 

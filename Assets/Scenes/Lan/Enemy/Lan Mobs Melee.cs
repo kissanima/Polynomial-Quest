@@ -34,6 +34,7 @@ public class LanMobsMelee : NetworkBehaviour
     [SerializeField] bool isBoss, isEmmanuel, isRespawnable;
     [SerializeField] string[] dialogues;
     [SerializeField] Transform wilson, ending;
+    [SerializeField] LanMobsMelee emmanuel;
     bool dialogue1Done, dialogue2Done;
     //sounds
     AudioSource hitAudioSource, dieAudioSource;
@@ -55,6 +56,7 @@ public class LanMobsMelee : NetworkBehaviour
         rb = GetComponent<Rigidbody2D>();
         enemyCollider = GetComponent<Collider2D>();
         bloodEffectParent = GameObject.FindWithTag("BloodEffects").transform;
+        
         if(isBoss) {
             textBox = transform.GetChild(6);
             textBoxText = textBox.GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -83,9 +85,14 @@ public class LanMobsMelee : NetworkBehaviour
         ////////////////OPTIMIZATIONS///////////
         //transform.GetChild(3).GetComponent<Animator>().enabled = false;
         //transform.GetChild(3).gameObject.SetActive(false);
+
+        if(isBoss && !isEmmanuel) {
+             target = emmanuel.target;
+        }
     }
 
     
+
     public void UpdateStats()
     {
         if(!IsOwner) return;
