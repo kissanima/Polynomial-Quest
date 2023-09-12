@@ -17,7 +17,7 @@ public class LanGameManager : MonoBehaviour
     public TextMeshProUGUI potionText, console;
     public LanPlayer player;
     public float enemyStatsModifier = 100f;
-    public GameObject inventoryManager, itemPool, characterCreationObject;
+    public GameObject inventoryManager, itemPool, characterCreationObject, customizationCamera;
     LanCreateCharacter characterCreation;
     LanCameraController playerCamera;
     public int difficulty = 0, dungeonStatues;
@@ -133,6 +133,7 @@ public class LanGameManager : MonoBehaviour
             break;
         }
         Application.targetFrameRate = 60;
+        customizationCamera.SetActive(false);
     }
 
     ////////////////////////////////////////RAIN/////////////////////////////////////

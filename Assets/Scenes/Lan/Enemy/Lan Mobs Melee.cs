@@ -83,7 +83,8 @@ public class LanMobsMelee : NetworkBehaviour
 
 
         ////////////////OPTIMIZATIONS///////////
-        //transform.GetChild(3).GetComponent<Animator>().enabled = false;
+        transform.GetChild(3).GetComponent<ClientNetworkAnimator>().enabled = false;
+        transform.GetChild(3).GetComponent<ClientNetworkTransform>().enabled = false;
         //transform.GetChild(3).gameObject.SetActive(false);
 
         if(isBoss && !isEmmanuel) {
