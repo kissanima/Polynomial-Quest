@@ -33,10 +33,9 @@ public class LanGameManager : MonoBehaviour
     Light2D light2D;
     public Sprite[] warriorSkillIcons, mageSkillIcons, assassinSkillIcons;
     [SerializeField] TextMeshProUGUI weatherTitleText, weatherInfoText, scoreText;
-    public GameObject[] MobsDesign;
     float elapseTime, weatherDuration = 30;
     public void Initialize() {
-        Application.targetFrameRate = 60;
+    
         players = FindObjectsOfType<LanPlayer>();
         foreach (LanPlayer p in players)
         {
@@ -133,6 +132,7 @@ public class LanGameManager : MonoBehaviour
             case "Assassin":
             break;
         }
+        Application.targetFrameRate = 60;
     }
 
     ////////////////////////////////////////RAIN/////////////////////////////////////

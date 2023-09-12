@@ -49,7 +49,7 @@ public class Ranking : MonoBehaviour
                 }
             }
         }
-        byLevel.SetText("Name                 SCORE \n");
+        byLevel.SetText("Name                 LEVEL \n");
         foreach (var item in players.Reverse())
         {
             byLevel.SetText(byLevel.text + "\n" + item.username + "              " + item.level.Value.ToString() + "\n");

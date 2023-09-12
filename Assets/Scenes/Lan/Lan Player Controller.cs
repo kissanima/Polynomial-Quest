@@ -200,11 +200,11 @@ public class LanPlayer : NetworkBehaviour
         //check if owner
         if(!IsOwner) return;
         if(isDead) {
-            deathTimer -= Time.deltaTime;
+            deathTimer -= Time.fixedDeltaTime;
             deathTimerText.SetText(deathTimer.ToString("F2"));
         }
         else {
-            attackCooldown -= Time.deltaTime; 
+            attackCooldown -= Time.fixedDeltaTime; 
             if(attackCooldown >= 0) {
             cooldownImage.gameObject.SetActive(true); //enable cooldown image
             cooldownImage.fillAmount = (attackCooldown - 0) / (attackSpeed - 0);

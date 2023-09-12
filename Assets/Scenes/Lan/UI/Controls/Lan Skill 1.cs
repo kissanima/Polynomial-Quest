@@ -17,7 +17,7 @@ public class LanSkill1 : NetworkBehaviour
     public Transform tempSkill;
     bool hasInitialized, hasPressed, hasReleased;
     float skillRange = .73f, cooldown = 6f, cooldownTimer, tempCooldownTimer, isDirectCast, manaCost, rotationZ;
-    GameObject cooldownImageObject;
+    GameObject cooldownImageObject, skillJoyStick;
     Image cooldownImage;
     TextMeshProUGUI cooldownText;
     string playerClass;
@@ -37,6 +37,7 @@ public class LanSkill1 : NetworkBehaviour
         skillImage = GetComponent<Image>();
         cooldownText = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         cooldownImageObject = transform.GetChild(1).gameObject;
+        skillJoyStick = transform.GetChild(0).gameObject;
         skillEffectParent = GameObject.FindWithTag("SkillEffects").transform;
         cooldownImage = cooldownImageObject.GetComponent<Image>();
         inCooldownSkillImage = transform.GetChild(1).GetComponent<Image>();
@@ -90,11 +91,11 @@ public class LanSkill1 : NetworkBehaviour
 
     private void Update() {
         if(!hasInitialized) return;
-        cooldownTimer -= Time.deltaTime; 
+        cooldownTimer -= Time.fixedDeltaTime; 
         //Debug.Log(cooldownTimer);
         //start here
         if(cooldownTimer >= 0) { //
-            transform.GetChild(0).gameObject.SetActive(false); //disable skillshot
+            skillJoyStick.SetActive(false); //disable skill joystick
             cooldownImageObject.SetActive(true); //enable cooldown image
             cooldownImage.fillAmount = (cooldownTimer - 0) / (cooldown - 0);
             cooldownText.gameObject.SetActive(true);
@@ -109,8 +110,7 @@ public class LanSkill1 : NetworkBehaviour
                 cooldownText.SetText("NO MANA");
         }
         else {
-            transform.GetChild(0).gameObject.SetActive(true); //enable skillshot
-            transform.GetChild(0).gameObject.SetActive(true); //enable cooldown image
+            skillJoyStick.SetActive(true); //disable skill joystick
             cooldownImageObject.SetActive(false);
             cooldownText.gameObject.SetActive(false);
             cooldownImage.fillAmount = 1;
