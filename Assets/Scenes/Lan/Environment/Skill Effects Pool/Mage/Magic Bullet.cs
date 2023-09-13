@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MagicBullet : MonoBehaviour
 {
-    LanGameManager gmScript;
+    [SerializeField]LanGameManager gmScript;
     public float finalDamage, additionalDamagePercentage, projectileSpeed, playerID;
     float elapseTime, flightDuration = 2;
     public Vector2 direction;

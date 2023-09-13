@@ -82,10 +82,15 @@ public class LanMobsMelee : NetworkBehaviour
         interactionManager = GameObject.FindWithTag("UI").transform.GetChild(3).GetComponent<LanInteractionManager>();
 
 
-        ////////////////OPTIMIZATIONS///////////
+        //////////////////////////////////////////////////////////OPTIMIZATIONS//////////////////////////////////////////////////////////////
         transform.GetChild(3).GetComponent<ClientNetworkAnimator>().enabled = false;
         transform.GetChild(3).GetComponent<ClientNetworkTransform>().enabled = false;
-        //transform.GetChild(3).gameObject.SetActive(false);
+        if(isRespawnable) {
+            GetComponent<LanMobsMelee>().enabled = false;
+            anim.enabled = false;
+        }
+        //END OPTIMIZATIONS
+
 
         if(isBoss && !isEmmanuel) {
              target = emmanuel.target;
@@ -260,25 +265,30 @@ public class LanMobsMelee : NetworkBehaviour
         if(IsOwner) {
             SubtracthealthServerRpc(damage, networkId); // call server to subtract network variable health using ServerRpc
         }
-        //players = FindObjectsOfType<LanPlayer>();
 
-        if(isKnight == 1) {
-            foreach (var item in gmScript.knights)
-            {
-                if(item.NetworkObjectId == networkId) {
+        ulong tempId = 987;
+        if(tempId != networkId) { //optimization - if networkID has change, call getComponent;
+            tempId = networkId;
+            if(isKnight == 1) {
+                foreach (var item in gmScript.knights)
+                {
+                    if(item.NetworkObjectId == networkId) {
                     target = item.GetComponent<Collider2D>();
+                    break;
+                    }
+                }
+            }
+            else { //is a player
+                foreach (var p in gmScript.players) {
+                    if (p.NetworkObjectId == networkId) {
+                        target = p.GetComponent<Collider2D>();
+                        targetScript = p.GetComponent<LanPlayer>();
+                        break;
+                    }
                 }
             }
         }
-        else { //is a player
-            foreach (var p in gmScript.players) {
-                if (p.NetworkObjectId == networkId) {
-                target = p.GetComponent<Collider2D>();
-                targetScript = p.GetComponent<LanPlayer>();
-                break;
-                }
-            }
-        }
+
         
         isIdle = false;
         isAttacking = true;

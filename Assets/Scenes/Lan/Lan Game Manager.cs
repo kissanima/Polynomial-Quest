@@ -132,7 +132,7 @@ public class LanGameManager : MonoBehaviour
             case "Assassin":
             break;
         }
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
         customizationCamera.SetActive(false);
     }
 

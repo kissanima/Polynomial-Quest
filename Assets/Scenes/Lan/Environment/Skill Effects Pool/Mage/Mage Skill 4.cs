@@ -5,13 +5,12 @@ using UnityEngine;
 public class MageSkill4 : MonoBehaviour
 {
     Collider2D[] targetList;
-    LanGameManager gmScript;
+    [SerializeField]LanGameManager gmScript;
     public float finalDamage, additionalDamagePercentage = .5f, playerID, projectileSpeed;
     float elapseTime, flightDuration = 3;
     public Vector2 direction;
     Rigidbody2D rb;
     private void OnEnable() {
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         rb = GetComponent<Rigidbody2D>();
         finalDamage = gmScript.player.finalDamage + 25;
 

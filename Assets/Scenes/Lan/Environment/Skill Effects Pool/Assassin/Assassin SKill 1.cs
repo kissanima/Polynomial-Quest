@@ -8,13 +8,12 @@ public class AssassinSKill1 : MonoBehaviour
     float elapseTime, flightDuration = 2;
 
 
-    LanGameManager gmScript;
+    [SerializeField]LanGameManager gmScript;
     Rigidbody2D rb;
     Transform parent, player;
     public Vector2 direction;
 
     private void Awake() {
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         rb = GetComponent<Rigidbody2D>();
         parent = transform.parent.parent.GetChild(0);
     }
