@@ -88,6 +88,7 @@ public class LanMobsMelee : NetworkBehaviour
         if(isRespawnable) {
             GetComponent<LanMobsMelee>().enabled = false;
             anim.enabled = false;
+            transform.GetChild(3).GetChild(0).gameObject.SetActive(false);
         }
         //END OPTIMIZATIONS
 

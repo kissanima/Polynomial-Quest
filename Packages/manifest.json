@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "com.handzlikchris.fastscriptreload": "https://github.com/handzlikchris/FastScriptReload.git?path=Assets",
+    "com.unity.adaptiveperformance": "5.0.2",
+    "com.unity.adaptiveperformance.google.android": "1.2.1",
     "com.unity.collab-proxy": "2.0.5",
     "com.unity.device-simulator.devices": "1.0.0",
     "com.unity.feature.2d": "2.0.0",

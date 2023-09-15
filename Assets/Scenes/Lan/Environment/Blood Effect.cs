@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class BloodEffect : MonoBehaviour
 {
+    [SerializeField] LanGameManager gmScript;
     Transform parent;
     private void Awake() {
-        parent = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>().player.bloodEffectsParent;
+        parent = gmScript.player.bloodEffectsParent;
     }
     public void AnimationEvent() {
         gameObject.SetActive(false);

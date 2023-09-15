@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class LanPotion : MonoBehaviour
 {
-    public LanGameManager gmScript;
+    [SerializeField] LanGameManager gmScript;
+    int draw;
+    bool isPotion;
     private void Start() {
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
+        draw = Random.Range(0,2); //0 = potion     1 = hint
+        if(draw == 0) {
+            isPotion = true;
+        }
+        else {
+            gameObject.name = "Hint";
+        }
     }
     void OnTriggerEnter2D(Collider2D other) {
         if(!other.CompareTag("Player")) return;
-        gmScript.player.potion += 1;
+        if(isPotion) {
+            gmScript.player.potion += 1;
+        }
+        else {
+            gmScript.player.hint += 1;
+        }
         gmScript.UpdateUI();
         Destroy(gameObject);
     }

@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class LanItemsWS : MonoBehaviour
 {
-    LanGameManager gmScript;
+    [SerializeField]LanGameManager gmScript;
     public int itemIndex;
     GameObject inventoryManager, itemPool;
 
     private void Start() {
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         inventoryManager = GameObject.FindWithTag("UI").transform.GetChild(4).gameObject;
         itemPool = inventoryManager.transform.GetChild(1).gameObject;
         gameObject.name = gameObject.name.Replace("Clone()", "");

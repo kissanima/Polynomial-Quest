@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class LanRewardsLabel : MonoBehaviour
 {
-    Transform rewardsLabelPool;
-    private void Start() {
-        rewardsLabelPool = GameObject.FindWithTag("RewardsLabelPool").transform;
-    }
+    [SerializeField]Transform rewardsLabelPool;
+
 
     void AnimationEvent() {
         transform.SetParent(rewardsLabelPool); 
