@@ -8,9 +8,9 @@ public class LanInteractionManager : MonoBehaviour
     public int index, attemps;
     public LanPlayer player;
     TextMeshProUGUI textBox, attempsText, continueButtonText, hintsText;
-    LanGameManager gmScript;
+    [SerializeField]LanGameManager gmScript;
     public LanNpc npcScript;
-    public GameObject continueButton, answerSelection, attempsCount, attempsLabel;
+    [SerializeField] GameObject continueButton, answerSelection, attempsCount, attempsLabel;
 
     AudioSource questionairSoundEffect;
 
@@ -18,13 +18,7 @@ public class LanInteractionManager : MonoBehaviour
     private void Awake() {
         textBox = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         attempsText = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
-        continueButton = GameObject.FindWithTag("InteractionManager").transform.GetChild(4).gameObject;
-        answerSelection = GameObject.FindWithTag("InteractionManager").transform.GetChild(5).gameObject;
-        attempsCount = GameObject.FindWithTag("InteractionManager").transform.GetChild(2).gameObject;
-        attempsLabel = GameObject.FindWithTag("InteractionManager").transform.GetChild(3).gameObject;
         questionairSoundEffect = GetComponent<AudioSource>();
-
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
 
         continueButtonText = continueButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         hintsText = transform.GetChild(6).GetComponent<TextMeshProUGUI>();

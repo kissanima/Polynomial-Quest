@@ -18,9 +18,14 @@ public class LanDetectEnemy : MonoBehaviour
             other.transform.GetChild(3).GetChild(0).gameObject.SetActive(true);
             other.transform.GetChild(3).GetComponent<ClientNetworkAnimator>().enabled = true;
             other.transform.GetChild(3).GetComponent<ClientNetworkTransform>().enabled = true;
+
+            other.transform.GetChild(1).gameObject.SetActive(true); //disable slider
+            other.transform.GetChild(4).gameObject.SetActive(true); //disable circle
         }
         else if(other.CompareTag("Enemy")) {
             other.transform.GetChild(3).GetChild(0).gameObject.SetActive(true);
+            other.transform.GetChild(1).gameObject.SetActive(true); //disable slider
+            other.transform.GetChild(4).gameObject.SetActive(true); //disable
         }
 
     }
@@ -30,9 +35,13 @@ public class LanDetectEnemy : MonoBehaviour
             other.transform.GetChild(3).GetChild(0).gameObject.SetActive(false);
             other.transform.GetChild(3).GetComponent<ClientNetworkAnimator>().enabled = false;
             other.transform.GetChild(3).GetComponent<ClientNetworkTransform>().enabled = false;
+            other.transform.GetChild(1).gameObject.SetActive(false); //disable slider
+            other.transform.GetChild(4).gameObject.SetActive(false); //disable
         }
         else if(other.CompareTag("Enemy")) {
             other.transform.GetChild(3).GetChild(0).gameObject.SetActive(false);
+            other.transform.GetChild(1).gameObject.SetActive(false); //disable slider
+            other.transform.GetChild(4).gameObject.SetActive(false); //disable
         }
     }
 }

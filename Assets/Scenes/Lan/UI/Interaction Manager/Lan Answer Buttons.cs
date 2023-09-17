@@ -5,27 +5,24 @@ using TMPro;
 
 public class LanAnswerButtons : MonoBehaviour
 {
-    public GameObject correctText, wrongText, interactionManager, itemsPoolWS;
+    [SerializeField] GameObject correctText, wrongText, interactionManager, itemsPoolWS;
     public LanAnswerSelection answerSelection;
-    LanInteractionManager interactionScript;
-    LanGameManager gmScript;
+    [SerializeField] LanInteractionManager interactionScript;
+    [SerializeField] LanGameManager gmScript;
     int rewardIndexRange, rewardIndex, potionOrItem;
     Vector3 playerPosition;
-    Transform rewardsLabelPool, reward;
+    [SerializeField] Transform rewardsLabelPool;
+    Transform reward;
     LanMobsMelee enemy;
     Collider2D enemyCollider;
     bool isAI;
 
 
     private void Start() {
-        interactionScript = interactionManager.GetComponent<LanInteractionManager>();
-        itemsPoolWS = GameObject.FindWithTag("ItemsPoolWS");
         playerPosition = gmScript.player.transform.position;
-        rewardsLabelPool = GameObject.FindWithTag("RewardsLabelPool").transform;
     }
 
     private void OnEnable() {
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         bool temp = gmScript.player.npc.GetComponent<LanNpc>().isAI;
         if(temp) {
             isAI = true;
@@ -45,106 +42,35 @@ public class LanAnswerButtons : MonoBehaviour
 
             interactionScript.npcScript.IsDone();
 
-
-            //give reward to player
-            //switch (gmScript.difficulty)
-            //{
-                //case 0: //0 means easy difficulty
-                switch (gmScript.player.playerClass)
-                {
-                    case "Warrior":
-                    potionOrItem = Random.Range(0, 2); //draw 0-1, if 0 give potion, if 1 give item
-                    if(potionOrItem == 0) { //give potion
-                    Debug.Log("Potion given");
-                        reward = Instantiate(itemsPoolWS.transform.GetChild(0), itemsPoolWS.transform);
-                    }
-                    else { //draw item and give as a reward
-                        float rarity = Random.Range(0, 1); //.05
-                        int itemType = Random.Range(1, 5); //example 3
-                        if(rarity >= 0 && rarity < .40) { //chance 40% common
-                            reward = Instantiate(itemsPoolWS.transform.GetChild(itemType), itemsPoolWS.transform);
-                        }
-                        else if(rarity >= .40 && rarity < .70) { //30% uncommon
-                            reward = Instantiate(itemsPoolWS.transform.GetChild(itemType+4), itemsPoolWS.transform);
-                        }
-                        else if(rarity >= .70 && rarity < .85) { //15% rare
-                            reward = Instantiate(itemsPoolWS.transform.GetChild(itemType+8), itemsPoolWS.transform);
-                        }
-                        else if(rarity >= .85 && rarity < .95) { //10% epic
-                            reward = Instantiate(itemsPoolWS.transform.GetChild(itemType+12), itemsPoolWS.transform);
-                        }
-                        else if(rarity >= .95 && rarity <= 1) {  //5% legendary
-                            reward = Instantiate(itemsPoolWS.transform.GetChild(itemType+16), itemsPoolWS.transform);
-                        }
-                    }
-                    reward.position = gmScript.player.transform.position;
-                    break;
-
-                    case "Mage":
-                    potionOrItem = Random.Range(0, 2); //draw 0-1, if 0 give potion, if 1 give item
+                potionOrItem = Random.Range(0, 2); //draw 0-1, if 0 give potion, if 1 give item
                     if(potionOrItem == 0) { //give potion
                         reward = Instantiate(itemsPoolWS.transform.GetChild(0), itemsPoolWS.transform);
                     }
                     else { //draw item and give as a reward
                         float rarity = Random.Range(0, 1);
-                        int itemType = Random.Range(1, 3); //2
+                        int itemIndex;
                         if(rarity >= 0 && rarity < .40) { //chance 40% common
-                            Debug.Log("common");
-                            reward = Instantiate(itemsPoolWS.transform.GetChild(20+itemType), itemsPoolWS.transform);
+                            itemIndex = Random.Range(0, itemsPoolWS.transform.GetChild(1).childCount);
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(1).GetChild(itemIndex), itemsPoolWS.transform);
                         }
                         else if(rarity >= .40 && rarity < .70) { //30% uncommon
-                        Debug.Log("uncommon");
-                            reward = Instantiate(itemsPoolWS.transform.GetChild(22+itemType), itemsPoolWS.transform);
+                            itemIndex = Random.Range(0, itemsPoolWS.transform.GetChild(2).childCount);
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(2).GetChild(itemIndex), itemsPoolWS.transform);
                         }
                         else if(rarity >= .70 && rarity < .85) { //15% rare
-                        Debug.Log("rare");
-                            reward = Instantiate(itemsPoolWS.transform.GetChild(24+itemType), itemsPoolWS.transform);
+                            itemIndex = Random.Range(0, itemsPoolWS.transform.GetChild(3).childCount);
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(3).GetChild(itemIndex), itemsPoolWS.transform);
                         }
                         else if(rarity >= .85 && rarity < .95) { //10% epic
-                        Debug.Log("epic");
-                            reward = Instantiate(itemsPoolWS.transform.GetChild(26+itemType), itemsPoolWS.transform);
+                            itemIndex = Random.Range(0, itemsPoolWS.transform.GetChild(4).childCount);
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(4).GetChild(itemIndex), itemsPoolWS.transform);
                         }
                         else if(rarity >= .95 && rarity <= 1) {  //5% legendary
-                        Debug.Log("legendary");
-                            reward = Instantiate(itemsPoolWS.transform.GetChild(28+itemType), itemsPoolWS.transform);
+                            itemIndex = Random.Range(0, itemsPoolWS.transform.GetChild(5).childCount);
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(5).GetChild(itemIndex), itemsPoolWS.transform);
                         }
                     }
                     reward.position = gmScript.player.transform.position;
-                    break;
-                    
-
-                    case "Assassin":
-                    potionOrItem = Random.Range(0, 2); //draw 0-1, if 0 give potion, if 1 give item
-                    if(potionOrItem == 0) { //give potion
-                        reward = Instantiate(itemsPoolWS.transform.GetChild(0), itemsPoolWS.transform);
-                    }
-                    else { //draw item and give as a reward
-                        float rarity = Random.Range(0, 1);
-                        int itemType = 1; 
-                        if(rarity >= 0 && rarity < .40) { //chance 40% common
-                            Debug.Log("common");
-                            reward = Instantiate(itemsPoolWS.transform.GetChild(30+itemType), itemsPoolWS.transform);
-                        }
-                        else if(rarity >= .40 && rarity < .70) { //30% uncommon
-                        Debug.Log("uncommon");
-                            reward = Instantiate(itemsPoolWS.transform.GetChild(31+itemType), itemsPoolWS.transform);
-                        }
-                        else if(rarity >= .70 && rarity < .85) { //15% rare
-                        Debug.Log("rare");
-                            reward = Instantiate(itemsPoolWS.transform.GetChild(32+itemType), itemsPoolWS.transform);
-                        }
-                        else if(rarity >= .85 && rarity < .95) { //10% epic
-                        Debug.Log("epic");
-                            reward = Instantiate(itemsPoolWS.transform.GetChild(33+itemType), itemsPoolWS.transform);
-                        }
-                        else if(rarity >= .95 && rarity <= 1) {  //5% legendary
-                        Debug.Log("legendary");
-                            reward = Instantiate(itemsPoolWS.transform.GetChild(34+itemType), itemsPoolWS.transform);
-                        }
-                    }
-                    reward.position = gmScript.player.transform.position;
-                    break;
-                }
 
 
                 //show reward
@@ -167,7 +93,7 @@ public class LanAnswerButtons : MonoBehaviour
             answerSelection.attempts -= 1; //subtract attemps
             gmScript.wrongSound.Play();
             wrongText.SetActive(true);
-            interactionManager.GetComponent<LanInteractionManager>().UpdateUI();
+            interactionScript.UpdateUI();
 
             if(answerSelection.attempts <= 0 && isAI) { //if wrong and attemp is zero and its an enemy
                 enemyCollider.enabled = true;

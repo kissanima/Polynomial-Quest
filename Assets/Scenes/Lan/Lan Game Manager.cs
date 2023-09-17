@@ -341,6 +341,7 @@ public class LanGameManager : MonoBehaviour
 
             player.level.Value = PlayerPrefs.GetInt("level");
             player.currentExp = PlayerPrefs.GetInt("currentExp");
+            player.baseRequiredExp = PlayerPrefs.GetInt("baseRequiredExp");
             player.finalRequiredExp = PlayerPrefs.GetInt("finalRequiredExp");
             player.potion = PlayerPrefs.GetInt("potion");
             player.equipedArmorIndex = PlayerPrefs.GetInt("equipedArmorIndex");
@@ -378,7 +379,7 @@ public class LanGameManager : MonoBehaviour
         {
             if(temp == itemPool.transform.GetChild(j).GetSiblingIndex() && temp >= 0) { 
                 GameObject tempInstance = Instantiate(itemPool.transform.GetChild(j).gameObject, inventoryManager.transform.GetChild(0)); //instantiate
-                tempInstance.GetComponent<LanItemSS>().itemIndex = itemPool.transform.GetChild(j).GetSiblingIndex();
+                tempInstance.GetComponent<LanItemSS>().itemIndex = j+1;
                 tempInstance.gameObject.SetActive(true); 
                 break;
             }
@@ -411,6 +412,7 @@ public class LanGameManager : MonoBehaviour
         PlayerPrefs.SetInt("potion", (int)player.potion);
         PlayerPrefs.SetInt("equipedWeaponIndex", (int)player.equipedWeaponIndex);
         PlayerPrefs.SetInt("equipedArmorIndex", (int)player.equipedArmorIndex);
+        PlayerPrefs.SetInt("baseRequiredExp", (int)player.baseRequiredExp);
         PlayerPrefs.SetInt("finalRequiredExp", (int)player.finalRequiredExp);
         PlayerPrefs.SetInt("finishIntro", (int)player.finishIntro);
         PlayerPrefs.SetInt("hint", (int)player.hint);

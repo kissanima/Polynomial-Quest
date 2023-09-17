@@ -6,11 +6,9 @@ public class LanItemsWS : MonoBehaviour
 {
     [SerializeField]LanGameManager gmScript;
     public int itemIndex;
-    GameObject inventoryManager, itemPool;
+    [SerializeField] GameObject inventoryManager, itemPool;
 
     private void Start() {
-        inventoryManager = GameObject.FindWithTag("UI").transform.GetChild(4).gameObject;
-        itemPool = inventoryManager.transform.GetChild(1).gameObject;
         gameObject.name = gameObject.name.Replace("Clone()", "");
     }
     

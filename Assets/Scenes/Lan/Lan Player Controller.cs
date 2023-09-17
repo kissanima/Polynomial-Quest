@@ -168,13 +168,13 @@ public class LanPlayer : NetworkBehaviour
         if(currentExp != 0 && currentExp >= finalRequiredExp && level.Value <= 30) {
             currentExp -= finalRequiredExp; //reset current Exp
             level.Value += 1;
-            baseRequiredExp += (baseRequiredExp * .20f);
+            baseRequiredExp += baseRequiredExp * .20f;
             finalRequiredExp = baseRequiredExp;
 
-            baseDamage += (baseDamage * .20f);
+            baseDamage += baseDamage * .20f;
             finalDamage = baseDamage + weaponDmg;
 
-            baseArmor += (baseArmor * .20f);
+            baseArmor += baseArmor * .20f;
 
             baseHealth.Value += (baseHealth.Value * .20f);
             finalHealth.Value = baseHealth.Value;
@@ -600,7 +600,7 @@ public class LanPlayer : NetworkBehaviour
                     item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
                 }
                 else {
-                    item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = itemsPool.GetChild(itemIndex).GetComponent<LanItemSS>().itemImageWS;
+                    item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = itemsPool.GetChild(itemIndex-1).GetComponent<LanItemSS>().itemImageWS;
                 }
             }
         }

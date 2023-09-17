@@ -24,7 +24,7 @@ public class LanMobsMelee : NetworkBehaviour
     TextMeshProUGUI textBoxText;
     public Collider2D target;
     public LanGameManager gmScript;
-    LanInteractionManager interactionManager;
+    [SerializeField] LanInteractionManager interactionManager;
     GameObject npc;
     Vector3 originalPos;
     Animator anim;
@@ -78,13 +78,12 @@ public class LanMobsMelee : NetworkBehaviour
         //get all sprite renderer
         spriteRenderers = gameObject.GetComponentsInChildren<SpriteRenderer>();
 
-        //interaction manager
-        interactionManager = GameObject.FindWithTag("UI").transform.GetChild(3).GetComponent<LanInteractionManager>();
-
 
         //////////////////////////////////////////////////////////OPTIMIZATIONS//////////////////////////////////////////////////////////////
         transform.GetChild(3).GetComponent<ClientNetworkAnimator>().enabled = false;
         transform.GetChild(3).GetComponent<ClientNetworkTransform>().enabled = false;
+        transform.GetChild(1).gameObject.SetActive(false); //disable slider
+        transform.GetChild(4).gameObject.SetActive(false); //disable
         if(isRespawnable) {
             GetComponent<LanMobsMelee>().enabled = false;
             anim.enabled = false;

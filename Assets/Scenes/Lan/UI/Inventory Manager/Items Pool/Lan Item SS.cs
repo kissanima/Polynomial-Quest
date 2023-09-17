@@ -12,18 +12,16 @@ public class LanItemSS : MonoBehaviour
     string itemName;
     public string itemClass = "", itemType = "";
     //public GameObject itemInfo;
-    LanItemInfo itemInfo;
     Sprite itemImage;
     public Sprite itemImageWS;
-    LanGameManager gmScript;
+    [SerializeField] LanItemInfo itemInfo;
+    [SerializeField] LanGameManager gmScript;
 
     private void Awake() {
         //itemIndex = transform.GetSiblingIndex() + 1;
         gameObject.name = gameObject.name.Replace("(Clone)", "");
         itemName = gameObject.name;
         itemImage = GetComponent<Image>().sprite;
-        itemInfo = GameObject.FindWithTag("InventoryManager").transform.GetChild(2).GetComponent<LanItemInfo>();
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
     }
 
     private void OnEnable() {
