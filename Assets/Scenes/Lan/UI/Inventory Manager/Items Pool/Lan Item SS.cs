@@ -24,18 +24,7 @@ public class LanItemSS : MonoBehaviour
         itemImage = GetComponent<Image>().sprite;
     }
 
-    private void OnEnable() {
-        if(itemIndex == gmScript.player.equipedWeaponIndex) {
-            transform.GetChild(0).gameObject.SetActive(true);
-
-            //set stats
-            gmScript.player.weaponDmg = damage;
-            gmScript.player.updateStats();
-        }
-        else {
-            transform.GetChild(0).gameObject.SetActive(false);
-        }
-    }
+   
     public void ButtonPressed() {
             itemInfo.gameObject.SetActive(true);
             itemInfo.itemType = itemType;

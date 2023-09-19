@@ -325,7 +325,7 @@ public class LanPlayer : NetworkBehaviour
         Transform temp;
         temp = damagePool.GetChild(0);
         temp.GetComponent<TextMeshProUGUI>().color = Color.red;
-        temp.GetComponent<TextMeshProUGUI>().SetText(damage.ToString());
+        temp.GetComponent<TextMeshProUGUI>().SetText(((int)damage).ToString());
         temp.SetParent(transform.GetChild(1));
         temp.gameObject.SetActive(true);
         

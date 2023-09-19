@@ -26,7 +26,7 @@ public class LanGameManager : MonoBehaviour
     public AudioClip[] backgroundMusic;
     public LanPlayer[] players;
     public LanKnights[] knights;
-    public bool isPortalFound;
+    public bool isPortalFound, hasSetEquippedWeapon;
     public AudioClip[] WarriorSoundEffects;
     public AudioClip[] MageSoundEffects;
     public AudioClip playerHitSoundEffect, playerDieSoundEffect;
@@ -344,6 +344,7 @@ public class LanGameManager : MonoBehaviour
             player.baseRequiredExp = PlayerPrefs.GetInt("baseRequiredExp");
             player.finalRequiredExp = PlayerPrefs.GetInt("finalRequiredExp");
             player.potion = PlayerPrefs.GetInt("potion");
+            player.equipedWeaponIndex = PlayerPrefs.GetInt("equipedWeaponIndex");
             player.equipedArmorIndex = PlayerPrefs.GetInt("equipedArmorIndex");
             player.hint = PlayerPrefs.GetInt("hint");
             player.finishIntro = PlayerPrefs.GetInt("finishIntro");
@@ -353,11 +354,10 @@ public class LanGameManager : MonoBehaviour
 
             //initialize
             player.finalDamage = player.baseDamage + player.weaponDmg;
-
+            player.updateStats();
         }
     
         player.CallUpdatePlayerNameInfoServerRpc(); //get names
-        player.updateStats();
         UpdateUI();
 
     
@@ -379,8 +379,18 @@ public class LanGameManager : MonoBehaviour
         {
             if(temp == itemPool.transform.GetChild(j).GetSiblingIndex() && temp >= 0) { 
                 GameObject tempInstance = Instantiate(itemPool.transform.GetChild(j).gameObject, inventoryManager.transform.GetChild(0)); //instantiate
-                tempInstance.GetComponent<LanItemSS>().itemIndex = j+1;
-                tempInstance.gameObject.SetActive(true); 
+                LanItemSS tempitemScript = tempInstance.GetComponent<LanItemSS>();
+                tempInstance.gameObject.SetActive(true);
+                tempitemScript.itemIndex = j+1;
+                    if(player.equipedWeaponIndex == tempitemScript.itemIndex && !hasSetEquippedWeapon) { //show equipped item status if true
+                        hasSetEquippedWeapon = true;
+                        tempInstance.transform.GetChild(0).gameObject.SetActive(true);
+
+                        //set stats
+                        player.weaponDmg = tempitemScript.damage;
+                        player.updateStats();
+                        player.EquipItemServerRpc(tempitemScript.itemIndex, player.NetworkObjectId);
+                    }
                 break;
             }
         }

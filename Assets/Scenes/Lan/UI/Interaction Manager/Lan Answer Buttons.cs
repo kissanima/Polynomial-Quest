@@ -16,18 +16,30 @@ public class LanAnswerButtons : MonoBehaviour
     LanMobsMelee enemy;
     Collider2D enemyCollider;
     bool isAI;
+    LanNpc npc;
+    TextMeshProUGUI textmesh;
 
 
-    private void Start() {
+    private void Awake() {
         playerPosition = gmScript.player.transform.position;
+        textmesh = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
     }
 
     private void OnEnable() {
+        npc = gmScript.player.npc.GetComponent<LanNpc>();
         bool temp = gmScript.player.npc.GetComponent<LanNpc>().isAI;
         if(temp) {
             isAI = true;
             enemy = gmScript.player.npc.GetComponent<LanMobsMelee>();
             enemyCollider = gmScript.player.npc.GetComponent<Collider2D>();
+        }
+
+        //set size
+        if(textmesh.text.Length > 5) {
+            textmesh.fontSize = 15;
+        }
+        else {
+            textmesh.fontSize = 24;
         }
     }
 
@@ -110,10 +122,12 @@ public class LanAnswerButtons : MonoBehaviour
                 }
                 transform.parent.gameObject.SetActive(false); //disable 
                 interactionManager.SetActive(false);
+                npc.DrawQuestions();
             }
             else if(answerSelection.attempts <= 0) { //if wrong and attemp is zero and is station
                 transform.parent.gameObject.SetActive(false);
                 interactionManager.SetActive(false);
+                npc.DrawQuestions();
             }
         }
     }

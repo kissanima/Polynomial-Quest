@@ -36,18 +36,6 @@ public class LanAnswerSelection : MonoBehaviour
 
         
         if(!npc.isFillinTheBlanks) {  //isfill in the blanks false, if true, it has choices
-            if(choices[1].Length > 5) {  //set text size
-                buttons[0].transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 15;
-                buttons[1].transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 15;
-                buttons[2].transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 15;
-                buttons[3].transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 15;
-            }
-            else {
-                buttons[0].transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 24;
-                buttons[1].transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 24;
-                buttons[2].transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 24;
-                buttons[3].transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = 24;
-            }
             buttons[0].transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(choices[0]);
             buttons[1].transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(choices[1]);
             buttons[2].transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(choices[2]);

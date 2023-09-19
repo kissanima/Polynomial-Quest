@@ -24,7 +24,7 @@ public class LanNpc : MonoBehaviour
     }
     
     
-    void DrawQuestions() {
+    public void DrawQuestions() {
         if(!isNpc) { //0 = easy, 1 = medium
         int draw = Random.Range(0, questionair.GetChild(gmScript.difficulty).transform.childCount); //draw 0-19 the child count of questonair
         LanQuestions temp = questionair.GetChild(gmScript.difficulty).GetChild(draw).GetComponent<LanQuestions>();
@@ -56,10 +56,11 @@ public class LanNpc : MonoBehaviour
 
     public void IsDone() {
         
-
+        Debug.Log("isDone called");
         if(!isAI && !isNpc) {  //
             gmScript.dungeonStatues++;
             gmScript.UpdateMission();
+            gameObject.SetActive(false);
         }
         else {
             gmScript.player.DisableEnemyServerRpc(transform.GetSiblingIndex());
