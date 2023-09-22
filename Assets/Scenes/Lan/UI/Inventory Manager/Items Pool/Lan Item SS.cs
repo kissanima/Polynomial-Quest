@@ -16,27 +16,30 @@ public class LanItemSS : MonoBehaviour
     public Sprite itemImageWS;
     [SerializeField] LanItemInfo itemInfo;
     [SerializeField] LanGameManager gmScript;
+    [SerializeField] TextMeshProUGUI damageArmorLabel;
 
     private void Awake() {
         //itemIndex = transform.GetSiblingIndex() + 1;
         gameObject.name = gameObject.name.Replace("(Clone)", "");
         itemName = gameObject.name;
         itemImage = GetComponent<Image>().sprite;
-    }
 
+    }
    
     public void ButtonPressed() {
             itemInfo.gameObject.SetActive(true);
             itemInfo.itemType = itemType;
             itemInfo.itemIndex = itemIndex;
 
-            itemInfo.SetInfo(itemImage, itemImageWS, itemName, itemClass, damage.ToString());
+            itemInfo.SetInfo(itemImage, itemImageWS, itemName, itemClass, damage.ToString(), armor.ToString());
 
             if(itemType == "sword") {
                 itemInfo.weaponDmg = damage;
+                damageArmorLabel.SetText("Damage: ");
             }
             else if(itemType == "armor") {
                 itemInfo.armor = armor;
+                damageArmorLabel.SetText("armor: ");
             }
     }
 }

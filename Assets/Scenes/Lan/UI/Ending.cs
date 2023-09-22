@@ -125,7 +125,7 @@ public class Ending : MonoBehaviour
         ultimateWeapon.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(1.5f);
-        gmScript.player.EquipItemServerRpc(35, gmScript.player.NetworkObjectId);
+        gmScript.player.EquipItemServerRpc(35, gmScript.player.NetworkObjectId, true);
 
         StartCoroutine(EmmanuelDialogue2());
     }

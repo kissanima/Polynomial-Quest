@@ -115,14 +115,9 @@ public class Lan : MonoBehaviour
     }
 
 	public void ButtonPressedEnter() {
-		//welcome.SetActive(false);
+			gmScript.player.StartIntroduction();
+			gmScript.StartBackgroundMusic();
 		
-		//enable minimap
-        //GameObject.FindWithTag("UI").transform.GetChild(10).gameObject.SetActive(true);
-
-		//enable intro
-		gmScript.player.StartIntroduction();
-		gmScript.StartBackgroundMusic();
 	}
 
 	public void ButtonHost() {

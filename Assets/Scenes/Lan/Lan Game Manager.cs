@@ -18,7 +18,7 @@ public class LanGameManager : MonoBehaviour
     public LanPlayer player;
     public float enemyStatsModifier = 100f;
     public GameObject inventoryManager, itemPool, characterCreationObject, customizationCamera;
-    LanCreateCharacter characterCreation;
+    public LanCreateCharacter characterCreation;
     LanCameraController playerCamera;
     public int difficulty = 0, dungeonStatues;
     AudioSource audioSource;
@@ -333,6 +333,7 @@ public class LanGameManager : MonoBehaviour
             player.finalRequiredExp = player.baseRequiredExp;
             player.potion = 10;
             player.hint = 10;
+            player.finalArmor = player.baseArmor;
 
         }
         else {
@@ -351,6 +352,8 @@ public class LanGameManager : MonoBehaviour
             player.score.Value = PlayerPrefs.GetInt("score");
             player.finalHealth.Value = PlayerPrefs.GetInt("finalHealth");
             player.currentHealth.Value = PlayerPrefs.GetInt("currentHealth");
+            player.baseArmor = PlayerPrefs.GetInt("baseArmor");
+            player.finalArmor = PlayerPrefs.GetInt("finalArmor");
 
             //initialize
             player.finalDamage = player.baseDamage + player.weaponDmg;
@@ -389,7 +392,7 @@ public class LanGameManager : MonoBehaviour
                         //set stats
                         player.weaponDmg = tempitemScript.damage;
                         player.updateStats();
-                        player.EquipItemServerRpc(tempitemScript.itemIndex, player.NetworkObjectId);
+                        player.EquipItemServerRpc(tempitemScript.itemIndex, player.NetworkObjectId, true);
                     }
                 break;
             }
@@ -430,6 +433,8 @@ public class LanGameManager : MonoBehaviour
         PlayerPrefs.SetInt("score", (int)player.score.Value);
         PlayerPrefs.SetInt("finalHealth", (int)player.finalHealth.Value);
         PlayerPrefs.SetInt("currentHealth", (int)player.currentHealth.Value);
+        PlayerPrefs.SetInt("baseArmor", (int)player.baseArmor);
+        PlayerPrefs.SetInt("baseArmor", (int)player.finalArmor);
 
 
         string tempString = string.Join(",", player.inventory);

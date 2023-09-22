@@ -174,7 +174,8 @@ public class LanPlayer : NetworkBehaviour
             baseDamage += baseDamage * .20f;
             finalDamage = baseDamage + weaponDmg;
 
-            baseArmor += baseArmor * .20f;
+            baseArmor += .8f;
+            finalArmor = baseArmor;
 
             baseHealth.Value += (baseHealth.Value * .20f);
             finalHealth.Value = baseHealth.Value;
@@ -351,7 +352,7 @@ public class LanPlayer : NetworkBehaviour
                 weaponDmg = 0;
                 updateStats();
                 gmScript.SavePlayerData();
-                EquipItemServerRpc(0, NetworkObjectId);
+                EquipItemServerRpc(0, NetworkObjectId, true);
             }
             StartCoroutine(playerRespawnWait());
         }
@@ -394,7 +395,7 @@ public class LanPlayer : NetworkBehaviour
 
     [ServerRpc(RequireOwnership = false)]
     public void SubtractHealthServerRpc(float damage) {
-        currentHealth.Value -= damage;
+        currentHealth.Value -= damage - (finalArmor * .5f);
     }
 
 
@@ -587,20 +588,30 @@ public class LanPlayer : NetworkBehaviour
     }
 
     [ServerRpc(RequireOwnership = false)] //TODO: item sync
-    public void EquipItemServerRpc(int itemIndex, ulong playerID) {
-        EquipItemClientRpc(itemIndex, playerID);
+    public void EquipItemServerRpc(int itemIndex, ulong playerID, bool isWeapon) {
+        EquipItemClientRpc(itemIndex, playerID, isWeapon);
         
     }
     [ClientRpc]
-    void EquipItemClientRpc(int itemIndex, ulong playerID) {
+    void EquipItemClientRpc(int itemIndex, ulong playerID, bool isWeapon) {
         foreach (var item in gmScript.players)
         {
             if(item.NetworkObjectId == playerID) {
-                if(itemIndex == 0) {
-                    item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
+                if(isWeapon) { //is a weapon
+                    if(itemIndex == 0) {
+                        item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
+                    }
+                    else {
+                        item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = itemsPool.GetChild(itemIndex-1).GetComponent<LanItemSS>().itemImageWS;
+                    }
                 }
-                else {
-                    item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = itemsPool.GetChild(itemIndex-1).GetComponent<LanItemSS>().itemImageWS;
+                else { //is armor
+                    if(itemIndex == 0) {
+                        item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite = gmScript.characterCreation.torso[item.torso.Value];
+                    }
+                    else {
+                        item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite = itemsPool.GetChild(itemIndex-1).GetComponent<LanItemSS>().itemImageWS;
+                    }
                 }
             }
         }

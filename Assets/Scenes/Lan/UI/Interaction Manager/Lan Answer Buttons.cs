@@ -54,13 +54,18 @@ public class LanAnswerButtons : MonoBehaviour
 
             interactionScript.npcScript.IsDone();
 
-                potionOrItem = Random.Range(0, 2); //draw 0-1, if 0 give potion, if 1 give item
+                potionOrItem = Random.Range(0, 3); //draw 0-2, if 0 give potion, if 1 give item, 2 give armor
+                float rarity = Random.Range(0, 1);
+                int itemIndex;
                     if(potionOrItem == 0) { //give potion
                         reward = Instantiate(itemsPoolWS.transform.GetChild(0), itemsPoolWS.transform);
                     }
+                    else if(potionOrItem == 2) {
+                        itemIndex = Random.Range(0, itemsPoolWS.transform.GetChild(7).childCount);
+                        reward = Instantiate(itemsPoolWS.transform.GetChild(7).GetChild(itemIndex), itemsPoolWS.transform);
+                    }
                     else { //draw item and give as a reward
-                        float rarity = Random.Range(0, 1);
-                        int itemIndex;
+                        
                         if(rarity >= 0 && rarity < .40) { //chance 40% common
                             itemIndex = Random.Range(0, itemsPoolWS.transform.GetChild(1).childCount);
                             reward = Instantiate(itemsPoolWS.transform.GetChild(1).GetChild(itemIndex), itemsPoolWS.transform);

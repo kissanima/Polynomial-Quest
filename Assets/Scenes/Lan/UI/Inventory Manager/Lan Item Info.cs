@@ -25,18 +25,26 @@ public class LanItemInfo : MonoBehaviour
         player = gmScript.player;
     }
 
-    public void SetInfo(Sprite itemImage, Sprite itemImageWS, string itemName, string itemClass, string itemDamage) {
+
+    public void SetInfo(Sprite itemImage, Sprite itemImageWS, string itemName, string itemClass, string itemDamage, string armor) {
         this.itemClass = itemClass;
         this.itemImage.sprite = itemImage;
         this.itemImageWS = itemImageWS;
         this.itemName.SetText(itemName);
-        this.itemDamage.SetText("Damage: " + itemDamage);
         itemClassLabel.SetText("CLASS: " + itemClass);
 
-        if(itemClass != gmScript.player.playerClass) {
+        if(itemClass == "armor") {
+            this.itemDamage.SetText("Armor: " + armor);
+        }
+        else {
+            this.itemDamage.SetText("Damage: " + itemDamage);
+        }
+
+        if(itemClass != "" && itemClass != gmScript.player.playerClass) {
             transform.GetChild(3).gameObject.SetActive(false);
             itemClassLabel.color = Color.red;
         }
+        
         else {
             transform.GetChild(3).gameObject.SetActive(true);
             itemClassLabel.color = Color.white;
@@ -47,24 +55,27 @@ public class LanItemInfo : MonoBehaviour
 
     public void itemEquip() {
         if(itemIndex == player.equipedWeaponIndex || itemIndex == player.equipedArmorIndex) {
-            player.weaponDmg -= weaponDmg;
-            player.equipedWeaponIndex = 0;
-            Debug.Log("item unequip");
+            if(itemType == "sword") {
+                player.weaponDmg -= weaponDmg;
+                player.equipedWeaponIndex = 0;
+                player.EquipItemServerRpc(0, player.NetworkObjectId, true);
+            }
+            else {
+                player.finalArmor -= armor;
+                player.equipedArmorIndex = 0;
+                player.EquipItemServerRpc(0, player.NetworkObjectId, false);
+            }
         }
         else {
-            Debug.Log("item equiped");
-
-            //set item sprite to player
-            //gmScript.player.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = itemImageWS;
-            player.EquipItemServerRpc(itemIndex, player.NetworkObjectId);
-            
             if(itemType == "sword") {
                 player.weaponDmg = weaponDmg;
                 player.equipedWeaponIndex = itemIndex;
+                player.EquipItemServerRpc(itemIndex, player.NetworkObjectId, true);
             }
             else if(itemType == "armor") {
                 player.itemArmor = armor;
                 player.equipedArmorIndex = itemIndex;
+                player.EquipItemServerRpc(itemIndex, player.NetworkObjectId, false);
             }
         }
         player.updateStats();
