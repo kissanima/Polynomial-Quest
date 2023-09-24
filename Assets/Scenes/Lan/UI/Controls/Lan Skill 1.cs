@@ -91,7 +91,7 @@ public class LanSkill1 : NetworkBehaviour
 
     private void Update() {
         if(!hasInitialized) return;
-        cooldownTimer -= Time.fixedDeltaTime; 
+        cooldownTimer -= Time.deltaTime; 
         //Debug.Log(cooldownTimer);
         //start here
         if(cooldownTimer >= 0) { //

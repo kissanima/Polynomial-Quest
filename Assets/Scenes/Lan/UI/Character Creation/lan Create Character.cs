@@ -44,6 +44,9 @@ public class LanCreateCharacter : MonoBehaviour
         classInfo.transform.GetChild(3).GetComponent<TextMeshProUGUI>().SetText(warriorStory);
 
         playerClass = "Warrior";
+
+        character.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(2).GetComponent<SpriteRenderer>().sprite = hood[5];
+        character.transform.GetChild(0).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite = torso[6]; 
     }
 
     public void ButtonMage() {
@@ -55,6 +58,9 @@ public class LanCreateCharacter : MonoBehaviour
         classInfo.transform.GetChild(3).GetComponent<TextMeshProUGUI>().SetText(mageStory);
 
         playerClass = "Mage";
+
+        character.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(2).GetComponent<SpriteRenderer>().sprite = hood[5];
+        character.transform.GetChild(0).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite = torso[7]; 
     }
 
     public void ButtonAssassin() {
@@ -66,6 +72,9 @@ public class LanCreateCharacter : MonoBehaviour
         classInfo.transform.GetChild(3).GetComponent<TextMeshProUGUI>().SetText(assassinStory);
 
         playerClass = "Assassin";
+
+        character.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(2).GetComponent<SpriteRenderer>().sprite = hood[0];
+        character.transform.GetChild(0).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite = torso[5]; 
     }
 
     public void ButtonNext() {
