@@ -6,7 +6,6 @@ using Unity.Netcode;
 public class WarriorSkill4 : MonoBehaviour
 {
     [SerializeField] LanGameManager gmScript;
-    Transform skillEffectsPool;
     AudioSource audioSource;
     public float ownerID;
 
@@ -20,7 +19,6 @@ public class WarriorSkill4 : MonoBehaviour
 
         
         if(ownerID != gmScript.player.NetworkObjectId) return;
-        skillEffectsPool = GameObject.FindWithTag("SkillEffects").transform;
 
         gmScript.player.damageReduction += damageReduction;  //
         gmScript.player.baseDamage += damage;

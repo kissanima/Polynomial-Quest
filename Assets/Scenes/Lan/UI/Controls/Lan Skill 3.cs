@@ -219,7 +219,7 @@ public class LanSkill3 : NetworkBehaviour
     
     [ServerRpc(RequireOwnership = false)]
     void WarriorSkill3ServerRpc(float joystickDirectionx, Vector3 targetPosition, ulong playerID) {
-        WarriorSkill3ClientRpc(joystickDirectionx, targetPosition, gmScript.player.NetworkObjectId);
+        WarriorSkill3ClientRpc(joystickDirectionx, targetPosition, playerID);
     }
     [ClientRpc]
     void WarriorSkill3ClientRpc(float joystickDirectionx, Vector3 targetPosition, ulong playerID) {

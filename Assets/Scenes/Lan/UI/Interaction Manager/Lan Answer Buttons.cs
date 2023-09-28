@@ -96,7 +96,7 @@ public class LanAnswerButtons : MonoBehaviour
                 temp.transform.SetParent(gmScript.player.transform.GetChild(1));
                 temp.transform.position = gmScript.player.transform.position;
                 temp.gameObject.SetActive(true);
-                //break;
+                
 
                 //give exp
                 gmScript.player.currentExp += 25;

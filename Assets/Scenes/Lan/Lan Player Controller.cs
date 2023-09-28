@@ -165,7 +165,7 @@ public class LanPlayer : NetworkBehaviour
     }
 
     public void updateStats() {        
-        if(currentExp != 0 && currentExp >= finalRequiredExp && level.Value <= 30) {
+        if(currentExp != 0 && currentExp >= finalRequiredExp && level.Value <= 30) { //called on level up
             currentExp -= finalRequiredExp; //reset current Exp
             level.Value += 1;
             baseRequiredExp += baseRequiredExp * .20f;
@@ -184,7 +184,7 @@ public class LanPlayer : NetworkBehaviour
             gmScript.UpdateUI();
         }
 
-  
+        finalArmor = baseArmor + itemArmor;
         finalMana = baseMana;
         currentMana = finalMana;
 
@@ -283,7 +283,7 @@ public class LanPlayer : NetworkBehaviour
 
                 case "Mage":
                     Vector2 targetPosition = targetList[0].transform.position - transform.position; //get enemy position
-                    SpawnMagicBulletServerRpc(targetPosition);
+                    SpawnMagicBulletServerRpc(targetPosition, NetworkObjectId);
 
                 break;
 
@@ -315,20 +315,14 @@ public class LanPlayer : NetworkBehaviour
         if(isManaShieldOn) {
             float tempDamage = damage * .30f; //expample: damage = 10, 30% is = 3
             currentMana -= tempDamage;
-            currentHealth.Value -= damage - tempDamage;
+            currentHealth.Value -= damage - ((finalArmor * .5f) / 100) * damage - tempDamage;
         }
         else {
-            currentHealth.Value -= damage;
+            currentHealth.Value -= damage - ((finalArmor * .5f) / 100) * damage;
         }
         gmScript.UpdateUI();
 
         
-        Transform temp;
-        temp = damagePool.GetChild(0);
-        temp.GetComponent<TextMeshProUGUI>().color = Color.red;
-        temp.GetComponent<TextMeshProUGUI>().SetText(((int)damage).ToString());
-        temp.SetParent(transform.GetChild(1));
-        temp.gameObject.SetActive(true);
         
         //blood effects
         //SpawnBloodEffectServerRpc(NetworkObjectId);
@@ -343,16 +337,19 @@ public class LanPlayer : NetworkBehaviour
             if(level.Value > 1) { //TODO: 
                 level.Value -= 1;
             }
-            if(inventoryPanel.childCount > 0) {
+            if(inventoryPanel.childCount > 0) { //wipe inventory when player die
                 for (int i = 0; i < inventoryPanel.childCount; i++)
                 {
                     Destroy(inventoryPanel.GetChild(i).gameObject);
                 }
                 equipedWeaponIndex = 0;
+                equipedArmorIndex = 0;
                 weaponDmg = 0;
+                itemArmor = 0;
                 updateStats();
                 gmScript.SavePlayerData();
-                EquipItemServerRpc(0, NetworkObjectId, true);
+                EquipItemServerRpc(0, NetworkObjectId, true); //for weapon
+                EquipItemServerRpc(0, NetworkObjectId, false); //for armor
             }
             StartCoroutine(playerRespawnWait());
         }
@@ -386,6 +383,13 @@ public class LanPlayer : NetworkBehaviour
         Transform bloodEffectTemp = bloodEffectsParent.GetChild(0);
         bloodEffectTemp.SetParent(transform.GetChild(3));
         bloodEffectTemp.gameObject.SetActive(true);
+
+        Transform temp;
+        temp = damagePool.GetChild(0);
+        temp.GetComponent<TextMeshProUGUI>().color = Color.red;
+        temp.GetComponent<TextMeshProUGUI>().SetText(((int)(oldValue-newValue)).ToString());
+        temp.SetParent(transform.GetChild(1));
+        temp.gameObject.SetActive(true);
     }
     }
 
@@ -395,7 +399,7 @@ public class LanPlayer : NetworkBehaviour
 
     [ServerRpc(RequireOwnership = false)]
     public void SubtractHealthServerRpc(float damage) {
-        currentHealth.Value -= damage - (finalArmor * .5f);
+        currentHealth.Value -= (damage - (finalArmor * .5f));
     }
 
 
@@ -514,10 +518,20 @@ public class LanPlayer : NetworkBehaviour
 
 
     [ServerRpc(RequireOwnership = false)]
-    public void SpawnMagicBulletServerRpc(Vector2 targetPosition) {
-        SpawnMagicBulletClientRpc(targetPosition);
+    public void SpawnMagicBulletServerRpc(Vector2 targetPosition, ulong playerID) {
+        SpawnMagicBulletClientRpc(targetPosition, playerID);
     }
+    [ClientRpc]
+    public void SpawnMagicBulletClientRpc(Vector2 enemyPosition, ulong playerID) {
+        Transform temp = skillEffectsParent.GetChild(1).GetChild(0).GetChild(0);
+        MagicBullet tempScript = temp.GetComponent<MagicBullet>();
 
+        tempScript.direction = enemyPosition;
+        tempScript.playerID = playerID;
+        temp.position = transform.position;
+        temp.SetParent(skillEffectsParent.GetChild(1).GetChild(1)); //move to in Use object
+        temp.gameObject.SetActive(true);
+    }
 
 
 
@@ -557,18 +571,6 @@ public class LanPlayer : NetworkBehaviour
         }
     }
 
-
-
-    [ClientRpc]
-    public void SpawnMagicBulletClientRpc(Vector2 enemyPosition) {
-        Transform temp = skillEffectsParent.GetChild(1).GetChild(0).GetChild(0);
-        MagicBullet tempScript = temp.GetComponent<MagicBullet>();
-
-        tempScript.direction = enemyPosition;
-        temp.position = transform.position;
-        temp.SetParent(skillEffectsParent.GetChild(1).GetChild(1)); //move to in Use object
-        temp.gameObject.SetActive(true);
-    }
 
     
     public void StartIntroduction() {

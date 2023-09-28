@@ -48,6 +48,7 @@ public class AssassinSKill1 : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D other) {
+        if(playerID != gmScript.player.NetworkObjectId) return;
         LanMobsMelee enemy;
         if(other.CompareTag("Enemy")) {
             enemy = other.GetComponent<LanMobsMelee>();

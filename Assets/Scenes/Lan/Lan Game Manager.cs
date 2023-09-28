@@ -351,7 +351,7 @@ public class LanGameManager : MonoBehaviour
             player.finishIntro = PlayerPrefs.GetInt("finishIntro");
             player.score.Value = PlayerPrefs.GetInt("score");
             player.finalHealth.Value = PlayerPrefs.GetInt("finalHealth");
-            player.currentHealth.Value = PlayerPrefs.GetInt("currentHealth");
+            player.currentHealth.Value = player.finalHealth.Value;
             player.baseArmor = PlayerPrefs.GetInt("baseArmor");
             player.finalArmor = PlayerPrefs.GetInt("finalArmor");
 
@@ -450,6 +450,7 @@ public class LanGameManager : MonoBehaviour
         LanPlayer[] temp = FindObjectsOfType<LanPlayer>();
         foreach (LanPlayer p in temp)
         {
+            Debug.Log("LoadPlayerCostumization()");
             //belt
             p.transform.GetChild(0).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite = characterCreation.belt[p.belt.Value];
 

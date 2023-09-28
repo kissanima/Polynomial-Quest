@@ -7,7 +7,6 @@ public class WarriorSkill3 : MonoBehaviour
     Collider2D[] targetList;
     [SerializeField] LanGameManager gmScript;
     public float finalDamage, additionalDamagePercentage = 150f, ownerID;
-    Transform skillEffectsPool;
     AudioSource audioSource;
 
     private void Awake() {
@@ -15,7 +14,6 @@ public class WarriorSkill3 : MonoBehaviour
     }
     
     public void OnEnable() {
-        skillEffectsPool = GameObject.FindWithTag("SkillEffects").transform;
         finalDamage = (gmScript.player.finalDamage * (additionalDamagePercentage / 100)) + 100f;  //150 / 100 = 1.5 
 
         //play sound effect

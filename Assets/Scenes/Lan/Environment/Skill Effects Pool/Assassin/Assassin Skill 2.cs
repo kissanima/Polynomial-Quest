@@ -11,6 +11,7 @@ public class AssassinSkill2 : MonoBehaviour
     Collider2D[] targetList;
 
    private void OnEnable() {
+    if(playerID != gmScript.player.NetworkObjectId) return;
     player = gmScript.player.transform;
     finalDamage = gmScript.player.finalDamage * 2.5f;
     if(playerID != gmScript.player.NetworkObjectId) return; 

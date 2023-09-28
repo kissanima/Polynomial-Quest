@@ -35,11 +35,11 @@ public class LanItemSS : MonoBehaviour
 
             if(itemType == "sword") {
                 itemInfo.weaponDmg = damage;
-                damageArmorLabel.SetText("Damage: ");
+                damageArmorLabel.SetText("Damage: " + damage);
             }
             else if(itemType == "armor") {
                 itemInfo.armor = armor;
-                damageArmorLabel.SetText("armor: ");
+                damageArmorLabel.SetText("armor: " + armor);
             }
     }
 }

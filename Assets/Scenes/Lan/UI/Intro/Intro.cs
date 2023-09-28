@@ -395,15 +395,6 @@ public class Intro : MonoBehaviour
 
 
 
-
-
-
-
-
-
-
-
-
         wilsonTextBox.transform.parent.gameObject.SetActive(false); //textbox disable
         ui.GetChild(2).gameObject.SetActive(true); // true controls
         ui.GetChild(6).gameObject.SetActive(true); // true health bars

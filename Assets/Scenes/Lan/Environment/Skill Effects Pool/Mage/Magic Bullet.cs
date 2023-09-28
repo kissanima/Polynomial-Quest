@@ -13,7 +13,6 @@ public class MagicBullet : MonoBehaviour
     AudioSource audioSource;
 
     private void Awake() {
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         rb = GetComponent<Rigidbody2D>();
         parent = transform.parent.parent.GetChild(0);
     }
@@ -23,6 +22,8 @@ public class MagicBullet : MonoBehaviour
         audioSource.Play();
         StartCoroutine(MovePosition());
         finalDamage = gmScript.player.finalDamage * (additionalDamagePercentage / 100) + gmScript.player.finalDamage;
+
+        Debug.Log("Bullet " + gmScript.player.NetworkObjectId);
     }
 
 
@@ -47,10 +48,14 @@ public class MagicBullet : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D other) {
+        if(playerID != gmScript.player.NetworkObjectId) return;
         LanMobsMelee enemy;
         if(other.CompareTag("Enemy")) {
             enemy = other.GetComponent<LanMobsMelee>();
-            gmScript.player.AttackServerRpc(other.transform.GetSiblingIndex(), finalDamage, gmScript.player.NetworkObjectId);
+
+            
+                gmScript.player.AttackServerRpc(other.transform.GetSiblingIndex(), finalDamage, gmScript.player.NetworkObjectId);
+            
 
             //disable projectile
             transform.SetParent(parent);

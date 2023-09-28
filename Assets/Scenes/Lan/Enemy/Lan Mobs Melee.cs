@@ -302,22 +302,20 @@ public class LanMobsMelee : NetworkBehaviour
         temp.SetParent(transform);
         temp.gameObject.SetActive(true);
 
-        //spawn blood effects
-        //gmScript.player.SpawnBloodEffectServerR     pc(NetworkObjectId);
 
-        if(currentHealth.Value <= (finalHealth.Value * .15f) && !isBoss) {
+        if(currentHealth.Value <= (finalHealth.Value * .15f) && !isBoss) { //MOBS
             enemyCollider.enabled = false;
             isAttacking = false;
             isIdle = false;
             isDead = true;
             
-            if(targetScript.IsLocalPlayer && networkId == gmScript.player.NetworkObjectId) {
+            if(networkId == gmScript.player.NetworkObjectId) {
                 gmScript.player.npc = gameObject;
                 interactionManager.gameObject.SetActive(true);
             }
 
         }
-        else if(currentHealth.Value <= 0 && isBoss) {
+        else if(currentHealth.Value <= 0 && isBoss) { //BOSS
             enemyCollider.enabled = false;
             isDead = true;
             isAttacking = false;
@@ -338,15 +336,16 @@ public class LanMobsMelee : NetworkBehaviour
     }
 
     void RespawnWait() {
-        if(!IsOwner) return;
-        transform.position = originalPos;
         isDead = false;
         gameObject.SetActive(true);
-
-        //reset stats
-        currentHealth.Value = finalHealth.Value;
         enemyCollider.enabled = true;
         target = null;
+
+
+        if(!IsOwner) return;
+        //reset stats
+        currentHealth.Value = finalHealth.Value; //server only
+        transform.position = originalPos; //server only
     }
 
     
