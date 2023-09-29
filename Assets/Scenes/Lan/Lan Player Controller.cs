@@ -12,7 +12,7 @@ public class LanPlayer : NetworkBehaviour
     public Animator anim;
     public GameObject npc, deathPanel, mobsParent;
     public LanGameManager gmScript;
-    public Transform damagePool;
+    public Transform damagePool, dungeonParent;
     public Transform bloodEffectsParent, skillEffectsParent, maps, ui;
     Transform itemsPool, inventoryPanel;
 
@@ -111,7 +111,7 @@ public class LanPlayer : NetworkBehaviour
         dieAudioSource = transform.GetChild(8).GetComponent<AudioSource>();
         hitAudioSource.clip = gmScript.playerHitSoundEffect;
         dieAudioSource.clip = gmScript.playerDieSoundEffect;
-
+        dungeonParent = GameObject.FindWithTag("Environment").transform.GetChild(2).transform;
         deathTimerText = deathPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         playerCollider = GetComponent<BoxCollider2D>();      
         StartCoroutine(DetectEnemyWait()); 
@@ -324,8 +324,7 @@ public class LanPlayer : NetworkBehaviour
 
         
         
-        //blood effects
-        //SpawnBloodEffectServerRpc(NetworkObjectId);
+        
 
         if(currentHealth.Value <= 0) {
             //dieAudioSource.Play();
@@ -642,7 +641,6 @@ public class LanPlayer : NetworkBehaviour
     public void DisableEnemyServerRpc(int enemyIndex) {
         DisableEnemyClientRpc(enemyIndex);
     }
-
     [ClientRpc]
     void DisableEnemyClientRpc(int enemyIndex) { //TODO:
     Transform enemy = mobsParent.transform.GetChild(enemyIndex);
@@ -650,4 +648,41 @@ public class LanPlayer : NetworkBehaviour
     enemy.GetComponent<Collider2D>().enabled = false;
     }
 
+    [ServerRpc(RequireOwnership = false)]
+    public void DisableStatueServerRpc(int statueIndex, int statueParentIndex, int statueParentParentIndex) { //index as siblingIndex()
+        DisableStatueClientRpc(statueIndex, statueParentIndex, statueParentParentIndex);
+    }
+    [ClientRpc]
+    void DisableStatueClientRpc(int statueIndex, int statueParentIndex, int statueParentParentIndex) {
+        gmScript.dungeonStatues++;
+        gmScript.UpdateMission();
+
+        dungeonParent.GetChild(statueParentParentIndex).GetChild(statueParentIndex).GetChild(statueIndex).gameObject.SetActive(false);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void GetStatueStateServerRpc() {
+        switch (gmScript.difficulty)
+        {
+            case 0:
+                for (int i = 0; i < dungeonParent.GetChild(0).GetChild(1).childCount; i++)
+                {
+                    
+                }
+            break;
+            
+            case 1:
+            break;
+
+            case 2:
+            break;
+
+            case 3:
+            break;
+        }
+    }
+    [ClientRpc]
+    void GetStatueStateClientRpc() {
+
+    }
 }

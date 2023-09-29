@@ -20,6 +20,7 @@ public class Lan : MonoBehaviour
 	bool hasCharacter;
 	string tempUsername;
 	float finishIntroClient;
+	LanNpc[] npcs;
 	void Start()
 	{
 		
@@ -29,6 +30,8 @@ public class Lan : MonoBehaviour
 		//RegisterNetworkPrefabs();
 		gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
 		finishIntroClient = PlayerPrefs.GetInt("finishIntro");
+
+		npcs = FindObjectsOfType<LanNpc>();
 	}
 
 	private void OnEnable() {
@@ -115,9 +118,15 @@ public class Lan : MonoBehaviour
     }
 
 	public void ButtonPressedEnter() {
-			gmScript.player.StartIntroduction();
-			gmScript.StartBackgroundMusic();
+		gmScript.player.StartIntroduction();
+		gmScript.StartBackgroundMusic();
 		
+		foreach (var item in npcs)
+		{
+			if(!item.isAI && !item.isNpc) {
+				item.LoadStatue();
+			}
+		}
 	}
 
 	public void ButtonHost() {
