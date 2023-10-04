@@ -94,7 +94,7 @@ public class LanPlayer : NetworkBehaviour
         shoulder.Value = PlayerPrefs.GetInt("shoulder");
         torso.Value = PlayerPrefs.GetInt("torso");
         wrist.Value = PlayerPrefs.GetInt("wrist");
-        
+
 
         damagePool = GameObject.FindWithTag("DamagePool").transform; // for damage pops
         transform.GetChild(0).GetComponent<ClientNetworkAnimator>().Animator = anim; //to sync animations across clients
@@ -113,7 +113,8 @@ public class LanPlayer : NetworkBehaviour
         dieAudioSource.clip = gmScript.playerDieSoundEffect;
         dungeonParent = GameObject.FindWithTag("Environment").transform.GetChild(2).transform;
         deathTimerText = deathPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        playerCollider = GetComponent<BoxCollider2D>();      
+        playerCollider = GetComponent<BoxCollider2D>(); 
+        GetComponent<AudioListener>().enabled = true;     
         StartCoroutine(DetectEnemyWait()); 
 
         
@@ -164,7 +165,7 @@ public class LanPlayer : NetworkBehaviour
         }
     }
 
-    public void updateStats() {        
+    public void updateStats() {      
         if(currentExp != 0 && currentExp >= finalRequiredExp && level.Value <= 30) { //called on level up
             currentExp -= finalRequiredExp; //reset current Exp
             level.Value += 1;
@@ -661,28 +662,20 @@ public class LanPlayer : NetworkBehaviour
     }
 
     [ServerRpc(RequireOwnership = false)]
-    public void GetStatueStateServerRpc() {
-        switch (gmScript.difficulty)
-        {
-            case 0:
-                for (int i = 0; i < dungeonParent.GetChild(0).GetChild(1).childCount; i++)
-                {
-                    
-                }
-            break;
-            
-            case 1:
-            break;
-
-            case 2:
-            break;
-
-            case 3:
-            break;
-        }
+    public void GiveExpServerRpc(float exp) {
+        Debug.Log("called by" + gmScript.player.name);
+        GetExpClientRpc(exp / gmScript.players.Length);
     }
     [ClientRpc]
-    void GetStatueStateClientRpc() {
-
+    void GetExpClientRpc(float exp) {
+        foreach (var item in gmScript.players)
+        {
+            if(item.IsLocalPlayer) {
+                item.currentExp += exp;
+                item.updateStats();
+                break;
+            }
+        }
+        gmScript.UpdateUI();
     }
 }

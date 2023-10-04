@@ -98,8 +98,8 @@ public class LanAnswerButtons : MonoBehaviour
                 temp.gameObject.SetActive(true);
                 
 
-                //give exp
-                gmScript.player.currentExp += 25;
+                
+                gmScript.player.GiveExpServerRpc(25f);
                 gmScript.player.score.Value += 100;
                 gmScript.player.updateStats();
                 gmScript.UpdateUI(); //update player healtbar, exp bar etc

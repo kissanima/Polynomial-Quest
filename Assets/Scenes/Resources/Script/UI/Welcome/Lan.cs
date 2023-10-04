@@ -39,7 +39,7 @@ public class Lan : MonoBehaviour
 			hasCharacter = true;
 			ipInput.gameObject.SetActive(true);
 			welcomeBackText.gameObject.SetActive(true);
-			welcomeBackText.SetText("Welcome back, " + tempUsername + "\n    Level: " + PlayerPrefs.GetFloat("level"));
+			welcomeBackText.SetText("Welcome back, " + tempUsername + "\n    Level: " + PlayerPrefs.GetInt("level"));
 		}
 	}
 
@@ -133,7 +133,7 @@ public class Lan : MonoBehaviour
 		string usernametemp = PlayerPrefs.GetString("username");
 		if(usernametemp != "") {
 			welcomeBackText.gameObject.SetActive(true); //enable welcomeback Object
-			welcomeBackText.SetText("Welcome back, " + PlayerPrefs.GetString("username") + "\n    Level: " + PlayerPrefs.GetFloat("level"));
+			welcomeBackText.SetText("Welcome back, " + PlayerPrefs.GetString("username") + "\n    Level: " + PlayerPrefs.GetInt("level"));
 
 			ipInput.gameObject.SetActive(false); //hide the ip inputBox
 			startClient.SetActive(false); //hide the start Client Button

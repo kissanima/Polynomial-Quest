@@ -6,13 +6,12 @@ using UnityEngine.UI;
 
 public class LanCharacterPanel : MonoBehaviour
 {
-    LanGameManager gmScript;
+    [SerializeField] LanGameManager gmScript;
     TextMeshProUGUI infoText, skillsInfo;
     Image skill1, skill2, skill3, skill4;
     public string[] warriorSkillsDescription, mageSkillsDescription, assassinSkillsDescription;
 
     private void Awake() {
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         infoText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         skill1 = transform.GetChild(1).GetChild(0).GetComponent<Image>();
         skill2 = transform.GetChild(1).GetChild(1).GetComponent<Image>();
@@ -23,16 +22,16 @@ public class LanCharacterPanel : MonoBehaviour
 
     private void OnEnable() {
         infoText.SetText("Name: " + gmScript.player.username + "   CLASS: " + gmScript.player.playerClass + "\n"
-        + "Level: " + gmScript.player.level.Value + "\n"
-        + "HP: " + gmScript.player.currentHealth.Value + "/" + gmScript.player.finalHealth.Value + "\n"
-        + "Mana: " + gmScript.player.currentMana + "/" + gmScript.player.finalMana + "\n"
-        + "Exp: " + gmScript.player.currentExp + "/" + gmScript.player.finalRequiredExp + "\n"
+        + "Level: " + (int)gmScript.player.level.Value + "\n"
+        + "HP: " + (int)gmScript.player.currentHealth.Value + "/" + (int)gmScript.player.finalHealth.Value + "\n"
+        + "Mana: " + (int)gmScript.player.currentMana + "/" + (int)gmScript.player.finalMana + "\n"
+        + "Exp: " + (int)gmScript.player.currentExp + "/" + (int)gmScript.player.finalRequiredExp + "\n"
         + "\n"
         + "STATS \n"
-        + "BASE DAMAGE: " + gmScript.player.baseDamage + "\n"
-        + "WEAPON DAMAGE: " + gmScript.player.weaponDmg + "\n"
-        + "DAMAGE REDUCTION: " + gmScript.player.damageReduction + "\n"
-        + "DEFENSE: " + gmScript.player.baseArmor);
+        + "BASE DAMAGE: " + (int)gmScript.player.baseDamage + "\n"
+        + "WEAPON DAMAGE: " + (int)gmScript.player.weaponDmg + "\n"
+        + "DAMAGE REDUCTION: " + (int)gmScript.player.damageReduction + "\n"
+        + "DEFENSE: " + (int)gmScript.player.baseArmor);
 
         switch (gmScript.player.playerClass)
         {
@@ -53,6 +52,11 @@ public class LanCharacterPanel : MonoBehaviour
             break;
 
             case "Assassin":
+            //skills icons
+                skill1.sprite = gmScript.assassinSkillIcons[0];
+                skill2.sprite = gmScript.assassinSkillIcons[1];
+                skill3.sprite = gmScript.assassinSkillIcons[2];
+                skill4.sprite = gmScript.assassinSkillIcons[3];
             break;
         }
     }

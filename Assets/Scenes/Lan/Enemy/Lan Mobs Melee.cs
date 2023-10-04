@@ -333,6 +333,7 @@ public class LanMobsMelee : NetworkBehaviour
         if(isRespawnable) { //if false, dont respawn
             Invoke(nameof(RespawnWait), deathTimer);
         }
+
     }
 
     void RespawnWait() {
