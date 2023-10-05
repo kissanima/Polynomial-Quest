@@ -10,10 +10,12 @@ public class LanItemInfo : MonoBehaviour
     Sprite itemImageWS;
     TextMeshProUGUI itemName, itemDamage, itemClassLabel;
     LanPlayer player;
-    LanGameManager gmScript;
+    [SerializeField] LanGameManager gmScript;
     public string itemType, itemClass;
     public int itemIndex;
     public float weaponDmg, armor;
+    bool isEquipped;
+    
     private void Awake() {
         //initialize components
         itemImage = transform.GetChild(0).GetComponent<Image>();
@@ -21,12 +23,12 @@ public class LanItemInfo : MonoBehaviour
         itemDamage = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         itemClassLabel = transform.GetChild(4).GetComponent<TextMeshProUGUI>();
 
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         player = gmScript.player;
     }
 
 
-    public void SetInfo(Sprite itemImage, Sprite itemImageWS, string itemName, string itemClass, string itemDamage, string armor) {
+    public void SetInfo(Sprite itemImage, Sprite itemImageWS, string itemName, string itemClass, string itemDamage, string armor, bool isEquipped) {
+        this.isEquipped = isEquipped;
         this.itemClass = itemClass;
         this.itemImage.sprite = itemImage;
         this.itemImageWS = itemImageWS;
@@ -84,7 +86,7 @@ public class LanItemInfo : MonoBehaviour
     }
 
     public void UpdateUI() {
-        if(itemIndex == player.equipedWeaponIndex || itemIndex == player.equipedArmorIndex) {
+        if(itemIndex == player.equipedWeaponIndex || itemIndex == player.equipedArmorIndex && isEquipped) {
             transform.GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().SetText("UNQUIP");
         }
         else { //it means item clicked is not equiped

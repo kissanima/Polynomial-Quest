@@ -26,7 +26,7 @@ public class LanGameManager : MonoBehaviour
     public AudioClip[] backgroundMusic;
     public LanPlayer[] players;
     public LanKnights[] knights;
-    public bool isPortalFound, hasSetEquippedWeapon;
+    public bool isPortalFound, hasSetEquippedWeapon, hasSetEquippedArmor;
     public AudioClip[] WarriorSoundEffects;
     public AudioClip[] MageSoundEffects;
     public AudioClip playerHitSoundEffect, playerDieSoundEffect;
@@ -132,6 +132,7 @@ public class LanGameManager : MonoBehaviour
             case "Assassin":
             break;
         }
+
         //Application.targetFrameRate = 60;
         customizationCamera.SetActive(false);
     }
@@ -144,7 +145,7 @@ public class LanGameManager : MonoBehaviour
             player.transform.GetChild(2).GetChild(0).gameObject.SetActive(true);
 
             player.moveSpeed -= player.moveSpeed * .10f; //debuffs
-            light2D.intensity = .9f;
+            light2D.intensity = .7f;
 
             StartCoroutine(RainWait());
     }
@@ -387,6 +388,7 @@ public class LanGameManager : MonoBehaviour
                 tempitemScript.itemIndex = j+1;
                     if(player.equipedWeaponIndex == tempitemScript.itemIndex && !hasSetEquippedWeapon) { //show equipped item status if true
                         hasSetEquippedWeapon = true;
+                        tempitemScript.isEquipped = true;
                         tempInstance.transform.GetChild(0).gameObject.SetActive(true);
 
                         //set stats
@@ -394,7 +396,18 @@ public class LanGameManager : MonoBehaviour
                         player.updateStats();
                         player.EquipItemServerRpc(tempitemScript.itemIndex, player.NetworkObjectId, true);
                     }
-                break;
+                    else if(player.equipedArmorIndex == tempitemScript.itemIndex && !hasSetEquippedArmor) { //show 
+                        hasSetEquippedArmor = true;
+                        tempitemScript.isEquipped = true;
+                        tempInstance.transform.GetChild(0).gameObject.SetActive(true);
+
+                        //set stats
+                        player.itemArmor = tempitemScript.damage;
+                        player.updateStats();
+                        player.EquipItemServerRpc(tempitemScript.itemIndex, player.NetworkObjectId, false);
+                        
+                    }
+                    break;
             }
         }
 
@@ -533,5 +546,29 @@ public class LanGameManager : MonoBehaviour
             //
             MissionPanel.GetChild(3).gameObject.SetActive(true);
         }
+    }
+
+    public void SetLighting() {
+        //2D light Config
+        switch (difficulty)
+        {
+           
+
+            case 1:
+                light2D.intensity = 2;
+                light2D.color = new Color32(255, 174, 66, 255); // Yellow Orange
+            break;
+
+            case 2:
+                light2D.intensity = 1.5f;
+                light2D.color = new Color32(248, 248, 255, 255);
+            break;
+
+            case 3:
+                light2D.color = new Color32(85, 107, 47, 255);
+            break;
+        }
+
+        Debug.Log("2D config called" + difficulty);
     }
 }

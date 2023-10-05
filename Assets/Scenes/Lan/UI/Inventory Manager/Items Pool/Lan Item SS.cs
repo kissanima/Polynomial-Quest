@@ -11,6 +11,7 @@ public class LanItemSS : MonoBehaviour
     public float armor;
     string itemName;
     public string itemClass = "", itemType = "";
+    public bool isEquipped;
     //public GameObject itemInfo;
     Sprite itemImage;
     public Sprite itemImageWS;
@@ -30,8 +31,7 @@ public class LanItemSS : MonoBehaviour
             itemInfo.gameObject.SetActive(true);
             itemInfo.itemType = itemType;
             itemInfo.itemIndex = itemIndex;
-
-            itemInfo.SetInfo(itemImage, itemImageWS, itemName, itemClass, damage.ToString(), armor.ToString());
+            itemInfo.SetInfo(itemImage, itemImageWS, itemName, itemClass, damage.ToString(), armor.ToString(), isEquipped);
 
             if(itemType == "sword") {
                 itemInfo.weaponDmg = damage;

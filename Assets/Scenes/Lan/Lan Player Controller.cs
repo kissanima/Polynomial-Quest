@@ -113,8 +113,7 @@ public class LanPlayer : NetworkBehaviour
         dieAudioSource.clip = gmScript.playerDieSoundEffect;
         dungeonParent = GameObject.FindWithTag("Environment").transform.GetChild(2).transform;
         deathTimerText = deathPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        playerCollider = GetComponent<BoxCollider2D>(); 
-        GetComponent<AudioListener>().enabled = true;     
+        playerCollider = GetComponent<BoxCollider2D>();     
         StartCoroutine(DetectEnemyWait()); 
 
         
@@ -156,6 +155,7 @@ public class LanPlayer : NetworkBehaviour
 
         if(!IsOwnedByServer) return; //codes below is executed on server only ///////////////////
         RandomWeatherServerRpc(); //weather
+        //gmScript.SetLighting();
     }
 
     IEnumerator DetectEnemyWait() {   
@@ -425,8 +425,8 @@ public class LanPlayer : NetworkBehaviour
     }
     [ClientRpc]
     public void SetDifficultyClientRpc(int difficulty) { ///executed on players CLIENT 
-        this.gmScript.difficulty = difficulty;
-
+        gmScript.difficulty = difficulty;
+        //gmScript.SetLighting(); //set 2D lights
         switch (gmScript.difficulty) //difficulty =1
         {
             case 0: //easy

@@ -5,11 +5,10 @@ using Unity.Netcode;
 
 public class LanCameraController : MonoBehaviour {
     Transform player;
-    LanGameManager gmScript;
+    [SerializeField] LanGameManager gmScript;
     bool hasInitialized;
 
     public void Initialize() {
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
         player = gmScript.player.transform;
         GetComponent<Camera>().enabled = true;
         hasInitialized = true;
