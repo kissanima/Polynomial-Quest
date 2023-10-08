@@ -7,7 +7,7 @@ public class LanPotion : MonoBehaviour
     [SerializeField] LanGameManager gmScript;
     int draw;
     bool isPotion;
-    private void Start() {
+    private void Awake() {
         draw = Random.Range(0,2); //0 = potion     1 = hint
         if(draw == 0) {
             isPotion = true;

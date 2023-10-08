@@ -2,19 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LanSelectDifficulty : MonoBehaviour
 {
-    public LanGameManager gmScript;
+    [SerializeField] LanGameManager gmScript;
     [SerializeField] GameObject welcome, nature, desert, snow, decay;
     public Transform enemyManager;
-    Transform skillEffectsParent;
+    Transform skillEffectsParent, startButton;
+    int playerLevel;
+    TextMeshProUGUI difficultyText;
 
     private void Awake() {
-        gmScript = GameObject.FindWithTag("GameManager").GetComponent<LanGameManager>();
+        playerLevel = PlayerPrefs.GetInt("level");
         welcome = GameObject.FindWithTag("UI").transform.GetChild(7).gameObject;
         enemyManager = GameObject.FindWithTag("EnemyManager").transform.GetChild(0);
         skillEffectsParent = GameObject.FindWithTag("SkillEffects").transform;
+        startButton = transform.GetChild(2);
+        difficultyText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 
         //maps
         nature = GameObject.FindWithTag("Environment").transform.GetChild(0).GetChild(0).gameObject;
@@ -33,6 +38,10 @@ public class LanSelectDifficulty : MonoBehaviour
             desert.SetActive(false);
             snow.SetActive(false);
             decay.SetActive(false);
+
+            startButton.gameObject.SetActive(true);
+            difficultyText.color = Color.white;
+            difficultyText.SetText("Select Difficulty: ");
             break;
 
             case 1:
@@ -42,6 +51,12 @@ public class LanSelectDifficulty : MonoBehaviour
             desert.SetActive(true);
             snow.SetActive(false);
             decay.SetActive(false);
+
+            if(playerLevel < 6) {
+                startButton.gameObject.SetActive(false);
+                difficultyText.color = Color.red;
+                difficultyText.SetText("Level 6 or higher required");
+            }
             break;
 
             case 2:
@@ -51,6 +66,12 @@ public class LanSelectDifficulty : MonoBehaviour
             desert.SetActive(false);
             snow.SetActive(true);
             decay.SetActive(false);
+
+            if(playerLevel < 16) {
+                startButton.gameObject.SetActive(false);
+                difficultyText.color = Color.red;
+                difficultyText.SetText("Level 16 or higher required");
+            }
             break;
 
             case 3:
@@ -61,8 +82,15 @@ public class LanSelectDifficulty : MonoBehaviour
             snow.SetActive(false);
             decay.SetActive(true);
             skillEffectsParent.GetChild(2).GetChild(1).gameObject.SetActive(true); //enable portal
+
+            if(playerLevel < 26) {
+                startButton.gameObject.SetActive(false);
+                difficultyText.color = Color.red;
+                difficultyText.SetText("Level 26 or higher required");
+            }
             break;
         }
+
     }
 
     public void ButtonPressed()

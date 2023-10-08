@@ -37,7 +37,7 @@ public class LanPlayer : NetworkBehaviour
     public float moveSpeed = 1f, attackSpeed = 1, attackCooldown = 0, baseDamage= 25, finalDamage, currentExp,
     baseRequiredExp = 75, finalRequiredExp, currentMana, baseMana = 75, finalMana,
     potion, weaponDmg, baseArmor = 5, finalArmor, itemArmor, equipedWeaponIndex, equipedArmorIndex, deathTimer = 5,
-    damageReduction, attackRange, hint = 10, finishIntro, hasStatsInitialized;
+    damageReduction, attackRange, hint = 10, finishIntro, hasStatsInitialized, weaponIndexAtInventory, armorIndexAtInventory;
     public string username, playerClass;
     public Collider2D[] targetList;
     public Slider sliderHealthWS;
@@ -130,7 +130,7 @@ public class LanPlayer : NetworkBehaviour
 
 
         //call server to call PlayerCustomizationClientRpc method on all client
-        PlayerCustomizationServerRpc(); //load costomization
+        //PlayerCustomizationServerRpc(); //load costomization
 
 
         //HOST = server and player ///network objects OWNER
@@ -155,7 +155,7 @@ public class LanPlayer : NetworkBehaviour
 
         if(!IsOwnedByServer) return; //codes below is executed on server only ///////////////////
         RandomWeatherServerRpc(); //weather
-        //gmScript.SetLighting();
+        gmScript.SetLighting();
     }
 
     IEnumerator DetectEnemyWait() {   
@@ -481,7 +481,7 @@ public class LanPlayer : NetworkBehaviour
     public void RandomWeatherServerRpc() {
         if(!IsOwnedByServer) return;
         int draw = Random.Range(0, 2);
-        Debug.Log("RandomWeatherServerRpc called: " + draw);
+        //Debug.Log("RandomWeatherServerRpc called: " + draw);
 
         if(draw == 1) {
             StartWeatherClientRpc(gmScript.difficulty);
@@ -608,11 +608,14 @@ public class LanPlayer : NetworkBehaviour
                     }
                 }
                 else { //is armor
+                        Debug.Log("set armor design");
                     if(itemIndex == 0) {
                         item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite = gmScript.characterCreation.torso[item.torso.Value];
                     }
                     else {
                         item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite = itemsPool.GetChild(itemIndex-1).GetComponent<LanItemSS>().itemImageWS;
+                        Debug.Log("armor design !null " + itemsPool.GetChild(itemIndex-1).GetComponent<LanItemSS>().itemImageWS);
+                        Debug.Log(item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite);
                     }
                 }
             }

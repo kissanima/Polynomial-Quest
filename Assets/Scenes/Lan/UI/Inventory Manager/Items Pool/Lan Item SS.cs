@@ -31,7 +31,7 @@ public class LanItemSS : MonoBehaviour
             itemInfo.gameObject.SetActive(true);
             itemInfo.itemType = itemType;
             itemInfo.itemIndex = itemIndex;
-            itemInfo.SetInfo(itemImage, itemImageWS, itemName, itemClass, damage.ToString(), armor.ToString(), isEquipped);
+            itemInfo.SetInfo(itemImage, itemImageWS, itemName, itemClass, damage.ToString(), armor.ToString(), isEquipped, this);
 
             if(itemType == "sword") {
                 itemInfo.weaponDmg = damage;

@@ -165,12 +165,12 @@ public class LanGameManager : MonoBehaviour
     public void DesertWeather() {
         weatherTitleText.gameObject.SetActive(true);
         weatherTitleText.SetText("SandStorm");
-        weatherInfoText.SetText("-10% movespeed \n-10% attack Speed");
+        weatherInfoText.SetText("-50% movespeed \n-10% attack Speed");
             player.transform.GetChild(2).GetChild(1).gameObject.SetActive(true); //disable particle system
 
             player.attackSpeed = player.attackSpeed * .10f;
-            player.moveSpeed -= player.moveSpeed * .10f; //debuffs
-            light2D.intensity = 1.2f;
+            player.moveSpeed -= player.moveSpeed * .50f; //debuffs
+            light2D.intensity = 1.5f;
 
             StartCoroutine(DesertWait());
     }
@@ -188,8 +188,8 @@ public class LanGameManager : MonoBehaviour
         player.transform.GetChild(2).GetChild(1).gameObject.SetActive(false); //disable particle system
 
         player.moveSpeed += player.moveSpeed * .10f;
-        player.attackSpeed += player.attackSpeed * .10f;
-        light2D.intensity =  1f;
+        player.attackSpeed += player.attackSpeed * .50f;
+        light2D.intensity =  2f;
 
         player.RandomWeatherServerRpc();
     }
@@ -199,12 +199,12 @@ public class LanGameManager : MonoBehaviour
     public void SnowWeather() {
         weatherTitleText.gameObject.SetActive(true);
         weatherTitleText.SetText("Snow");
-        weatherInfoText.SetText("-15% movespeed \n-15% attack Speed \n-25% max mana");
+        weatherInfoText.SetText("-25% movespeed \n-15% attack Speed \n-25% max mana");
             player.transform.GetChild(2).GetChild(2).gameObject.SetActive(true); //enable particle
 
             //debuffs
-            player.attackSpeed = player.attackSpeed * .10f;
-            player.moveSpeed -= player.moveSpeed * .10f; 
+            player.attackSpeed -= player.attackSpeed * .10f;
+            player.moveSpeed -= player.moveSpeed * .20f; 
             player.finalMana -= player.finalMana * .25f;
 
             UpdateUI();
@@ -223,9 +223,9 @@ public class LanGameManager : MonoBehaviour
         weatherTitleText.gameObject.SetActive(false);
         player.transform.GetChild(2).GetChild(2).gameObject.SetActive(false); //disable particle system
         
-        player.moveSpeed += player.moveSpeed * .15f;
-        player.attackSpeed += player.attackSpeed * .15f;
-        player.finalMana += player.finalMana * .25f;
+        player.attackSpeed += player.attackSpeed * .10f;
+            player.moveSpeed += player.moveSpeed * .20f; 
+            player.finalMana += player.finalMana * .25f;
 
         UpdateUI();
         player.RandomWeatherServerRpc();
@@ -237,11 +237,11 @@ public class LanGameManager : MonoBehaviour
     public void AcidWeather() {
         weatherTitleText.gameObject.SetActive(true);
         weatherTitleText.SetText("Acid Rain");
-        weatherInfoText.SetText("-15% movespeed \n-15% attack Speed \n-25% max mana \n-(20 + 1% of max health) per second");
+        weatherInfoText.SetText("-15% movespeed \n-15% attack Speed \n-25% max mana \n-(5 + 1% of max health) per second");
             player.transform.GetChild(2).GetChild(3).gameObject.SetActive(true);
 
             //debuffs
-            player.attackSpeed = player.attackSpeed * .10f;
+            player.attackSpeed -= player.attackSpeed * .10f;
             player.moveSpeed -= player.moveSpeed * .10f; 
             player.finalMana -= player.finalMana * .25f;
 
@@ -253,7 +253,7 @@ public class LanGameManager : MonoBehaviour
          if(elapseTime < weatherDuration) {
             elapseTime += Time.fixedDeltaTime;
             while (true) {
-                player.currentHealth.Value -= (player.currentHealth.Value * .01f) + 20f;
+                player.currentHealth.Value -= (player.currentHealth.Value * .01f) + 5f;
                 yield return new WaitForSeconds(1f);
             }
         }
@@ -261,8 +261,8 @@ public class LanGameManager : MonoBehaviour
         weatherTitleText.gameObject.SetActive(false);
         player.transform.GetChild(2).GetChild(3).gameObject.SetActive(false); //disable particle system
         
-        player.moveSpeed += player.moveSpeed * .15f;
-        player.attackSpeed += player.attackSpeed * .15f;
+        player.attackSpeed += player.attackSpeed * .10f;
+        player.moveSpeed += player.moveSpeed * .10f; 
         player.finalMana += player.finalMana * .25f;
 
         UpdateUI();
@@ -347,7 +347,9 @@ public class LanGameManager : MonoBehaviour
             player.finalRequiredExp = PlayerPrefs.GetInt("finalRequiredExp");
             player.potion = PlayerPrefs.GetInt("potion");
             player.equipedWeaponIndex = PlayerPrefs.GetInt("equipedWeaponIndex");
+            player.weaponIndexAtInventory = PlayerPrefs.GetInt("weaponIndexAtInventory");
             player.equipedArmorIndex = PlayerPrefs.GetInt("equipedArmorIndex");
+            player.armorIndexAtInventory = PlayerPrefs.GetInt("armorIndexAtInventory");
             player.hint = PlayerPrefs.GetInt("hint");
             player.finishIntro = PlayerPrefs.GetInt("finishIntro");
             player.score.Value = PlayerPrefs.GetInt("score");
@@ -362,8 +364,7 @@ public class LanGameManager : MonoBehaviour
         }
     
         player.CallUpdatePlayerNameInfoServerRpc(); //get names
-        UpdateUI();
-
+        player.PlayerCustomizationServerRpc();
     
     //Load Inventory String
     string tempString = PlayerPrefs.GetString("inventory");
@@ -386,7 +387,7 @@ public class LanGameManager : MonoBehaviour
                 LanItemSS tempitemScript = tempInstance.GetComponent<LanItemSS>();
                 tempInstance.gameObject.SetActive(true);
                 tempitemScript.itemIndex = j+1;
-                    if(player.equipedWeaponIndex == tempitemScript.itemIndex && !hasSetEquippedWeapon) { //show equipped item status if true
+                    if(player.weaponIndexAtInventory - 1 == i && !hasSetEquippedWeapon) { //show equipped item status if true
                         hasSetEquippedWeapon = true;
                         tempitemScript.isEquipped = true;
                         tempInstance.transform.GetChild(0).gameObject.SetActive(true);
@@ -396,7 +397,7 @@ public class LanGameManager : MonoBehaviour
                         player.updateStats();
                         player.EquipItemServerRpc(tempitemScript.itemIndex, player.NetworkObjectId, true);
                     }
-                    else if(player.equipedArmorIndex == tempitemScript.itemIndex && !hasSetEquippedArmor) { //show 
+                    else if(player.armorIndexAtInventory - 1 == i && !hasSetEquippedArmor) { //show 
                         hasSetEquippedArmor = true;
                         tempitemScript.isEquipped = true;
                         tempInstance.transform.GetChild(0).gameObject.SetActive(true);
@@ -428,6 +429,8 @@ public class LanGameManager : MonoBehaviour
         player.attackRange = 0.30f;
         break;
     }
+    UpdateUI();
+
     //END LOAD PLAYER DATA
     Debug.Log("LOAD DATA SUCCESSFULLY");
     } 
@@ -437,7 +440,9 @@ public class LanGameManager : MonoBehaviour
         PlayerPrefs.SetInt("currentExp", (int)player.currentExp);
         PlayerPrefs.SetInt("potion", (int)player.potion);
         PlayerPrefs.SetInt("equipedWeaponIndex", (int)player.equipedWeaponIndex);
+        PlayerPrefs.SetInt("weaponIndexAtInventory", (int)player.weaponIndexAtInventory);
         PlayerPrefs.SetInt("equipedArmorIndex", (int)player.equipedArmorIndex);
+        PlayerPrefs.SetInt("armorIndexAtInventory", (int)player.armorIndexAtInventory);
         PlayerPrefs.SetInt("baseRequiredExp", (int)player.baseRequiredExp);
         PlayerPrefs.SetInt("finalRequiredExp", (int)player.finalRequiredExp);
         PlayerPrefs.SetInt("finishIntro", (int)player.finishIntro);
@@ -554,9 +559,9 @@ public class LanGameManager : MonoBehaviour
         {
            
 
-            case 1:
+            case 1: //desert
                 light2D.intensity = 2;
-                light2D.color = new Color32(255, 174, 66, 255); // Yellow Orange
+                light2D.color = new Color32(255, 216, 162, 255); // Yellow Orange
             break;
 
             case 2:
