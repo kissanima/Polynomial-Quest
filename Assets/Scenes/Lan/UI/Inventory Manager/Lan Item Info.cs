@@ -6,9 +6,9 @@ using TMPro;
 
 public class LanItemInfo : MonoBehaviour
 {
-    Image itemImage;
+    [SerializeField] Image itemImage;
     Sprite itemImageWS;
-    TextMeshProUGUI itemName, itemDamage, itemClassLabel;
+    [SerializeField] TextMeshProUGUI itemName, itemDamage, itemClassLabel, itemStatus;
     LanPlayer player;
     LanItemSS itemClicked;
     [SerializeField] LanGameManager gmScript;
@@ -17,13 +17,10 @@ public class LanItemInfo : MonoBehaviour
     public float weaponDmg, armor;
     bool isEquipped;
     Transform inventoryPanel;
+    [SerializeField] GameObject confirmPrompt;
+    
     
     private void Awake() {
-        //initialize components
-        itemImage = transform.GetChild(0).GetComponent<Image>();
-        itemName = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        itemDamage = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
-        itemClassLabel = transform.GetChild(4).GetComponent<TextMeshProUGUI>();
         inventoryPanel = transform.parent.GetChild(0);
         player = gmScript.player;
     }
@@ -60,27 +57,11 @@ public class LanItemInfo : MonoBehaviour
 
     public void itemEquip() {
         if(itemClicked.transform.GetSiblingIndex() + 1 == player.weaponIndexAtInventory || itemClicked.transform.GetSiblingIndex() + 1 == player.armorIndexAtInventory) {
-            if(itemType == "sword") { //unequipped weapon
-                itemClicked.isEquipped = false;
-                player.weaponDmg -= weaponDmg;
-                player.equipedWeaponIndex = 0;
-                player.weaponIndexAtInventory = 0;
-                player.EquipItemServerRpc(0, player.NetworkObjectId, true);
-
-                //show equipped status
-                itemClicked.transform.GetChild(0).gameObject.SetActive(false);
-                
-
+            if(itemType == "sword") { 
+                UnequipWeapon();
             }
-            else { //unequipped armor
-                itemClicked.isEquipped = false;
-                player.finalArmor -= armor;
-                player.equipedArmorIndex = 0;
-                player.armorIndexAtInventory = 0;
-                player.EquipItemServerRpc(0, player.NetworkObjectId, false);
-
-                //show equipped status
-                itemClicked.transform.GetChild(0).gameObject.SetActive(false);
+            else { 
+                UnequipArmor();
             }
         }
         else { //equip item
@@ -113,39 +94,90 @@ public class LanItemInfo : MonoBehaviour
 
                 //hide equipped status of the old item
                 if(player.armorIndexAtInventory != 0) {
-                 
-                    inventoryPanel.GetChild((int)player.armorIndexAtInventory - 1).GetChild(0).gameObject.SetActive(false);
+                    if(player.armorIndexAtInventory > 0) {
+                        inventoryPanel.GetChild((int)player.armorIndexAtInventory - 1).GetChild(0).gameObject.SetActive(false);
+                    }
                 }
                 
 
                 player.armorIndexAtInventory = itemClicked.transform.GetSiblingIndex() + 1;
             }
         }
-        player.updateStats();
+        player.UpdateStats();
         UpdateUI();
         gmScript.SavePlayerData();
     }
 
     public void UpdateUI() {
-        if(itemClicked.itemType == "weapon") {
+        if(itemClicked.itemType == "sword") {
             if(itemClicked.transform.GetSiblingIndex() + 1 == player.weaponIndexAtInventory) {
-                transform.GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().SetText("UNQUIP");
+                itemStatus.SetText("UNQUIP");
             }
             else {
-                transform.GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().SetText("EQUIP");
+                itemStatus.SetText("EQUIP");
             }
         }
         else { //item clicked is armor
             if(itemClicked.transform.GetSiblingIndex() + 1 == player.armorIndexAtInventory) {
-                transform.GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().SetText("UNQUIP");
+                itemStatus.SetText("UNQUIP");
             }
             else {
-                transform.GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().SetText("EQUIP");
+                itemStatus.SetText("EQUIP");
+            }
+        } 
+    }
+
+    public void DeleteItem() {
+        confirmPrompt.SetActive(true);
+    }
+    public void CancelDelete() {
+        confirmPrompt.SetActive(false);
+    }
+
+    public void ConfirmDelete() {
+        if(itemClicked.transform.GetSiblingIndex() + 1 == player.weaponIndexAtInventory || itemClicked.transform.GetSiblingIndex() + 1 == player.armorIndexAtInventory) {
+            if(itemClicked.itemClass == "sword") {
+                UnequipWeapon();
+            }
+            else {
+                UnequipArmor();
+                
             }
         }
+        player.inventory[itemClicked.itemIndexAtInventory] = "0"; //remove item at player inventory array
+        Destroy(itemClicked.gameObject); //destroy item gameobject
+        player.UpdateStats();
+        gmScript.SavePlayerData();
+
+        gameObject.SetActive(false);
+        confirmPrompt.SetActive(false);
+    }
 
 
-       
+
+
+
+    void UnequipWeapon() {
+        itemClicked.isEquipped = false;
+        player.weaponDmg -= weaponDmg;
+        player.equipedWeaponIndex = 0;
+        player.weaponIndexAtInventory = 0;
+        player.EquipItemServerRpc(0, player.NetworkObjectId, true);
+
+        //show equipped status
+        itemClicked.transform.GetChild(0).gameObject.SetActive(false);
+    }
+
+    void UnequipArmor() {
+        itemClicked.isEquipped = false;
+        player.finalArmor -= armor;
+        player.equipedArmorIndex = 0;
+        player.armorIndexAtInventory = 0;
+        player.EquipItemServerRpc(0, player.NetworkObjectId, false);
+
+        //show equipped status
+        itemClicked.transform.GetChild(0).gameObject.SetActive(false);
+        Debug.Log("UnequipArmor called" );
     }
 
     

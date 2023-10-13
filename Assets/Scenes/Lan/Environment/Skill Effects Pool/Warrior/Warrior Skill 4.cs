@@ -22,13 +22,13 @@ public class WarriorSkill4 : MonoBehaviour
 
         gmScript.player.damageReduction += damageReduction;  //
         gmScript.player.baseDamage += damage;
-        gmScript.player.updateStats();
+        gmScript.player.UpdateStats();
     }
 
     private void OnDisable() {
         gmScript.player.damageReduction -= damageReduction;
         gmScript.player.baseDamage -= damage;
-        gmScript.player.updateStats();
+        gmScript.player.UpdateStats();
     }
 
 }

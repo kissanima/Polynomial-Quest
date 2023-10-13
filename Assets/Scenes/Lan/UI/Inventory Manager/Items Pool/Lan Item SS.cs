@@ -6,7 +6,7 @@ using TMPro;
 
 public class LanItemSS : MonoBehaviour
 {
-    public int itemIndex;
+    public int itemIndex, itemIndexAtInventory;
     public float damage = 25;
     public float armor;
     string itemName;

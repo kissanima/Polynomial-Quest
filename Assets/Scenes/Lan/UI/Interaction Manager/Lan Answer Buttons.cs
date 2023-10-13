@@ -101,7 +101,7 @@ public class LanAnswerButtons : MonoBehaviour
                 
                 gmScript.player.GiveExpServerRpc(25f);
                 gmScript.player.score.Value += 100;
-                gmScript.player.updateStats();
+                gmScript.player.UpdateStats();
                 gmScript.UpdateUI(); //update player healtbar, exp bar etc
                 gmScript.SavePlayerData(); //save data
             //}

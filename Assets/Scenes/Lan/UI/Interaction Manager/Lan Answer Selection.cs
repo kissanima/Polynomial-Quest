@@ -126,7 +126,7 @@ public class LanAnswerSelection : MonoBehaviour
                 //give exp
                 gmScript.player.currentExp += 25;
                 
-                gmScript.player.updateStats();
+                gmScript.player.UpdateStats();
                 gmScript.UpdateUI(); //update player healtbar, exp bar etc
                 gmScript.SavePlayerData(); //save data
                 

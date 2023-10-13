@@ -65,7 +65,7 @@ public class LanNpc : MonoBehaviour
 
     public void IsDone() {
         
-        Debug.Log("isDone called");
+        //Debug.Log("isDone called");
         if(!isAI && !isNpc) {  //is a statue
 
             //first parameter is statue index

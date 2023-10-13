@@ -165,7 +165,7 @@ public class LanPlayer : NetworkBehaviour
         }
     }
 
-    public void updateStats() {      
+    public void UpdateStats() {      
         if(currentExp != 0 && currentExp >= finalRequiredExp && level.Value <= 30) { //called on level up
             currentExp -= finalRequiredExp; //reset current Exp
             level.Value += 1;
@@ -346,7 +346,7 @@ public class LanPlayer : NetworkBehaviour
                 equipedArmorIndex = 0;
                 weaponDmg = 0;
                 itemArmor = 0;
-                updateStats();
+                UpdateStats();
                 gmScript.SavePlayerData();
                 EquipItemServerRpc(0, NetworkObjectId, true); //for weapon
                 EquipItemServerRpc(0, NetworkObjectId, false); //for armor
@@ -610,12 +610,13 @@ public class LanPlayer : NetworkBehaviour
                 else { //is armor
                         Debug.Log("set armor design");
                     if(itemIndex == 0) {
+                        Debug.Log("itemIndex" + itemIndex);
                         item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite = gmScript.characterCreation.torso[item.torso.Value];
                     }
                     else {
                         item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite = itemsPool.GetChild(itemIndex-1).GetComponent<LanItemSS>().itemImageWS;
-                        Debug.Log("armor design !null " + itemsPool.GetChild(itemIndex-1).GetComponent<LanItemSS>().itemImageWS);
-                        Debug.Log(item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite);
+                        //Debug.Log("armor design !null " + itemsPool.GetChild(itemIndex-1).GetComponent<LanItemSS>().itemImageWS);
+                        //Debug.Log(item.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite);
                     }
                 }
             }
@@ -675,7 +676,7 @@ public class LanPlayer : NetworkBehaviour
         {
             if(item.IsLocalPlayer) {
                 item.currentExp += exp;
-                item.updateStats();
+                item.UpdateStats();
                 break;
             }
         }

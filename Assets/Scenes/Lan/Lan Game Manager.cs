@@ -360,7 +360,7 @@ public class LanGameManager : MonoBehaviour
 
             //initialize
             player.finalDamage = player.baseDamage + player.weaponDmg;
-            player.updateStats();
+            player.UpdateStats();
         }
     
         player.CallUpdatePlayerNameInfoServerRpc(); //get names
@@ -385,6 +385,7 @@ public class LanGameManager : MonoBehaviour
             if(temp == itemPool.transform.GetChild(j).GetSiblingIndex() && temp >= 0) { 
                 GameObject tempInstance = Instantiate(itemPool.transform.GetChild(j).gameObject, inventoryManager.transform.GetChild(0)); //instantiate
                 LanItemSS tempitemScript = tempInstance.GetComponent<LanItemSS>();
+                tempitemScript.itemIndexAtInventory = i;
                 tempInstance.gameObject.SetActive(true);
                 tempitemScript.itemIndex = j+1;
                     if(player.weaponIndexAtInventory - 1 == i && !hasSetEquippedWeapon) { //show equipped item status if true
@@ -394,7 +395,7 @@ public class LanGameManager : MonoBehaviour
 
                         //set stats
                         player.weaponDmg = tempitemScript.damage;
-                        player.updateStats();
+                        player.UpdateStats();
                         player.EquipItemServerRpc(tempitemScript.itemIndex, player.NetworkObjectId, true);
                     }
                     else if(player.armorIndexAtInventory - 1 == i && !hasSetEquippedArmor) { //show 
@@ -404,7 +405,7 @@ public class LanGameManager : MonoBehaviour
 
                         //set stats
                         player.itemArmor = tempitemScript.damage;
-                        player.updateStats();
+                        player.UpdateStats();
                         player.EquipItemServerRpc(tempitemScript.itemIndex, player.NetworkObjectId, false);
                         
                     }
@@ -468,7 +469,7 @@ public class LanGameManager : MonoBehaviour
         LanPlayer[] temp = FindObjectsOfType<LanPlayer>();
         foreach (LanPlayer p in temp)
         {
-            Debug.Log("LoadPlayerCostumization()");
+            //Debug.Log("LoadPlayerCostumization()");
             //belt
             p.transform.GetChild(0).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite = characterCreation.belt[p.belt.Value];
 
@@ -574,6 +575,6 @@ public class LanGameManager : MonoBehaviour
             break;
         }
 
-        Debug.Log("2D config called" + difficulty);
+        //Debug.Log("2D config called" + difficulty);
     }
 }

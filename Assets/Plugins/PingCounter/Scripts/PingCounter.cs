@@ -23,15 +23,15 @@ public class PingCounter : NetworkBehaviour
   private float lastPing = 0f;
 
   public override void OnNetworkSpawn() {
-    Debug.Log("ping meter Initialized");
+    //Debug.Log("ping meter Initialized");
     transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
     if(IsHost) {
       address = "127.0.0.1";
-      Debug.Log("Ping meter IP address: " + address);
+      //Debug.Log("Ping meter IP address: " + address);
     }
     else {
       address = transport.ConnectionData.Address;
-      Debug.Log("Ping meter IP address: " + address);
+      //Debug.Log("Ping meter IP address: " + address);
     }
   }
 
