@@ -33,6 +33,7 @@ public class LanGameManager : MonoBehaviour
     Light2D light2D;
     public Sprite[] warriorSkillIcons, mageSkillIcons, assassinSkillIcons;
     [SerializeField] TextMeshProUGUI weatherTitleText, weatherInfoText, scoreText;
+    [SerializeField] LanItemInfo lanItem;
     float elapseTime, weatherDuration = 30;
     public void Initialize() {
     

@@ -5,6 +5,7 @@ using TMPro;
 using Unity.Netcode;
 using Unity.Multiplayer.Samples.Utilities.ClientAuthority;
 using UnityEngine.UI;
+using System.Linq;
 
 public class LanPlayer : NetworkBehaviour
 {
@@ -344,14 +345,17 @@ public class LanPlayer : NetworkBehaviour
                 {
                     Destroy(inventoryPanel.GetChild(i).gameObject);
                 }
+                inventory = Enumerable.Repeat("0", 30).ToArray();
                 equipedWeaponIndex = 0;
+                weaponIndexAtInventory = 0;
                 equipedArmorIndex = 0;
+                armorIndexAtInventory = 0;
                 weaponDmg = 0;
                 itemArmor = 0;
                 UpdateStats();
-                gmScript.SavePlayerData();
                 EquipItemServerRpc(0, NetworkObjectId, true); //for weapon
                 EquipItemServerRpc(0, NetworkObjectId, false); //for armor
+                gmScript.SavePlayerData();
             }
             StartCoroutine(playerRespawnWait());
         }
