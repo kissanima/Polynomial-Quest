@@ -5,10 +5,9 @@ using UnityEngine;
 public class LanPotion : MonoBehaviour
 {
     [SerializeField] LanGameManager gmScript;
-    int draw;
+    public int draw;
     bool isPotion;
     private void Awake() {
-        draw = Random.Range(0,2); //0 = potion     1 = hint
         if(draw == 0) {
             isPotion = true;
         }
@@ -16,6 +15,7 @@ public class LanPotion : MonoBehaviour
             gameObject.name = "Hint";
         }
     }
+    
     void OnTriggerEnter2D(Collider2D other) {
         if(!other.CompareTag("Player")) return;
         if(isPotion) {

@@ -8,13 +8,13 @@ using UnityEngine.Rendering.Universal;
 
 public class LanGameManager : MonoBehaviour
 {
-    Transform MissionPanel;
+    Transform MissionPanel, Controls;
     public Slider sliderExp, sliderHealth, sliderMana, sliderHealthWS; //sliderHealthWS worlds space slider
 
     //initialize variables
     TextMeshProUGUI healthText, manaText, expText;
     public TextMeshProUGUI usernameSS, usernameWS; //SS = screen Space, WS = world space
-    public TextMeshProUGUI potionText, console;
+    public TextMeshProUGUI potionText, hintText, console;
     public LanPlayer player;
     public float enemyStatsModifier = 100f;
     public GameObject inventoryManager, itemPool, characterCreationObject, customizationCamera;
@@ -48,7 +48,7 @@ public class LanGameManager : MonoBehaviour
 
         knights = FindObjectsOfType<LanKnights>();
 
-        
+        Controls = GameObject.FindWithTag("Controls").transform;
         characterCreation = characterCreationObject.GetComponent<LanCreateCharacter>();
         sliderHealthWS = player.transform.GetChild(1).GetChild(0).GetComponent<Slider>(); //get world space healthbar
         sliderHealth = GameObject.FindWithTag("PlayerInfoBar").transform.GetChild(1).GetComponent<Slider>();
@@ -61,7 +61,8 @@ public class LanGameManager : MonoBehaviour
         expText = sliderExp.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         
 
-        potionText = GameObject.FindWithTag("Controls").transform.GetChild(5).GetChild(0).GetComponent<TextMeshProUGUI>();
+        potionText = Controls.GetChild(5).GetChild(0).GetComponent<TextMeshProUGUI>();
+        hintText = Controls.GetChild(12).GetChild(0).GetComponent<TextMeshProUGUI>();
         usernameSS = GameObject.FindWithTag("PlayerInfoBar").transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         usernameWS = player.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
         MissionPanel = GameObject.FindWithTag("UI").transform.GetChild(14);
@@ -92,11 +93,11 @@ public class LanGameManager : MonoBehaviour
 
         //initialize skills
         //initialize spell and skills
-        GameObject.FindWithTag("Controls").transform.GetChild(7).GetComponent<LanSpell1>().Initialize(); //spell flicker
-        GameObject.FindWithTag("Controls").transform.GetChild(8).GetComponent<LanSkill1>().Initialize(); //first skill
-        GameObject.FindWithTag("Controls").transform.GetChild(9).GetComponent<LanSkill2>().Initialize(); //second skill
-        GameObject.FindWithTag("Controls").transform.GetChild(10).GetComponent<LanSkill3>().Initialize(); //third skill
-        GameObject.FindWithTag("Controls").transform.GetChild(11).GetComponent<LanSkill4>().Initialize(); //fourth skill
+        Controls.GetChild(7).GetComponent<LanSpell1>().Initialize(); //spell flicker
+        Controls.GetChild(8).GetComponent<LanSkill1>().Initialize(); //first skill
+        Controls.GetChild(9).GetComponent<LanSkill2>().Initialize(); //second skill
+        Controls.GetChild(10).GetComponent<LanSkill3>().Initialize(); //third skill
+        Controls.GetChild(11).GetComponent<LanSkill4>().Initialize(); //fourth skill
 
         //initialize skills warrior
         //GameObject.FindWithTag("SkillEffects").transform.GetChild(0).GetChild(0).GetComponent<WarriorSkill1>().Initialize();
@@ -110,20 +111,20 @@ public class LanGameManager : MonoBehaviour
         {
             case "Warrior":
             //skill 1
-            GameObject.FindWithTag("Controls").transform.GetChild(8).GetComponent<Image>().sprite = warriorSkillIcons[0];
-            GameObject.FindWithTag("Controls").transform.GetChild(8).GetChild(1).GetComponent<Image>().sprite = warriorSkillIcons[0];
+            Controls.GetChild(8).GetComponent<Image>().sprite = warriorSkillIcons[0];
+            Controls.GetChild(8).GetChild(1).GetComponent<Image>().sprite = warriorSkillIcons[0];
 
             //skill 2
-            GameObject.FindWithTag("Controls").transform.GetChild(9).GetComponent<Image>().sprite = warriorSkillIcons[1];
-            GameObject.FindWithTag("Controls").transform.GetChild(9).GetChild(1).GetComponent<Image>().sprite = warriorSkillIcons[1];
+            Controls.GetChild(9).GetComponent<Image>().sprite = warriorSkillIcons[1];
+            Controls.GetChild(9).GetChild(1).GetComponent<Image>().sprite = warriorSkillIcons[1];
 
             //skill 3
-            GameObject.FindWithTag("Controls").transform.GetChild(10).GetComponent<Image>().sprite = warriorSkillIcons[2];
-            GameObject.FindWithTag("Controls").transform.GetChild(10).GetChild(1).GetComponent<Image>().sprite = warriorSkillIcons[2];
+            Controls.GetChild(10).GetComponent<Image>().sprite = warriorSkillIcons[2];
+            Controls.GetChild(10).GetChild(1).GetComponent<Image>().sprite = warriorSkillIcons[2];
 
             //skill 4
-            GameObject.FindWithTag("Controls").transform.GetChild(11).GetComponent<Image>().sprite = warriorSkillIcons[3];
-            GameObject.FindWithTag("Controls").transform.GetChild(11).GetChild(1).GetComponent<Image>().sprite = warriorSkillIcons[3];
+            Controls.GetChild(11).GetComponent<Image>().sprite = warriorSkillIcons[3];
+            Controls.GetChild(11).GetChild(1).GetComponent<Image>().sprite = warriorSkillIcons[3];
             break;
 
             case "Mage":
@@ -309,6 +310,8 @@ public class LanGameManager : MonoBehaviour
         expText.SetText(Mathf.FloorToInt(sliderExp.value).ToString()  + "/" + Mathf.FloorToInt(sliderExp.maxValue).ToString() );
 
         potionText.SetText(player.potion.ToString());
+        hintText.SetText(player.hint.ToString());
+
 
         usernameSS.SetText(player.username + "  Lv. " + player.level.Value);
         usernameWS.SetText(player.username + "  Lv. " + player.level.Value);
@@ -387,7 +390,7 @@ public class LanGameManager : MonoBehaviour
                 LanItemSS tempitemScript = tempInstance.GetComponent<LanItemSS>();
                 tempitemScript.itemIndexAtInventory = i;
                 tempInstance.gameObject.SetActive(true);
-                tempitemScript.itemIndex = j+1;
+                //tempitemScript.itemIndex = j;
                     if(player.weaponIndexAtInventory - 1 == i && !hasSetEquippedWeapon) { //show equipped item status if true
                         hasSetEquippedWeapon = true;
                         tempitemScript.isEquipped = true;

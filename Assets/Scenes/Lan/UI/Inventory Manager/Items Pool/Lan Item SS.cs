@@ -30,7 +30,7 @@ public class LanItemSS : MonoBehaviour
     public void ButtonPressed() {
             itemInfo.gameObject.SetActive(true);
             itemInfo.itemType = itemType;
-            itemInfo.itemIndex = itemIndex;
+            //itemInfo.itemIndex = itemIndex;
             itemInfo.SetInfo(itemImage, itemImageWS, itemName, itemClass, damage.ToString(), armor.ToString(), isEquipped, this);
 
             if(itemType == "sword") {

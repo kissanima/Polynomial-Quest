@@ -49,13 +49,14 @@ public class LanAnswerButtons : MonoBehaviour
             correctText.SetActive(true);
             transform.parent.gameObject.SetActive(false);
             interactionManager.SetActive(false);
+            gmScript.correctSound.Play(); //play sound
+            interactionScript.npcScript.IsDone(); //method to disable gameobjects
+            gmScript.player.GiveRewardsServerRpc(25f);
 
-            gmScript.correctSound.Play();
-
-            interactionScript.npcScript.IsDone();
-
-                potionOrItem = Random.Range(0, 3); //draw 0-2, if 0 give potion, if 1 give item, 2 give armor
-                float rarity = Random.Range(0, 1);
+                /*  REMOVED/TRANSFERRED to player script networking block
+                
+                potionOrItem = Random.Range(0, 3); //draw 0-2, if 0 give potion or hint, if 1 give item, 2 give armor
+                float rarity = Random.Range(0, 1); //the rarity of the weapon/armor
                 int itemIndex;
                     if(potionOrItem == 0) { //give potion
                         reward = Instantiate(itemsPoolWS.transform.GetChild(0), itemsPoolWS.transform);
@@ -90,7 +91,7 @@ public class LanAnswerButtons : MonoBehaviour
                     reward.position = gmScript.player.transform.position;
 
 
-                //show reward
+                show reward
                 TextMeshProUGUI temp = rewardsLabelPool.GetChild(0).GetComponent<TextMeshProUGUI>();
                 temp.SetText("+1 " + reward.gameObject.name.Replace("(Clone)", "")); 
                 temp.transform.SetParent(gmScript.player.transform.GetChild(1));
@@ -99,12 +100,12 @@ public class LanAnswerButtons : MonoBehaviour
                 
 
                 
-                gmScript.player.GiveExpServerRpc(25f);
+                
                 gmScript.player.score.Value += 100;
                 gmScript.player.UpdateStats();
                 gmScript.UpdateUI(); //update player healtbar, exp bar etc
-                gmScript.SavePlayerData(); //save data
-            //}
+                gmScript.SavePlayerData(); //save data 
+            }  */
         }
         else { //if wrong
             answerSelection.attempts -= 1; //subtract attemps

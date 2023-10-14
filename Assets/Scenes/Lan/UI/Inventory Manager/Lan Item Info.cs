@@ -27,6 +27,7 @@ public class LanItemInfo : MonoBehaviour
 
 
     public void SetInfo(Sprite itemImage, Sprite itemImageWS, string itemName, string itemClass, string itemDamage, string armor, bool isEquipped, LanItemSS itemClicked) {
+        this.itemIndex = itemClicked.itemIndex;
         this.isEquipped = isEquipped;
         this.itemClass = itemClass;
         this.itemImage.sprite = itemImage;

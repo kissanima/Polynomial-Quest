@@ -14,7 +14,7 @@ public class LanPlayer : NetworkBehaviour
     public LanGameManager gmScript;
     public Transform damagePool, dungeonParent;
     public Transform bloodEffectsParent, skillEffectsParent, maps, ui;
-    Transform itemsPool, inventoryPanel;
+    Transform itemsPool, inventoryPanel, reward, itemsPoolWS, rewardsLabelPool;
 
     //player customizations network variables
     public NetworkVariable<int> belt = new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
@@ -74,6 +74,8 @@ public class LanPlayer : NetworkBehaviour
         anim = transform.GetChild(0).GetComponent<Animator>(); //for animations
         ui = GameObject.FindWithTag("UI").transform;
         itemsPool = ui.GetChild(4).GetChild(1);
+        itemsPoolWS = GameObject.FindWithTag("ItemsPoolWS").transform;
+        rewardsLabelPool = GameObject.FindWithTag("RewardsLabelPool").transform;
 
         if(!IsLocalPlayer) {
             transform.GetChild(6).gameObject.SetActive(false);
@@ -334,7 +336,7 @@ public class LanPlayer : NetworkBehaviour
             playerCollider.enabled = false;
             deathPanel.SetActive(true); //show Died message
 
-            if(level.Value > 1) { //TODO: 
+            if(level.Value > 1) {
                 level.Value -= 1;
             }
             if(inventoryPanel.childCount > 0) { //wipe inventory when player die
@@ -419,7 +421,7 @@ public class LanPlayer : NetworkBehaviour
 
 
     //get difficulty from server
-    [ServerRpc(RequireOwnership = false)]   //TODO: 
+    [ServerRpc(RequireOwnership = false)]  
     public void GetDifficultyServerRpc() {
         SetDifficultyClientRpc(gmScript.difficulty);
     }
@@ -589,7 +591,7 @@ public class LanPlayer : NetworkBehaviour
         }
     }
 
-    [ServerRpc(RequireOwnership = false)] //TODO: item sync
+    [ServerRpc(RequireOwnership = false)]
     public void EquipItemServerRpc(int itemIndex, ulong playerID, bool isWeapon) {
         EquipItemClientRpc(itemIndex, playerID, isWeapon);
         
@@ -647,7 +649,7 @@ public class LanPlayer : NetworkBehaviour
         DisableEnemyClientRpc(enemyIndex);
     }
     [ClientRpc]
-    void DisableEnemyClientRpc(int enemyIndex) { //TODO:
+    void DisableEnemyClientRpc(int enemyIndex) {
     Transform enemy = mobsParent.transform.GetChild(enemyIndex);
     enemy.gameObject.SetActive(false);
     enemy.GetComponent<Collider2D>().enabled = false;
@@ -665,18 +667,70 @@ public class LanPlayer : NetworkBehaviour
         dungeonParent.GetChild(statueParentParentIndex).GetChild(statueParentIndex).GetChild(statueIndex).gameObject.SetActive(false);
     }
 
-    [ServerRpc(RequireOwnership = false)]
-    public void GiveExpServerRpc(float exp) {
-        Debug.Log("called by" + gmScript.player.name);
-        GetExpClientRpc(exp / gmScript.players.Length);
+    [ServerRpc(RequireOwnership = false)] //TODO: 
+    public void GiveRewardsServerRpc(float exp) {
+        float sharedExp = exp / gmScript.players.Length; //shared exp, exp reward divided by the number of players
+        int consumableOrItem = Random.Range(0, 3); //draw 0-2, if 0 give potion or hint, if 1 give weapon, 2 give armor
+        int potionOrHint = Random.Range(0,1); //
+        float rarity = Random.Range(0, 1); //the rarity of the weapon/armor
+        GiveRewardsClientRpc(sharedExp, consumableOrItem, potionOrHint, rarity);
     }
     [ClientRpc]
-    void GetExpClientRpc(float exp) {
+    void GiveRewardsClientRpc(float sharedExp, int consumableOrItem, int potionOrHint, float rarity) {
+        int itemIndex;
         foreach (var item in gmScript.players)
         {
             if(item.IsLocalPlayer) {
-                item.currentExp += exp;
-                item.UpdateStats();
+                item.currentExp += sharedExp; //give exp
+
+                //consumables or item rewards
+                if(consumableOrItem == 0) { //give consumables
+                    reward = Instantiate(itemsPoolWS.transform.GetChild(0), itemsPoolWS.transform); //TODO:
+                    reward.GetComponent<LanPotion>().draw = potionOrHint;
+                }
+                else if(consumableOrItem == 2) {
+                        itemIndex = Random.Range(0, itemsPoolWS.transform.GetChild(7).childCount);
+                        reward = Instantiate(itemsPoolWS.transform.GetChild(7).GetChild(itemIndex), itemsPoolWS.transform);
+                    }
+                else { //draw item and give as a reward
+                        
+                        if(rarity >= 0 && rarity < .40) { //chance 40% common
+                            itemIndex = Random.Range(0, itemsPoolWS.transform.GetChild(1).childCount);
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(1).GetChild(itemIndex), itemsPoolWS.transform);
+                        }
+                        else if(rarity >= .40 && rarity < .70) { //30% uncommon
+                            itemIndex = Random.Range(0, itemsPoolWS.transform.GetChild(2).childCount);
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(2).GetChild(itemIndex), itemsPoolWS.transform);
+                        }
+                        else if(rarity >= .70 && rarity < .85) { //15% rare
+                            itemIndex = Random.Range(0, itemsPoolWS.transform.GetChild(3).childCount);
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(3).GetChild(itemIndex), itemsPoolWS.transform);
+                        }
+                        else if(rarity >= .85 && rarity < .95) { //10% epic
+                            itemIndex = Random.Range(0, itemsPoolWS.transform.GetChild(4).childCount);
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(4).GetChild(itemIndex), itemsPoolWS.transform);
+                        }
+                        else if(rarity >= .95 && rarity <= 1) {  //5% legendary
+                            itemIndex = Random.Range(0, itemsPoolWS.transform.GetChild(5).childCount);
+                            reward = Instantiate(itemsPoolWS.transform.GetChild(5).GetChild(itemIndex), itemsPoolWS.transform);
+                        }
+                    }
+                reward.position = gmScript.player.transform.position;
+                reward.gameObject.SetActive(true);
+
+
+                //show reward
+                TextMeshProUGUI temp = rewardsLabelPool.GetChild(0).GetComponent<TextMeshProUGUI>();
+                temp.SetText("+1 " + reward.gameObject.name.Replace("(Clone)", "")); 
+                temp.transform.SetParent(gmScript.player.transform.GetChild(1));
+                temp.transform.position = gmScript.player.transform.position;
+                temp.gameObject.SetActive(true);
+
+                //item is from foreach current iteration
+                item.score.Value += 100; // Increase the score of the current item by 100
+                item.UpdateStats(); // Update the stats of the current item
+                gmScript.UpdateUI(); // Update the UI elements such as player health bar, exp bar, etc.
+                gmScript.SavePlayerData(); // Save the current state of player data
                 break;
             }
         }
